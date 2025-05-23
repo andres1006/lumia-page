@@ -40,43 +40,80 @@ export default function Hero({
     },
   ];
 
-  const dotPattern = `data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23D4AF37" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="4"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E`;
+  const heroImages = [
+    '/images/hero/hero-image-1.jpg',
+    '/images/hero/hero-image-2.jpg',
+  ];
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === heroImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 7000); // Change image every 7 seconds
+
+    return () => clearInterval(timer); // Cleanup on component unmount
+  }, [heroImages.length]);
+
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 to-white">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image Slideshow */}
+      {heroImages.map((src, index) => (
         <div
-          className="absolute inset-0"
-          style={{ backgroundImage: `url("${dotPattern}")` }}
-        ></div>
-      </div>
+          key={src}
+          className="absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out"
+          style={{
+            backgroundImage: `url(${src})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            opacity: index === currentImageIndex ? 1 : 0,
+          }}
+        />
+      ))}
 
-      {/* Hero Image Placeholder */}
-      <div className="absolute inset-0 z-0">
-        <div className="w-full h-full bg-gradient-to-r from-white/95 via-white/80 to-white/95 flex items-center justify-center">
-          <div className="w-full max-w-4xl h-96 bg-gray-200 rounded-2xl shadow-luxury mx-4 flex items-center justify-center">
-            <div className="text-center text-gray-500">
-              <div className="w-20 h-20 bg-primary-gold/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <span className="text-primary-gold text-3xl">✨</span>
-              </div>
-              <p className="text-lg font-medium">
-                {lang === "es" ? "Imagen Hero Principal" : "Main Hero Image"}
-              </p>
-              <p className="text-sm mt-2">
-                {lang === "es"
-                  ? "Sonrisa perfecta / Tecnología avanzada"
-                  : "Perfect smile / Advanced technology"}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* Overlay for text legibility */}
+      <div className="absolute inset-0 bg-black/30 z-0"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center">
           {/* Main Title */}
           <h1
+            className={`text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 transition-all duration-1000 ${ // Changed text-gray-900 to text-white
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
+          >
+            <span className="block">LUMIA:</span>
+            <span className="block text-primary-gold">
+              {lang === "es" ? "Donde la Ciencia" : "Where Science"}
+            </span>
+            <span className="block">
+              {lang === "es" ? "y el Arte" : "and Art"}
+            </span>
+            <span className="block text-primary-gold">
+              {lang === "es" ? "Crean Sonrisas" : "Create Smiles"}
+            </span>
+            <span className="block">
+              {lang === "es" ? "Extraordinarias" : "Extraordinary"}
+            </span>
+          </h1>
+
+          {/* Subtitle */}
+          <p
+            className={`text-xl md:text-2xl text-gray-200 mb-12 max-w-4xl mx-auto leading-relaxed transition-all duration-1000 delay-300 ${ // Changed text-gray-600 to text-gray-200
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
+          >
+            {subtitle}
+          </p>
+
+          {/* CTAs */}
+          <div
             className={`text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 transition-all duration-1000 ${
               isVisible
                 ? "opacity-100 translate-y-0"
@@ -100,17 +137,6 @@ export default function Hero({
 
           {/* Subtitle */}
           <p
-            className={`text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed transition-all duration-1000 delay-300 ${
-              isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-10"
-            }`}
-          >
-            {subtitle}
-          </p>
-
-          {/* CTAs */}
-          <div
             className={`flex flex-col sm:flex-row gap-4 justify-center mb-16 transition-all duration-1000 delay-500 ${
               isVisible
                 ? "opacity-100 translate-y-0"
@@ -142,7 +168,7 @@ export default function Hero({
             </a>
             <a
               href={lang === "es" ? "/contacto" : "/en/contact"}
-              className="inline-flex items-center px-8 py-4 border-2 border-primary-gold text-primary-gold hover:bg-primary-gold hover:text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
+              className="inline-flex items-center px-8 py-4 border-2 border-white text-white hover:bg-primary-gold hover:text-gray-900 font-semibold rounded-lg transition-all duration-300 transform hover:scale-105" // Changed text colors for better contrast on dark overlay
             >
               {cta2Text}
             </a>
@@ -158,13 +184,13 @@ export default function Hero({
           >
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-gold/10 rounded-full mb-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 rounded-full mb-4"> {/* Changed bg-primary-gold/10 to bg-white/10 */}
                   <stat.icon className="w-8 h-8 text-primary-gold" />
                 </div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">
+                <div className="text-3xl font-bold text-white mb-2"> {/* Changed text-gray-900 to text-white */}
                   {stat.number}
                 </div>
-                <div className="text-gray-600 font-medium">{stat.text}</div>
+                <div className="text-gray-300 font-medium">{stat.text}</div> {/* Changed text-gray-600 to text-gray-300 */}
               </div>
             ))}
           </div>
@@ -172,7 +198,7 @@ export default function Hero({
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10"> {/* Ensure scroll indicator is above overlay */}
         <ChevronDown className="w-6 h-6 text-primary-gold" />
       </div>
     </section>

@@ -1,0 +1,33 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations } from '../../../i18n';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const pageTitle = "Bichectomy";
+---
+
+<Layout 
+  title={`${pageTitle} - LUMIA Odontología Especializada`} 
+  description={`Learn more about ${pageTitle.toLowerCase()} at LUMIA Odontología Especializada. Contact us for a consultation.`}
+  lang={lang}
+>
+  <main class="pt-20">
+    <section class="py-12 md:py-20">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          {pageTitle}
+        </h1>
+        <p class="text-xl text-gray-600 mb-8">
+          Detailed content for this service is coming soon. Please check back later or contact us for more information.
+        </p>
+        <a 
+          href={lang === 'es' ? '/contacto' : '/en/contact'}
+          class="inline-flex items-center px-8 py-4 bg-gradient-gold text-white font-semibold rounded-lg shadow-gold hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+        >
+          {t('common.schedule-appointment')}
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>

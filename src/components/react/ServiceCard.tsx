@@ -24,13 +24,22 @@ export default function ServiceCard({
 
   return (
     <div
-      className={`group relative overflow-hidden rounded-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-luxury ${
+      className={`group relative overflow-hidden rounded-2xl transition-all duration-500 transform hover:shadow-luxury ${
         featured
           ? "bg-gradient-gold text-white shadow-gold"
           : "bg-white text-gray-900 shadow-lg hover:shadow-xl border border-gray-100"
       }`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      style={{ transformStyle: "preserve-3d" }}
+      onMouseEnter={(e) => {
+        setIsHovered(true);
+        const card = e.currentTarget;
+        card.style.transform = 'scale(1.05) rotateY(5deg) translateZ(5px)';
+      }}
+      onMouseLeave={(e) => {
+        setIsHovered(false);
+        const card = e.currentTarget;
+        card.style.transform = 'scale(1) rotateY(0deg) translateZ(0px)';
+      }}
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
