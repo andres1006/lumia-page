@@ -22,7 +22,7 @@ const {
   lang = "es",
   canonicalURL = Astro.url.href,
   ogImage = "/images/og-image.jpg",
-  keywords = "odontología, diseño de sonrisa, implantes dentales, turismo dental, Manizales, Pereira",
+  keywords = "odontología, diseño de sonrisa, implantes dentales, turismo dental, Manizales",
 } = Astro.props;
 
 const siteName = "LUMIA Odontología Especializada";
@@ -85,25 +85,16 @@ const fullTitle = title === siteName ? title : `${title} | ${siteName}`;
         "@context": "https://schema.org",
         "@type": "DentalClinic",
         "name": "LUMIA Odontología Especializada",
-        "description": "Clínica dental especializada en diseño de sonrisa, implantes dentales y turismo dental en Manizales y Pereira, Colombia",
+        "description": "Clínica dental especializada en diseño de sonrisa, implantes dentales y turismo dental en Manizales, Colombia",
         "url": "https://lumiaodontologia.com",
         "logo": "https://lumiaodontologia.com/images/logo.png",
-        "address": [
-          {
-            "@type": "PostalAddress",
-            "streetAddress": "CC Fundadores",
-            "addressLocality": "Manizales",
-            "addressRegion": "Caldas",
-            "addressCountry": "CO"
-          },
-          {
-            "@type": "PostalAddress",
-            "streetAddress": "Oval Médica",
-            "addressLocality": "Pereira",
-            "addressRegion": "Risaralda",
-            "addressCountry": "CO"
-          }
-        ],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "CC Fundadores",
+          "addressLocality": "Manizales",
+          "addressRegion": "Caldas",
+          "addressCountry": "CO"
+        },
         "telephone": ["+57-300-000-0000", "+57-300-000-0001"],
         "priceRange": "$$$",
         "medicalSpecialty": [

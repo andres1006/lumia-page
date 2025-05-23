@@ -70,15 +70,15 @@ const testimonials = [
       : 'My experience with LUMIA was extraordinary. Dr. López completely transformed my smile and confidence. The result exceeded all my expectations.',
     service: t('services.smile-design.title')
   },
-  {
-    name: 'Carlos Mendoza',
-    location: 'Pereira',
-    rating: 5,
-    text: lang === 'es'
-      ? 'Los implantes dentales cambiaron mi vida. La tecnología que usan es impresionante y el equipo es sumamente profesional y cálido.'
-      : 'The dental implants changed my life. The technology they use is impressive and the team is extremely professional and warm.',
-    service: t('services.implants.title')
-  },
+  // {
+  //   name: 'Carlos Mendoza',
+  //   location: 'Pereira',
+  //   rating: 5,
+  //   text: lang === 'es'
+  //     ? 'Los implantes dentales cambiaron mi vida. La tecnología que usan es impresionante y el equipo es sumamente profesional y cálido.'
+  //     : 'The dental implants changed my life. The technology they use is impressive and the team is extremely professional and warm.',
+  //   service: t('services.implants.title')
+  // },
   {
     name: 'Sarah Johnson',
     location: 'Miami, FL',
@@ -94,13 +94,13 @@ const testimonials = [
 <Layout 
   title="LUMIA Odontología Especializada"
   description={lang === 'es' 
-    ? 'Transformamos sonrisas con tecnología de vanguardia. Especialistas en diseño de sonrisa, implantes dentales y turismo dental en Manizales y Pereira, Colombia.'
-    : 'We transform smiles with cutting-edge technology. Specialists in smile design, dental implants and dental tourism in Manizales and Pereira, Colombia.'
+    ? 'Transformamos sonrisas con tecnología de vanguardia. Especialistas en diseño de sonrisa, implantes dentales y turismo dental en Manizales, Colombia.'
+    : 'We transform smiles with cutting-edge technology. Specialists in smile design, dental implants and dental tourism in Manizales, Colombia.'
   }
   lang={lang}
   keywords={lang === 'es'
-    ? 'diseño de sonrisa Manizales, implantes dentales Pereira, turismo dental Colombia, ortodoncista Caldas, mejor dentista estético Colombia'
-    : 'smile design Manizales Colombia, dental implants Pereira, dental tourism Colombia, orthodontist Caldas, best cosmetic dentist Colombia'
+    ? 'diseño de sonrisa Manizales, implantes dentales Manizales, turismo dental Colombia, ortodoncista Caldas, mejor dentista estético Colombia'
+    : 'smile design Manizales Colombia, dental implants Manizales, dental tourism Colombia, orthodontist Caldas, best cosmetic dentist Colombia'
   }
 >
   <Header />

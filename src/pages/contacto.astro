@@ -17,15 +17,15 @@ const locations = [
     hours: "Lun - Vie: 8:00 AM - 6:00 PM\nSáb: 8:00 AM - 2:00 PM",
     mapEmbed: "https://maps.google.com/embed?pb=!1m18...", // Placeholder
   },
-  {
-    city: "Pereira",
-    address: "Oval Médica, Consultorio 305",
-    addressDetail: "Carrera 14 #8-55, Pereira, Risaralda",
-    phone: "+57 (300) 000-0001",
-    email: "pereira@lumiaodontologia.com",
-    hours: "Lun - Vie: 8:00 AM - 6:00 PM\nSáb: 8:00 AM - 2:00 PM",
-    mapEmbed: "https://maps.google.com/embed?pb=!1m18...", // Placeholder
-  },
+  // {
+  //   city: "Pereira",
+  //   address: "Oval Médica, Consultorio 305",
+  //   addressDetail: "Carrera 14 #8-55, Pereira, Risaralda",
+  //   phone: "+57 (300) 000-0001",
+  //   email: "pereira@lumiaodontologia.com",
+  //   hours: "Lun - Vie: 8:00 AM - 6:00 PM\nSáb: 8:00 AM - 2:00 PM",
+  //   mapEmbed: "https://maps.google.com/embed?pb=!1m18...", // Placeholder
+  // },
 ];
 
 const services = [
@@ -41,9 +41,9 @@ const services = [
 
 <Layout
   title={t("contact.title")}
-  description="Contacta con LUMIA Odontología Especializada. Agenda tu cita en Manizales o Pereira. Atención personalizada y tecnología de vanguardia."
+  description="Contacta con LUMIA Odontología Especializada. Agenda tu cita en Manizales. Atención personalizada y tecnología de vanguardia."
   lang={lang}
-  keywords="contacto dentista Manizales, cita odontólogo Pereira, LUMIA contacto, dentista Caldas Risaralda"
+  keywords="contacto dentista Manizales, cita odontólogo Manizales, LUMIA contacto, dentista Caldas"
 >
   <Header />
 
@@ -213,7 +213,7 @@ const services = [
                 >
                   <option value="">Selecciona una ubicación</option>
                   <option value="manizales">Manizales</option>
-                  <option value="pereira">Pereira</option>
+                  <!-- <option value="pereira">Pereira</option> -->
                   <option value="virtual">Consulta Virtual</option>
                 </select>
               </div>
@@ -467,4 +467,3 @@ const services = [
 
   <Footer />
 </Layout>
-
