@@ -51,10 +51,10 @@ export default function LanguageSelector({ lang }: LanguageSelectorProps) {
     "/servicios/bichectomia": "/en/services/bichectomy",
     "/en/services/bichectomy": "/servicios/bichectomia",
 
-    "/servicios/odontologia-estetica-general":
+    "/servicios/odontologia-estetica":
       "/en/services/cosmetic-dentistry",
     "/en/services/cosmetic-dentistry":
-      "/servicios/odontologia-estetica-general",
+      "/servicios/odontologia-estetica",
   };
 
   const getToggleUrl = () => {
