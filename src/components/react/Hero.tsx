@@ -80,7 +80,7 @@ export default function Hero({
         <div className="text-center">
           {/* Main Title */}
           <h1
-            className={`text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 transition-all duration-1000 ${ // Changed text-gray-900 to text-white
+            className={`text-4xl md:text-6xl lg:text-7xl text-white mb-6 transition-all duration-1000 ${ // Changed text-gray-900 to text-white
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-10"
@@ -114,29 +114,6 @@ export default function Hero({
 
           {/* CTAs */}
           <div
-            className={`text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 transition-all duration-1000 ${
-              isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-10"
-            }`}
-          >
-            <span className="block">LUMIA:</span>
-            <span className="block text-primary-gold">
-              {lang === "es" ? "Donde la Ciencia" : "Where Science"}
-            </span>
-            <span className="block">
-              {lang === "es" ? "y el Arte" : "and Art"}
-            </span>
-            <span className="block text-primary-gold">
-              {lang === "es" ? "Crean Sonrisas" : "Create Smiles"}
-            </span>
-            <span className="block">
-              {lang === "es" ? "Extraordinarias" : "Extraordinary"}
-            </span>
-          </h1>
-
-          {/* Subtitle */}
-          <p
             className={`flex flex-col sm:flex-row gap-4 justify-center mb-16 transition-all duration-1000 delay-500 ${
               isVisible
                 ? "opacity-100 translate-y-0"
@@ -187,7 +164,7 @@ export default function Hero({
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 rounded-full mb-4"> {/* Changed bg-primary-gold/10 to bg-white/10 */}
                   <stat.icon className="w-8 h-8 text-primary-gold" />
                 </div>
-                <div className="text-3xl font-bold text-white mb-2"> {/* Changed text-gray-900 to text-white */}
+                <div className="text-3xl text-white mb-2"> {/* Changed text-gray-900 to text-white, removed font-bold */}
                   {stat.number}
                 </div>
                 <div className="text-gray-300 font-medium">{stat.text}</div> {/* Changed text-gray-600 to text-gray-300 */}

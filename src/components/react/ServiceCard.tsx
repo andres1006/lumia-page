@@ -80,7 +80,7 @@ export default function ServiceCard({
 
         {/* Content */}
         <h3
-          className={`text-2xl font-bold mb-4 transition-colors duration-300 ${
+          className={`text-2xl mb-4 transition-colors duration-300 ${
             featured
               ? "text-white"
               : "text-gray-900 group-hover:text-primary-gold"
