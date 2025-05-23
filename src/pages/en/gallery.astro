@@ -1,0 +1,564 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { useTranslations } from "../../i18n";
+
+// Force English language for this page
+const lang = "en";
+const t = useTranslations(lang);
+
+const portfolioItems = [
+  {
+    id: 1,
+    category: "smile-design",
+    title: "Complete Smile Makeover",
+    subtitle: "Digital Smile Design + Veneers",
+    beforeImage: "https://via.placeholder.com/600x400/f3f4f6/9ca3af?text=Before",
+    afterImage: "https://via.placeholder.com/600x400/d4af37/ffffff?text=After",
+    description: "Complete transformation with 10 porcelain veneers using Digital Smile Design technology.",
+    treatment: "Porcelain Veneers",
+    duration: "3 weeks",
+    featured: true
+  },
+  {
+    id: 2,
+    category: "implants",
+    title: "Full Mouth Reconstruction",
+    subtitle: "6 Dental Implants + Fixed Bridge",
+    beforeImage: "https://via.placeholder.com/600x400/f3f4f6/9ca3af?text=Before",
+    afterImage: "https://via.placeholder.com/600x400/d4af37/ffffff?text=After",
+    description: "Complete mouth rehabilitation with 6 premium titanium implants and fixed ceramic bridge.",
+    treatment: "Dental Implants",
+    duration: "4 months",
+    featured: true
+  },
+  {
+    id: 3,
+    category: "orthodontics",
+    title: "Invisalign Treatment",
+    subtitle: "12-Month Invisible Correction",
+    beforeImage: "https://via.placeholder.com/600x400/f3f4f6/9ca3af?text=Before",
+    afterImage: "https://via.placeholder.com/600x400/d4af37/ffffff?text=After",
+    description: "Perfect alignment achieved with Invisalign clear aligners in just 12 months.",
+    treatment: "Invisalign",
+    duration: "12 months",
+    featured: false
+  },
+  {
+    id: 4,
+    category: "bichectomy",
+    title: "Facial Contouring",
+    subtitle: "Bichectomy + Smile Design",
+    beforeImage: "https://via.placeholder.com/600x400/f3f4f6/9ca3af?text=Before",
+    afterImage: "https://via.placeholder.com/600x400/d4af37/ffffff?text=After",
+    description: "Facial refinement with bichectomy combined with smile design for perfect harmony.",
+    treatment: "Bichectomy",
+    duration: "1 session",
+    featured: false
+  },
+  {
+    id: 5,
+    category: "smile-design",
+    title: "Celebrity Smile",
+    subtitle: "Digital Design + Premium Ceramics",
+    beforeImage: "https://via.placeholder.com/600x400/f3f4f6/9ca3af?text=Before",
+    afterImage: "https://via.placeholder.com/600x400/d4af37/ffffff?text=After",
+    description: "Hollywood-style smile achieved with high-end ceramic restorations.",
+    treatment: "Smile Design",
+    duration: "2 weeks",
+    featured: true
+  },
+  {
+    id: 6,
+    category: "whitening",
+    title: "Professional Whitening",
+    subtitle: "8 Shades Lighter",
+    beforeImage: "https://via.placeholder.com/600x400/f3f4f6/9ca3af?text=Before",
+    afterImage: "https://via.placeholder.com/600x400/d4af37/ffffff?text=After",
+    description: "Dramatic whitening results achieved in a single professional session.",
+    treatment: "Teeth Whitening",
+    duration: "1 session",
+    featured: false
+  },
+  {
+    id: 7,
+    category: "implants",
+    title: "Single Tooth Replacement",
+    subtitle: "Premium Titanium Implant",
+    beforeImage: "https://via.placeholder.com/600x400/f3f4f6/9ca3af?text=Before",
+    afterImage: "https://via.placeholder.com/600x400/d4af37/ffffff?text=After",
+    description: "Perfect single tooth replacement with titanium implant and ceramic crown.",
+    treatment: "Single Implant",
+    duration: "3 months",
+    featured: false
+  },
+  {
+    id: 8,
+    category: "smile-design",
+    title: "Gummy Smile Correction",
+    subtitle: "Laser + Veneers",
+    beforeImage: "https://via.placeholder.com/600x400/f3f4f6/9ca3af?text=Before",
+    afterImage: "https://via.placeholder.com/600x400/d4af37/ffffff?text=After",
+    description: "Gummy smile correction using laser technology combined with porcelain veneers.",
+    treatment: "Laser + Veneers",
+    duration: "4 weeks",
+    featured: false
+  },
+  {
+    id: 9,
+    category: "orthodontics",
+    title: "Complex Orthodontic Case",
+    subtitle: "18-Month Transformation",
+    beforeImage: "https://via.placeholder.com/600x400/f3f4f6/9ca3af?text=Before",
+    afterImage: "https://via.placeholder.com/600x400/d4af37/ffffff?text=After",
+    description: "Complex malocclusion corrected with advanced orthodontic techniques.",
+    treatment: "Clear Aligners",
+    duration: "18 months",
+    featured: false
+  }
+];
+
+const categories = [
+  { id: "all", name: "All Cases", icon: "🎨" },
+  { id: "smile-design", name: "Smile Design", icon: "✨" },
+  { id: "implants", name: "Dental Implants", icon: "🦷" },
+  { id: "orthodontics", name: "Orthodontics", icon: "📐" },
+  { id: "bichectomy", name: "Bichectomy", icon: "💫" },
+  { id: "whitening", name: "Whitening", icon: "⚡" },
+];
+
+const stats = [
+  { number: "2,500+", label: "Successful Cases" },
+  { number: "15+", label: "Years Experience" },
+  { number: "98%", label: "Satisfaction Rate" },
+  { number: "50+", label: "International Patients" }
+];
+---
+
+<Layout
+  title="Gallery - LUMIA Specialized Dentistry"
+  description="Explore our gallery of successful dental transformations. Before and after cases of smile design, dental implants, orthodontics and more at LUMIA Clinic."
+  lang={lang}
+  keywords="dental before after, smile makeover Colombia, dental transformation gallery, LUMIA cases, dental tourism results"
+>
+  <Header />
+
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="py-20 bg-gradient-to-br from-primary-gold to-primary-gold-dark text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
+          Transformation Gallery
+        </h1>
+        <p class="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto animate-slide-up">
+          Discover the life-changing results we achieve every day at LUMIA
+        </p>
+        <div class="animate-scale-in">
+          <div class="inline-flex items-center px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full">
+            <span class="text-lg font-semibold">Real Cases • Real Results • Real Smiles</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {stats.map((stat, index) => (
+            <div class="text-center group hover:transform hover:scale-105 transition-all duration-300">
+              <div class="text-3xl md:text-4xl font-bold text-primary-gold mb-2 animate-counter" data-target={stat.number}>
+                {stat.number}
+              </div>
+              <div class="text-gray-600 font-medium">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="py-8 bg-gray-50 sticky top-20 z-10 border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-wrap justify-center gap-4">
+          {categories.map((category) => (
+            <button
+              class="filter-btn flex items-center px-6 py-3 bg-white rounded-full border border-gray-200 hover:border-primary-gold hover:text-primary-gold transition-all duration-300 text-sm font-medium"
+              data-filter={category.id}
+            >
+              <span class="mr-2">{category.icon}</span>
+              {category.name}
+            </button>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {portfolioItems.map((item, index) => (
+            <div 
+              class={`gallery-item bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-500 ${item.featured ? 'featured lg:col-span-2 lg:row-span-2' : ''}`}
+              data-category={item.category}
+              style={`animation-delay: ${index * 100}ms`}
+            >
+              <div class="relative overflow-hidden">
+                <div class="before-after-container relative h-64 md:h-80">
+                  <!-- Before Image -->
+                  <div class="before-image absolute inset-0 transition-opacity duration-700">
+                    <img
+                      src={item.beforeImage}
+                      alt={`${item.title} - Before`}
+                      class="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                    <div class="absolute top-4 left-4 bg-black/70 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      Before
+                    </div>
+                  </div>
+                  
+                  <!-- After Image -->
+                  <div class="after-image absolute inset-0 opacity-0 transition-opacity duration-700">
+                    <img
+                      src={item.afterImage}
+                      alt={`${item.title} - After`}
+                      class="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                    <div class="absolute top-4 left-4 bg-primary-gold text-white px-3 py-1 rounded-full text-sm font-medium">
+                      After
+                    </div>
+                  </div>
+                  
+                  <!-- Hover Overlay -->
+                  <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <button 
+                      class="view-case-btn bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+                      data-case-id={item.id}
+                    >
+                      View Case Details
+                    </button>
+                  </div>
+                </div>
+                
+                <!-- Content -->
+                <div class="p-6">
+                  <div class="flex items-center justify-between mb-3">
+                    <span class="text-xs font-semibold text-primary-gold uppercase tracking-wider">
+                      {item.treatment}
+                    </span>
+                    <span class="text-xs text-gray-500">{item.duration}</span>
+                  </div>
+                  
+                  <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-gold transition-colors">
+                    {item.title}
+                  </h3>
+                  
+                  <p class="text-gray-600 text-sm mb-4 line-clamp-2">
+                    {item.description}
+                  </p>
+                  
+                  <div class="text-sm text-gray-500">
+                    {item.subtitle}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Modal -->
+    <div id="case-modal" class="fixed inset-0 bg-black/80 z-50 opacity-0 invisible transition-all duration-300">
+      <div class="flex items-center justify-center min-h-screen p-4">
+        <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300">
+          <div class="sticky top-0 bg-white border-b border-gray-200 p-6 flex items-center justify-between">
+            <h2 id="modal-title" class="text-2xl font-bold text-gray-900"></h2>
+            <button id="close-modal" class="text-gray-400 hover:text-gray-600 transition-colors">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          
+          <div id="modal-content" class="p-6">
+            <!-- Content will be injected here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-primary-gold text-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">
+          Ready for Your Transformation?
+        </h2>
+        <p class="text-xl mb-12 opacity-90">
+          Join thousands of satisfied patients who have transformed their lives with LUMIA
+        </p>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+          <a
+            href="/en/contact"
+            class="inline-flex items-center px-10 py-5 bg-white text-primary-gold font-bold rounded-lg shadow-luxury hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+          >
+            Start Your Journey
+          </a>
+          <a
+            href="https://wa.me/573000000000"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center px-10 py-5 border-3 border-white text-white hover:bg-white hover:text-primary-gold font-bold rounded-lg transition-all duration-300"
+          >
+            <svg class="mr-3 w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.531 3.503"></path>
+            </svg>
+            WhatsApp Consultation
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+  <style>
+    .gallery-item {
+      animation: fadeInUp 0.6s ease-out both;
+    }
+
+    .gallery-item.featured {
+      grid-row: span 2;
+    }
+
+    .gallery-item.featured .before-after-container {
+      height: 400px;
+    }
+
+    @media (min-width: 1024px) {
+      .gallery-item.featured .before-after-container {
+        height: 500px;
+      }
+    }
+
+    .before-after-container:hover .before-image {
+      opacity: 0;
+    }
+
+    .before-after-container:hover .after-image {
+      opacity: 1;
+    }
+
+    .line-clamp-2 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .filter-btn.active {
+      background-color: #D4AF37;
+      color: white;
+      border-color: #D4AF37;
+    }
+
+    #case-modal.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    #case-modal.show .bg-white {
+      transform: scale(1);
+    }
+  </style>
+
+  <script>
+    // Gallery filtering functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const modal = document.getElementById('case-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalContent = document.getElementById('modal-content');
+    const closeModal = document.getElementById('close-modal');
+
+    // Portfolio data (would normally come from a database)
+    const portfolioData = {
+      1: {
+        title: "Complete Smile Makeover",
+        beforeImage: "https://via.placeholder.com/800x600/f3f4f6/9ca3af?text=Before+Image",
+        afterImage: "https://via.placeholder.com/800x600/d4af37/ffffff?text=After+Image",
+        description: "This patient came to us with severe discoloration, gaps, and misaligned teeth. Using Digital Smile Design technology, we created a personalized treatment plan that included 10 porcelain veneers. The result is a perfectly aligned, bright white smile that completely transformed the patient's confidence.",
+        treatment: "Porcelain Veneers + Digital Smile Design",
+        duration: "3 weeks",
+        beforeDetails: "Severe discoloration, gaps between teeth, uneven alignment",
+        afterDetails: "Perfect white smile, closed gaps, harmonious proportions",
+        technique: "Digital Smile Design with premium porcelain veneers"
+      },
+      2: {
+        title: "Full Mouth Reconstruction",
+        beforeImage: "https://via.placeholder.com/800x600/f3f4f6/9ca3af?text=Before+Image",
+        afterImage: "https://via.placeholder.com/800x600/d4af37/ffffff?text=After+Image",
+        description: "Complex case of multiple missing teeth restored with 6 premium titanium implants and a fixed ceramic bridge. The patient regained full chewing function and a beautiful smile.",
+        treatment: "6 Dental Implants + Fixed Ceramic Bridge",
+        duration: "4 months",
+        beforeDetails: "Multiple missing teeth, compromised chewing function",
+        afterDetails: "Complete restoration, full function, natural appearance",
+        technique: "Guided implant surgery with immediate loading protocol"
+      }
+      // Add more case details as needed
+    };
+
+    // Filter functionality
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+        
+        // Update active button
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        // Filter items
+        galleryItems.forEach(item => {
+          const htmlItem = item as HTMLElement;
+          const category = item.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            htmlItem.style.display = 'block';
+            htmlItem.style.animation = 'fadeInUp 0.6s ease-out';
+          } else {
+            htmlItem.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Set default active filter
+    const defaultFilter = document.querySelector('[data-filter="all"]');
+    if (defaultFilter) {
+      defaultFilter.classList.add('active');
+    }
+
+    // Modal functionality
+    document.querySelectorAll('.view-case-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const caseId = btn.getAttribute('data-case-id');
+        const numericCaseId = caseId ? parseInt(caseId) : null;
+        const caseData = numericCaseId && portfolioData[numericCaseId as keyof typeof portfolioData] ? portfolioData[numericCaseId as keyof typeof portfolioData] : null;
+        
+        if (caseData && modal && modalTitle && modalContent) {
+          modalTitle.textContent = caseData.title;
+          modalContent.innerHTML = `
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+              <div>
+                <h3 class="text-lg font-semibold mb-4 text-gray-900">Before</h3>
+                <img src="${caseData.beforeImage}" alt="Before" class="w-full rounded-lg shadow-lg">
+                <p class="text-sm text-gray-600 mt-2">${caseData.beforeDetails}</p>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold mb-4 text-primary-gold">After</h3>
+                <img src="${caseData.afterImage}" alt="After" class="w-full rounded-lg shadow-lg">
+                <p class="text-sm text-gray-600 mt-2">${caseData.afterDetails}</p>
+              </div>
+            </div>
+            
+            <div class="space-y-6">
+              <div>
+                <h3 class="text-lg font-semibold mb-2 text-gray-900">Case Description</h3>
+                <p class="text-gray-600 leading-relaxed">${caseData.description}</p>
+              </div>
+              
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <h4 class="font-semibold text-gray-900 mb-1">Treatment</h4>
+                  <p class="text-gray-600 text-sm">${caseData.treatment}</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <h4 class="font-semibold text-gray-900 mb-1">Duration</h4>
+                  <p class="text-gray-600 text-sm">${caseData.duration}</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <h4 class="font-semibold text-gray-900 mb-1">Technique</h4>
+                  <p class="text-gray-600 text-sm">${caseData.technique}</p>
+                </div>
+              </div>
+            </div>
+          `;
+          
+          modal.classList.add('show');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    // Close modal
+    if (closeModal && modal) {
+      closeModal.addEventListener('click', () => {
+        modal.classList.remove('show');
+        document.body.style.overflow = 'auto';
+      });
+
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.remove('show');
+          document.body.style.overflow = 'auto';
+        }
+      });
+    }
+
+    // Animate counters
+    const animateCounters = () => {
+      const counters = document.querySelectorAll('.animate-counter');
+      counters.forEach(counter => {
+        const target = counter.getAttribute('data-target');
+        if (target) {
+          const numericTarget = parseInt(target.replace(/\D/g, ''));
+          const suffix = target.replace(/\d/g, '');
+          let current = 0;
+          const increment = numericTarget / 100;
+          
+          const updateCounter = () => {
+            if (current < numericTarget) {
+              current += increment;
+              counter.textContent = Math.floor(current) + suffix;
+              requestAnimationFrame(updateCounter);
+            } else {
+              counter.textContent = target;
+            }
+          };
+          
+          updateCounter();
+        }
+      });
+    };
+
+    // Trigger counter animation when in view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounters();
+          observer.disconnect();
+        }
+      });
+    });
+
+    const firstCounter = document.querySelector('.animate-counter');
+    if (firstCounter && firstCounter.parentElement) {
+      observer.observe(firstCounter.parentElement);
+    }
+  </script>
+</Layout> 

@@ -1,0 +1,676 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { getLangFromUrl, useTranslations } from "../i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const packages = [
+  {
+    name:
+      lang === "es"
+        ? "Paquete Diseño de Sonrisa Premium"
+        : "Premium Smile Design Package",
+    duration: lang === "es" ? "5-7 días" : "5-7 days",
+    price: "$3,200 - $4,500",
+    originalPrice: "$8,000 - $12,000",
+    savings: "60-70%",
+    includes:
+      lang === "es"
+        ? [
+            "Consulta inicial con especialista",
+            "Exámenes digitales 3D completos",
+            "Diseño digital de sonrisa",
+            "6-10 carillas de porcelana premium",
+            "Blanqueamiento dental profesional",
+            "Seguimiento post-tratamiento",
+            "2 noches de hotel (opcional)",
+            "Traslados aeropuerto-clínica",
+          ]
+        : [
+            "Initial specialist consultation",
+            "Complete 3D digital exams",
+            "Digital smile design",
+            "6-10 premium porcelain veneers",
+            "Professional teeth whitening",
+            "Post-treatment follow-up",
+            "2 hotel nights (optional)",
+            "Airport-clinic transfers",
+          ],
+  },
+  {
+    name:
+      lang === "es"
+        ? "Paquete Implantes Todo Incluido"
+        : "All-Inclusive Implants Package",
+    duration: lang === "es" ? "7-10 días" : "7-10 days",
+    price: "$2,500 - $5,000",
+    originalPrice: "$6,000 - $15,000",
+    savings: "60-75%",
+    includes:
+      lang === "es"
+        ? [
+            "Evaluación con tomografía 3D",
+            "1-4 implantes dentales premium",
+            "Cirugía guiada por computadora",
+            "Coronas de porcelana",
+            "Medicamentos incluidos",
+            "Seguimiento durante 1 año",
+            "3 noches de hotel (opcional)",
+            "Plan nutricional post-cirugía",
+          ]
+        : [
+            "3D tomography evaluation",
+            "1-4 premium dental implants",
+            "Computer-guided surgery",
+            "Porcelain crowns",
+            "Medications included",
+            "1-year follow-up",
+            "3 hotel nights (optional)",
+            "Post-surgery nutrition plan",
+          ],
+  },
+  {
+    name:
+      lang === "es"
+        ? "Paquete Transformación Completa"
+        : "Complete Transformation Package",
+    duration: lang === "es" ? "10-14 días" : "10-14 days",
+    price: "$6,000 - $9,000",
+    originalPrice: "$20,000 - $30,000",
+    savings: "70-80%",
+    includes:
+      lang === "es"
+        ? [
+            "Evaluación integral multiespecialista",
+            "Diseño de sonrisa completo",
+            "Implantes + carillas combinados",
+            "Ortodoncia invisible (si aplica)",
+            "Bichectomía facial",
+            "Blanqueamiento avanzado",
+            "5 noches de hotel incluidas",
+            "Tour gastronómico y cultural",
+          ]
+        : [
+            "Comprehensive multi-specialist evaluation",
+            "Complete smile design",
+            "Combined implants + veneers",
+            "Invisible orthodontics (if applicable)",
+            "Facial bichectomy",
+            "Advanced whitening",
+            "5 hotel nights included",
+            "Gastronomic and cultural tour",
+          ],
+  },
+];
+
+const destinations = [
+  {
+    name: "Nevado del Ruiz",
+    description:
+      lang === "es"
+        ? "Explora el majestuoso volcán nevado y sus paisajes únicos durante tu recuperación."
+        : "Explore the majestic snow-capped volcano and its unique landscapes during your recovery.",
+    image: "🏔️",
+  },
+  {
+    name: "Eje Cafetero",
+    description:
+      lang === "es"
+        ? "Descubre las fincas cafeteras tradicionales y degusta el mejor café del mundo."
+        : "Discover traditional coffee farms and taste the world's best coffee.",
+    image: "☕",
+  },
+  {
+    name: "Termales de Santa Rosa",
+    description:
+      lang === "es"
+        ? "Relájate en aguas termales naturales con propiedades curativas."
+        : "Relax in natural thermal waters with healing properties.",
+    image: "♨️",
+  },
+  {
+    name: "Manizales Centro",
+    description:
+      lang === "es"
+        ? "Explora la vibrante cultura de la ciudad, museos y arquitectura colonial."
+        : "Explore the vibrant city culture, museums and colonial architecture.",
+    image: "🏛️",
+  },
+];
+
+const process = [
+  {
+    step: "1",
+    title:
+      lang === "es" ? "Consulta Virtual Gratuita" : "Free Virtual Consultation",
+    description:
+      lang === "es"
+        ? "Evaluamos tu caso y diseñamos un plan de tratamiento personalizado desde casa."
+        : "We evaluate your case and design a personalized treatment plan from home.",
+  },
+  {
+    step: "2",
+    title: lang === "es" ? "Planificación del Viaje" : "Trip Planning",
+    description:
+      lang === "es"
+        ? "Te ayudamos con vuelos, alojamiento y todos los detalles de tu estadía."
+        : "We help you with flights, accommodation and all the details of your stay.",
+  },
+  {
+    step: "3",
+    title: lang === "es" ? "Llegada y Bienvenida" : "Arrival and Welcome",
+    description:
+      lang === "es"
+        ? "Te recogemos en el aeropuerto y te instalamos cómodamente en Manizales."
+        : "We pick you up at the airport and get you comfortably settled in Manizales.",
+  },
+  {
+    step: "4",
+    title: lang === "es" ? "Tratamiento Dental" : "Dental Treatment",
+    description:
+      lang === "es"
+        ? "Ejecutamos tu plan de tratamiento con la más alta calidad y tecnología."
+        : "We execute your treatment plan with the highest quality and technology.",
+  },
+  {
+    step: "5",
+    title: lang === "es" ? "Recuperación y Turismo" : "Recovery and Tourism",
+    description:
+      lang === "es"
+        ? "Disfruta de Colombia mientras te recuperas con nuestro programa turístico."
+        : "Enjoy Colombia while you recover with our tourism program.",
+  },
+  {
+    step: "6",
+    title: lang === "es" ? "Seguimiento Continuo" : "Continuous Follow-up",
+    description:
+      lang === "es"
+        ? "Mantenemos contacto contigo para asegurar resultados perfectos a largo plazo."
+        : "We keep in touch with you to ensure perfect long-term results.",
+  },
+];
+
+const faqs = [
+  {
+    question:
+      lang === "es"
+        ? "¿Necesito visa para viajar a Colombia?"
+        : "Do I need a visa to travel to Colombia?",
+    answer:
+      lang === "es"
+        ? "Los ciudadanos estadounidenses no necesitan visa para estadías menores a 90 días. Solo necesitas pasaporte vigente."
+        : "US citizens do not need a visa for stays under 90 days. You just need a valid passport.",
+  },
+  {
+    question:
+      lang === "es"
+        ? "¿Qué pasa si necesito cuidados adicionales?"
+        : "What if I need additional care?",
+    answer:
+      lang === "es"
+        ? "Ofrecemos seguimiento virtual 24/7 y tenemos convenios con dentistas en Estados Unidos para emergencias."
+        : "We offer 24/7 virtual follow-up and have agreements with dentists in the United States for emergencies.",
+  },
+  {
+    question:
+      lang === "es"
+        ? "¿Los materiales son de la misma calidad?"
+        : "Are the materials of the same quality?",
+    answer:
+      lang === "es"
+        ? "Utilizamos exactamente los mismos materiales premium que las clínicas de Estados Unidos y Europa."
+        : "We use exactly the same premium materials as clinics in the United States and Europe.",
+  },
+  {
+    question:
+      lang === "es"
+        ? "¿Hablan inglés en la clínica?"
+        : "Do they speak English at the clinic?",
+    answer:
+      lang === "es"
+        ? "Todo nuestro equipo es bilingüe y ofrecemos atención completamente en inglés."
+        : "Our entire team is bilingual and we offer complete care in English.",
+  },
+];
+---
+
+<Layout
+  title={t("tourism.hero.title")}
+  description={lang === "es"
+    ? "Ahorra hasta 70% en tratamientos dentales de calidad mundial. Combina tu cuidado dental con unas vacaciones increíbles en Manizales, Colombia."
+    : "Save up to 70% on world-class dental treatments. Combine your dental care with an incredible vacation in Manizales, Colombia."}
+  lang={lang}
+  keywords={lang === "es"
+    ? "turismo dental Colombia, dentista Manizales extranjeros, implantes dentales baratos Colombia, diseño sonrisa turismo, vacaciones dentales"
+    : "dental tourism Colombia, dentist Manizales foreigners, cheap dental implants Colombia, smile design tourism, dental vacation"}
+>
+  <Header />
+
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section
+      class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary-gold to-primary-gold-dark text-white"
+    >
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 opacity-20">
+        <div class="absolute inset-0 opacity-10 bg-white"></div>
+      </div>
+
+      <!-- Hero Image Placeholder -->
+      <div class="absolute inset-0 z-0">
+        <div
+          class="w-full h-full bg-gradient-to-r from-primary-gold/95 via-primary-gold/80 to-primary-gold/95 flex items-center justify-center"
+        >
+          <div
+            class="w-full max-w-5xl h-128 bg-white/10 backdrop-blur-sm rounded-2xl shadow-luxury mx-4 flex items-center justify-center"
+          >
+            <div class="text-center text-white">
+              <div
+                class="w-24 h-24 bg-white/20 rounded-full mx-auto mb-6 flex items-center justify-center"
+              >
+                <span class="text-white text-4xl">🇨🇴</span>
+              </div>
+              <p class="text-xl font-medium mb-2">
+                {
+                  lang === "es"
+                    ? "Imagen Hero Turismo Dental"
+                    : "Dental Tourism Hero Image"
+                }
+              </p>
+              <p class="text-sm opacity-80">
+                {
+                  lang === "es"
+                    ? "Paisajes de Manizales + Sonrisa perfecta + Turistas felices"
+                    : "Manizales landscapes + Perfect smile + Happy tourists"
+                }
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center"
+      >
+        <div class="animate-fade-in">
+          <h1 class="text-5xl md:text-7xl font-bold mb-8">
+            {t("tourism.hero.title")}
+          </h1>
+          <p class="text-2xl md:text-3xl font-semibold mb-6 opacity-90">
+            {t("tourism.hero.subtitle")}
+          </p>
+          <p class="text-xl mb-12 max-w-4xl mx-auto opacity-80">
+            {
+              lang === "es"
+                ? "Ahorra hasta un 70% en tratamientos dentales de calidad mundial mientras disfrutas de la hermosa Colombia. Una experiencia que transformará tu sonrisa y tu vida."
+                : "Save up to 70% on world-class dental treatments while enjoying beautiful Colombia. An experience that will transform your smile and your life."
+            }
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-6 justify-center">
+            <a
+              href="#packages"
+              class="inline-flex items-center px-10 py-5 bg-white text-primary-gold font-bold rounded-lg shadow-luxury hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-lg"
+            >
+              {lang === "es" ? "Ver Paquetes" : "View Packages"}
+              <svg
+                class="ml-3 w-6 h-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </a>
+            <a
+              href="#consultation"
+              class="inline-flex items-center px-10 py-5 border-3 border-white text-white hover:bg-white hover:text-primary-gold font-bold rounded-lg transition-all duration-300 transform hover:scale-105 text-lg"
+            >
+              {lang === "es" ? "Consulta Gratuita" : "Free Consultation"}
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Banner -->
+      <div
+        class="absolute bottom-0 left-0 right-0 bg-white/10 backdrop-blur-sm border-t border-white/20"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div class="text-3xl font-bold">70%</div>
+              <div class="text-sm opacity-80">
+                {lang === "es" ? "Ahorro Promedio" : "Average Savings"}
+              </div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold">500+</div>
+              <div class="text-sm opacity-80">
+                {
+                  lang === "es"
+                    ? "Pacientes Internacionales"
+                    : "International Patients"
+                }
+              </div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold">98%</div>
+              <div class="text-sm opacity-80">
+                {lang === "es" ? "Satisfacción" : "Satisfaction"}
+              </div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold">15+</div>
+              <div class="text-sm opacity-80">
+                {lang === "es" ? "Años de Experiencia" : "Years Experience"}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            {t("tourism.value.title")}
+          </h2>
+          <p class="text-xl text-primary-gold font-semibold">
+            {t("tourism.value.subtitle")}
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div class="text-center">
+            <div
+              class="w-20 h-20 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <span class="text-3xl">💰</span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              {lang === "es" ? "Ahorro Significativo" : "Significant Savings"}
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              {
+                lang === "es"
+                  ? "Ahorra entre 60-80% comparado con Estados Unidos sin comprometer la calidad. Incluye vuelos y estadía."
+                  : "Save 60-80% compared to the United States without compromising quality. Includes flights and accommodation."
+              }
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div
+              class="w-20 h-20 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <span class="text-3xl">🏆</span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              {
+                lang === "es"
+                  ? "Calidad Internacional"
+                  : "International Quality"
+              }
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              {
+                lang === "es"
+                  ? "Especialistas con formación internacional, tecnología de vanguardia y materiales premium importados."
+                  : "Specialists with international training, cutting-edge technology and imported premium materials."
+              }
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div
+              class="w-20 h-20 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <span class="text-3xl">🌴</span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              {lang === "es" ? "Experiencia Única" : "Unique Experience"}
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              {
+                lang === "es"
+                  ? "Combina tu tratamiento con turismo cultural, gastronómico y de naturaleza en el hermoso Eje Cafetero."
+                  : "Combine your treatment with cultural, gastronomic and nature tourism in the beautiful Coffee Region."
+              }
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            {t("tourism.packages.title")}
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            {
+              lang === "es"
+                ? "Paquetes completos diseñados para ofrecerte la mejor experiencia dental y turística"
+                : "Complete packages designed to offer you the best dental and tourism experience"
+            }
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {
+            packages.map((pkg, index) => (
+              <div class="bg-white rounded-2xl shadow-luxury overflow-hidden transform hover:scale-105 transition-all duration-300">
+                <div class="p-8">
+                  <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                      {pkg.name}
+                    </h3>
+                    <div class="text-sm text-gray-500 mb-2">{pkg.duration}</div>
+                    <div class="text-4xl font-bold text-primary-gold mb-2">
+                      {pkg.price}
+                    </div>
+                    <div class="text-gray-500 line-through text-lg">
+                      {pkg.originalPrice}
+                    </div>
+                    <div class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold mt-2">
+                      {lang === "es" ? "Ahorra" : "Save"} {pkg.savings}
+                    </div>
+                  </div>
+
+                  <div class="space-y-4 mb-8">
+                    <h4 class="font-semibold text-gray-900">
+                      {lang === "es" ? "Incluye:" : "Includes:"}
+                    </h4>
+                    <ul class="space-y-2">
+                      {pkg.includes.map((item, i) => (
+                        <li class="flex items-start">
+                          <svg
+                            class="w-5 h-5 text-primary-gold mr-3 mt-0.5 flex-shrink-0"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          <span class="text-gray-600 text-sm">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <a
+                    href="#consultation"
+                    class="block w-full text-center px-6 py-4 bg-gradient-gold text-white font-semibold rounded-lg shadow-gold hover:shadow-xl transition-all duration-300"
+                  >
+                    {lang === "es"
+                      ? "Solicitar Información"
+                      : "Request Information"}
+                  </a>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Destination Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            {t("tourism.destination.title")}
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            {t("tourism.destination.subtitle")}
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {
+            destinations.map((destination, index) => (
+              <div class="text-center p-6 rounded-2xl bg-gray-50 hover:bg-primary-gold/5 transition-all duration-300 hover:shadow-lg group">
+                <div class="w-24 h-24 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <span class="text-4xl">{destination.image}</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-primary-gold transition-colors">
+                  {destination.name}
+                </h3>
+                <p class="text-gray-600">{destination.description}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-20 bg-gradient-dark text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold mb-6">
+            {t("tourism.process.title")}
+          </h2>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            {
+              lang === "es"
+                ? "Te acompañamos en cada paso de tu transformación dental y experiencia turística"
+                : "We accompany you in every step of your dental transformation and tourism experience"
+            }
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {
+            process.map((step, index) => (
+              <div class="relative">
+                <div class="flex items-start">
+                  <div class="flex-shrink-0">
+                    <div class="w-16 h-16 bg-gradient-gold rounded-full flex items-center justify-center text-white font-bold text-xl">
+                      {step.step}
+                    </div>
+                  </div>
+                  <div class="ml-6">
+                    <h3 class="text-xl font-bold mb-3">{step.title}</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+                {index < process.length - 1 && (
+                  <div class="hidden lg:block absolute top-8 left-full w-8 h-0.5 bg-primary-gold/30 transform -translate-x-4" />
+                )}
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            {t("tourism.faqs.title")}
+          </h2>
+        </div>
+
+        <div class="space-y-6">
+          {
+            faqs.map((faq, index) => (
+              <div class="bg-white rounded-2xl p-8 shadow-lg">
+                <h3 class="text-xl font-bold text-gray-900 mb-4">
+                  {faq.question}
+                </h3>
+                <p class="text-gray-600 leading-relaxed">{faq.answer}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Consultation CTA Section -->
+    <section id="consultation" class="py-20 bg-primary-gold text-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">
+          {
+            lang === "es"
+              ? "¿Listo para tu Aventura Dental?"
+              : "Ready for Your Dental Adventure?"
+          }
+        </h2>
+        <p class="text-xl mb-12 opacity-90">
+          {
+            lang === "es"
+              ? "Agenda tu consulta virtual gratuita hoy y descubre cómo podemos transformar tu sonrisa mientras disfrutas de Colombia."
+              : "Schedule your free virtual consultation today and discover how we can transform your smile while you enjoy Colombia."
+          }
+        </p>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+          <a
+            href={lang === "es" ? "/contacto" : "/en/contact"}
+            class="inline-flex items-center px-10 py-5 bg-white text-primary-gold font-bold rounded-lg shadow-luxury hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+          >
+            {
+              lang === "es"
+                ? "Consulta Virtual Gratuita"
+                : "Free Virtual Consultation"
+            }
+          </a>
+          <a
+            href="https://wa.me/573000000000"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center px-10 py-5 border-3 border-white text-white hover:bg-white hover:text-primary-gold font-bold rounded-lg transition-all duration-300"
+          >
+            <svg class="mr-3 w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.531 3.503"
+              ></path>
+            </svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

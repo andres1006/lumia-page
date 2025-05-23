@@ -1,0 +1,649 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const serviceDetails = {
+  title: "Implantes Dentales Premium",
+  subtitle: "Reemplazo Permanente con Titanio Alemán",
+  price: "Desde $1,800,000 COP",
+  duration: "3-6 meses",
+  description:
+    "Los implantes dentales son la solución más avanzada y duradera para reemplazar dientes perdidos. Utilizamos implantes de titanio alemán de la más alta calidad para garantizar resultados excepcionales y duraderos.",
+
+  benefits: [
+    "100% funcional como diente natural",
+    "Duración de por vida con cuidado adecuado",
+    "Preserva el hueso maxilar",
+    "No afecta dientes adyacentes",
+    "Tecnología alemana premium",
+    "Éxito del 98% en nuestros casos",
+  ],
+
+  types: [
+    {
+      name: "Implante Individual",
+      description: "Para reemplazar un solo diente perdido",
+      price: "Desde $1,800,000 COP",
+      duration: "3-4 meses",
+      icon: "🦷",
+    },
+    {
+      name: "Puente sobre Implantes",
+      description: "Para reemplazar múltiples dientes consecutivos",
+      price: "Desde $4,500,000 COP",
+      duration: "4-5 meses",
+      icon: "🏗️",
+    },
+    {
+      name: "All-on-4",
+      description: "Rehabilitación completa con 4 implantes",
+      price: "Desde $15,000,000 COP",
+      duration: "6 meses",
+      icon: "✨",
+    },
+    {
+      name: "All-on-6",
+      description: "Rehabilitación completa con 6 implantes",
+      price: "Desde $18,000,000 COP",
+      duration: "6 meses",
+      icon: "👑",
+    },
+  ],
+
+  process: [
+    {
+      step: "1",
+      title: "Evaluación y Diagnóstico",
+      description:
+        "Tomografía 3D, análisis óseo y planificación digital del caso.",
+      duration: "60 min",
+    },
+    {
+      step: "2",
+      title: "Cirugía de Implante",
+      description:
+        "Colocación del implante de titanio con técnica mínimamente invasiva.",
+      duration: "45-90 min",
+    },
+    {
+      step: "3",
+      title: "Período de Oseointegración",
+      description:
+        "Proceso natural de fusión del implante con el hueso (3-6 meses).",
+      duration: "3-6 meses",
+    },
+    {
+      step: "4",
+      title: "Toma de Impresión",
+      description:
+        "Impresión digital para fabricación de la corona personalizada.",
+      duration: "30 min",
+    },
+    {
+      step: "5",
+      title: "Colocación de Corona",
+      description: "Instalación de la corona definitiva sobre el implante.",
+      duration: "45 min",
+    },
+  ],
+
+  beforeAfter: [
+    {
+      before:
+        "https://via.placeholder.com/400x300/f3f4f6/9ca3af?text=Sin+Diente",
+      after:
+        "https://via.placeholder.com/400x300/d4af37/ffffff?text=Con+Implante",
+      case: "Implante Individual - Molar Superior",
+    },
+    {
+      before:
+        "https://via.placeholder.com/400x300/f3f4f6/9ca3af?text=Múltiples+Faltantes",
+      after: "https://via.placeholder.com/400x300/d4af37/ffffff?text=All+on+4",
+      case: "All-on-4 Maxilar Superior",
+    },
+    {
+      before:
+        "https://via.placeholder.com/400x300/f3f4f6/9ca3af?text=Prótesis+Removible",
+      after:
+        "https://via.placeholder.com/400x300/d4af37/ffffff?text=Implantes+Fijos",
+      case: "Rehabilitación Completa Inferior",
+    },
+  ],
+
+  faq: [
+    {
+      question: "¿Cuánto tiempo duran los implantes dentales?",
+      answer:
+        "Con el cuidado adecuado, los implantes dentales pueden durar toda la vida. El titanio se integra permanentemente con el hueso y no se deteriora.",
+    },
+    {
+      question: "¿Es doloroso el procedimiento?",
+      answer:
+        "No, utilizamos anestesia local y técnicas mínimamente invasivas. La mayoría de pacientes reportan menos molestias que una extracción dental.",
+    },
+    {
+      question: "¿Puedo comer normal después del implante?",
+      answer:
+        "Después del período de cicatrización inicial (7-10 días), podrás comer con total normalidad. Los implantes ofrecen 100% de la fuerza masticatoria.",
+    },
+    {
+      question: "¿Qué cuidados requieren los implantes?",
+      answer:
+        "Los mismos cuidados que tus dientes naturales: cepillado, hilo dental y visitas regulares de control cada 6 meses.",
+    },
+    {
+      question: "¿Todos pueden recibir implantes?",
+      answer:
+        "La mayoría de personas son candidatos. Evaluamos cada caso individualmente, considerando salud general, densidad ósea y hábitos.",
+    },
+  ],
+};
+
+const testimonials = [
+  {
+    name: "Roberto Martínez",
+    age: 45,
+    location: "Manizales",
+    text: "Después de 2 años usando prótesis removible, los implantes All-on-4 cambiaron mi vida. Puedo comer de todo y sonreír con confianza.",
+    rating: 5,
+    image: "https://via.placeholder.com/80x80/d4af37/ffffff?text=RM",
+  },
+  {
+    name: "Ana Lucía Torres",
+    age: 38,
+    location: "Pereira",
+    text: "Mi implante individual se ve y se siente exactamente como mi diente natural. El proceso fue muy cómodo y profesional.",
+    rating: 5,
+    image: "https://via.placeholder.com/80x80/d4af37/ffffff?text=AT",
+  },
+];
+---
+
+<Layout
+  title="Implantes Dentales Premium - LUMIA Odontología Especializada"
+  description="Implantes dentales de titanio alemán premium en LUMIA. Reemplazo permanente para dientes perdidos. All-on-4, implantes individuales. Manizales y Pereira."
+  lang={lang}
+  keywords="implantes dentales Manizales, All on 4 Colombia, implantes titanio Pereira, rehabilitación oral, prótesis fija"
+>
+  <Header />
+
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section
+      class="py-20 bg-gradient-to-br from-primary-gold to-primary-gold-dark text-white relative overflow-hidden"
+    >
+      <div class="absolute inset-0 bg-black/20"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div
+              class="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-6"
+            >
+              <span class="text-sm font-semibold">🦷 Tecnología Alemana</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
+              {serviceDetails.title}
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90 animate-slide-up">
+              {serviceDetails.subtitle}
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 mb-8">
+              <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <div class="text-sm opacity-80">Precio</div>
+                <div class="text-2xl font-bold">{serviceDetails.price}</div>
+              </div>
+              <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <div class="text-sm opacity-80">Proceso</div>
+                <div class="text-2xl font-bold">{serviceDetails.duration}</div>
+              </div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a
+                href="/contacto"
+                class="inline-flex items-center justify-center px-8 py-4 bg-white text-primary-gold font-bold rounded-lg shadow-luxury hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              >
+                Consulta Gratuita
+              </a>
+              <a
+                href="https://wa.me/573000000000"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-primary-gold font-bold rounded-lg transition-all duration-300"
+              >
+                <svg
+                  class="mr-2 w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.531 3.503"
+                  ></path>
+                </svg>
+                WhatsApp
+              </a>
+            </div>
+          </div>
+          <div class="relative">
+            <div
+              class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-500"
+            >
+              <img
+                src="https://via.placeholder.com/500x400/ffffff/d4af37?text=Implante+Dental+3D"
+                alt="Implantes Dentales"
+                class="rounded-xl shadow-2xl"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Types of Implants -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Tipos de Implantes
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Soluciones personalizadas para cada necesidad
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {
+            serviceDetails.types.map((type, index) => (
+              <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border border-gray-100">
+                <div class="text-center">
+                  <div class="text-6xl mb-4">{type.icon}</div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-4">
+                    {type.name}
+                  </h3>
+                  <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                    {type.description}
+                  </p>
+                  <div class="border-t border-gray-100 pt-6">
+                    <div class="text-2xl font-bold text-primary-gold mb-2">
+                      {type.price}
+                    </div>
+                    <div class="text-sm text-gray-500">{type.duration}</div>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Description -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-4xl font-bold text-gray-900 mb-6">
+              ¿Por qué elegir nuestros implantes?
+            </h2>
+            <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+              {serviceDetails.description}
+            </p>
+
+            <div class="space-y-4">
+              <h3 class="text-2xl font-bold text-gray-900">
+                Ventajas de nuestros implantes:
+              </h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {
+                  serviceDetails.benefits.map((benefit) => (
+                    <div class="flex items-center space-x-3">
+                      <div class="w-6 h-6 bg-primary-gold rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg
+                          class="w-3 h-3 text-white"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </div>
+                      <span class="text-gray-700">{benefit}</span>
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <div
+              class="aspect-video bg-gray-100 rounded-2xl overflow-hidden shadow-xl"
+            >
+              <img
+                src="https://via.placeholder.com/600x400/f3f4f6/9ca3af?text=Titanio+Alemán"
+                alt="Implantes de Titanio Alemán"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Steps -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Proceso del Implante
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Un proceso sistemático y seguro para resultados predecibles
+          </p>
+        </div>
+
+        <div class="space-y-12">
+          {
+            serviceDetails.process.map((step, index) => (
+              <div
+                class={`flex flex-col lg:flex-row items-center gap-8 ${index % 2 === 1 ? "lg:flex-row-reverse" : ""}`}
+              >
+                <div class="flex-1">
+                  <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                    <div class="flex items-center mb-4">
+                      <div class="w-12 h-12 bg-gradient-gold rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+                        {step.step}
+                      </div>
+                      <div>
+                        <h3 class="text-2xl font-bold text-gray-900">
+                          {step.title}
+                        </h3>
+                        <span class="text-primary-gold font-medium">
+                          {step.duration}
+                        </span>
+                      </div>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+                <div class="flex-1">
+                  <div class="aspect-video bg-gradient-to-br from-primary-gold/10 to-primary-gold/20 rounded-2xl flex items-center justify-center">
+                    <img
+                      src={`https://via.placeholder.com/500x300/d4af37/ffffff?text=Paso+${step.step}`}
+                      alt={step.title}
+                      class="rounded-xl shadow-lg"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Before & After Gallery -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Casos de Éxito
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Resultados reales que transforman vidas
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {
+            serviceDetails.beforeAfter.map((comparison, index) => (
+              <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div class="relative group">
+                  <div class="before-after-container">
+                    <img
+                      src={comparison.before}
+                      alt="Antes"
+                      class="before-image w-full h-64 object-cover transition-opacity duration-700"
+                    />
+                    <img
+                      src={comparison.after}
+                      alt="Después"
+                      class="after-image w-full h-64 object-cover absolute inset-0 opacity-0 transition-opacity duration-700"
+                    />
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span class="text-white font-semibold">
+                        Hover para ver resultado
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-6">
+                  <h3 class="text-lg font-bold text-gray-900 mb-2">
+                    {comparison.case}
+                  </h3>
+                  <div class="flex justify-between text-sm text-gray-500">
+                    <span>Antes</span>
+                    <span>→</span>
+                    <span>Después</span>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Preguntas Frecuentes
+          </h2>
+          <p class="text-xl text-gray-600">
+            Resolvemos tus dudas sobre implantes dentales
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          {
+            serviceDetails.faq.map((item, index) => (
+              <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+                <button
+                  class="faq-button w-full text-left p-6 focus:outline-none focus:ring-2 focus:ring-primary-gold"
+                  data-target={`faq-${index}`}
+                >
+                  <div class="flex justify-between items-center">
+                    <h3 class="text-lg font-bold text-gray-900">
+                      {item.question}
+                    </h3>
+                    <svg
+                      class="faq-icon w-5 h-5 text-primary-gold transition-transform duration-200"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </div>
+                </button>
+                <div class="faq-content hidden px-6 pb-6">
+                  <p class="text-gray-600 leading-relaxed">{item.answer}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Testimonios Reales
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            La satisfacción de nuestros pacientes es nuestra mayor recompensa
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {
+            testimonials.map((testimonial, index) => (
+              <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div class="flex items-center mb-4">
+                  {Array.from({ length: testimonial.rating }).map((_, i) => (
+                    <svg
+                      class="w-5 h-5 text-yellow-400"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p class="text-gray-700 mb-6 italic leading-relaxed">
+                  "{testimonial.text}"
+                </p>
+                <div class="flex items-center">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    class="w-12 h-12 rounded-full mr-4"
+                  />
+                  <div>
+                    <h4 class="font-bold text-gray-900">{testimonial.name}</h4>
+                    <p class="text-gray-600 text-sm">
+                      {testimonial.age} años • {testimonial.location}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-primary-gold text-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">
+          ¿Listo para Recuperar tu Sonrisa?
+        </h2>
+        <p class="text-xl mb-12 opacity-90">
+          Agenda tu consulta gratuita y descubre cómo los implantes pueden
+          cambiar tu vida
+        </p>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+          <a
+            href="/contacto"
+            class="inline-flex items-center px-10 py-5 bg-white text-primary-gold font-bold rounded-lg shadow-luxury hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+          >
+            Consulta Gratuita
+          </a>
+          <a
+            href="https://wa.me/573000000000"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center px-10 py-5 border-3 border-white text-white hover:bg-white hover:text-primary-gold font-bold rounded-lg transition-all duration-300"
+          >
+            <svg class="mr-3 w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.531 3.503"
+              ></path>
+            </svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+  <style>
+    .before-after-container:hover .before-image {
+      opacity: 0;
+    }
+
+    .before-after-container:hover .after-image {
+      opacity: 1;
+    }
+
+    .faq-button.active .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    .faq-content.show {
+      display: block;
+      animation: fadeInDown 0.3s ease-out;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+
+  <script>
+    // FAQ Accordion functionality
+    document.querySelectorAll(".faq-button").forEach((button) => {
+      button.addEventListener("click", () => {
+        const content = button.nextElementSibling as HTMLElement | null;
+
+        // Close all other FAQs
+        document.querySelectorAll(".faq-content").forEach((item) => {
+          if (item !== content && item.classList.contains("show")) {
+            item.classList.remove("show");
+            item.classList.add("hidden");
+            const prevButton =
+              item.previousElementSibling as HTMLElement | null;
+            if (prevButton) {
+              prevButton.classList.remove("active");
+            }
+          }
+        });
+
+        // Toggle current FAQ
+        if (content) {
+          if (content.classList.contains("hidden")) {
+            content.classList.remove("hidden");
+            content.classList.add("show");
+            button.classList.add("active");
+          } else {
+            content.classList.add("hidden");
+            content.classList.remove("show");
+            button.classList.remove("active");
+          }
+        }
+      });
+    });
+  </script>
+</Layout>
+

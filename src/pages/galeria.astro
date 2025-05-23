@@ -1,0 +1,562 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { getLangFromUrl, useTranslations } from "../i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const portfolioItems = [
+  {
+    id: 1,
+    category: "smile-design",
+    title: "Transformación Completa de Sonrisa",
+    subtitle: "Diseño Digital + Carillas",
+    beforeImage: "https://via.placeholder.com/600x400/f3f4f6/9ca3af?text=Antes",
+    afterImage: "https://via.placeholder.com/600x400/d4af37/ffffff?text=Después",
+    description: "Transformación completa con 10 carillas de porcelana utilizando tecnología de Diseño Digital de Sonrisa.",
+    treatment: "Carillas de Porcelana",
+    duration: "3 semanas",
+    featured: true
+  },
+  {
+    id: 2,
+    category: "implants",
+    title: "Rehabilitación Oral Completa",
+    subtitle: "6 Implantes Dentales + Puente Fijo",
+    beforeImage: "https://via.placeholder.com/600x400/f3f4f6/9ca3af?text=Antes",
+    afterImage: "https://via.placeholder.com/600x400/d4af37/ffffff?text=Después",
+    description: "Rehabilitación completa con 6 implantes de titanio premium y puente fijo de cerámica.",
+    treatment: "Implantes Dentales",
+    duration: "4 meses",
+    featured: true
+  },
+  {
+    id: 3,
+    category: "orthodontics",
+    title: "Tratamiento Invisalign",
+    subtitle: "Corrección Invisible de 12 Meses",
+    beforeImage: "https://via.placeholder.com/600x400/f3f4f6/9ca3af?text=Antes",
+    afterImage: "https://via.placeholder.com/600x400/d4af37/ffffff?text=Después",
+    description: "Alineación perfecta lograda con alineadores transparentes Invisalign en solo 12 meses.",
+    treatment: "Invisalign",
+    duration: "12 meses",
+    featured: false
+  },
+  {
+    id: 4,
+    category: "bichectomy",
+    title: "Contorno Facial",
+    subtitle: "Bichectomía + Diseño de Sonrisa",
+    beforeImage: "https://via.placeholder.com/600x400/f3f4f6/9ca3af?text=Antes",
+    afterImage: "https://via.placeholder.com/600x400/d4af37/ffffff?text=Después",
+    description: "Refinamiento facial con bichectomía combinada con diseño de sonrisa para armonía perfecta.",
+    treatment: "Bichectomía",
+    duration: "1 sesión",
+    featured: false
+  },
+  {
+    id: 5,
+    category: "smile-design",
+    title: "Sonrisa de Celebridad",
+    subtitle: "Diseño Digital + Cerámicas Premium",
+    beforeImage: "https://via.placeholder.com/600x400/f3f4f6/9ca3af?text=Antes",
+    afterImage: "https://via.placeholder.com/600x400/d4af37/ffffff?text=Después",
+    description: "Sonrisa estilo Hollywood lograda con restauraciones cerámicas de alta gama.",
+    treatment: "Diseño de Sonrisa",
+    duration: "2 semanas",
+    featured: true
+  },
+  {
+    id: 6,
+    category: "whitening",
+    title: "Blanqueamiento Profesional",
+    subtitle: "8 Tonos Más Blanco",
+    beforeImage: "https://via.placeholder.com/600x400/f3f4f6/9ca3af?text=Antes",
+    afterImage: "https://via.placeholder.com/600x400/d4af37/ffffff?text=Después",
+    description: "Resultados dramáticos de blanqueamiento logrados en una sola sesión profesional.",
+    treatment: "Blanqueamiento Dental",
+    duration: "1 sesión",
+    featured: false
+  },
+  {
+    id: 7,
+    category: "implants",
+    title: "Reemplazo de Diente Individual",
+    subtitle: "Implante de Titanio Premium",
+    beforeImage: "https://via.placeholder.com/600x400/f3f4f6/9ca3af?text=Antes",
+    afterImage: "https://via.placeholder.com/600x400/d4af37/ffffff?text=Después",
+    description: "Reemplazo perfecto de diente individual con implante de titanio y corona cerámica.",
+    treatment: "Implante Individual",
+    duration: "3 meses",
+    featured: false
+  },
+  {
+    id: 8,
+    category: "smile-design",
+    title: "Corrección de Sonrisa Gingival",
+    subtitle: "Láser + Carillas",
+    beforeImage: "https://via.placeholder.com/600x400/f3f4f6/9ca3af?text=Antes",
+    afterImage: "https://via.placeholder.com/600x400/d4af37/ffffff?text=Después",
+    description: "Corrección de sonrisa gingival usando tecnología láser combinada con carillas de porcelana.",
+    treatment: "Láser + Carillas",
+    duration: "4 semanas",
+    featured: false
+  },
+  {
+    id: 9,
+    category: "orthodontics",
+    title: "Caso Ortodóncico Complejo",
+    subtitle: "Transformación de 18 Meses",
+    beforeImage: "https://via.placeholder.com/600x400/f3f4f6/9ca3af?text=Antes",
+    afterImage: "https://via.placeholder.com/600x400/d4af37/ffffff?text=Después",
+    description: "Maloclusión compleja corregida con técnicas ortodóncicas avanzadas.",
+    treatment: "Alineadores Transparentes",
+    duration: "18 meses",
+    featured: false
+  }
+];
+
+const categories = [
+  { id: "all", name: "Todos los Casos", icon: "🎨" },
+  { id: "smile-design", name: "Diseño de Sonrisa", icon: "✨" },
+  { id: "implants", name: "Implantes Dentales", icon: "🦷" },
+  { id: "orthodontics", name: "Ortodoncia", icon: "📐" },
+  { id: "bichectomy", name: "Bichectomía", icon: "💫" },
+  { id: "whitening", name: "Blanqueamiento", icon: "⚡" },
+];
+
+const stats = [
+  { number: "2,500+", label: "Casos Exitosos" },
+  { number: "15+", label: "Años de Experiencia" },
+  { number: "98%", label: "Satisfacción" },
+  { number: "50+", label: "Pacientes Internacionales" }
+];
+---
+
+<Layout
+  title="Galería - LUMIA Odontología Especializada"
+  description="Explora nuestra galería de transformaciones dentales exitosas. Casos antes y después de diseño de sonrisa, implantes dentales, ortodoncia y más en LUMIA."
+  lang={lang}
+  keywords="antes después dental, transformación sonrisa Colombia, galería casos LUMIA, resultados turismo dental"
+>
+  <Header />
+
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="py-20 bg-gradient-to-br from-primary-gold to-primary-gold-dark text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
+          Galería de Transformaciones
+        </h1>
+        <p class="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto animate-slide-up">
+          Descubre los resultados que cambian vidas que logramos cada día en LUMIA
+        </p>
+        <div class="animate-scale-in">
+          <div class="inline-flex items-center px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full">
+            <span class="text-lg font-semibold">Casos Reales • Resultados Reales • Sonrisas Reales</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {stats.map((stat, index) => (
+            <div class="text-center group hover:transform hover:scale-105 transition-all duration-300">
+              <div class="text-3xl md:text-4xl font-bold text-primary-gold mb-2 animate-counter" data-target={stat.number}>
+                {stat.number}
+              </div>
+              <div class="text-gray-600 font-medium">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="py-8 bg-gray-50 sticky top-20 z-10 border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-wrap justify-center gap-4">
+          {categories.map((category) => (
+            <button
+              class="filter-btn flex items-center px-6 py-3 bg-white rounded-full border border-gray-200 hover:border-primary-gold hover:text-primary-gold transition-all duration-300 text-sm font-medium"
+              data-filter={category.id}
+            >
+              <span class="mr-2">{category.icon}</span>
+              {category.name}
+            </button>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {portfolioItems.map((item, index) => (
+            <div 
+              class={`gallery-item bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-500 ${item.featured ? 'featured lg:col-span-2 lg:row-span-2' : ''}`}
+              data-category={item.category}
+              style={`animation-delay: ${index * 100}ms`}
+            >
+              <div class="relative overflow-hidden">
+                <div class="before-after-container relative h-64 md:h-80">
+                  <!-- Before Image -->
+                  <div class="before-image absolute inset-0 transition-opacity duration-700">
+                    <img
+                      src={item.beforeImage}
+                      alt={`${item.title} - Antes`}
+                      class="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                    <div class="absolute top-4 left-4 bg-black/70 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      Antes
+                    </div>
+                  </div>
+                  
+                  <!-- After Image -->
+                  <div class="after-image absolute inset-0 opacity-0 transition-opacity duration-700">
+                    <img
+                      src={item.afterImage}
+                      alt={`${item.title} - Después`}
+                      class="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                    <div class="absolute top-4 left-4 bg-primary-gold text-white px-3 py-1 rounded-full text-sm font-medium">
+                      Después
+                    </div>
+                  </div>
+                  
+                  <!-- Hover Overlay -->
+                  <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <button 
+                      class="view-case-btn bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+                      data-case-id={item.id}
+                    >
+                      Ver Detalles del Caso
+                    </button>
+                  </div>
+                </div>
+                
+                <!-- Content -->
+                <div class="p-6">
+                  <div class="flex items-center justify-between mb-3">
+                    <span class="text-xs font-semibold text-primary-gold uppercase tracking-wider">
+                      {item.treatment}
+                    </span>
+                    <span class="text-xs text-gray-500">{item.duration}</span>
+                  </div>
+                  
+                  <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-gold transition-colors">
+                    {item.title}
+                  </h3>
+                  
+                  <p class="text-gray-600 text-sm mb-4 line-clamp-2">
+                    {item.description}
+                  </p>
+                  
+                  <div class="text-sm text-gray-500">
+                    {item.subtitle}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Modal -->
+    <div id="case-modal" class="fixed inset-0 bg-black/80 z-50 opacity-0 invisible transition-all duration-300">
+      <div class="flex items-center justify-center min-h-screen p-4">
+        <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300">
+          <div class="sticky top-0 bg-white border-b border-gray-200 p-6 flex items-center justify-between">
+            <h2 id="modal-title" class="text-2xl font-bold text-gray-900"></h2>
+            <button id="close-modal" class="text-gray-400 hover:text-gray-600 transition-colors">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          
+          <div id="modal-content" class="p-6">
+            <!-- Content will be injected here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-primary-gold text-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">
+          ¿Listo para tu Transformación?
+        </h2>
+        <p class="text-xl mb-12 opacity-90">
+          Únete a miles de pacientes satisfechos que han transformado sus vidas con LUMIA
+        </p>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+          <a
+            href="/contacto"
+            class="inline-flex items-center px-10 py-5 bg-white text-primary-gold font-bold rounded-lg shadow-luxury hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+          >
+            Inicia tu Transformación
+          </a>
+          <a
+            href="https://wa.me/573000000000"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center px-10 py-5 border-3 border-white text-white hover:bg-white hover:text-primary-gold font-bold rounded-lg transition-all duration-300"
+          >
+            <svg class="mr-3 w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.531 3.503"></path>
+            </svg>
+            Consulta WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+  <style>
+    .gallery-item {
+      animation: fadeInUp 0.6s ease-out both;
+    }
+
+    .gallery-item.featured {
+      grid-row: span 2;
+    }
+
+    .gallery-item.featured .before-after-container {
+      height: 400px;
+    }
+
+    @media (min-width: 1024px) {
+      .gallery-item.featured .before-after-container {
+        height: 500px;
+      }
+    }
+
+    .before-after-container:hover .before-image {
+      opacity: 0;
+    }
+
+    .before-after-container:hover .after-image {
+      opacity: 1;
+    }
+
+    .line-clamp-2 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .filter-btn.active {
+      background-color: #D4AF37;
+      color: white;
+      border-color: #D4AF37;
+    }
+
+    #case-modal.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    #case-modal.show .bg-white {
+      transform: scale(1);
+    }
+  </style>
+
+  <script>
+    // Funcionalidad de filtrado de galería
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const modal = document.getElementById('case-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalContent = document.getElementById('modal-content');
+    const closeModal = document.getElementById('close-modal');
+
+    // Datos del portafolio (normalmente vendrían de una base de datos)
+    const portfolioData = {
+      1: {
+        title: "Transformación Completa de Sonrisa",
+        beforeImage: "https://via.placeholder.com/800x600/f3f4f6/9ca3af?text=Imagen+Antes",
+        afterImage: "https://via.placeholder.com/800x600/d4af37/ffffff?text=Imagen+Después",
+        description: "Esta paciente llegó a nosotros con decoloración severa, espacios y dientes desalineados. Usando tecnología de Diseño Digital de Sonrisa, creamos un plan de tratamiento personalizado que incluyó 10 carillas de porcelana. El resultado es una sonrisa perfectamente alineada y blanca que transformó completamente la confianza de la paciente.",
+        treatment: "Carillas de Porcelana + Diseño Digital de Sonrisa",
+        duration: "3 semanas",
+        beforeDetails: "Decoloración severa, espacios entre dientes, alineación irregular",
+        afterDetails: "Sonrisa blanca perfecta, espacios cerrados, proporciones armoniosas",
+        technique: "Diseño Digital de Sonrisa con carillas de porcelana premium"
+      },
+      2: {
+        title: "Rehabilitación Oral Completa",
+        beforeImage: "https://via.placeholder.com/800x600/f3f4f6/9ca3af?text=Imagen+Antes",
+        afterImage: "https://via.placeholder.com/800x600/d4af37/ffffff?text=Imagen+Después",
+        description: "Caso complejo de múltiples dientes perdidos restaurados con 6 implantes de titanio premium y un puente fijo de cerámica. El paciente recuperó la función masticatoria completa y una sonrisa hermosa.",
+        treatment: "6 Implantes Dentales + Puente Fijo de Cerámica",
+        duration: "4 meses",
+        beforeDetails: "Múltiples dientes perdidos, función masticatoria comprometida",
+        afterDetails: "Restauración completa, función total, apariencia natural",
+        technique: "Cirugía guiada de implantes con protocolo de carga inmediata"
+      }
+    };
+
+    // Funcionalidad de filtrado
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+        
+        // Actualizar botón activo
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        // Filtrar elementos
+        galleryItems.forEach(item => {
+          const htmlItem = item as HTMLElement;
+          const category = item.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            htmlItem.style.display = 'block';
+            htmlItem.style.animation = 'fadeInUp 0.6s ease-out';
+          } else {
+            htmlItem.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Establecer filtro activo por defecto
+    const defaultFilter = document.querySelector('[data-filter="all"]');
+    if (defaultFilter) {
+      defaultFilter.classList.add('active');
+    }
+
+    // Funcionalidad del modal
+    document.querySelectorAll('.view-case-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const caseId = btn.getAttribute('data-case-id');
+        const numericCaseId = caseId ? parseInt(caseId) : null;
+        const caseData = numericCaseId && portfolioData[numericCaseId as keyof typeof portfolioData] ? portfolioData[numericCaseId as keyof typeof portfolioData] : null;
+        
+        if (caseData && modal && modalTitle && modalContent) {
+          modalTitle.textContent = caseData.title;
+          modalContent.innerHTML = `
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+              <div>
+                <h3 class="text-lg font-semibold mb-4 text-gray-900">Antes</h3>
+                <img src="${caseData.beforeImage}" alt="Antes" class="w-full rounded-lg shadow-lg">
+                <p class="text-sm text-gray-600 mt-2">${caseData.beforeDetails}</p>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold mb-4 text-primary-gold">Después</h3>
+                <img src="${caseData.afterImage}" alt="Después" class="w-full rounded-lg shadow-lg">
+                <p class="text-sm text-gray-600 mt-2">${caseData.afterDetails}</p>
+              </div>
+            </div>
+            
+            <div class="space-y-6">
+              <div>
+                <h3 class="text-lg font-semibold mb-2 text-gray-900">Descripción del Caso</h3>
+                <p class="text-gray-600 leading-relaxed">${caseData.description}</p>
+              </div>
+              
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <h4 class="font-semibold text-gray-900 mb-1">Tratamiento</h4>
+                  <p class="text-gray-600 text-sm">${caseData.treatment}</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <h4 class="font-semibold text-gray-900 mb-1">Duración</h4>
+                  <p class="text-gray-600 text-sm">${caseData.duration}</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <h4 class="font-semibold text-gray-900 mb-1">Técnica</h4>
+                  <p class="text-gray-600 text-sm">${caseData.technique}</p>
+                </div>
+              </div>
+            </div>
+          `;
+          
+          modal.classList.add('show');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    // Cerrar modal
+    if (closeModal && modal) {
+      closeModal.addEventListener('click', () => {
+        modal.classList.remove('show');
+        document.body.style.overflow = 'auto';
+      });
+
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.remove('show');
+          document.body.style.overflow = 'auto';
+        }
+      });
+    }
+
+    // Animar contadores
+    const animateCounters = () => {
+      const counters = document.querySelectorAll('.animate-counter');
+      counters.forEach(counter => {
+        const target = counter.getAttribute('data-target');
+        if (target) {
+          const numericTarget = parseInt(target.replace(/\D/g, ''));
+          const suffix = target.replace(/\d/g, '');
+          let current = 0;
+          const increment = numericTarget / 100;
+          
+          const updateCounter = () => {
+            if (current < numericTarget) {
+              current += increment;
+              counter.textContent = Math.floor(current) + suffix;
+              requestAnimationFrame(updateCounter);
+            } else {
+              counter.textContent = target;
+            }
+          };
+          
+          updateCounter();
+        }
+      });
+    };
+
+    // Activar animación de contadores cuando estén en vista
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounters();
+          observer.disconnect();
+        }
+      });
+    });
+
+    const firstCounter = document.querySelector('.animate-counter');
+    if (firstCounter && firstCounter.parentElement) {
+      observer.observe(firstCounter.parentElement);
+    }
+  </script>
+</Layout> 

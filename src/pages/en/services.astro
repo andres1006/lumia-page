@@ -1,0 +1,442 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import ServiceCard from "../../components/react/ServiceCard";
+import { useTranslations } from "../../i18n";
+
+// Force English language for this page
+const lang = "en";
+const t = useTranslations(lang);
+
+const mainServices = [
+  {
+    title: "Smile Design",
+    description:
+      "Complete smile transformation using 3D technology and premium materials for natural and lasting results.",
+    icon: "✨",
+    href: "/en/services/smile-design",
+    featured: true,
+    benefits: [
+      "Predictable results",
+      "3D technology",
+      "Premium materials",
+      "Personalized process",
+    ],
+    duration: "2-3 appointments",
+    price: "From $2,500 USD",
+  },
+  {
+    title: "Dental Implants",
+    description:
+      "Replacement of missing teeth with high-quality titanium implants and aesthetic crowns that look and function like natural teeth.",
+    icon: "🦷",
+    href: "/en/services/dental-implants",
+    benefits: [
+      "Medical grade titanium",
+      "Guided surgery",
+      "Custom crown",
+      "Extended warranty",
+    ],
+    duration: "3-6 months",
+    price: "From $1,800 USD",
+  },
+  {
+    title: "Invisible Orthodontics",
+    description:
+      "Tooth position correction with Invisalign clear aligners for a perfect smile without metal brackets.",
+    icon: "🦷",
+    href: "/en/services/orthodontics",
+    benefits: [
+      "Invisible aligners",
+      "Removable",
+      "Comfortable",
+      "Precise results",
+    ],
+    duration: "6-18 months",
+    price: "From $4,500 USD",
+  },
+  {
+    title: "Bichectomy",
+    description:
+      "Reduction of Bichat fat pads to refine the face and enhance cheekbones, creating a more defined and harmonious facial profile.",
+    icon: "💫",
+    href: "/en/services/bichectomy",
+    benefits: [
+      "More defined face",
+      "Outpatient procedure",
+      "Quick recovery",
+      "Permanent results",
+    ],
+    duration: "1 appointment",
+    price: "From $1,200 USD",
+  },
+  {
+    title: "Teeth Whitening",
+    description:
+      "Professional treatment to lighten the color of your teeth up to 8 shades, restoring the natural whiteness of your smile.",
+    icon: "⚡",
+    href: "/en/services/whitening",
+    benefits: [
+      "Up to 8 shades whiter",
+      "No sensitivity",
+      "Immediate results",
+      "Long-lasting",
+    ],
+    duration: "1 appointment",
+    price: "From $350 USD",
+  },
+  {
+    title: "General Cosmetic Dentistry",
+    description:
+      "Comprehensive treatments to improve the appearance and function of your smile, including veneers, crowns and aesthetic restorations.",
+    icon: "🎨",
+    href: "/en/services/cosmetic-dentistry",
+    benefits: [
+      "Multiple treatments",
+      "Comprehensive approach",
+      "Aesthetic materials",
+      "Personalized care",
+    ],
+    duration: "Variable",
+    price: "Consult",
+  },
+];
+
+const specialtyServices = [
+  {
+    title: "Periodontics",
+    description: "Specialized treatment of gums and dental support structures.",
+    icon: "🌿",
+  },
+  {
+    title: "Endodontics",
+    description: "Root canal treatments with cutting-edge technology.",
+    icon: "🔬",
+  },
+  {
+    title: "Oral Surgery",
+    description: "Specialized surgical procedures in the oral cavity.",
+    icon: "⚕️",
+  },
+  {
+    title: "Pediatric Dentistry",
+    description: "Specialized dental care for children and adolescents.",
+    icon: "👶",
+  },
+];
+
+const process = [
+  {
+    step: "1",
+    title: "Initial Assessment",
+    description:
+      "Complete examination, X-rays and personalized treatment plan design.",
+  },
+  {
+    step: "2",
+    title: "3D Diagnosis",
+    description:
+      "Digital smile analysis and results simulation with advanced technology.",
+  },
+  {
+    step: "3",
+    title: "Treatment Plan",
+    description:
+      "Detailed presentation of the plan, schedule and treatment costs.",
+  },
+  {
+    step: "4",
+    title: "Execution",
+    description: "Treatment performed with the highest quality standards.",
+  },
+  {
+    step: "5",
+    title: "Follow-up",
+    description:
+      "Post-treatment control and maintenance to ensure lasting results.",
+  },
+];
+---
+
+<Layout
+  title="Services - LUMIA Specialized Dentistry"
+  description="Discover our cosmetic and restorative dentistry services. Smile design, dental implants, invisible orthodontics, bichectomy and more in Manizales and Pereira, Colombia."
+  lang={lang}
+  keywords="dental services Colombia, smile design Manizales, dental implants Pereira, invisible orthodontics, facial bichectomy"
+>
+  <Header />
+
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section
+      class="py-20 bg-gradient-to-br from-primary-gold to-primary-gold-dark text-white"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
+          Our Services
+        </h1>
+        <p
+          class="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto animate-slide-up"
+        >
+          We transform smiles with cutting-edge technology and world-class
+          personalized care
+        </p>
+        <div class="animate-scale-in">
+          <div
+            class="inline-flex items-center px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full"
+          >
+            <span class="text-lg font-semibold"
+              >6 Specialties • Premium Technology • Guaranteed Results</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Services Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Main Services
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Specialized treatments designed to transform your smile and improve
+            your quality of life
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {
+            mainServices.map((service, index) => (
+              <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 group">
+                <div class="p-8">
+                  <div class="w-16 h-16 bg-gradient-gold rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <span class="text-3xl">{service.icon}</span>
+                  </div>
+
+                  <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary-gold transition-colors">
+                    {service.title}
+                  </h3>
+
+                  <p class="text-gray-600 mb-6 leading-relaxed">
+                    {service.description}
+                  </p>
+
+                  <div class="space-y-4 mb-6">
+                    <div class="flex justify-between items-center text-sm">
+                      <span class="text-gray-500">Duration:</span>
+                      <span class="font-semibold text-gray-700">
+                        {service.duration}
+                      </span>
+                    </div>
+                    <div class="flex justify-between items-center text-sm">
+                      <span class="text-gray-500">Price:</span>
+                      <span class="font-semibold text-primary-gold">
+                        {service.price}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="mb-6">
+                    <h4 class="font-semibold text-gray-900 mb-3">Benefits:</h4>
+                    <ul class="space-y-2">
+                      {service.benefits.map((benefit) => (
+                        <li class="flex items-center text-sm text-gray-600">
+                          <svg
+                            class="w-4 h-4 text-primary-gold mr-2 flex-shrink-0"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          {benefit}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <a
+                    href={service.href}
+                    class="block w-full text-center px-6 py-3 bg-gradient-gold text-white font-semibold rounded-lg hover:shadow-gold transition-all duration-300 transform hover:scale-105"
+                  >
+                    Learn More
+                  </a>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Specialty Services Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Additional Specialties
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Complementary services for comprehensive dental care
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {
+            specialtyServices.map((service, index) => (
+              <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 text-center group">
+                <div class="w-16 h-16 bg-primary-gold/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-gold/20 transition-colors duration-300">
+                  <span class="text-3xl">{service.icon}</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-gold transition-colors">
+                  {service.title}
+                </h3>
+                <p class="text-gray-600 text-sm">{service.description}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-20 bg-gradient-dark text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold mb-6">Our Process</h2>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            A systematic and personalized approach to guarantee the best results
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+          {
+            process.map((step, index) => (
+              <div class="text-center">
+                <div class="w-16 h-16 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-xl">
+                  {step.step}
+                </div>
+                <h3 class="text-xl font-bold mb-4">{step.title}</h3>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Cutting-Edge Technology
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            We use the most advanced equipment to guarantee exceptional results
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div
+            class="text-center p-6 bg-gray-50 rounded-xl hover:bg-primary-gold/5 transition-colors duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-2xl">🖥️</span>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">
+              Digital Smile Design
+            </h3>
+            <p class="text-gray-600 text-sm">
+              3D digital smile design with simulation
+            </p>
+          </div>
+
+          <div
+            class="text-center p-6 bg-gray-50 rounded-xl hover:bg-primary-gold/5 transition-colors duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-2xl">📷</span>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">3D Tomography</h3>
+            <p class="text-gray-600 text-sm">
+              High-precision imaging diagnostics
+            </p>
+          </div>
+
+          <div
+            class="text-center p-6 bg-gray-50 rounded-xl hover:bg-primary-gold/5 transition-colors duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-2xl">⚡</span>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Dental Laser</h3>
+            <p class="text-gray-600 text-sm">Minimally invasive treatments</p>
+          </div>
+
+          <div
+            class="text-center p-6 bg-gray-50 rounded-xl hover:bg-primary-gold/5 transition-colors duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-2xl">🦷</span>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">CAD/CAM</h3>
+            <p class="text-gray-600 text-sm">Same-day restorations</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-primary-gold text-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">
+          Ready to Transform Your Smile?
+        </h2>
+        <p class="text-xl mb-12 opacity-90">
+          Schedule your personalized consultation and discover which treatment
+          is ideal for you
+        </p>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+          <a
+            href="/en/contact"
+            class="inline-flex items-center px-10 py-5 bg-white text-primary-gold font-bold rounded-lg shadow-luxury hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+          >
+            Schedule Consultation
+          </a>
+          <a
+            href="https://wa.me/573000000000"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center px-10 py-5 border-3 border-white text-white hover:bg-white hover:text-primary-gold font-bold rounded-lg transition-all duration-300"
+          >
+            <svg class="mr-3 w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.531 3.503"
+              ></path>
+            </svg>
+            WhatsApp Consultation
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

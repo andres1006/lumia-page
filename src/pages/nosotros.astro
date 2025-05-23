@@ -1,0 +1,432 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { getLangFromUrl, useTranslations } from "../i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const team = [
+  {
+    name: "Dr. María Elena Ruiz",
+    title: "Directora Médica & Especialista en Diseño de Sonrisa",
+    education: "Universidad CES - Especialización en Rehabilitación Oral",
+    certifications: [
+      "Fellow International Congress of Oral Implantologists",
+      "Certificación en Digital Smile Design",
+    ],
+    experience: "15+ años",
+    image: "👩‍⚕️",
+  },
+  {
+    name: "Dr. Carlos Andrés Moreno",
+    title: "Especialista en Implantología",
+    education: "Universidad Javeriana - Especialización en Implantología Oral",
+    certifications: [
+      "Certificación Straumann Institute",
+      "Advanced Implantology Certificate - ITI",
+    ],
+    experience: "12+ años",
+    image: "👨‍⚕️",
+  },
+  {
+    name: "Dra. Ana Sofía Valencia",
+    title: "Ortodoncista",
+    education: "Universidad del Valle - Especialización en Ortodoncia",
+    certifications: [
+      "Invisalign Provider",
+      "Certificación en Ortodoncia Lingual",
+    ],
+    experience: "8+ años",
+    image: "👩‍⚕️",
+  },
+];
+
+const values = [
+  {
+    title: "Excelencia",
+    description:
+      "Buscamos la perfección en cada tratamiento, utilizando las técnicas más avanzadas y materiales de la más alta calidad.",
+    icon: "🏆",
+  },
+  {
+    title: "Innovación",
+    description:
+      "Incorporamos constantemente nuevas tecnologías y metodologías para ofrecer los mejores resultados.",
+    icon: "🔬",
+  },
+  {
+    title: "Compromiso",
+    description:
+      "Nos dedicamos completamente al bienestar y satisfacción de nuestros pacientes en cada paso del proceso.",
+    icon: "💎",
+  },
+  {
+    title: "Calidez Humana",
+    description:
+      "Tratamos a cada paciente como familia, brindando un ambiente cálido y personalizado.",
+    icon: "❤️",
+  },
+];
+
+const certifications = [
+  "ISO 9001:2015 - Gestión de Calidad",
+  "Certificación INVIMA",
+  "Miembro International Congress of Oral Implantologists",
+  "Certificación Straumann Partner",
+  "Nobel Biocare Certified Center",
+  "Invisalign Diamond Provider",
+];
+---
+
+<Layout
+  title="Nosotros - LUMIA Odontología Especializada"
+  description="Conoce a LUMIA, clínica dental líder en Colombia. Más de 15 años transformando sonrisas con tecnología de vanguardia y atención personalizada en Manizales y Pereira."
+  lang={lang}
+  keywords="dentistas Manizales, clínica dental Pereira, especialistas odontología Colombia, diseño de sonrisa, implantes dentales"
+>
+  <Header />
+
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section
+      class="py-20 bg-gradient-to-br from-primary-gold to-primary-gold-dark text-white"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
+          Conoce LUMIA
+        </h1>
+        <p
+          class="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto animate-slide-up"
+        >
+          Más de 15 años transformando sonrisas y cambiando vidas en el corazón
+          del Eje Cafetero
+        </p>
+        <div class="animate-scale-in">
+          <div
+            class="inline-flex items-center px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full"
+          >
+            <span class="text-lg font-semibold"
+              >Desde 2008 • 2,500+ Sonrisas Transformadas</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
+              Nuestra Historia
+            </h2>
+            <div class="space-y-6 text-lg text-gray-600 leading-relaxed">
+              <p>
+                LUMIA nació en 2008 con una visión clara: <strong
+                  class="text-primary-gold"
+                  >revolucionar la odontología estética en Colombia</strong
+                >
+                mediante la combinación perfecta entre ciencia avanzada y arte especializado.
+              </p>
+              <p>
+                Fundada por la Dra. María Elena Ruiz en Manizales, nuestra
+                clínica ha crecido hasta convertirse en referente nacional en
+                diseño de sonrisa e implantología, expandiéndonos a Pereira en
+                2015 para servir mejor al Eje Cafetero.
+              </p>
+              <p>
+                Lo que comenzó como un pequeño consultorio con grandes sueños,
+                hoy es una clínica de vanguardia que recibe pacientes de toda
+                Colombia y el extranjero, especialmente de Estados Unidos,
+                buscando tratamientos de clase mundial a precios justos.
+              </p>
+            </div>
+          </div>
+          <div class="relative">
+            <div
+              class="aspect-square bg-gradient-gold rounded-2xl shadow-luxury flex items-center justify-center"
+            >
+              <div class="text-center text-white">
+                <div
+                  class="w-32 h-32 bg-white/20 rounded-full mx-auto mb-6 flex items-center justify-center"
+                >
+                  <span class="text-6xl">🏥</span>
+                </div>
+                <p class="text-xl font-medium">Historia LUMIA</p>
+                <p class="text-sm opacity-80 mt-2">2008 - Presente</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Misión y Visión
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div
+            class="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-primary-gold"
+          >
+            <div class="flex items-center mb-6">
+              <div
+                class="w-16 h-16 bg-gradient-gold rounded-full flex items-center justify-center mr-4"
+              >
+                <span class="text-3xl">🎯</span>
+              </div>
+              <h3 class="text-3xl font-bold text-gray-900">Misión</h3>
+            </div>
+            <p class="text-lg text-gray-600 leading-relaxed">
+              Transformar sonrisas y cambiar vidas a través de tratamientos
+              odontológicos de excelencia, utilizando tecnología de vanguardia y
+              brindando una experiencia personalizada que supere las
+              expectativas de nuestros pacientes, mientras promovemos el turismo
+              dental responsable en Colombia.
+            </p>
+          </div>
+
+          <div
+            class="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-primary-gold"
+          >
+            <div class="flex items-center mb-6">
+              <div
+                class="w-16 h-16 bg-gradient-gold rounded-full flex items-center justify-center mr-4"
+              >
+                <span class="text-3xl">🌟</span>
+              </div>
+              <h3 class="text-3xl font-bold text-gray-900">Visión</h3>
+            </div>
+            <p class="text-lg text-gray-600 leading-relaxed">
+              Ser reconocidos como la clínica odontológica líder en
+              Latinoamérica para tratamientos estéticos y restaurativos, siendo
+              el destino preferido para pacientes nacionales e internacionales
+              que buscan sonrisas perfectas con los más altos estándares de
+              calidad y calidez humana.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Nuestros Valores
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Los pilares que guían cada decisión y cada tratamiento en LUMIA
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {
+            values.map((value, index) => (
+              <div class="text-center group hover:transform hover:scale-105 transition-all duration-300">
+                <div class="w-20 h-20 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-6 group-hover:shadow-gold transition-all duration-300">
+                  <span class="text-3xl">{value.icon}</span>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary-gold transition-colors">
+                  {value.title}
+                </h3>
+                <p class="text-gray-600 leading-relaxed">{value.description}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-gradient-dark text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold mb-6">
+            Nuestro Equipo Especializado
+          </h2>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            Profesionales altamente calificados con formación internacional
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {
+            team.map((member, index) => (
+              <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/15 transition-all duration-300">
+                <div class="w-24 h-24 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                  <span class="text-4xl">{member.image}</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">{member.name}</h3>
+                <p class="text-primary-gold font-semibold mb-4">
+                  {member.title}
+                </p>
+                <div class="space-y-3 text-gray-300">
+                  <p class="text-sm">
+                    <strong>Formación:</strong> {member.education}
+                  </p>
+                  <p class="text-sm">
+                    <strong>Experiencia:</strong> {member.experience}
+                  </p>
+                  <div>
+                    <p class="text-sm font-semibold mb-2">Certificaciones:</p>
+                    <ul class="text-xs space-y-1">
+                      {member.certifications.map((cert) => (
+                        <li>• {cert}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Certificaciones y Reconocimientos
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Avalados por las instituciones más prestigiosas del sector
+            odontológico
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {
+            certifications.map((cert, index) => (
+              <div class="bg-white rounded-xl p-6 shadow-lg flex items-center hover:shadow-xl transition-all duration-300">
+                <div class="w-12 h-12 bg-primary-gold/20 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  <svg
+                    class="w-6 h-6 text-primary-gold"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <p class="font-semibold text-gray-900">{cert}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Tecnología de Vanguardia
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Equipos de última generación para resultados excepcionales
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-2xl">🖥️</span>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">
+              Digital Smile Design
+            </h3>
+            <p class="text-gray-600 text-sm">Diseño digital de sonrisa 3D</p>
+          </div>
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-2xl">📷</span>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Tomografía 3D</h3>
+            <p class="text-gray-600 text-sm">
+              Diagnóstico por imágenes avanzado
+            </p>
+          </div>
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-2xl">⚡</span>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Láser Dental</h3>
+            <p class="text-gray-600 text-sm">
+              Tratamientos mínimamente invasivos
+            </p>
+          </div>
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-2xl">🦷</span>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">CAD/CAM</h3>
+            <p class="text-gray-600 text-sm">Restauraciones en una sola cita</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-primary-gold text-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">
+          ¿Listo para Conocernos?
+        </h2>
+        <p class="text-xl mb-12 opacity-90">
+          Agenda tu valoración personalizada y descubre por qué miles de
+          pacientes confían en LUMIA
+        </p>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+          <a
+            href="/contacto"
+            class="inline-flex items-center px-10 py-5 bg-white text-primary-gold font-bold rounded-lg shadow-luxury hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+          >
+            Agendar Cita
+          </a>
+          <a
+            href="https://wa.me/573000000000"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center px-10 py-5 border-3 border-white text-white hover:bg-white hover:text-primary-gold font-bold rounded-lg transition-all duration-300"
+          >
+            <svg class="mr-3 w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.531 3.503"
+              ></path>
+            </svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+

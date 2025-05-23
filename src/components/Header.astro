@@ -1,0 +1,213 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n";
+import LanguageSelector from "./react/LanguageSelector";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<header
+  class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 transition-all duration-300"
+  id="header"
+>
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a
+          href={lang === "es" ? "/" : "/en"}
+          class="flex items-center space-x-3 group"
+        >
+          <div
+            class="w-12 h-12 bg-gradient-gold rounded-lg flex items-center justify-center shadow-gold"
+          >
+            <span class="text-white font-bold text-xl">L</span>
+          </div>
+          <div class="hidden sm:block">
+            <span
+              class="text-2xl font-bold text-gray-900 group-hover:text-primary-gold transition-colors"
+            >
+              LUMIA
+            </span>
+            <div class="text-sm text-gray-600 -mt-1">
+              {
+                lang === "es"
+                  ? "Odontología Especializada"
+                  : "Specialized Dentistry"
+              }
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex items-center space-x-8">
+        <a
+          href={lang === "es" ? "/" : "/en"}
+          class="text-gray-700 hover:text-primary-gold font-medium transition-colors duration-200 relative group"
+        >
+          {t("nav.home")}
+          <span
+            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-gold transition-all duration-200 group-hover:w-full"
+          ></span>
+        </a>
+        <a
+          href={lang === "es" ? "/nosotros" : "/en/about"}
+          class="text-gray-700 hover:text-primary-gold font-medium transition-colors duration-200 relative group"
+        >
+          {t("nav.about")}
+          <span
+            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-gold transition-all duration-200 group-hover:w-full"
+          ></span>
+        </a>
+        <a
+          href={lang === "es" ? "/servicios" : "/en/services"}
+          class="text-gray-700 hover:text-primary-gold font-medium transition-colors duration-200 relative group"
+        >
+          {t("nav.services")}
+          <span
+            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-gold transition-all duration-200 group-hover:w-full"
+          ></span>
+        </a>
+        <a
+          href={lang === "es" ? "/casos-de-exito" : "/en/gallery"}
+          class="text-gray-700 hover:text-primary-gold font-medium transition-colors duration-200 relative group"
+        >
+          {t("nav.gallery")}
+          <span
+            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-gold transition-all duration-200 group-hover:w-full"
+          ></span>
+        </a>
+        <a
+          href={lang === "es" ? "/turismo-odontologico" : "/en/dental-tourism"}
+          class="text-gray-700 hover:text-primary-gold font-medium transition-colors duration-200 relative group"
+        >
+          {t("nav.dental-tourism")}
+          <span
+            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-gold transition-all duration-200 group-hover:w-full"
+          ></span>
+        </a>
+        <a
+          href={lang === "es" ? "/contacto" : "/en/contact"}
+          class="text-gray-700 hover:text-primary-gold font-medium transition-colors duration-200 relative group"
+        >
+          {t("nav.contact")}
+          <span
+            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-gold transition-all duration-200 group-hover:w-full"
+          ></span>
+        </a>
+      </div>
+
+      <!-- CTAs and Language Selector -->
+      <div class="flex items-center space-x-4">
+        <LanguageSelector lang={lang} client:load />
+
+        <a
+          href={lang === "es" ? "/contacto" : "/en/contact"}
+          class="hidden sm:inline-flex items-center px-6 py-2 border border-primary-gold text-primary-gold hover:bg-primary-gold hover:text-white font-medium rounded-lg transition-all duration-200 hover:shadow-gold"
+        >
+          {t("common.schedule-appointment")}
+        </a>
+
+        <!-- Mobile menu button -->
+        <button
+          class="lg:hidden p-2 rounded-md text-gray-700 hover:text-primary-gold hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-gold transition-colors"
+          aria-label="Abrir menú"
+          id="mobile-menu-button"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="lg:hidden hidden" id="mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-100">
+        <a
+          href={lang === "es" ? "/" : "/en"}
+          class="block px-3 py-2 text-gray-700 hover:text-primary-gold hover:bg-gray-50 rounded-md font-medium transition-colors"
+        >
+          {t("nav.home")}
+        </a>
+        <a
+          href={lang === "es" ? "/nosotros" : "/en/about"}
+          class="block px-3 py-2 text-gray-700 hover:text-primary-gold hover:bg-gray-50 rounded-md font-medium transition-colors"
+        >
+          {t("nav.about")}
+        </a>
+        <a
+          href={lang === "es" ? "/servicios" : "/en/services"}
+          class="block px-3 py-2 text-gray-700 hover:text-primary-gold hover:bg-gray-50 rounded-md font-medium transition-colors"
+        >
+          {t("nav.services")}
+        </a>
+        <a
+          href={lang === "es" ? "/casos-de-exito" : "/en/gallery"}
+          class="block px-3 py-2 text-gray-700 hover:text-primary-gold hover:bg-gray-50 rounded-md font-medium transition-colors"
+        >
+          {t("nav.gallery")}
+        </a>
+        <a
+          href={lang === "es" ? "/turismo-odontologico" : "/en/dental-tourism"}
+          class="block px-3 py-2 text-gray-700 hover:text-primary-gold hover:bg-gray-50 rounded-md font-medium transition-colors"
+        >
+          {t("nav.dental-tourism")}
+        </a>
+        <a
+          href={lang === "es" ? "/contacto" : "/en/contact"}
+          class="block px-3 py-2 text-gray-700 hover:text-primary-gold hover:bg-gray-50 rounded-md font-medium transition-colors"
+        >
+          {t("nav.contact")}
+        </a>
+        <div class="pt-2">
+          <a
+            href={lang === "es" ? "/contacto" : "/en/contact"}
+            class="block mx-3 px-4 py-2 bg-gradient-gold text-white text-center font-medium rounded-lg shadow-gold hover:shadow-xl transition-all duration-200"
+          >
+            {t("common.schedule-appointment")}
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  // Mobile menu toggle
+  document.addEventListener("DOMContentLoaded", function () {
+    const button = document.getElementById("mobile-menu-button");
+    const menu = document.getElementById("mobile-menu");
+
+    if (button && menu) {
+      button.addEventListener("click", function () {
+        menu.classList.toggle("hidden");
+      });
+    }
+
+    // Header background on scroll
+    const header = document.getElementById("header");
+    if (header) {
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 10) {
+          header.classList.add("bg-white", "shadow-sm");
+          header.classList.remove("bg-white/95");
+        } else {
+          header.classList.add("bg-white/95");
+          header.classList.remove("bg-white", "shadow-sm");
+        }
+      });
+    }
+  });
+</script>
+
