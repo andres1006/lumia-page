@@ -7,7 +7,7 @@ const t = useTranslations(lang);
 ---
 
 <header
-  class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 transition-all duration-300"
+  class="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-md transition-all duration-500 ease-in-out"
   id="header"
 >
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,17 +19,18 @@ const t = useTranslations(lang);
           class="flex items-center space-x-3 group"
         >
           <div
-            class="w-12 h-12 bg-gradient-gold rounded-lg flex items-center justify-center shadow-gold"
+            class="w-10 h-10 bg-gradient-gold rounded-lg flex items-center justify-center shadow-gold transition-all duration-300 group-hover:scale-110"
           >
-            <span class="text-white font-bold text-xl">L</span>
+            <span class="text-white font-bold text-lg">L</span>
           </div>
           <div class="hidden sm:block">
             <span
-              class="text-2xl font-bold text-gray-900 group-hover:text-primary-gold transition-colors"
+              class="text-xl font-bold text-white group-hover:text-primary-gold transition-colors duration-300"
+              id="logo-text"
             >
               LUMIA
             </span>
-            <div class="text-sm text-gray-600 -mt-1">
+            <div class="text-xs text-white/90 -mt-1" id="logo-subtitle">
               {
                 lang === "es"
                   ? "Odontología Especializada"
@@ -41,139 +42,149 @@ const t = useTranslations(lang);
       </div>
 
       <!-- Desktop Navigation -->
-      <div class="hidden lg:flex items-center space-x-8">
+      <div class="hidden lg:flex items-center space-x-6">
         <a
           href={lang === "es" ? "/" : "/en"}
-          class="text-gray-700 hover:text-primary-gold font-medium transition-colors duration-200 relative group"
+          class="nav-link text-white hover:text-primary-gold font-medium transition-all duration-300 relative group py-2"
         >
           {t("nav.home")}
           <span
-            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-gold transition-all duration-200 group-hover:w-full"
+            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-gold transition-all duration-300 group-hover:w-full"
           ></span>
         </a>
         <a
           href={lang === "es" ? "/nosotros" : "/en/about"}
-          class="text-gray-700 hover:text-primary-gold font-medium transition-colors duration-200 relative group"
+          class="nav-link text-white hover:text-primary-gold font-medium transition-all duration-300 relative group py-2"
         >
           {t("nav.about")}
           <span
-            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-gold transition-all duration-200 group-hover:w-full"
+            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-gold transition-all duration-300 group-hover:w-full"
           ></span>
         </a>
         <a
           href={lang === "es" ? "/servicios" : "/en/services"}
-          class="text-gray-700 hover:text-primary-gold font-medium transition-colors duration-200 relative group"
+          class="nav-link text-white hover:text-primary-gold font-medium transition-all duration-300 relative group py-2"
         >
           {t("nav.services")}
           <span
-            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-gold transition-all duration-200 group-hover:w-full"
+            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-gold transition-all duration-300 group-hover:w-full"
           ></span>
         </a>
         <a
           href={lang === "es" ? "/casos-de-exito" : "/en/gallery"}
-          class="text-gray-700 hover:text-primary-gold font-medium transition-colors duration-200 relative group"
+          class="nav-link text-white hover:text-primary-gold font-medium transition-all duration-300 relative group py-2"
         >
           {t("nav.gallery")}
           <span
-            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-gold transition-all duration-200 group-hover:w-full"
+            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-gold transition-all duration-300 group-hover:w-full"
           ></span>
         </a>
         <a
           href={lang === "es" ? "/turismo-odontologico" : "/en/dental-tourism"}
-          class="text-gray-700 hover:text-primary-gold font-medium transition-colors duration-200 relative group"
+          class="nav-link text-white hover:text-primary-gold font-medium transition-all duration-300 relative group py-2"
         >
           {t("nav.dental-tourism")}
           <span
-            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-gold transition-all duration-200 group-hover:w-full"
+            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-gold transition-all duration-300 group-hover:w-full"
           ></span>
         </a>
         <a
           href={lang === "es" ? "/contacto" : "/en/contact"}
-          class="text-gray-700 hover:text-primary-gold font-medium transition-colors duration-200 relative group"
+          class="nav-link text-white hover:text-primary-gold font-medium transition-all duration-300 relative group py-2"
         >
           {t("nav.contact")}
           <span
-            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-gold transition-all duration-200 group-hover:w-full"
+            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-gold transition-all duration-300 group-hover:w-full"
           ></span>
         </a>
       </div>
 
       <!-- CTAs and Language Selector -->
-      <div class="flex items-center space-x-4">
-        <LanguageSelector lang={lang} client:load />
+      <div class="flex items-center space-x-3">
+        <div class="language-selector">
+          <LanguageSelector lang={lang} client:load />
+        </div>
 
         <a
           href={lang === "es" ? "/contacto" : "/en/contact"}
-          class="hidden sm:inline-flex items-center px-6 py-2 border border-primary-gold text-primary-gold hover:bg-primary-gold hover:text-white font-medium rounded-lg transition-all duration-200 hover:shadow-gold"
+          class="hidden sm:inline-flex items-center px-5 py-2 border border-white/30 text-white hover:bg-primary-gold hover:border-primary-gold hover:text-gray-900 font-medium rounded-lg transition-all duration-300 hover:shadow-gold backdrop-blur-sm"
+          id="cta-button"
         >
           {t("common.schedule-appointment")}
         </a>
 
         <!-- Mobile menu button -->
         <button
-          class="lg:hidden p-2 rounded-md text-gray-700 hover:text-primary-gold hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-gold transition-colors"
+          class="lg:hidden p-2 rounded-md text-white hover:text-primary-gold hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-primary-gold transition-all duration-300"
           aria-label="Abrir menú"
           id="mobile-menu-button"
         >
           <svg
-            class="w-6 h-6"
+            class="w-6 h-6 transform transition-transform duration-300"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
+            id="menu-icon"
           >
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"></path>
+              d="M4 6h16M4 12h16M4 18h16"
+              id="hamburger-icon"></path>
           </svg>
         </button>
       </div>
     </div>
 
     <!-- Mobile Navigation -->
-    <div class="lg:hidden hidden" id="mobile-menu">
-      <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-100">
+    <div
+      class="lg:hidden hidden transform transition-all duration-300 ease-in-out"
+      id="mobile-menu"
+    >
+      <div
+        class="px-2 pt-2 pb-3 space-y-1 bg-black/90 backdrop-blur-lg rounded-b-2xl border-t border-white/10 mt-2"
+      >
         <a
           href={lang === "es" ? "/" : "/en"}
-          class="block px-3 py-2 text-gray-700 hover:text-primary-gold hover:bg-gray-50 rounded-md font-medium transition-colors"
+          class="block px-3 py-3 text-white/90 hover:text-primary-gold hover:bg-white/10 rounded-lg font-medium transition-all duration-300"
         >
           {t("nav.home")}
         </a>
         <a
           href={lang === "es" ? "/nosotros" : "/en/about"}
-          class="block px-3 py-2 text-gray-700 hover:text-primary-gold hover:bg-gray-50 rounded-md font-medium transition-colors"
+          class="block px-3 py-3 text-white/90 hover:text-primary-gold hover:bg-white/10 rounded-lg font-medium transition-all duration-300"
         >
           {t("nav.about")}
         </a>
         <a
           href={lang === "es" ? "/servicios" : "/en/services"}
-          class="block px-3 py-2 text-gray-700 hover:text-primary-gold hover:bg-gray-50 rounded-md font-medium transition-colors"
+          class="block px-3 py-3 text-white/90 hover:text-primary-gold hover:bg-white/10 rounded-lg font-medium transition-all duration-300"
         >
           {t("nav.services")}
         </a>
         <a
           href={lang === "es" ? "/casos-de-exito" : "/en/gallery"}
-          class="block px-3 py-2 text-gray-700 hover:text-primary-gold hover:bg-gray-50 rounded-md font-medium transition-colors"
+          class="block px-3 py-3 text-white/90 hover:text-primary-gold hover:bg-white/10 rounded-lg font-medium transition-all duration-300"
         >
           {t("nav.gallery")}
         </a>
         <a
           href={lang === "es" ? "/turismo-odontologico" : "/en/dental-tourism"}
-          class="block px-3 py-2 text-gray-700 hover:text-primary-gold hover:bg-gray-50 rounded-md font-medium transition-colors"
+          class="block px-3 py-3 text-white/90 hover:text-primary-gold hover:bg-white/10 rounded-lg font-medium transition-all duration-300"
         >
           {t("nav.dental-tourism")}
         </a>
         <a
           href={lang === "es" ? "/contacto" : "/en/contact"}
-          class="block px-3 py-2 text-gray-700 hover:text-primary-gold hover:bg-gray-50 rounded-md font-medium transition-colors"
+          class="block px-3 py-3 text-white/90 hover:text-primary-gold hover:bg-white/10 rounded-lg font-medium transition-all duration-300"
         >
           {t("nav.contact")}
         </a>
-        <div class="pt-2">
+        <div class="pt-3">
           <a
             href={lang === "es" ? "/contacto" : "/en/contact"}
-            class="block mx-3 px-4 py-2 bg-gradient-gold text-white text-center font-medium rounded-lg shadow-gold hover:shadow-xl transition-all duration-200"
+            class="block mx-3 px-4 py-3 bg-gradient-gold text-white text-center font-medium rounded-lg shadow-gold hover:shadow-xl transition-all duration-300 transform hover:scale-105"
           >
             {t("common.schedule-appointment")}
           </a>
@@ -183,31 +194,140 @@ const t = useTranslations(lang);
   </nav>
 </header>
 
+<style>
+  /* Header transition styles */
+  .header-scrolled {
+    background: rgba(0, 0, 0, 0.3) !important;
+    backdrop-filter: blur(25px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .header-scrolled #logo-text {
+    color: #ffffff !important;
+  }
+
+  .header-scrolled #logo-subtitle {
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  .header-scrolled .nav-link {
+    color: #ffffff !important;
+  }
+
+  .header-scrolled .nav-link:hover {
+    color: #d4af37 !important;
+  }
+
+  .header-scrolled #cta-button {
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  .header-scrolled #cta-button:hover {
+    background-color: #d4af37 !important;
+    color: white !important;
+    border-color: #d4af37 !important;
+  }
+
+  .header-scrolled #mobile-menu-button {
+    color: #ffffff !important;
+  }
+
+  .header-scrolled #mobile-menu-button:hover {
+    color: #d4af37 !important;
+    background-color: rgba(255, 255, 255, 0.15) !important;
+  }
+
+  /* Mobile menu animation */
+  #mobile-menu.show {
+    display: block;
+    animation: slideDown 0.3s ease-out;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Hamburger to X animation */
+  #menu-icon.open {
+    transform: rotate(90deg);
+  }
+</style>
+
 <script>
-  // Mobile menu toggle
+  // Mobile menu toggle with smooth animation
   document.addEventListener("DOMContentLoaded", function () {
     const button = document.getElementById("mobile-menu-button");
     const menu = document.getElementById("mobile-menu");
+    const icon = document.getElementById("menu-icon");
+    const hamburgerIcon = document.getElementById("hamburger-icon");
 
-    if (button && menu) {
+    if (button && menu && icon && hamburgerIcon) {
       button.addEventListener("click", function () {
-        menu.classList.toggle("hidden");
-      });
-    }
+        const isHidden = menu.classList.contains("hidden");
 
-    // Header background on scroll
-    const header = document.getElementById("header");
-    if (header) {
-      window.addEventListener("scroll", function () {
-        if (window.scrollY > 10) {
-          header.classList.add("bg-white", "shadow-sm");
-          header.classList.remove("bg-white/95");
+        if (isHidden) {
+          menu.classList.remove("hidden");
+          menu.classList.add("show");
+          icon.classList.add("open");
+          hamburgerIcon.setAttribute("d", "M6 18L18 6M6 6l12 12"); // X icon
         } else {
-          header.classList.add("bg-white/95");
-          header.classList.remove("bg-white", "shadow-sm");
+          menu.classList.add("hidden");
+          menu.classList.remove("show");
+          icon.classList.remove("open");
+          hamburgerIcon.setAttribute("d", "M4 6h16M4 12h16M4 18h16"); // Hamburger icon
+        }
+      });
+
+      // Close mobile menu when clicking outside
+      document.addEventListener("click", function (event) {
+        const target = event.target as HTMLElement;
+        if (!button.contains(target) && !menu.contains(target)) {
+          menu.classList.add("hidden");
+          menu.classList.remove("show");
+          icon.classList.remove("open");
+          hamburgerIcon.setAttribute("d", "M4 6h16M4 12h16M4 18h16");
         }
       });
     }
+
+    // Enhanced header scroll behavior
+    const header = document.getElementById("header");
+    let ticking = false;
+
+    function updateHeader() {
+      const scrolled = window.scrollY > 50;
+
+      if (scrolled) {
+        header?.classList.add("header-scrolled");
+      } else {
+        header?.classList.remove("header-scrolled");
+      }
+
+      ticking = false;
+    }
+
+    function requestTick() {
+      if (!ticking) {
+        requestAnimationFrame(updateHeader);
+        ticking = true;
+      }
+    }
+
+    if (header) {
+      window.addEventListener("scroll", requestTick, { passive: true });
+
+      // Initial check in case page is loaded scrolled
+      updateHeader();
+    }
   });
 </script>
-

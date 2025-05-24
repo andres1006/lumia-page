@@ -9,6 +9,13 @@ interface HeroProps {
   lang: "es" | "en";
 }
 
+interface HeroMediaItem {
+  type: "image" | "video";
+  src: string;
+  alt?: string;
+  poster?: string;
+}
+
 export default function Hero({
   title,
   subtitle,
@@ -40,140 +47,360 @@ export default function Hero({
     },
   ];
 
-  const dotPattern = `data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23D4AF37" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="4"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E`;
+  const heroMedia: HeroMediaItem[] = [
+    {
+      type: "image",
+      src: "/images/hero/hero-image-1.jpg",
+      alt: "LUMIA Dental Clinic",
+    },
+    {
+      type: "image",
+      src: "/images/hero/hero-image-2.jpg",
+      alt: "Modern Dental Technology",
+    },
+    // Ejemplo para agregar video en el futuro:
+    // {
+    //   type: 'video',
+    //   src: '/videos/hero-video.mp4',
+    //   poster: '/images/hero/video-poster.jpg'
+    // }
+  ];
+
+  const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentMediaIndex((prevIndex) =>
+        prevIndex === heroMedia.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 8000); // Change media every 8 seconds
+
+    return () => clearInterval(timer);
+  }, [heroMedia.length]);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 to-white">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
+    <section className="relative h-screen w-full overflow-hidden">
+      {/* Background Media Slideshow */}
+      {heroMedia.map((media, index) => (
         <div
-          className="absolute inset-0"
-          style={{ backgroundImage: `url("${dotPattern}")` }}
-        ></div>
-      </div>
+          key={index}
+          className="absolute inset-0 w-full h-full transition-opacity duration-1500 ease-in-out"
+          style={{
+            opacity: index === currentMediaIndex ? 1 : 0,
+          }}
+        >
+          {media.type === "image" ? (
+            <div
+              className="w-full h-full bg-cover bg-center bg-no-repeat"
+              style={{
+                backgroundImage: `url(${media.src})`,
+              }}
+            />
+          ) : (
+            <video
+              className="w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+              poster={media.poster}
+            >
+              <source src={media.src} type="video/mp4" />
+            </video>
+          )}
+        </div>
+      ))}
 
-      {/* Hero Image Placeholder */}
-      <div className="absolute inset-0 z-0">
-        <div className="w-full h-full bg-gradient-to-r from-white/95 via-white/80 to-white/95 flex items-center justify-center">
-          <div className="w-full max-w-4xl h-96 bg-gray-200 rounded-2xl shadow-luxury mx-4 flex items-center justify-center">
-            <div className="text-center text-gray-500">
-              <div className="w-20 h-20 bg-primary-gold/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <span className="text-primary-gold text-3xl">✨</span>
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
+
+      {/* Content Container */}
+      <div className="relative z-10 h-full flex flex-col">
+        {/* Mobile/Tablet Content - Centered */}
+        <div className="flex-1 flex items-center justify-center p-6 md:hidden">
+          <div className="text-center max-w-lg">
+            {/* Main Title - Mobile */}
+            <h1
+              className={`text-3xl text-white mb-4 leading-tight transition-all duration-1000 ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+              }`}
+              style={{
+                fontWeight: 700,
+                lineHeight: 1.2,
+              }}
+            >
+              <span
+                className="block"
+                style={{
+                  fontWeight: 700,
+                }}
+              >
+                LUMIA:
+              </span>
+              <span
+                className="block text-primary-gold"
+                style={{
+                  fontWeight: 700,
+                }}
+              >
+                {lang === "es" ? "Donde la Ciencia" : "Where Science"}
+              </span>
+              <span
+                className="block"
+                style={{
+                  fontWeight: 700,
+                }}
+              >
+                {lang === "es" ? "y el Arte" : "and Art"}
+              </span>
+              <span
+                className="block text-primary-gold"
+                style={{
+                  fontWeight: 700,
+                }}
+              >
+                {lang === "es" ? "Crean Sonrisas" : "Create Smiles"}
+              </span>
+              <span
+                className="block"
+                style={{
+                  fontWeight: 700,
+                }}
+              >
+                {lang === "es" ? "Extraordinarias" : "Extraordinary"}
+              </span>
+            </h1>
+
+            {/* Subtitle - Mobile */}
+            <p
+              className={`text-lg text-gray-200 mb-8 leading-relaxed transition-all duration-1000 delay-300 ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+              }`}
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            >
+              {subtitle}
+            </p>
+
+            {/* CTAs - Mobile */}
+            <div
+              className={`flex flex-col gap-3 transition-all duration-1000 delay-500 ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+              }`}
+            >
+              <a
+                href={
+                  lang === "es"
+                    ? "/servicios/diseno-de-sonrisa"
+                    : "/en/services/smile-design"
+                }
+                className="inline-flex items-center justify-center px-6 py-3 bg-gradient-gold text-white font-semibold rounded-lg shadow-gold hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-sm"
+                style={{
+                  fontFamily: "'Montserrat', sans-serif",
+                  fontWeight: 600,
+                }}
+              >
+                {cta1Text}
+                <svg
+                  className="ml-2 w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </a>
+              <a
+                href={lang === "es" ? "/contacto" : "/en/contact"}
+                className="inline-flex items-center justify-center px-6 py-3 border-2 border-white text-white hover:bg-primary-gold hover:border-primary-gold hover:text-gray-900 font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 text-sm"
+                style={{
+                  fontFamily: "'Montserrat', sans-serif",
+                  fontWeight: 600,
+                }}
+              >
+                {cta2Text}
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Desktop Content - Bottom Left */}
+        <div className="hidden md:flex h-full items-end">
+          <div className="max-w-7xl mx-auto w-full px-8 pb-16">
+            <div className="max-w-2xl">
+              {/* Main Title - Desktop */}
+              <h1
+                className={`text-5xl lg:text-7xl text-white mb-6 leading-tight transition-all duration-1000 ${
+                  isVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-10"
+                }`}
+                style={{
+                  fontWeight: 700,
+                  lineHeight: 1.1,
+                }}
+              >
+                <span
+                  className="block"
+                  style={{
+                    fontWeight: 700,
+                  }}
+                >
+                  LUMIA:
+                </span>
+                <span
+                  className="block text-primary-gold"
+                  style={{
+                    fontWeight: 700,
+                  }}
+                >
+                  {lang === "es" ? "Donde la Ciencia" : "Where Science"}
+                </span>
+                <span
+                  className="block"
+                  style={{
+                    fontWeight: 700,
+                  }}
+                >
+                  {lang === "es" ? "y el Arte" : "and Art"}
+                </span>
+                <span
+                  className="block text-primary-gold"
+                  style={{
+                    fontWeight: 700,
+                  }}
+                >
+                  {lang === "es" ? "Crean Sonrisas" : "Create Smiles"}
+                </span>
+                <span
+                  className="block"
+                  style={{
+                    fontWeight: 700,
+                  }}
+                >
+                  {lang === "es" ? "Extraordinarias" : "Extraordinary"}
+                </span>
+              </h1>
+
+              {/* Subtitle - Desktop */}
+              <p
+                className={`text-xl lg:text-2xl text-gray-200 mb-8 leading-relaxed max-w-xl transition-all duration-1000 delay-300 ${
+                  isVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-10"
+                }`}
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+              >
+                {subtitle}
+              </p>
+
+              {/* CTAs - Desktop */}
+              <div
+                className={`flex flex-col sm:flex-row gap-4 mb-12 transition-all duration-1000 delay-500 ${
+                  isVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-10"
+                }`}
+              >
+                <a
+                  href={
+                    lang === "es"
+                      ? "/servicios/diseno-de-sonrisa"
+                      : "/en/services/smile-design"
+                  }
+                  className="inline-flex items-center px-8 py-4 bg-gradient-gold text-white font-semibold rounded-lg shadow-gold hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                  style={{
+                    fontFamily: "'Montserrat', sans-serif",
+                    fontWeight: 600,
+                  }}
+                >
+                  {cta1Text}
+                  <svg
+                    className="ml-2 w-5 h-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href={lang === "es" ? "/contacto" : "/en/contact"}
+                  className="inline-flex items-center px-8 py-4 border-2 border-white text-white hover:bg-primary-gold hover:border-primary-gold hover:text-gray-900 font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
+                  style={{
+                    fontFamily: "'Montserrat', sans-serif",
+                    fontWeight: 600,
+                  }}
+                >
+                  {cta2Text}
+                </a>
               </div>
-              <p className="text-lg font-medium">
-                {lang === "es" ? "Imagen Hero Principal" : "Main Hero Image"}
-              </p>
-              <p className="text-sm mt-2">
-                {lang === "es"
-                  ? "Sonrisa perfecta / Tecnología avanzada"
-                  : "Perfect smile / Advanced technology"}
-              </p>
+
+              {/* Stats - Desktop */}
+              <div
+                className={`grid grid-cols-3 gap-8 max-w-lg transition-all duration-1000 delay-700 ${
+                  isVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-10"
+                }`}
+              >
+                {stats.map((stat, index) => (
+                  <div key={index} className="text-left">
+                    <div
+                      className="text-2xl lg:text-3xl text-white mb-1"
+                      style={{
+                        fontWeight: 700,
+                      }}
+                    >
+                      {stat.number}
+                    </div>
+                    <div
+                      className="text-gray-300 text-sm font-medium"
+                      style={{ fontFamily: "'Montserrat', sans-serif" }}
+                    >
+                      {stat.text}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="text-center">
-          {/* Main Title */}
-          <h1
-            className={`text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 transition-all duration-1000 ${
-              isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-10"
-            }`}
-          >
-            <span className="block">LUMIA:</span>
-            <span className="block text-primary-gold">
-              {lang === "es" ? "Donde la Ciencia" : "Where Science"}
-            </span>
-            <span className="block">
-              {lang === "es" ? "y el Arte" : "and Art"}
-            </span>
-            <span className="block text-primary-gold">
-              {lang === "es" ? "Crean Sonrisas" : "Create Smiles"}
-            </span>
-            <span className="block">
-              {lang === "es" ? "Extraordinarias" : "Extraordinary"}
-            </span>
-          </h1>
-
-          {/* Subtitle */}
-          <p
-            className={`text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed transition-all duration-1000 delay-300 ${
-              isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-10"
-            }`}
-          >
-            {subtitle}
-          </p>
-
-          {/* CTAs */}
-          <div
-            className={`flex flex-col sm:flex-row gap-4 justify-center mb-16 transition-all duration-1000 delay-500 ${
-              isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-10"
-            }`}
-          >
-            <a
-              href={
-                lang === "es"
-                  ? "/servicios/diseno-de-sonrisa"
-                  : "/en/services/smile-design"
-              }
-              className="inline-flex items-center px-8 py-4 bg-gradient-gold text-white font-semibold rounded-lg shadow-gold hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-            >
-              {cta1Text}
-              <svg
-                className="ml-2 w-5 h-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </a>
-            <a
-              href={lang === "es" ? "/contacto" : "/en/contact"}
-              className="inline-flex items-center px-8 py-4 border-2 border-primary-gold text-primary-gold hover:bg-primary-gold hover:text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
-            >
-              {cta2Text}
-            </a>
-          </div>
-
-          {/* Stats */}
-          <div
-            className={`grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto transition-all duration-1000 delay-700 ${
-              isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-10"
-            }`}
-          >
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-gold/10 rounded-full mb-4">
-                  <stat.icon className="w-8 h-8 text-primary-gold" />
-                </div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-gray-600 font-medium">{stat.text}</div>
-              </div>
-            ))}
-          </div>
-        </div>
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
+        <ChevronDown className="w-6 h-6 text-primary-gold" />
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ChevronDown className="w-6 h-6 text-primary-gold" />
+      {/* Media Navigation Dots */}
+      <div className="absolute bottom-8 right-8 flex space-x-2 z-10">
+        {heroMedia.map((_, index) => (
+          <button
+            key={index}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              index === currentMediaIndex
+                ? "bg-primary-gold"
+                : "bg-white/50 hover:bg-white/70"
+            }`}
+            onClick={() => setCurrentMediaIndex(index)}
+          />
+        ))}
       </div>
     </section>
   );
