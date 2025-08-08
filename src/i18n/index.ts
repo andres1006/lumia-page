@@ -13,6 +13,7 @@ export const ui = {
         'nav.services': 'Servicios',
         'nav.gallery': 'Galería',
         'nav.contact': 'Contacto',
+        'nav.schedule-appointment': 'Programa tu Consulta',
         'nav.dental-tourism': 'Turismo Dental',
 
         // Common
@@ -27,11 +28,11 @@ export const ui = {
 
         // Home Page
         'home.hero.title': 'LUMIA: Donde la Ciencia y el Arte Crean Sonrisas Extraordinarias',
-        'home.hero.subtitle': 'Transformamos vidas a través de sonrisas perfectas con tecnología de vanguardia y atención personalizada de clase mundial',
-        'home.hero.cta1': 'Descubre Nuestros Diseños de Sonrisa',
+        'home.hero.subtitle': 'Una nueva sonrisa tu mejor versión',
+        'home.hero.cta1': 'Programa tu Consulta',
         'home.hero.cta2': 'Agenda tu Valoración Exclusiva',
 
-        'home.intro.title': 'LUMIA Odontología Especializada',
+        'home.intro.title': 'Odontología Especializada',
         'home.intro.subtitle': 'Excelencia, Innovación y Resultados Extraordinarios',
         'home.intro.description': 'En LUMIA, combinamos la precisión científica con la creatividad artística para crear sonrisas que no solo transforman tu apariencia, sino que revolucionan tu confianza y bienestar.',
 
@@ -103,6 +104,7 @@ export const ui = {
         'nav.services': 'Services',
         'nav.gallery': 'Gallery',
         'nav.contact': 'Contact',
+        'nav.schedule-appointment': 'Schedule Appointment',
         'nav.dental-tourism': 'Dental Tourism',
 
         // Common
@@ -118,7 +120,7 @@ export const ui = {
         // Home Page
         'home.hero.title': 'LUMIA: Where Science and Art Create Extraordinary Smiles',
         'home.hero.subtitle': 'We transform lives through perfect smiles with cutting-edge technology and world-class personalized care',
-        'home.hero.cta1': 'Discover Our Smile Designs',
+        'home.hero.cta1': 'Schedule Your Consultation',
         'home.hero.cta2': 'Schedule Your Exclusive Consultation',
 
         'home.intro.title': 'LUMIA Specialized Dentistry',

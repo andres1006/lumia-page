@@ -103,29 +103,6 @@ const mainServices = [
   },
 ];
 
-const specialtyServices = [
-  {
-    title: "Periodontics",
-    description: "Specialized treatment of gums and dental support structures.",
-    icon: "🌿",
-  },
-  {
-    title: "Endodontics",
-    description: "Root canal treatments with cutting-edge technology.",
-    icon: "🔬",
-  },
-  {
-    title: "Oral Surgery",
-    description: "Specialized surgical procedures in the oral cavity.",
-    icon: "⚕️",
-  },
-  {
-    title: "Pediatric Dentistry",
-    description: "Specialized dental care for children and adolescents.",
-    icon: "👶",
-  },
-];
-
 const process = [
   {
     step: "1",
@@ -268,36 +245,6 @@ const process = [
                     Learn More
                   </a>
                 </div>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-    </section>
-
-    <!-- Specialty Services Section -->
-    <section class="py-20 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Additional Specialties
-          </h2>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Complementary services for comprehensive dental care
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {
-            specialtyServices.map((service, index) => (
-              <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 text-center group">
-                <div class="w-16 h-16 bg-primary-gold/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-gold/20 transition-colors duration-300">
-                  <span class="text-3xl">{service.icon}</span>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-gold transition-colors">
-                  {service.title}
-                </h3>
-                <p class="text-gray-600 text-sm">{service.description}</p>
               </div>
             ))
           }

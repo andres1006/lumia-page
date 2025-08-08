@@ -17,7 +17,7 @@ const team = [
       "Certificación en Digital Smile Design",
     ],
     experience: "15+ años",
-    image: "👩‍⚕️",
+    image: "/img-lumia/IMG_9959.jpg",
   },
   {
     name: "Dr. Carlos Andrés Moreno",
@@ -28,7 +28,7 @@ const team = [
       "Advanced Implantology Certificate - ITI",
     ],
     experience: "12+ años",
-    image: "👨‍⚕️",
+    image: "/img-lumia/IMG_5830.jpg",
   },
   {
     name: "Dra. Ana Sofía Valencia",
@@ -39,7 +39,7 @@ const team = [
       "Certificación en Ortodoncia Lingual",
     ],
     experience: "8+ años",
-    image: "👩‍⚕️",
+    image: "/img-lumia/IMG_5726.jpg",
   },
 ];
 
@@ -88,76 +88,112 @@ const certifications = [
 >
   <Header />
 
-  <main class="pt-20">
+  <main>
     <!-- Hero Section -->
     <section
-      class="py-20 bg-gradient-to-br from-primary-gold to-primary-gold-dark text-white"
+      class="relative h-screen flex items-center justify-center overflow-hidden"
     >
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
-          Conoce LUMIA
+      <div class="absolute inset-0">
+        <img
+          src="/img-lumia/IMG_9959.jpg"
+          alt="LUMIA Clinic"
+          class="w-full h-full object-cover grayscale brightness-50"
+        />
+        <div class="absolute inset-0 bg-black/40"></div>
+      </div>
+
+      <div
+        class="relative z-10 text-center text-white max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
+        <h1 class="text-5xl md:text-7xl font-light mb-8 tracking-wide">
+          {lang === "es" ? "LUMIA" : "LUMIA"}
         </h1>
         <p
-          class="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto animate-slide-up"
+          class="text-xl md:text-2xl mb-12 opacity-90 font-light tracking-wide"
         >
-          Más de 15 años transformando sonrisas y cambiando vidas en el corazón
-          del Eje Cafetero
+          {
+            lang === "es"
+              ? "Donde la Ciencia y el Arte Crean Sonrisas Extraordinarias"
+              : "Where Science and Art Create Extraordinary Smiles"
+          }
         </p>
-        <div class="animate-scale-in">
-          <div
-            class="inline-flex items-center px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full"
-          >
-            <span class="text-lg font-semibold"
-              >Desde 2008 • 2,500+ Sonrisas Transformadas</span
-            >
+        <div
+          class="flex flex-col sm:flex-row gap-6 justify-center items-center"
+        >
+          <div class="text-center">
+            <div class="text-3xl font-light mb-2">15+</div>
+            <div class="text-sm opacity-80">Años de Experiencia</div>
+          </div>
+          <div class="w-px h-12 bg-white/30 hidden sm:block"></div>
+          <div class="text-center">
+            <div class="text-3xl font-light mb-2">2,500+</div>
+            <div class="text-sm opacity-80">Sonrisas Transformadas</div>
+          </div>
+          <div class="w-px h-12 bg-white/30 hidden sm:block"></div>
+          <div class="text-center">
+            <div class="text-3xl font-light mb-2">100%</div>
+            <div class="text-sm opacity-80">Satisfacción</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Our Story Section -->
-    <section class="py-20 bg-white">
+    <!-- Story Section -->
+    <section class="py-32 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
-              Nuestra Historia
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div class="space-y-8">
+            <div
+              class="text-sm font-medium text-amber-600 tracking-widest uppercase"
+            >
+              {lang === "es" ? "Nuestra Historia" : "Our Story"}
+            </div>
+            <h2
+              class="text-4xl md:text-5xl font-light text-gray-900 leading-tight"
+            >
+              {
+                lang === "es"
+                  ? "Más de una década transformando sonrisas y cambiando vidas"
+                  : "Over a decade transforming smiles and changing lives"
+              }
             </h2>
             <div class="space-y-6 text-lg text-gray-600 leading-relaxed">
               <p>
-                LUMIA nació en 2008 con una visión clara: <strong
-                  class="text-primary-gold"
-                  >revolucionar la odontología estética en Colombia</strong
-                >
-                mediante la combinación perfecta entre ciencia avanzada y arte especializado.
+                {
+                  lang === "es"
+                    ? "LUMIA nació en 2008 con una visión clara: revolucionar la odontología estética en Colombia mediante la combinación perfecta entre ciencia avanzada y arte especializado."
+                    : "LUMIA was born in 2008 with a clear vision: to revolutionize aesthetic dentistry in Colombia through the perfect combination of advanced science and specialized art."
+                }
               </p>
               <p>
-                Fundada por la Dra. María Elena Ruiz en Manizales, nuestra
-                clínica ha crecido hasta convertirse en referente nacional en
-                diseño de sonrisa e implantología, expandiéndonos a Pereira en
-                2015 para servir mejor al Eje Cafetero.
+                {
+                  lang === "es"
+                    ? "Fundada por la Dra. María Elena Ruiz en Manizales, nuestra clínica ha crecido hasta convertirse en referente nacional en diseño de sonrisa e implantología."
+                    : "Founded by Dr. María Elena Ruiz in Manizales, our clinic has grown to become a national reference in smile design and implantology."
+                }
               </p>
               <p>
-                Lo que comenzó como un pequeño consultorio con grandes sueños,
-                hoy es una clínica de vanguardia que recibe pacientes de toda
-                Colombia y el extranjero, especialmente de Estados Unidos,
-                buscando tratamientos de clase mundial a precios justos.
+                {
+                  lang === "es"
+                    ? "Lo que comenzó como un pequeño consultorio con grandes sueños, hoy es una clínica de vanguardia que recibe pacientes de toda Colombia y el extranjero."
+                    : "What began as a small office with big dreams, today is a cutting-edge clinic that receives patients from all over Colombia and abroad."
+                }
               </p>
             </div>
           </div>
+
           <div class="relative">
+            <div class="aspect-square bg-gray-100 rounded-2xl overflow-hidden">
+              <img
+                src="/img-lumia/IMG_5830.jpg"
+                alt="LUMIA History"
+                class="w-full h-full object-cover"
+              />
+            </div>
             <div
-              class="aspect-square bg-gradient-gold rounded-2xl shadow-luxury flex items-center justify-center"
+              class="absolute -bottom-6 -right-6 w-32 h-32 bg-amber-600 rounded-full flex items-center justify-center"
             >
-              <div class="text-center text-white">
-                <div
-                  class="w-32 h-32 bg-white/20 rounded-full mx-auto mb-6 flex items-center justify-center"
-                >
-                  <span class="text-6xl">🏥</span>
-                </div>
-                <p class="text-xl font-medium">Historia LUMIA</p>
-                <p class="text-sm opacity-80 mt-2">2008 - Presente</p>
-              </div>
+              <span class="text-white text-2xl font-light">2008</span>
             </div>
           </div>
         </div>
@@ -165,52 +201,32 @@ const certifications = [
     </section>
 
     <!-- Mission & Vision Section -->
-    <section class="py-20 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Misión y Visión
-          </h2>
+    <section class="bg-white">
+      <div class="relative">
+        <div class="h-64 md:h-80 lg:h-96 bg-gray-200 overflow-hidden">
+          <img
+            src="/img-lumia/IMG_5726.jpg"
+            alt="LUMIA Purpose"
+            class="w-full h-full object-cover grayscale brightness-50"
+          />
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Text Overlay -->
+        <div class="absolute inset-0 flex items-center justify-center">
           <div
-            class="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-primary-gold"
+            class="text-center text-white max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
           >
-            <div class="flex items-center mb-6">
-              <div
-                class="w-16 h-16 bg-gradient-gold rounded-full flex items-center justify-center mr-4"
-              >
-                <span class="text-3xl">🎯</span>
-              </div>
-              <h3 class="text-3xl font-bold text-gray-900">Misión</h3>
-            </div>
-            <p class="text-lg text-gray-600 leading-relaxed">
-              Transformar sonrisas y cambiar vidas a través de tratamientos
-              odontológicos de excelencia, utilizando tecnología de vanguardia y
-              brindando una experiencia personalizada que supere las
-              expectativas de nuestros pacientes, mientras promovemos el turismo
-              dental responsable en Colombia.
-            </p>
-          </div>
-
-          <div
-            class="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-primary-gold"
-          >
-            <div class="flex items-center mb-6">
-              <div
-                class="w-16 h-16 bg-gradient-gold rounded-full flex items-center justify-center mr-4"
-              >
-                <span class="text-3xl">🌟</span>
-              </div>
-              <h3 class="text-3xl font-bold text-gray-900">Visión</h3>
-            </div>
-            <p class="text-lg text-gray-600 leading-relaxed">
-              Ser reconocidos como la clínica odontológica líder en
-              Latinoamérica para tratamientos estéticos y restaurativos, siendo
-              el destino preferido para pacientes nacionales e internacionales
-              que buscan sonrisas perfectas con los más altos estándares de
-              calidad y calidez humana.
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-light mb-3 sm:mb-6">
+              {lang === "es" ? "Nuestro Propósito" : "Our Purpose"}
+            </h2>
+            <p
+              class="text-xs sm:text-sm md:text-base leading-relaxed mb-3 sm:mb-6 opacity-95 max-w-2xl mx-auto"
+            >
+              {
+                lang === "es"
+                  ? "Transformar sonrisas y cambiar vidas a través de tratamientos odontológicos de excelencia, utilizando tecnología de vanguardia y brindando una experiencia personalizada que supere las expectativas de nuestros pacientes."
+                  : "Transform smiles and change lives through excellence in dental treatments, using cutting-edge technology and providing a personalized experience that exceeds our patients' expectations."
+              }
             </p>
           </div>
         </div>
@@ -218,72 +234,47 @@ const certifications = [
     </section>
 
     <!-- Values Section -->
-    <section class="py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Nuestros Valores
+    <section class="pt-32 bg-white">
+      <div class="px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20">
+          <div
+            class="text-sm font-medium text-amber-600 tracking-widest uppercase mb-4"
+          >
+            {lang === "es" ? "Nuestros Valores" : "Our Values"}
+          </div>
+          <h2 class="text-4xl md:text-5xl font-light text-gray-900 mb-8">
+            {lang === "es" ? "Los Pilares de LUMIA" : "The Pillars of LUMIA"}
           </h2>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Los pilares que guían cada decisión y cada tratamiento en LUMIA
+            {
+              lang === "es"
+                ? "Los principios que guían cada decisión y cada tratamiento"
+                : "The principles that guide every decision and every treatment"
+            }
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div
+          class="grid grid-cols-1 md:grid-cols-3 gap-0 -mx-4 sm:-mx-6 lg:-mx-8"
+        >
           {
-            values.map((value, index) => (
-              <div class="text-center group hover:transform hover:scale-105 transition-all duration-300">
-                <div class="w-20 h-20 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-6 group-hover:shadow-gold transition-all duration-300">
-                  <span class="text-3xl">{value.icon}</span>
+            values.slice(0, 3).map((value, index) => (
+              <div class="relative group">
+                <div class="h-64 md:h-80 lg:h-96 bg-gray-200 overflow-hidden">
+                  <img
+                    src={`/img-lumia/IMG_${index === 0 ? "9959" : index === 1 ? "5830" : "5726"}.jpg`}
+                    alt={value.title}
+                    class="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-75 transition-all duration-300"
+                  />
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary-gold transition-colors">
-                  {value.title}
-                </h3>
-                <p class="text-gray-600 leading-relaxed">{value.description}</p>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="py-20 bg-gradient-dark text-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-6">
-            Nuestro Equipo Especializado
-          </h2>
-          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-            Profesionales altamente calificados con formación internacional
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {
-            team.map((member, index) => (
-              <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/15 transition-all duration-300">
-                <div class="w-24 h-24 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span class="text-4xl">{member.image}</span>
-                </div>
-                <h3 class="text-2xl font-bold mb-2">{member.name}</h3>
-                <p class="text-primary-gold font-semibold mb-4">
-                  {member.title}
-                </p>
-                <div class="space-y-3 text-gray-300">
-                  <p class="text-sm">
-                    <strong>Formación:</strong> {member.education}
-                  </p>
-                  <p class="text-sm">
-                    <strong>Experiencia:</strong> {member.experience}
-                  </p>
-                  <div>
-                    <p class="text-sm font-semibold mb-2">Certificaciones:</p>
-                    <ul class="text-xs space-y-1">
-                      {member.certifications.map((cert) => (
-                        <li>• {cert}</li>
-                      ))}
-                    </ul>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="text-center text-white max-w-xs px-4">
+                    <h3 class="text-xl md:text-2xl font-light mb-4 group-hover:text-amber-400 transition-colors">
+                      {value.title}
+                    </h3>
+                    <p class="text-sm md:text-base leading-relaxed opacity-90">
+                      {value.description}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -293,39 +284,70 @@ const certifications = [
       </div>
     </section>
 
-    <!-- Certifications Section -->
-    <section class="py-20 bg-gray-50">
+    <!-- Team Section -->
+    <section class="py-32 bg-black text-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Certificaciones y Reconocimientos
+        <div class="text-center mb-20">
+          <div
+            class="text-sm font-medium text-amber-400 tracking-widest uppercase mb-4"
+          >
+            {lang === "es" ? "Nuestro Equipo" : "Our Team"}
+          </div>
+          <h2 class="text-4xl md:text-5xl font-light mb-8">
+            {
+              lang === "es"
+                ? "Especialistas de Excelencia"
+                : "Excellence Specialists"
+            }
           </h2>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Avalados por las instituciones más prestigiosas del sector
-            odontológico
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            {
+              lang === "es"
+                ? "Profesionales altamente calificados con formación internacional"
+                : "Highly qualified professionals with international training"
+            }
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {
-            certifications.map((cert, index) => (
-              <div class="bg-white rounded-xl p-6 shadow-lg flex items-center hover:shadow-xl transition-all duration-300">
-                <div class="w-12 h-12 bg-primary-gold/20 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                  <svg
-                    class="w-6 h-6 text-primary-gold"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
+            team.map((member, index) => (
+              <div class="group">
+                <div class="aspect-square bg-gray-800 rounded-2xl overflow-hidden mb-8 group-hover:scale-105 transition-transform duration-300">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+                  />
                 </div>
-                <p class="font-semibold text-gray-900">{cert}</p>
+                <div class="text-center">
+                  <h3 class="text-2xl font-light mb-3">{member.name}</h3>
+                  <p class="text-amber-400 font-medium mb-6">{member.title}</p>
+                  <div class="space-y-4 text-gray-300 text-sm">
+                    <p>
+                      <strong class="text-white">
+                        {lang === "es" ? "Formación:" : "Education:"}
+                      </strong>{" "}
+                      {member.education}
+                    </p>
+                    <p>
+                      <strong class="text-white">
+                        {lang === "es" ? "Experiencia:" : "Experience:"}
+                      </strong>{" "}
+                      {member.experience}
+                    </p>
+                    <div>
+                      <p class="font-medium text-white mb-2">
+                        {lang === "es" ? "Certificaciones:" : "Certifications:"}
+                      </p>
+                      <ul class="space-y-1 text-xs">
+                        {member.certifications.map((cert) => (
+                          <li class="text-gray-400">• {cert}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
               </div>
             ))
           }
@@ -333,87 +355,31 @@ const certifications = [
       </div>
     </section>
 
-    <!-- Technology Section -->
-    <section class="py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Tecnología de Vanguardia
-          </h2>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Equipos de última generación para resultados excepcionales
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div class="text-center">
-            <div
-              class="w-16 h-16 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-4"
-            >
-              <span class="text-2xl">🖥️</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 mb-2">
-              Digital Smile Design
-            </h3>
-            <p class="text-gray-600 text-sm">Diseño digital de sonrisa 3D</p>
-          </div>
-          <div class="text-center">
-            <div
-              class="w-16 h-16 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-4"
-            >
-              <span class="text-2xl">📷</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 mb-2">Tomografía 3D</h3>
-            <p class="text-gray-600 text-sm">
-              Diagnóstico por imágenes avanzado
-            </p>
-          </div>
-          <div class="text-center">
-            <div
-              class="w-16 h-16 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-4"
-            >
-              <span class="text-2xl">⚡</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 mb-2">Láser Dental</h3>
-            <p class="text-gray-600 text-sm">
-              Tratamientos mínimamente invasivos
-            </p>
-          </div>
-          <div class="text-center">
-            <div
-              class="w-16 h-16 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-4"
-            >
-              <span class="text-2xl">🦷</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 mb-2">CAD/CAM</h3>
-            <p class="text-gray-600 text-sm">Restauraciones en una sola cita</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- CTA Section -->
-    <section class="py-20 bg-primary-gold text-white">
+    <section class="py-32 bg-white text-gray-900">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6">
-          ¿Listo para Conocernos?
+        <h2 class="text-4xl md:text-5xl font-light mb-8">
+          {lang === "es" ? "¿Listo para Conocernos?" : "Ready to Meet Us?"}
         </h2>
-        <p class="text-xl mb-12 opacity-90">
-          Agenda tu valoración personalizada y descubre por qué miles de
-          pacientes confían en LUMIA
+        <p class="text-xl mb-12 text-gray-600">
+          {
+            lang === "es"
+              ? "Agenda tu valoración personalizada y descubre por qué miles de pacientes confían en LUMIA"
+              : "Schedule your personalized consultation and discover why thousands of patients trust LUMIA"
+          }
         </p>
         <div class="flex flex-col sm:flex-row gap-6 justify-center">
           <a
-            href="/contacto"
-            class="inline-flex items-center px-10 py-5 bg-white text-primary-gold font-bold rounded-lg shadow-luxury hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            href={lang === "es" ? "/contacto" : "/en/contact"}
+            class="inline-flex items-center px-10 py-5 bg-amber-600 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
           >
-            Agendar Cita
+            {lang === "es" ? "Agendar Cita" : "Schedule Appointment"}
           </a>
           <a
             href="https://wa.me/573000000000"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center px-10 py-5 border-3 border-white text-white hover:bg-white hover:text-primary-gold font-bold rounded-lg transition-all duration-300"
+            class="inline-flex items-center px-10 py-5 border-2 border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white font-medium rounded-lg transition-all duration-300"
           >
             <svg class="mr-3 w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
               <path
@@ -429,4 +395,3 @@ const certifications = [
 
   <Footer />
 </Layout>
-

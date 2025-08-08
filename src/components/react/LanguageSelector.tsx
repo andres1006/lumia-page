@@ -81,7 +81,7 @@ export default function LanguageSelector({ lang }: LanguageSelectorProps) {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 px-3 py-2 text-gray-700 hover:text-primary-gold border border-gray-200 hover:border-primary-gold rounded-lg transition-all duration-200 bg-white"
+        className="flex items-center space-x-2 px-3 py-2 text-black hover:text-primary-gold border border-gray-200 hover:border-primary-gold rounded-lg transition-all duration-200 bg-white"
         aria-label="Selector de idioma"
       >
         <Globe className="w-4 h-4" />

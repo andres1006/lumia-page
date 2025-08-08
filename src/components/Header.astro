@@ -7,37 +7,15 @@ const t = useTranslations(lang);
 ---
 
 <header
-  class="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-md transition-all duration-500 ease-in-out"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out"
   id="header"
 >
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-20">
+    <div class="flex justify-between items-center h-16">
       <!-- Logo -->
       <div class="flex-shrink-0">
-        <a
-          href={lang === "es" ? "/" : "/en"}
-          class="flex items-center space-x-3 group"
-        >
-          <div
-            class="w-10 h-10 bg-gradient-gold rounded-lg flex items-center justify-center shadow-gold transition-all duration-300 group-hover:scale-110"
-          >
-            <span class="text-white font-bold text-lg">L</span>
-          </div>
-          <div class="hidden sm:block">
-            <span
-              class="text-xl font-bold text-white group-hover:text-primary-gold transition-colors duration-300"
-              id="logo-text"
-            >
-              LUMIA
-            </span>
-            <div class="text-xs text-white/90 -mt-1" id="logo-subtitle">
-              {
-                lang === "es"
-                  ? "Odontología Especializada"
-                  : "Specialized Dentistry"
-              }
-            </div>
-          </div>
+        <a href={lang === "es" ? "/" : "/en"} class="flex items-center">
+          <img src="/logo-lumia.png" alt="Lumia" class="w-32 h-32" />
         </a>
       </div>
 
@@ -45,82 +23,57 @@ const t = useTranslations(lang);
       <div class="hidden lg:flex items-center space-x-6">
         <a
           href={lang === "es" ? "/" : "/en"}
-          class="nav-link text-white hover:text-primary-gold font-medium transition-all duration-300 relative group py-2"
+          class="text-white hover:text-gray-200 font-medium transition-colors duration-200 hover:font-extrabold"
         >
           {t("nav.home")}
-          <span
-            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-gold transition-all duration-300 group-hover:w-full"
-          ></span>
         </a>
         <a
           href={lang === "es" ? "/nosotros" : "/en/about"}
-          class="nav-link text-white hover:text-primary-gold font-medium transition-all duration-300 relative group py-2"
+          class="text-white hover:text-gray-200 font-medium transition-colors duration-200 hover:font-extrabold"
         >
           {t("nav.about")}
-          <span
-            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-gold transition-all duration-300 group-hover:w-full"
-          ></span>
         </a>
         <a
           href={lang === "es" ? "/servicios" : "/en/services"}
-          class="nav-link text-white hover:text-primary-gold font-medium transition-all duration-300 relative group py-2"
+          class="text-white hover:text-gray-200 font-medium transition-colors duration-200 hover:font-extrabold"
         >
           {t("nav.services")}
-          <span
-            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-gold transition-all duration-300 group-hover:w-full"
-          ></span>
         </a>
         <a
-          href={lang === "es" ? "/casos-de-exito" : "/en/gallery"}
-          class="nav-link text-white hover:text-primary-gold font-medium transition-all duration-300 relative group py-2"
+          href={lang === "es" ? "/galeria" : "/en/gallery"}
+          class="text-white hover:text-gray-200 font-medium transition-colors duration-200 hover:font-extrabold"
         >
           {t("nav.gallery")}
-          <span
-            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-gold transition-all duration-300 group-hover:w-full"
-          ></span>
         </a>
         <a
           href={lang === "es" ? "/turismo-odontologico" : "/en/dental-tourism"}
-          class="nav-link text-white hover:text-primary-gold font-medium transition-all duration-300 relative group py-2"
+          class="text-white hover:text-gray-200 font-medium transition-colors duration-200 hover:font-extrabold"
         >
           {t("nav.dental-tourism")}
-          <span
-            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-gold transition-all duration-300 group-hover:w-full"
-          ></span>
         </a>
         <a
           href={lang === "es" ? "/contacto" : "/en/contact"}
-          class="nav-link text-white hover:text-primary-gold font-medium transition-all duration-300 relative group py-2"
+          class="text-white hover:text-gray-200 font-medium transition-colors duration-200 underline underline-offset-4 hover:font-extrabold"
         >
-          {t("nav.contact")}
-          <span
-            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-gold transition-all duration-300 group-hover:w-full"
-          ></span>
+          {t("common.schedule-appointment")}
         </a>
       </div>
 
-      <!-- CTAs and Language Selector -->
+      <!-- Right side -->
       <div class="flex items-center space-x-3">
+        <!-- Language Selector -->
         <div class="language-selector">
           <LanguageSelector lang={lang} client:load />
         </div>
 
-        <a
-          href={lang === "es" ? "/contacto" : "/en/contact"}
-          class="hidden sm:inline-flex items-center px-5 py-2 border border-white/30 text-white hover:bg-primary-gold hover:border-primary-gold hover:text-gray-900 font-medium rounded-lg transition-all duration-300 hover:shadow-gold backdrop-blur-sm"
-          id="cta-button"
-        >
-          {t("common.schedule-appointment")}
-        </a>
-
         <!-- Mobile menu button -->
         <button
-          class="lg:hidden p-2 rounded-md text-white hover:text-primary-gold hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-primary-gold transition-all duration-300"
+          class="lg:hidden p-2 rounded-md text-white hover:text-gray-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/50 transition-colors duration-200"
           aria-label="Abrir menú"
           id="mobile-menu-button"
         >
           <svg
-            class="w-6 h-6 transform transition-transform duration-300"
+            class="w-6 h-6"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -138,53 +91,44 @@ const t = useTranslations(lang);
     </div>
 
     <!-- Mobile Navigation -->
-    <div
-      class="lg:hidden hidden transform transition-all duration-300 ease-in-out"
-      id="mobile-menu"
-    >
+    <div class="lg:hidden hidden" id="mobile-menu">
       <div
-        class="px-2 pt-2 pb-3 space-y-1 bg-black/90 backdrop-blur-lg rounded-b-2xl border-t border-white/10 mt-2"
+        class="px-2 pt-2 pb-3 space-y-1 bg-black/80 backdrop-blur-sm border-t border-white/20"
       >
         <a
           href={lang === "es" ? "/" : "/en"}
-          class="block px-3 py-3 text-white/90 hover:text-primary-gold hover:bg-white/10 rounded-lg font-medium transition-all duration-300"
+          class="block px-3 py-2 text-white hover:text-gray-200 hover:bg-white/10 rounded-md font-medium transition-colors duration-200"
         >
           {t("nav.home")}
         </a>
         <a
           href={lang === "es" ? "/nosotros" : "/en/about"}
-          class="block px-3 py-3 text-white/90 hover:text-primary-gold hover:bg-white/10 rounded-lg font-medium transition-all duration-300"
+          class="block px-3 py-2 text-white hover:text-gray-200 hover:bg-white/10 rounded-md font-medium transition-colors duration-200"
         >
           {t("nav.about")}
         </a>
         <a
           href={lang === "es" ? "/servicios" : "/en/services"}
-          class="block px-3 py-3 text-white/90 hover:text-primary-gold hover:bg-white/10 rounded-lg font-medium transition-all duration-300"
+          class="block px-3 py-2 text-white hover:text-gray-200 hover:bg-white/10 rounded-md font-medium transition-colors duration-200"
         >
           {t("nav.services")}
         </a>
         <a
-          href={lang === "es" ? "/casos-de-exito" : "/en/gallery"}
-          class="block px-3 py-3 text-white/90 hover:text-primary-gold hover:bg-white/10 rounded-lg font-medium transition-all duration-300"
+          href={lang === "es" ? "/galeria" : "/en/gallery"}
+          class="block px-3 py-2 text-white hover:text-gray-200 hover:bg-white/10 rounded-md font-medium transition-colors duration-200"
         >
           {t("nav.gallery")}
         </a>
         <a
           href={lang === "es" ? "/turismo-odontologico" : "/en/dental-tourism"}
-          class="block px-3 py-3 text-white/90 hover:text-primary-gold hover:bg-white/10 rounded-lg font-medium transition-all duration-300"
+          class="block px-3 py-2 text-white hover:text-gray-200 hover:bg-white/10 rounded-md font-medium transition-colors duration-200"
         >
           {t("nav.dental-tourism")}
         </a>
-        <a
-          href={lang === "es" ? "/contacto" : "/en/contact"}
-          class="block px-3 py-3 text-white/90 hover:text-primary-gold hover:bg-white/10 rounded-lg font-medium transition-all duration-300"
-        >
-          {t("nav.contact")}
-        </a>
-        <div class="pt-3">
+        <div class="pt-2">
           <a
             href={lang === "es" ? "/contacto" : "/en/contact"}
-            class="block mx-3 px-4 py-3 bg-gradient-gold text-white text-center font-medium rounded-lg shadow-gold hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            class="block mx-3 px-4 py-2 bg-white text-black text-center font-medium rounded-md hover:bg-gray-100 transition-colors duration-200"
           >
             {t("common.schedule-appointment")}
           </a>
@@ -195,76 +139,51 @@ const t = useTranslations(lang);
 </header>
 
 <style>
-  /* Header transition styles */
+  /* Header scroll styles */
   .header-scrolled {
-    background: rgba(0, 0, 0, 0.3) !important;
-    backdrop-filter: blur(25px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   }
 
-  .header-scrolled #logo-text {
-    color: #ffffff !important;
+  .header-scrolled .text-white {
+    color: #000000 !important;
   }
 
-  .header-scrolled #logo-subtitle {
-    color: rgba(255, 255, 255, 0.9) !important;
+  .header-scrolled .hover\:text-gray-200:hover {
+    color: #374151 !important;
   }
 
-  .header-scrolled .nav-link {
-    color: #ffffff !important;
+  .header-scrolled .hover\:bg-white\/10:hover {
+    background-color: rgba(0, 0, 0, 0.05) !important;
   }
 
-  .header-scrolled .nav-link:hover {
-    color: #d4af37 !important;
+  .header-scrolled .focus\:ring-white\/50:focus {
+    --tw-ring-color: rgba(0, 0, 0, 0.2) !important;
   }
 
-  .header-scrolled #cta-button {
-    color: #ffffff !important;
-    border-color: rgba(255, 255, 255, 0.4) !important;
-    background: rgba(255, 255, 255, 0.1) !important;
+  .header-scrolled #mobile-menu {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border-color: rgba(0, 0, 0, 0.1) !important;
   }
 
-  .header-scrolled #cta-button:hover {
-    background-color: #d4af37 !important;
-    color: white !important;
-    border-color: #d4af37 !important;
+  .header-scrolled #mobile-menu .text-white {
+    color: #000000 !important;
   }
 
-  .header-scrolled #mobile-menu-button {
-    color: #ffffff !important;
+  .header-scrolled #mobile-menu .hover\:text-gray-200:hover {
+    color: #374151 !important;
   }
 
-  .header-scrolled #mobile-menu-button:hover {
-    color: #d4af37 !important;
-    background-color: rgba(255, 255, 255, 0.15) !important;
-  }
-
-  /* Mobile menu animation */
-  #mobile-menu.show {
-    display: block;
-    animation: slideDown 0.3s ease-out;
-  }
-
-  @keyframes slideDown {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Hamburger to X animation */
-  #menu-icon.open {
-    transform: rotate(90deg);
+  .header-scrolled #mobile-menu .hover\:bg-white\/10:hover {
+    background-color: rgba(0, 0, 0, 0.05) !important;
   }
 </style>
 
 <script>
-  // Mobile menu toggle with smooth animation
+  // Mobile menu toggle
   document.addEventListener("DOMContentLoaded", function () {
     const button = document.getElementById("mobile-menu-button");
     const menu = document.getElementById("mobile-menu");
@@ -277,13 +196,9 @@ const t = useTranslations(lang);
 
         if (isHidden) {
           menu.classList.remove("hidden");
-          menu.classList.add("show");
-          icon.classList.add("open");
           hamburgerIcon.setAttribute("d", "M6 18L18 6M6 6l12 12"); // X icon
         } else {
           menu.classList.add("hidden");
-          menu.classList.remove("show");
-          icon.classList.remove("open");
           hamburgerIcon.setAttribute("d", "M4 6h16M4 12h16M4 18h16"); // Hamburger icon
         }
       });
@@ -293,14 +208,12 @@ const t = useTranslations(lang);
         const target = event.target as HTMLElement;
         if (!button.contains(target) && !menu.contains(target)) {
           menu.classList.add("hidden");
-          menu.classList.remove("show");
-          icon.classList.remove("open");
           hamburgerIcon.setAttribute("d", "M4 6h16M4 12h16M4 18h16");
         }
       });
     }
 
-    // Enhanced header scroll behavior
+    // Header scroll behavior
     const header = document.getElementById("header");
     let ticking = false;
 

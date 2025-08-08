@@ -6,6 +6,7 @@ interface ServiceCardProps {
   description: string;
   icon: string;
   href: string;
+  imageBackground?: string;
   featured?: boolean;
   lang: "es" | "en";
 }
@@ -15,6 +16,7 @@ export default function ServiceCard({
   description,
   icon,
   href,
+  imageBackground,
   featured = false,
   lang,
 }: ServiceCardProps) {
@@ -33,10 +35,13 @@ export default function ServiceCard({
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-50">
         <div
-          className="absolute inset-0"
-          style={{ backgroundImage: `url("${patternUrl}")` }}
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url("${imageBackground}")`,
+            opacity: 0.5,
+          }}
         ></div>
       </div>
 
