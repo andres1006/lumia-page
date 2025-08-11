@@ -62,19 +62,32 @@ const serviceDetails = {
 
   beforeAfter: [
     {
-      before: "https://via.placeholder.com/400x300/f3f4f6/9ca3af?text=Antes+1",
-      after: "https://via.placeholder.com/400x300/d4af37/ffffff?text=Después+1",
+      before: "/optimized-images/img-lumia/antes-1-optimized.jpg",
+      after: "/optimized-images/img-lumia/cliente-final-1-optimized.jpg",
       case: "Caso 1: Sonrisa Gingival",
     },
     {
-      before: "https://via.placeholder.com/400x300/f3f4f6/9ca3af?text=Antes+2",
-      after: "https://via.placeholder.com/400x300/d4af37/ffffff?text=Después+2",
+      before: "/optimized-images/img-lumia/antes-despues-1-optimized.jpg",
+      after: "/optimized-images/img-lumia/cliente-final-2-optimized.jpg",
       case: "Caso 2: Espacios Interdentales",
     },
     {
-      before: "https://via.placeholder.com/400x300/f3f4f6/9ca3af?text=Antes+3",
-      after: "https://via.placeholder.com/400x300/d4af37/ffffff?text=Después+3",
+      before: "/optimized-images/img-lumia/antes-despues-2-optimized.jpg",
+      after: "/optimized-images/img-lumia/cliente-final-3-optimized.jpg",
       case: "Caso 3: Decoloración Severa",
+    },
+    {
+      before:
+        "/optimized-images/img-lumia/diseno-ceramica/IMG_0705-optimized.jpg",
+      after:
+        "/optimized-images/img-lumia/diseno-ceramica/IMG_1034-optimized.jpg",
+      case: "Caso 4: Diseño en Cerámica",
+    },
+    {
+      before:
+        "/optimized-images/img-lumia/diseno-recina/IMG_1163-optimized.jpg",
+      after: "/optimized-images/img-lumia/diseno-recina/IMG_1322-optimized.jpg",
+      case: "Caso 5: Diseño en Resina",
     },
   ],
 
@@ -191,7 +204,7 @@ const testimonials = [
               class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-500"
             >
               <img
-                src="https://via.placeholder.com/500x400/ffffff/d4af37?text=Diseño+de+Sonrisa+3D"
+                src="/optimized-images/img-lumia/cliente-final-4-optimized.jpg"
                 alt="Diseño de Sonrisa Digital"
                 class="rounded-xl shadow-2xl"
                 loading="lazy"
@@ -247,7 +260,7 @@ const testimonials = [
               class="aspect-video bg-gray-100 rounded-2xl overflow-hidden shadow-xl"
             >
               <img
-                src="https://via.placeholder.com/600x400/f3f4f6/9ca3af?text=Tecnología+DSD"
+                src="/optimized-images/img-lumia/cliente-final-5-optimized.jpg"
                 alt="Tecnología Digital Smile Design"
                 class="w-full h-full object-cover"
                 loading="lazy"
@@ -300,7 +313,7 @@ const testimonials = [
                 <div class="flex-1">
                   <div class="aspect-video bg-gradient-to-br from-primary-gold/10 to-primary-gold/20 rounded-2xl flex items-center justify-center">
                     <img
-                      src={`https://via.placeholder.com/500x300/d4af37/ffffff?text=Paso+${step.step}`}
+                      src={`/optimized-images/img-lumia/cliente-final-${parseInt(step.step) + 5}-optimized.jpg`}
                       alt={step.title}
                       class="rounded-xl shadow-lg"
                       loading="lazy"
@@ -330,33 +343,33 @@ const testimonials = [
           {
             serviceDetails.beforeAfter.map((comparison, index) => (
               <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div class="relative group">
-                  <div class="before-after-container">
-                    <img
-                      src={comparison.before}
-                      alt="Antes"
-                      class="before-image w-full h-64 object-cover transition-opacity duration-700"
-                    />
-                    <img
-                      src={comparison.after}
-                      alt="Después"
-                      class="after-image w-full h-64 object-cover absolute inset-0 opacity-0 transition-opacity duration-700"
-                    />
-                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <span class="text-white font-semibold">
-                        Hover para ver resultado
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div class="p-6">
-                  <h3 class="text-lg font-bold text-gray-900 mb-2">
+                <div class="p-4">
+                  <h3 class="text-lg font-bold text-gray-900 mb-4 text-center">
                     {comparison.case}
                   </h3>
-                  <div class="flex justify-between text-sm text-gray-500">
-                    <span>Antes</span>
-                    <span>→</span>
-                    <span>Después</span>
+                  <div class="space-y-4">
+                    <div>
+                      <h4 class="text-sm font-semibold text-gray-600 mb-2">
+                        Antes
+                      </h4>
+                      <img
+                        src={comparison.before}
+                        alt="Antes"
+                        class="w-full h-48 object-cover rounded-lg border-2 border-gray-200"
+                        onerror="this.style.border='2px solid red'; this.alt='ERROR: Imagen no encontrada';"
+                      />
+                    </div>
+                    <div>
+                      <h4 class="text-sm font-semibold text-gray-600 mb-2">
+                        Después
+                      </h4>
+                      <img
+                        src={comparison.after}
+                        alt="Después"
+                        class="w-full h-48 object-cover rounded-lg border-2 border-gray-200"
+                        onerror="this.style.border='2px solid red'; this.alt='ERROR: Imagen no encontrada';"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -434,7 +447,6 @@ const testimonials = [
                 <div class="flex items-center mb-4">
                   {Array.from({ length: testimonial.rating }).map((_, i) => (
                     <svg
-                      key={i}
                       class="w-5 h-5 text-yellow-400"
                       fill="currentColor"
                       viewBox="0 0 20 20"
@@ -538,7 +550,7 @@ const testimonials = [
     document.querySelectorAll(".faq-button").forEach((button) => {
       button.addEventListener("click", () => {
         const target = button.getAttribute("data-target");
-        const content = button.nextElementSibling;
+        const content = button.nextElementSibling as HTMLElement | null;
         const icon = button.querySelector(".faq-icon");
 
         // Close all other FAQs
@@ -546,22 +558,27 @@ const testimonials = [
           if (item !== content && item.classList.contains("show")) {
             item.classList.remove("show");
             item.classList.add("hidden");
-            item.previousElementSibling.classList.remove("active");
+            const prevButton =
+              item.previousElementSibling as HTMLElement | null;
+            if (prevButton) {
+              prevButton.classList.remove("active");
+            }
           }
         });
 
         // Toggle current FAQ
-        if (content.classList.contains("hidden")) {
-          content.classList.remove("hidden");
-          content.classList.add("show");
-          button.classList.add("active");
-        } else {
-          content.classList.add("hidden");
-          content.classList.remove("show");
-          button.classList.remove("active");
+        if (content) {
+          if (content.classList.contains("hidden")) {
+            content.classList.remove("hidden");
+            content.classList.add("show");
+            button.classList.add("active");
+          } else {
+            content.classList.add("hidden");
+            content.classList.remove("show");
+            button.classList.remove("active");
+          }
         }
       });
     });
   </script>
 </Layout>
-

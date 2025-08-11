@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Imágenes</title>
+</head>
+<body>
+    <h1>Test de Carga de Imágenes</h1>
+    
+    <h2>Imágenes Básicas (deberían funcionar):</h2>
+    <img src="/optimized-images/img-lumia/antes-1-optimized.jpg" alt="Antes 1" style="width: 200px; height: 150px; object-fit: cover;">
+    <img src="/optimized-images/img-lumia/cliente-final-1-optimized.jpg" alt="Cliente Final 1" style="width: 200px; height: 150px; object-fit: cover;">
+    
+    <h2>Imágenes con Carpetas con Espacios (URLs codificadas):</h2>
+    <img src="/optimized-images/img-lumia/Dise%C3%B1o%20Ceramica/IMG_0705-optimized.jpg" alt="Diseño Cerámica 1" style="width: 200px; height: 150px; object-fit: cover;">
+    <img src="/optimized-images/img-lumia/Dise%C3%B1o%20Ceramica/IMG_1034-optimized.jpg" alt="Diseño Cerámica 2" style="width: 200px; height: 150px; object-fit: cover;">
+    
+    <h2>Imágenes de Prótesis Híbridas:</h2>
+    <img src="/optimized-images/img-lumia/Protesis%20hibrida%201/protesis-hibrida-caso1-1-optimized.jpg" alt="Prótesis Híbrida 1" style="width: 200px; height: 150px; object-fit: cover;">
+    <img src="/optimized-images/img-lumia/Protesis%20hibrida%201/protesis-hibrida-caso1-2-optimized.jpg" alt="Prótesis Híbrida 2" style="width: 200px; height: 150px; object-fit: cover;">
+    
+    <script>
+        // Verificar si las imágenes se cargan correctamente
+        document.querySelectorAll('img').forEach((img, index) => {
+            img.onload = () => {
+                console.log(`Imagen ${index + 1} cargada correctamente:`, img.src);
+            };
+            img.onerror = () => {
+                console.error(`Error al cargar imagen ${index + 1}:`, img.src);
+            };
+        });
+    </script>
+</body>
+</html>

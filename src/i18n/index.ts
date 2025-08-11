@@ -96,6 +96,22 @@ export const ui = {
         'tourism.packages.title': 'Paquetes de Turismo Dental',
         'tourism.process.title': 'Proceso Simplificado',
         'tourism.faqs.title': 'Preguntas Frecuentes',
+
+        // Places
+        'places.nevado.title': 'Nevado del Ruiz',
+        'places.nevado.description': 'Explora el majestuoso volcán nevado y sus paisajes únicos durante tu recuperación.',
+        'places.eje-cafetero.title': 'Eje Cafetero',
+        'places.eje-cafetero.description': 'Descubre las fincas cafeteras tradicionales y degusta el mejor café del mundo.',
+        'places.termales.title': 'Termales de Santa Rosa',
+        'places.termales.description': 'Relájate en aguas termales naturales con propiedades curativas.',
+        'places.centro.title': 'Centro de Manizales',
+        'places.centro.description': 'Explora la vibrante cultura de la ciudad, museos y arquitectura colonial.',
+        'places.parque.title': 'Parque Nacional Los Nevados',
+        'places.parque.description': 'Aventuras en la naturaleza y senderismo en paisajes de montaña.',
+        'places.recinto.title': 'Recinto del Pensamiento',
+        'places.recinto.description': 'Mariposario y jardines botánicos en un entorno mágico.',
+        'places.plaza.title': 'Plaza de Bolívar',
+        'places.plaza.description': 'Centro histórico con arquitectura colonial y vida cultural.',
     },
     en: {
         // Navigation
@@ -187,6 +203,22 @@ export const ui = {
         'tourism.packages.title': 'Dental Tourism Packages',
         'tourism.process.title': 'Simplified Process',
         'tourism.faqs.title': 'Frequently Asked Questions',
+
+        // Places
+        'places.nevado.title': 'Nevado del Ruiz',
+        'places.nevado.description': 'Explore the majestic Nevado del Ruiz volcano and its unique landscapes during your recovery.',
+        'places.eje-cafetero.title': 'Eje Cafetero',
+        'places.eje-cafetero.description': 'Discover traditional coffee farms and taste the world\'s best coffee.',
+        'places.termales.title': 'Termales de Santa Rosa',
+        'places.termales.description': 'Relax in natural thermal waters with healing properties.',
+        'places.centro.title': 'Centro de Manizales',
+        'places.centro.description': 'Explore the vibrant culture of the city, museums, and colonial architecture.',
+        'places.parque.title': 'Parque Nacional Los Nevados',
+        'places.parque.description': 'Adventures in nature and hiking in mountain landscapes.',
+        'places.recinto.title': 'Recinto del Pensamiento',
+        'places.recinto.description': 'Butterfly garden and botanical gardens in a magical environment.',
+        'places.plaza.title': 'Plaza de Bolívar',
+        'places.plaza.description': 'Historic center with colonial architecture and cultural life.',
     }
 } as const
 

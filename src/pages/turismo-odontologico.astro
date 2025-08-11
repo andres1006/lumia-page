@@ -106,41 +106,6 @@ const packages = [
   },
 ];
 
-const destinations = [
-  {
-    name: "Nevado del Ruiz",
-    description:
-      lang === "es"
-        ? "Explora el majestuoso volcán nevado y sus paisajes únicos durante tu recuperación."
-        : "Explore the majestic snow-capped volcano and its unique landscapes during your recovery.",
-    image: "🏔️",
-  },
-  {
-    name: "Eje Cafetero",
-    description:
-      lang === "es"
-        ? "Descubre las fincas cafeteras tradicionales y degusta el mejor café del mundo."
-        : "Discover traditional coffee farms and taste the world's best coffee.",
-    image: "☕",
-  },
-  {
-    name: "Termales de Santa Rosa",
-    description:
-      lang === "es"
-        ? "Relájate en aguas termales naturales con propiedades curativas."
-        : "Relax in natural thermal waters with healing properties.",
-    image: "♨️",
-  },
-  {
-    name: "Manizales Centro",
-    description:
-      lang === "es"
-        ? "Explora la vibrante cultura de la ciudad, museos y arquitectura colonial."
-        : "Explore the vibrant city culture, museums and colonial architecture.",
-    image: "🏛️",
-  },
-];
-
 const process = [
   {
     step: "1",
@@ -256,8 +221,8 @@ const faqs = [
     >
       <div class="absolute inset-0">
         <img
-          src="/img-lumia/IMG_5830.jpg"
-          alt="LUMIA Dental Tourism"
+          src="/optimized-images/img-lumia/cliente-final-4-optimized.jpg"
+          alt="LUMIA Dental Tourism - Resultados de Tratamiento"
           class="w-full h-full object-cover grayscale brightness-50"
         />
         <div class="absolute inset-0 bg-black/40"></div>
@@ -334,8 +299,8 @@ const faqs = [
           <div class="group relative h-96">
             <div class="absolute inset-0">
               <img
-                src="/img-lumia/IMG_5830.jpg"
-                alt="Savings"
+                src="/optimized-images/img-lumia/cliente-final-5-optimized.jpg"
+                alt="Savings - Resultados de Tratamiento"
                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
               />
               <div
@@ -376,8 +341,8 @@ const faqs = [
           <div class="group relative h-96">
             <div class="absolute inset-0">
               <img
-                src="/img-lumia/IMG_5726.jpg"
-                alt="Quality"
+                src="/optimized-images/img-lumia/cliente-final-6-optimized.jpg"
+                alt="Quality - Resultados de Tratamiento"
                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
               />
               <div
@@ -418,8 +383,8 @@ const faqs = [
           <div class="group relative h-96">
             <div class="absolute inset-0">
               <img
-                src="/img-lumia/IMG_0103.jpg"
-                alt="Experience"
+                src="/optimized-images/img-lumia/cliente-final-7-optimized.jpg"
+                alt="Experience - Resultados de Tratamiento"
                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
               />
               <div
@@ -529,8 +494,8 @@ const faqs = [
             class="absolute inset-0 w-screen left-1/2 transform -translate-x-1/2"
           >
             <img
-              src="/img-lumia/IMG_5830.jpg"
-              alt="Dental Tourism Packages"
+              src="/optimized-images/img-lumia/cliente-final-9-optimized.jpg"
+              alt="Dental Tourism Packages - Resultados de Tratamiento"
               class="w-full h-full object-cover grayscale"
             />
             <div class="absolute inset-0 bg-black/50"></div>
@@ -689,8 +654,8 @@ const faqs = [
           <div class="group relative h-96 overflow-hidden">
             <div class="absolute inset-0">
               <img
-                src="/img-lumia/IMG_0103.jpg"
-                alt="Nevado del Ruiz"
+                src="/lugares/nevado-ruiz.jpg"
+                alt="Nevado del Ruiz - Resultados de Tratamiento"
                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
               />
               <div
@@ -703,14 +668,10 @@ const faqs = [
             >
               <div class="text-4xl mb-4">🏔️</div>
               <h3 class="text-2xl font-light mb-3 tracking-wide">
-                Nevado del Ruiz
+                {t("places.nevado.title")}
               </h3>
               <p class="text-gray-200 font-light leading-relaxed">
-                {
-                  lang === "es"
-                    ? "Explora el majestuoso volcán nevado y sus paisajes únicos durante tu recuperación."
-                    : "Explore the majestic snow-capped volcano and its unique landscapes during your recovery."
-                }
+                {t("places.nevado.description")}
               </p>
             </div>
           </div>
@@ -719,7 +680,7 @@ const faqs = [
           <div class="group relative h-96 overflow-hidden">
             <div class="absolute inset-0">
               <img
-                src="/img-lumia/IMG_5726.jpg"
+                src="/lugares/eje-cafetero.jpg"
                 alt="Eje Cafetero"
                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
               />
@@ -733,14 +694,10 @@ const faqs = [
             >
               <div class="text-4xl mb-4">☕</div>
               <h3 class="text-2xl font-light mb-3 tracking-wide">
-                Eje Cafetero
+                {t("places.eje-cafetero.title")}
               </h3>
               <p class="text-gray-200 font-light leading-relaxed">
-                {
-                  lang === "es"
-                    ? "Descubre las fincas cafeteras tradicionales y degusta el mejor café del mundo."
-                    : "Discover traditional coffee farms and taste the world's best coffee."
-                }
+                {t("places.eje-cafetero.description")}
               </p>
             </div>
           </div>
@@ -749,7 +706,7 @@ const faqs = [
           <div class="group relative h-96 overflow-hidden">
             <div class="absolute inset-0">
               <img
-                src="/img-lumia/IMG_5830.jpg"
+                src="/lugares/termales-santaRosa.jpg"
                 alt="Termales de Santa Rosa"
                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
               />
@@ -763,24 +720,20 @@ const faqs = [
             >
               <div class="text-4xl mb-4">♨️</div>
               <h3 class="text-2xl font-light mb-3 tracking-wide">
-                Termales de Santa Rosa
+                {t("places.termales.title")}
               </h3>
               <p class="text-gray-200 font-light leading-relaxed">
-                {
-                  lang === "es"
-                    ? "Relájate en aguas termales naturales con propiedades curativas."
-                    : "Relax in natural thermal waters with healing properties."
-                }
+                {t("places.termales.description")}
               </p>
             </div>
           </div>
 
-          <!-- Manizales Centro -->
+          <!-- Centro de Manizales -->
           <div class="group relative h-96 overflow-hidden">
             <div class="absolute inset-0">
               <img
-                src="/img-lumia/IMG_0108.jpg"
-                alt="Manizales Centro"
+                src="/lugares/centro-manizales.jpg"
+                alt="Centro de Manizales"
                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
               />
               <div
@@ -793,14 +746,10 @@ const faqs = [
             >
               <div class="text-4xl mb-4">🏛️</div>
               <h3 class="text-2xl font-light mb-3 tracking-wide">
-                Manizales Centro
+                {t("places.centro.title")}
               </h3>
               <p class="text-gray-200 font-light leading-relaxed">
-                {
-                  lang === "es"
-                    ? "Explora la vibrante cultura de la ciudad, museos y arquitectura colonial."
-                    : "Explore the vibrant city culture, museums and colonial architecture."
-                }
+                {t("places.centro.description")}
               </p>
             </div>
           </div>
@@ -812,7 +761,7 @@ const faqs = [
           <div class="group relative h-80 overflow-hidden">
             <div class="absolute inset-0">
               <img
-                src="/img-lumia/IMG_0115.jpg"
+                src="/lugares/Parque-nacional.jpg"
                 alt="Parque Nacional Los Nevados"
                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
               />
@@ -826,18 +775,10 @@ const faqs = [
             >
               <div class="text-3xl mb-3">🌲</div>
               <h3 class="text-xl font-light mb-2 tracking-wide">
-                {
-                  lang === "es"
-                    ? "Parque Nacional Los Nevados"
-                    : "Los Nevados National Park"
-                }
+                {t("places.parque.title")}
               </h3>
               <p class="text-gray-200 font-light text-sm leading-relaxed">
-                {
-                  lang === "es"
-                    ? "Aventuras en la naturaleza y senderismo en paisajes de montaña."
-                    : "Nature adventures and hiking in mountain landscapes."
-                }
+                {t("places.parque.description")}
               </p>
             </div>
           </div>
@@ -846,7 +787,7 @@ const faqs = [
           <div class="group relative h-80 overflow-hidden">
             <div class="absolute inset-0">
               <img
-                src="/img-lumia/IMG_0149.jpg"
+                src="/lugares/recinto-pensamiento.webp"
                 alt="Recinto del Pensamiento"
                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
               />
@@ -860,18 +801,10 @@ const faqs = [
             >
               <div class="text-3xl mb-3">🦋</div>
               <h3 class="text-xl font-light mb-2 tracking-wide">
-                {
-                  lang === "es"
-                    ? "Recinto del Pensamiento"
-                    : "Recinto del Pensamiento"
-                }
+                {t("places.recinto.title")}
               </h3>
               <p class="text-gray-200 font-light text-sm leading-relaxed">
-                {
-                  lang === "es"
-                    ? "Mariposario y jardines botánicos en un entorno mágico."
-                    : "Butterfly garden and botanical gardens in a magical setting."
-                }
+                {t("places.recinto.description")}
               </p>
             </div>
           </div>
@@ -880,7 +813,7 @@ const faqs = [
           <div class="group relative h-80 overflow-hidden">
             <div class="absolute inset-0">
               <img
-                src="/img-lumia/IMG_0197.jpg"
+                src="/lugares/plaza de bolivar.jpg"
                 alt="Plaza de Bolívar"
                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
               />
@@ -894,14 +827,10 @@ const faqs = [
             >
               <div class="text-3xl mb-3">🏛️</div>
               <h3 class="text-xl font-light mb-2 tracking-wide">
-                {lang === "es" ? "Plaza de Bolívar" : "Bolivar Square"}
+                {t("places.plaza.title")}
               </h3>
               <p class="text-gray-200 font-light text-sm leading-relaxed">
-                {
-                  lang === "es"
-                    ? "Centro histórico con arquitectura colonial y vida cultural."
-                    : "Historic center with colonial architecture and cultural life."
-                }
+                {t("places.plaza.description")}
               </p>
             </div>
           </div>

@@ -94,24 +94,33 @@ const serviceDetails = {
 
   beforeAfter: [
     {
-      before:
-        "https://via.placeholder.com/400x300/f3f4f6/9ca3af?text=Sin+Diente",
-      after:
-        "https://via.placeholder.com/400x300/d4af37/ffffff?text=Con+Implante",
+      before: "/optimized-images/img-lumia/antes-1-optimized.jpg",
+      after: "/optimized-images/img-lumia/cliente-final-1-optimized.jpg",
       case: "Implante Individual - Molar Superior",
     },
     {
-      before:
-        "https://via.placeholder.com/400x300/f3f4f6/9ca3af?text=Múltiples+Faltantes",
-      after: "https://via.placeholder.com/400x300/d4af37/ffffff?text=All+on+4",
+      before: "/optimized-images/img-lumia/antes-despues-1-optimized.jpg",
+      after: "/optimized-images/img-lumia/cliente-final-2-optimized.jpg",
       case: "All-on-4 Maxilar Superior",
     },
     {
-      before:
-        "https://via.placeholder.com/400x300/f3f4f6/9ca3af?text=Prótesis+Removible",
-      after:
-        "https://via.placeholder.com/400x300/d4af37/ffffff?text=Implantes+Fijos",
+      before: "/optimized-images/img-lumia/antes-despues-2-optimized.jpg",
+      after: "/optimized-images/img-lumia/cliente-final-3-optimized.jpg",
       case: "Rehabilitación Completa Inferior",
+    },
+    {
+      before:
+        "/optimized-images/img-lumia/protesis-hibrida-1/protesis-hibrida-caso1-1-optimized.jpg",
+      after:
+        "/optimized-images/img-lumia/protesis-hibrida-1/protesis-hibrida-caso1-2-optimized.jpg",
+      case: "Prótesis Híbrida - Caso 1",
+    },
+    {
+      before:
+        "/optimized-images/img-lumia/protesis-hibrida-2/protesis-hibrida-caso2-1-optimized.jpg",
+      after:
+        "/optimized-images/img-lumia/protesis-hibrida-2/protesis-hibrida-caso2-2-optimized.jpg",
+      case: "Prótesis Híbrida - Caso 2",
     },
   ],
 
@@ -409,33 +418,33 @@ const testimonials = [
           {
             serviceDetails.beforeAfter.map((comparison, index) => (
               <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div class="relative group">
-                  <div class="before-after-container">
-                    <img
-                      src={comparison.before}
-                      alt="Antes"
-                      class="before-image w-full h-64 object-cover transition-opacity duration-700"
-                    />
-                    <img
-                      src={comparison.after}
-                      alt="Después"
-                      class="after-image w-full h-64 object-cover absolute inset-0 opacity-0 transition-opacity duration-700"
-                    />
-                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <span class="text-white font-semibold">
-                        Hover para ver resultado
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div class="p-6">
-                  <h3 class="text-lg font-bold text-gray-900 mb-2">
+                <div class="p-4">
+                  <h3 class="text-lg font-bold text-gray-900 mb-4 text-center">
                     {comparison.case}
                   </h3>
-                  <div class="flex justify-between text-sm text-gray-500">
-                    <span>Antes</span>
-                    <span>→</span>
-                    <span>Después</span>
+                  <div class="space-y-4">
+                    <div>
+                      <h4 class="text-sm font-semibold text-gray-600 mb-2">
+                        Antes
+                      </h4>
+                      <img
+                        src={comparison.before}
+                        alt="Antes"
+                        class="w-full h-48 object-cover rounded-lg border-2 border-gray-200"
+                        onerror="this.style.border='2px solid red'; this.alt='ERROR: Imagen no encontrada';"
+                      />
+                    </div>
+                    <div>
+                      <h4 class="text-sm font-semibold text-gray-600 mb-2">
+                        Después
+                      </h4>
+                      <img
+                        src={comparison.after}
+                        alt="Después"
+                        class="w-full h-64 object-cover rounded-lg border-2 border-gray-200"
+                        onerror="this.style.border='2px solid red'; this.alt='ERROR: Imagen no encontrada';"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -646,4 +655,3 @@ const testimonials = [
     });
   </script>
 </Layout>
-
