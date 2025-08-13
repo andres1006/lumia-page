@@ -9,34 +9,41 @@ export interface Props {
   muted?: boolean;
   loop?: boolean;
   controls?: boolean;
-  preload?: 'none' | 'metadata' | 'auto';
+  preload?: "none" | "metadata" | "auto";
   playsinline?: boolean;
   threshold?: number;
 }
 
-const { 
-  src, 
-  poster, 
-  width, 
-  height, 
-  class: className, 
-  autoplay = false, 
-  muted = false, 
-  loop = false, 
+const {
+  src,
+  poster,
+  width,
+  height,
+  class: className,
+  autoplay = false,
+  muted = false,
+  loop = false,
   controls = true,
-  preload = 'metadata',
+  preload = "metadata",
   playsinline = true,
-  threshold = 0.1
+  threshold = 0.1,
 } = Astro.props;
 
 // Generar rutas optimizadas
-const baseName = src.replace(/\.[^/.]+$/, '');
-const optimizedBasePath = baseName.replace('/img-lumia/Videos/', '/optimized-videos/img-lumia/Videos/');
+const baseName = src.replace(/\.[^/.]+$/, "");
+const optimizedBasePath = baseName.replace(
+  "/img-lumia/Videos/",
+  "/optimized-videos/img-lumia/Videos/"
+);
 
 const uniqueId = Math.random().toString(36).substr(2, 9);
 ---
 
-<div class="lazy-video-container" data-video-id={uniqueId}>
+<div
+  class="lazy-video-container"
+  data-video-id={uniqueId}
+  data-threshold={threshold}
+>
   <video
     id={`video-${uniqueId}`}
     width={width}
@@ -52,31 +59,28 @@ const uniqueId = Math.random().toString(36).substr(2, 9);
     data-src={src}
   >
     <!-- WebM -->
-    <source 
-      data-src={`${optimizedBasePath}.webm`} 
-      type="video/webm"
-    />
-    
+    <source data-src={`${optimizedBasePath}.webm`} type="video/webm" />
+
     <!-- MP4 Desktop -->
-    <source 
-      data-src={`${optimizedBasePath}-main.mp4`} 
+    <source
+      data-src={`${optimizedBasePath}-main.mp4`}
       type="video/mp4"
       media="(min-width: 768px)"
     />
-    
+
     <!-- MP4 Mobile -->
-    <source 
-      data-src={`${optimizedBasePath}-mobile.mp4`} 
+    <source
+      data-src={`${optimizedBasePath}-mobile.mp4`}
       type="video/mp4"
       media="(max-width: 767px)"
     />
-    
+
     <p class="video-fallback">
-      Tu navegador no soporta el elemento video. 
+      Tu navegador no soporta el elemento video.
       <a href={src} download>Descarga el video</a>.
     </p>
   </video>
-  
+
   <!-- Overlay de carga -->
   <div class="video-loading-overlay" id={`overlay-${uniqueId}`}>
     <div class="loading-spinner"></div>
@@ -88,46 +92,55 @@ const uniqueId = Math.random().toString(36).substr(2, 9);
   // Lazy loading para videos
   const observerOptions = {
     root: null,
-    rootMargin: '50px',
-    threshold: ${threshold}
+    rootMargin: "50px",
+    threshold: 0.1, // valor por defecto
   };
 
   const videoObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        const video = entry.target;
+        const video = entry.target as HTMLVideoElement;
         const videoId = video.id;
-        const overlayId = `overlay-${videoId.replace('video-', '')}`;
+        const overlayId = `overlay-${videoId.replace("video-", "")}`;
         const overlay = document.getElementById(overlayId);
-        
+
         // Cargar sources
-        const sources = video.querySelectorAll('source[data-src]');
-        sources.forEach(source => {
+        const sources = video.querySelectorAll("source[data-src]") as any;
+        sources.forEach((source: any) => {
           source.src = source.dataset.src;
         });
-        
+
         // Cargar video
         video.load();
-        
+
         // Ocultar overlay cuando el video esté listo
-        video.addEventListener('loadeddata', () => {
+        video.addEventListener("loadeddata", () => {
           if (overlay) {
-            overlay.style.opacity = '0';
+            overlay.style.opacity = "0";
             setTimeout(() => {
-              overlay.style.display = 'none';
+              overlay.style.display = "none";
             }, 300);
           }
         });
-        
+
         videoObserver.unobserve(video);
       }
     });
   }, observerOptions);
 
   // Observar todos los videos lazy
-  document.addEventListener('DOMContentLoaded', () => {
-    const lazyVideos = document.querySelectorAll('video[data-src]');
-    lazyVideos.forEach(video => {
+  document.addEventListener("DOMContentLoaded", () => {
+    const lazyVideos = document.querySelectorAll("video[data-src]");
+    lazyVideos.forEach((video) => {
+      // Obtener el threshold personalizado del contenedor padre si existe
+      const container = video.closest(".lazy-video-container") as HTMLElement;
+      if (container && container.dataset.threshold) {
+        const customThreshold = parseFloat(container.dataset.threshold);
+        if (!isNaN(customThreshold)) {
+          observerOptions.threshold = customThreshold;
+        }
+      }
+
       videoObserver.observe(video);
     });
   });
@@ -138,20 +151,22 @@ const uniqueId = Math.random().toString(36).substr(2, 9);
     position: relative;
     display: block;
   }
-  
+
   video {
     max-width: 100%;
     height: auto;
     border-radius: 12px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
   }
-  
+
   video:hover {
     transform: translateY(-2px);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
   }
-  
+
   .video-loading-overlay {
     position: absolute;
     top: 0;
@@ -167,7 +182,7 @@ const uniqueId = Math.random().toString(36).substr(2, 9);
     color: white;
     transition: opacity 0.3s ease;
   }
-  
+
   .loading-spinner {
     width: 40px;
     height: 40px;
@@ -177,12 +192,16 @@ const uniqueId = Math.random().toString(36).substr(2, 9);
     animation: spin 1s linear infinite;
     margin-bottom: 1rem;
   }
-  
+
   @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
-  
+
   .video-fallback {
     text-align: center;
     padding: 2rem;
@@ -191,7 +210,7 @@ const uniqueId = Math.random().toString(36).substr(2, 9);
     color: #64748b;
     font-size: 0.875rem;
   }
-  
+
   @media (max-width: 768px) {
     video {
       border-radius: 8px;
