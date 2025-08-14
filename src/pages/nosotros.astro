@@ -9,37 +9,97 @@ const t = useTranslations(lang);
 
 const team = [
   {
-    name: "Dr. María Elena Ruiz",
-    title: "Directora Médica & Especialista en Diseño de Sonrisa",
-    education: "Universidad CES - Especialización en Rehabilitación Oral",
+    name: "Dr. Alejandro Restrepo",
+    title: "Rehabilitador Oral",
+    education: "Especialización en Rehabilitación Oral",
     certifications: [
-      "Fellow International Congress of Oral Implantologists",
-      "Certificación en Digital Smile Design",
+      "Especialista en Rehabilitación Oral",
+      "Certificación en Implantología",
     ],
-    experience: "15+ años",
+    experience: "10+ años",
     image: "/optimized-images/img-lumia/cliente-final-9-optimized.jpg",
   },
   {
-    name: "Dr. Carlos Andrés Moreno",
-    title: "Especialista en Implantología",
-    education: "Universidad Javeriana - Especialización en Implantología Oral",
-    certifications: [
-      "Certificación Straumann Institute",
-      "Advanced Implantology Certificate - ITI",
-    ],
-    experience: "12+ años",
+    name: "Dra. Tatiana Atehortua",
+    title: "Odontóloga General",
+    education: "Odontología General",
+    certifications: ["Odontóloga General", "Certificación en Estética Dental"],
+    experience: "8+ años",
     image: "/optimized-images/img-lumia/cliente-final-10-optimized.jpg",
   },
   {
-    name: "Dra. Ana Sofía Valencia",
-    title: "Ortodoncista",
-    education: "Universidad del Valle - Especialización en Ortodoncia",
+    name: "Dra. Juliana Echeverry",
+    title: "Endodoncista",
+    education: "Especialización en Endodoncia",
     certifications: [
-      "Invisalign Provider",
+      "Especialista en Endodoncia",
+      "Certificación en Microcirugía Endodóntica",
+    ],
+    experience: "7+ años",
+    image: "/optimized-images/img-lumia/cliente-final-11-optimized.jpg",
+  },
+  {
+    name: "Dr. Santiago Rodriguez",
+    title: "Cirujano Maxilofacial",
+    education: "Especialización en Cirugía Maxilofacial",
+    certifications: [
+      "Especialista en Cirugía Maxilofacial",
+      "Certificación en Cirugía Ortognática",
+    ],
+    experience: "12+ años",
+    image: "/optimized-images/img-lumia/cliente-final-12-optimized.jpg",
+  },
+  {
+    name: "Dra. Juanita Castañeda",
+    title: "Periodoncista",
+    education: "Especialización en Periodoncia",
+    certifications: [
+      "Especialista en Periodoncia",
+      "Certificación en Implantes Periodontales",
+    ],
+    experience: "9+ años",
+    image: "/optimized-images/img-lumia/cliente-final-13-optimized.jpg",
+  },
+  {
+    name: "Dra. Angela Victoria Gomez",
+    title: "Ortodoncista",
+    education: "Especialización en Ortodoncia",
+    certifications: ["Especialista en Ortodoncia", "Certificación Invisalign"],
+    experience: "6+ años",
+    image: "/optimized-images/img-lumia/cliente-final-14-optimized.jpg",
+  },
+  {
+    name: "Dra. Camila Cuervo",
+    title: "Ortodoncista",
+    education: "Especialización en Ortodoncia",
+    certifications: [
+      "Especialista en Ortodoncia",
       "Certificación en Ortodoncia Lingual",
     ],
+    experience: "5+ años",
+    image: "/optimized-images/img-lumia/cliente-final-15-optimized.jpg",
+  },
+  {
+    name: "Dra. Paula Restrepo",
+    title: "Ortodoncista",
+    education: "Especialización en Ortodoncia",
+    certifications: [
+      "Especialista en Ortodoncia",
+      "Certificación en Ortodoncia Invisible",
+    ],
+    experience: "7+ años",
+    image: "/optimized-images/img-lumia/cliente-final-16-optimized.jpg",
+  },
+  {
+    name: "Dra. Catalina Garcés",
+    title: "Especialista",
+    education: "Especialización en Odontología",
+    certifications: [
+      "Especialista en Odontología",
+      "Certificación en Estética Dental",
+    ],
     experience: "8+ años",
-    image: "/optimized-images/img-lumia/cliente-final-11-optimized.jpg",
+    image: "/optimized-images/img-lumia/cliente-final-17-optimized.jpg",
   },
 ];
 
@@ -105,17 +165,15 @@ const certifications = [
       <div
         class="relative z-10 text-center text-white max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
       >
-        <h1 class="text-5xl md:text-7xl font-light mb-8 tracking-wide">
-          {lang === "es" ? "LUMIA" : "LUMIA"}
+        <h1
+          class="text-5xl md:text-7xl font-light mb-8 tracking-wide about-hero-title"
+        >
+          {t("about.hero.title")}
         </h1>
         <p
-          class="text-xl md:text-2xl mb-12 opacity-90 font-light tracking-wide"
+          class="text-xl md:text-2xl mb-12 opacity-90 font-light tracking-wide about-hero-subtitle"
         >
-          {
-            lang === "es"
-              ? "Donde la Ciencia y el Arte Crean Sonrisas Extraordinarias"
-              : "Where Science and Art Create Extraordinary Smiles"
-          }
+          {t("about.hero.subtitle")}
         </p>
         <div
           class="flex flex-col sm:flex-row gap-6 justify-center items-center"
@@ -146,38 +204,22 @@ const certifications = [
             <div
               class="text-sm font-medium text-amber-600 tracking-widest uppercase"
             >
-              {lang === "es" ? "Nuestra Historia" : "Our Story"}
+              {t("about.story.title")}
             </div>
             <h2
-              class="text-4xl md:text-5xl font-light text-gray-900 leading-tight"
+              class="text-4xl md:text-5xl font-light text-gray-900 leading-tight about-story-subtitle"
             >
-              {
-                lang === "es"
-                  ? "Más de una década transformando sonrisas y cambiando vidas"
-                  : "Over a decade transforming smiles and changing lives"
-              }
+              {t("about.story.subtitle")}
             </h2>
             <div class="space-y-6 text-lg text-gray-600 leading-relaxed">
               <p>
-                {
-                  lang === "es"
-                    ? "LUMIA nació en 2008 con una visión clara: revolucionar la odontología estética en Colombia mediante la combinación perfecta entre ciencia avanzada y arte especializado."
-                    : "LUMIA was born in 2008 with a clear vision: to revolutionize aesthetic dentistry in Colombia through the perfect combination of advanced science and specialized art."
-                }
+                {t("about.story.paragraph1")}
               </p>
               <p>
-                {
-                  lang === "es"
-                    ? "Fundada por la Dra. María Elena Ruiz en Manizales, nuestra clínica ha crecido hasta convertirse en referente nacional en diseño de sonrisa e implantología."
-                    : "Founded by Dr. María Elena Ruiz in Manizales, our clinic has grown to become a national reference in smile design and implantology."
-                }
+                {t("about.story.paragraph2")}
               </p>
               <p>
-                {
-                  lang === "es"
-                    ? "Lo que comenzó como un pequeño consultorio con grandes sueños, hoy es una clínica de vanguardia que recibe pacientes de toda Colombia y el extranjero."
-                    : "What began as a small office with big dreams, today is a cutting-edge clinic that receives patients from all over Colombia and abroad."
-                }
+                {t("about.story.paragraph3")}
               </p>
             </div>
           </div>
@@ -217,16 +259,12 @@ const certifications = [
             class="text-center text-white max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
           >
             <h2 class="text-xl sm:text-2xl md:text-3xl font-light mb-3 sm:mb-6">
-              {lang === "es" ? "Nuestro Propósito" : "Our Purpose"}
+              {t("about.purpose.title")}
             </h2>
             <p
-              class="text-xs sm:text-sm md:text-base leading-relaxed mb-3 sm:mb-6 opacity-95 max-w-2xl mx-auto"
+              class="text-xs sm:text-sm md:text-base leading-relaxed mb-3 sm:mb-6 opacity-95 max-w-2xl mx-auto about-purpose-description"
             >
-              {
-                lang === "es"
-                  ? "Transformar sonrisas y cambiar vidas a través de tratamientos odontológicos de excelencia, utilizando tecnología de vanguardia y brindando una experiencia personalizada que supere las expectativas de nuestros pacientes."
-                  : "Transform smiles and change lives through excellence in dental treatments, using cutting-edge technology and providing a personalized experience that exceeds our patients' expectations."
-              }
+              {t("about.purpose.description")}
             </p>
           </div>
         </div>
@@ -240,17 +278,15 @@ const certifications = [
           <div
             class="text-sm font-medium text-amber-600 tracking-widest uppercase mb-4"
           >
-            {lang === "es" ? "Nuestros Valores" : "Our Values"}
+            {t("about.values.title")}
           </div>
           <h2 class="text-4xl md:text-5xl font-light text-gray-900 mb-8">
-            {lang === "es" ? "Los Pilares de LUMIA" : "The Pillars of LUMIA"}
+            {t("about.values.subtitle")}
           </h2>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            {
-              lang === "es"
-                ? "Los principios que guían cada decisión y cada tratamiento"
-                : "The principles that guide every decision and every treatment"
-            }
+          <p
+            class="text-xl text-gray-600 max-w-3xl mx-auto about-values-description"
+          >
+            {t("about.values.description")}
           </p>
         </div>
 
@@ -291,29 +327,25 @@ const certifications = [
           <div
             class="text-sm font-medium text-amber-400 tracking-widest uppercase mb-4"
           >
-            {lang === "es" ? "Nuestro Equipo" : "Our Team"}
+            {t("about.team.title")}
           </div>
           <h2 class="text-4xl md:text-5xl font-light mb-8">
-            {
-              lang === "es"
-                ? "Especialistas de Excelencia"
-                : "Excellence Specialists"
-            }
+            {t("about.team.subtitle")}
           </h2>
-          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-            {
-              lang === "es"
-                ? "Profesionales altamente calificados con formación internacional"
-                : "Highly qualified professionals with international training"
-            }
+          <p
+            class="text-xl text-gray-300 max-w-3xl mx-auto about-team-description"
+          >
+            {t("about.team.description")}
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+        >
           {
             team.map((member, index) => (
-              <div class="group">
-                <div class="aspect-square bg-gray-800 rounded-2xl overflow-hidden mb-8 group-hover:scale-105 transition-transform duration-300">
+              <div class="group team-member-card">
+                <div class="aspect-square bg-gray-800 rounded-2xl overflow-hidden mb-6 group-hover:scale-105 transition-transform duration-300">
                   <img
                     src={member.image}
                     alt={member.name}
@@ -321,24 +353,26 @@ const certifications = [
                   />
                 </div>
                 <div class="text-center">
-                  <h3 class="text-2xl font-light mb-3">{member.name}</h3>
-                  <p class="text-amber-400 font-medium mb-6">{member.title}</p>
-                  <div class="space-y-4 text-gray-300 text-sm">
+                  <h3 class="text-xl font-light mb-2">{member.name}</h3>
+                  <p class="text-amber-400 font-medium mb-4 text-sm team-member-title">
+                    {member.title}
+                  </p>
+                  <div class="space-y-3 text-gray-300 text-xs team-member-info">
                     <p>
                       <strong class="text-white">
-                        {lang === "es" ? "Formación:" : "Education:"}
+                        {t("about.team.education")}
                       </strong>{" "}
                       {member.education}
                     </p>
                     <p>
                       <strong class="text-white">
-                        {lang === "es" ? "Experiencia:" : "Experience:"}
+                        {t("about.team.experience")}
                       </strong>{" "}
                       {member.experience}
                     </p>
                     <div>
-                      <p class="font-medium text-white mb-2">
-                        {lang === "es" ? "Certificaciones:" : "Certifications:"}
+                      <p class="font-medium text-white mb-1">
+                        {t("about.team.certifications")}
                       </p>
                       <ul class="space-y-1 text-xs">
                         {member.certifications.map((cert) => (
@@ -359,21 +393,17 @@ const certifications = [
     <section class="py-32 bg-white text-gray-900">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-4xl md:text-5xl font-light mb-8">
-          {lang === "es" ? "¿Listo para Conocernos?" : "Ready to Meet Us?"}
+          {t("about.cta.title")}
         </h2>
-        <p class="text-xl mb-12 text-gray-600">
-          {
-            lang === "es"
-              ? "Agenda tu valoración personalizada y descubre por qué miles de pacientes confían en LUMIA"
-              : "Schedule your personalized consultation and discover why thousands of patients trust LUMIA"
-          }
+        <p class="text-xl mb-12 text-gray-600 about-cta-description">
+          {t("about.cta.description")}
         </p>
         <div class="flex flex-col sm:flex-row gap-6 justify-center">
           <a
             href={lang === "es" ? "/contacto" : "/en/contact"}
             class="inline-flex items-center px-10 py-5 bg-amber-600 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
           >
-            {lang === "es" ? "Agendar Cita" : "Schedule Appointment"}
+            {t("about.cta.button")}
           </a>
           <a
             href="https://wa.me/573000000000"
@@ -395,3 +425,74 @@ const certifications = [
 
   <Footer />
 </Layout>
+
+<style>
+  /* Consistent layout regardless of language */
+  .about-hero-title {
+    min-height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about-hero-subtitle {
+    min-height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about-story-subtitle {
+    min-height: 3rem;
+  }
+
+  .about-purpose-description {
+    min-height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about-values-description {
+    min-height: 3rem;
+  }
+
+  .about-team-description {
+    min-height: 3rem;
+  }
+
+  .about-cta-description {
+    min-height: 4rem;
+  }
+
+  /* Ensure consistent card heights */
+  .team-member-card {
+    min-height: 400px;
+  }
+
+  .team-member-title {
+    min-height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .team-member-info {
+    min-height: 8rem;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .about-hero-subtitle {
+      min-height: 8rem;
+    }
+
+    .about-purpose-description {
+      min-height: 6rem;
+    }
+
+    .about-cta-description {
+      min-height: 6rem;
+    }
+  }
+</style>

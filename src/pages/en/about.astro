@@ -10,37 +10,94 @@ const t = useTranslations(lang);
 
 const team = [
   {
-    name: "Dr. María Elena Ruiz",
-    title: "Medical Director & Smile Design Specialist",
-    education: "CES University - Oral Rehabilitation Specialization",
+    name: "Dr. Alejandro Restrepo",
+    title: "Oral Rehabilitation Specialist",
+    education: "Specialization in Oral Rehabilitation",
     certifications: [
-      "Fellow International Congress of Oral Implantologists",
-      "Digital Smile Design Certification",
+      "Oral Rehabilitation Specialist",
+      "Implantology Certification",
     ],
-    experience: "15+ years",
-    image: "👩‍⚕️",
+    experience: "10+ years",
+    image: "/optimized-images/img-lumia/cliente-final-9-optimized.jpg",
   },
   {
-    name: "Dr. Carlos Andrés Moreno",
-    title: "Implantology Specialist",
-    education: "Javeriana University - Oral Implantology Specialization",
+    name: "Dr. Tatiana Atehortua",
+    title: "General Dentist",
+    education: "General Dentistry",
+    certifications: ["General Dentist", "Dental Aesthetics Certification"],
+    experience: "8+ years",
+    image: "/optimized-images/img-lumia/cliente-final-10-optimized.jpg",
+  },
+  {
+    name: "Dr. Juliana Echeverry",
+    title: "Endodontist",
+    education: "Specialization in Endodontics",
     certifications: [
-      "Straumann Institute Certification",
-      "Advanced Implantology Certificate - ITI",
+      "Endodontics Specialist",
+      "Microsurgical Endodontics Certification",
+    ],
+    experience: "7+ years",
+    image: "/optimized-images/img-lumia/cliente-final-11-optimized.jpg",
+  },
+  {
+    name: "Dr. Santiago Rodriguez",
+    title: "Maxillofacial Surgeon",
+    education: "Specialization in Maxillofacial Surgery",
+    certifications: [
+      "Maxillofacial Surgery Specialist",
+      "Orthognathic Surgery Certification",
     ],
     experience: "12+ years",
-    image: "👨‍⚕️",
+    image: "/optimized-images/img-lumia/cliente-final-12-optimized.jpg",
   },
   {
-    name: "Dr. Ana Sofía Valencia",
-    title: "Orthodontist",
-    education: "Valle University - Orthodontics Specialization",
+    name: "Dr. Juanita Castañeda",
+    title: "Periodontist",
+    education: "Specialization in Periodontics",
     certifications: [
-      "Invisalign Provider",
+      "Periodontics Specialist",
+      "Periodontal Implants Certification",
+    ],
+    experience: "9+ years",
+    image: "/optimized-images/img-lumia/cliente-final-13-optimized.jpg",
+  },
+  {
+    name: "Dr. Angela Victoria Gomez",
+    title: "Orthodontist",
+    education: "Specialization in Orthodontics",
+    certifications: ["Orthodontics Specialist", "Invisalign Certification"],
+    experience: "6+ years",
+    image: "/optimized-images/img-lumia/cliente-final-14-optimized.jpg",
+  },
+  {
+    name: "Dr. Camila Cuervo",
+    title: "Orthodontist",
+    education: "Specialization in Orthodontics",
+    certifications: [
+      "Orthodontics Specialist",
       "Lingual Orthodontics Certification",
     ],
+    experience: "5+ years",
+    image: "/optimized-images/img-lumia/cliente-final-15-optimized.jpg",
+  },
+  {
+    name: "Dr. Paula Restrepo",
+    title: "Orthodontist",
+    education: "Specialization in Orthodontics",
+    certifications: [
+      "Orthodontics Specialist",
+      "Invisible Orthodontics Certification",
+    ],
+    experience: "7+ years",
+    image: "/optimized-images/img-lumia/cliente-final-16-optimized.jpg",
+  },
+  {
+    name: "Dr. Catalina Garcés",
+    title: "Specialist",
+    education: "Specialization in Dentistry",
+    certifications: ["Dentistry Specialist", "Dental Aesthetics Certification"],
     experience: "8+ years",
-    image: "👩‍⚕️",
+    image: "/optimized-images/img-lumia/cliente-final-17-optimized.jpg",
   },
 ];
 
@@ -89,77 +146,94 @@ const certifications = [
 >
   <Header />
 
-  <main class="pt-20">
+  <main>
     <!-- Hero Section -->
     <section
-      class="py-20 bg-gradient-to-br from-primary-gold to-primary-gold-dark text-white"
+      class="relative h-screen flex items-center justify-center overflow-hidden"
     >
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
-          Meet LUMIA
+      <div class="absolute inset-0">
+        <img
+          src="/optimized-images/img-lumia/cliente-final-12-optimized.jpg"
+          alt="LUMIA Clinic"
+          class="w-full h-full object-cover grayscale brightness-50"
+        />
+        <div class="absolute inset-0 bg-black/40"></div>
+      </div>
+
+      <div
+        class="relative z-10 text-center text-white max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
+        <h1
+          class="text-5xl md:text-7xl font-light mb-8 tracking-wide about-hero-title"
+        >
+          {t("about.hero.title")}
         </h1>
         <p
-          class="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto animate-slide-up"
+          class="text-xl md:text-2xl mb-12 opacity-90 font-light tracking-wide about-hero-subtitle"
         >
-          Over 15 years transforming smiles and changing lives in the heart of
-          Colombia's Coffee Region
+          {t("about.hero.subtitle")}
         </p>
-        <div class="animate-scale-in">
-          <div
-            class="inline-flex items-center px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full"
-          >
-            <span class="text-lg font-semibold"
-              >Since 2008 • 2,500+ Smiles Transformed</span
-            >
+        <div
+          class="flex flex-col sm:flex-row gap-6 justify-center items-center"
+        >
+          <div class="text-center">
+            <div class="text-3xl font-light mb-2">15+</div>
+            <div class="text-sm opacity-80">Years of Experience</div>
+          </div>
+          <div class="w-px h-12 bg-white/30 hidden sm:block"></div>
+          <div class="text-center">
+            <div class="text-3xl font-light mb-2">2,500+</div>
+            <div class="text-sm opacity-80">Smiles Transformed</div>
+          </div>
+          <div class="w-px h-12 bg-white/30 hidden sm:block"></div>
+          <div class="text-center">
+            <div class="text-3xl font-light mb-2">100%</div>
+            <div class="text-sm opacity-80">Satisfaction</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Our Story Section -->
-    <section class="py-20 bg-white">
+    <!-- Story Section -->
+    <section class="py-32 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
-              Our Story
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div class="space-y-8">
+            <div
+              class="text-sm font-medium text-amber-600 tracking-widest uppercase"
+            >
+              {t("about.story.title")}
+            </div>
+            <h2
+              class="text-4xl md:text-5xl font-light text-gray-900 leading-tight about-story-subtitle"
+            >
+              {t("about.story.subtitle")}
             </h2>
             <div class="space-y-6 text-lg text-gray-600 leading-relaxed">
               <p>
-                LUMIA was born in 2008 with a clear vision: to <strong
-                  class="text-primary-gold"
-                  >revolutionize cosmetic dentistry in Colombia</strong
-                >
-                through the perfect combination of advanced science and specialized
-                artistry.
+                {t("about.story.paragraph1")}
               </p>
               <p>
-                Founded by Dr. María Elena Ruiz in Manizales, our clinic has
-                grown to become a national reference in smile design and
-                implantology, expanding to Pereira in 2015 to better serve
-                Colombia's Coffee Region.
+                {t("about.story.paragraph2")}
               </p>
               <p>
-                What began as a small office with big dreams is now a
-                cutting-edge clinic that receives patients from all over
-                Colombia and abroad, especially from the United States, seeking
-                world-class treatments at fair prices.
+                {t("about.story.paragraph3")}
               </p>
             </div>
           </div>
+
           <div class="relative">
+            <div class="aspect-square bg-gray-100 rounded-2xl overflow-hidden">
+              <img
+                src="/optimized-images/img-lumia/cliente-final-13-optimized.jpg"
+                alt="LUMIA History"
+                class="w-full h-full object-cover"
+              />
+            </div>
             <div
-              class="aspect-square bg-gradient-gold rounded-2xl shadow-luxury flex items-center justify-center"
+              class="absolute -bottom-6 -right-6 w-32 h-32 bg-amber-600 rounded-full flex items-center justify-center"
             >
-              <div class="text-center text-white">
-                <div
-                  class="w-32 h-32 bg-white/20 rounded-full mx-auto mb-6 flex items-center justify-center"
-                >
-                  <span class="text-6xl">🏥</span>
-                </div>
-                <p class="text-xl font-medium">LUMIA History</p>
-                <p class="text-sm opacity-80 mt-2">2008 - Present</p>
-              </div>
+              <span class="text-white text-2xl font-light">2008</span>
             </div>
           </div>
         </div>
@@ -167,51 +241,28 @@ const certifications = [
     </section>
 
     <!-- Mission & Vision Section -->
-    <section class="py-20 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Mission & Vision
-          </h2>
+    <section class="bg-white">
+      <div class="relative">
+        <div class="h-64 md:h-80 lg:h-96 bg-gray-200 overflow-hidden">
+          <img
+            src="/optimized-images/img-lumia/cliente-final-14-optimized.jpg"
+            alt="LUMIA Purpose"
+            class="w-full h-full object-cover grayscale brightness-50"
+          />
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Text Overlay -->
+        <div class="absolute inset-0 flex items-center justify-center">
           <div
-            class="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-primary-gold"
+            class="text-center text-white max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
           >
-            <div class="flex items-center mb-6">
-              <div
-                class="w-16 h-16 bg-gradient-gold rounded-full flex items-center justify-center mr-4"
-              >
-                <span class="text-3xl">🎯</span>
-              </div>
-              <h3 class="text-3xl font-bold text-gray-900">Mission</h3>
-            </div>
-            <p class="text-lg text-gray-600 leading-relaxed">
-              To transform smiles and change lives through excellent dental
-              treatments, using cutting-edge technology and providing a
-              personalized experience that exceeds our patients' expectations,
-              while promoting responsible dental tourism in Colombia.
-            </p>
-          </div>
-
-          <div
-            class="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-primary-gold"
-          >
-            <div class="flex items-center mb-6">
-              <div
-                class="w-16 h-16 bg-gradient-gold rounded-full flex items-center justify-center mr-4"
-              >
-                <span class="text-3xl">🌟</span>
-              </div>
-              <h3 class="text-3xl font-bold text-gray-900">Vision</h3>
-            </div>
-            <p class="text-lg text-gray-600 leading-relaxed">
-              To be recognized as the leading dental clinic in Latin America for
-              aesthetic and restorative treatments, being the preferred
-              destination for national and international patients seeking
-              perfect smiles with the highest standards of quality and human
-              warmth.
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-light mb-3 sm:mb-6">
+              {t("about.purpose.title")}
+            </h2>
+            <p
+              class="text-xs sm:text-sm md:text-base leading-relaxed mb-3 sm:mb-6 opacity-95 max-w-2xl mx-auto about-purpose-description"
+            >
+              {t("about.purpose.description")}
             </p>
           </div>
         </div>
@@ -219,72 +270,45 @@ const certifications = [
     </section>
 
     <!-- Values Section -->
-    <section class="py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Our Values
+    <section class="pt-32 bg-white">
+      <div class="px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20">
+          <div
+            class="text-sm font-medium text-amber-600 tracking-widest uppercase mb-4"
+          >
+            {t("about.values.title")}
+          </div>
+          <h2 class="text-4xl md:text-5xl font-light text-gray-900 mb-8">
+            {t("about.values.subtitle")}
           </h2>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            The pillars that guide every decision and every treatment at LUMIA
+          <p
+            class="text-xl text-gray-600 max-w-3xl mx-auto about-values-description"
+          >
+            {t("about.values.description")}
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div
+          class="grid grid-cols-1 md:grid-cols-3 gap-0 -mx-4 sm:-mx-6 lg:-mx-8"
+        >
           {
-            values.map((value, index) => (
-              <div class="text-center group hover:transform hover:scale-105 transition-all duration-300">
-                <div class="w-20 h-20 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-6 group-hover:shadow-gold transition-all duration-300">
-                  <span class="text-3xl">{value.icon}</span>
+            values.slice(0, 3).map((value, index) => (
+              <div class="relative group">
+                <div class="h-64 md:h-80 lg:h-96 bg-gray-200 overflow-hidden">
+                  <img
+                    src={`/optimized-images/img-lumia/cliente-final-${index === 0 ? "15" : index === 1 ? "16" : "17"}-optimized.jpg`}
+                    alt={value.title}
+                    class="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-75 transition-all duration-300"
+                  />
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary-gold transition-colors">
-                  {value.title}
-                </h3>
-                <p class="text-gray-600 leading-relaxed">{value.description}</p>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="py-20 bg-gradient-dark text-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-6">
-            Our Specialized Team
-          </h2>
-          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-            Highly qualified professionals with international training
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {
-            team.map((member, index) => (
-              <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/15 transition-all duration-300">
-                <div class="w-24 h-24 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span class="text-4xl">{member.image}</span>
-                </div>
-                <h3 class="text-2xl font-bold mb-2">{member.name}</h3>
-                <p class="text-primary-gold font-semibold mb-4">
-                  {member.title}
-                </p>
-                <div class="space-y-3 text-gray-300">
-                  <p class="text-sm">
-                    <strong>Education:</strong> {member.education}
-                  </p>
-                  <p class="text-sm">
-                    <strong>Experience:</strong> {member.experience}
-                  </p>
-                  <div>
-                    <p class="text-sm font-semibold mb-2">Certifications:</p>
-                    <ul class="text-xs space-y-1">
-                      {member.certifications.map((cert) => (
-                        <li>• {cert}</li>
-                      ))}
-                    </ul>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="text-center text-white max-w-xs px-4">
+                    <h3 class="text-xl md:text-2xl font-light mb-4 group-hover:text-amber-400 transition-colors">
+                      {value.title}
+                    </h3>
+                    <p class="text-sm md:text-base leading-relaxed opacity-90">
+                      {value.description}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -294,38 +318,68 @@ const certifications = [
       </div>
     </section>
 
-    <!-- Certifications Section -->
-    <section class="py-20 bg-gray-50">
+    <!-- Team Section -->
+    <section class="py-32 bg-black text-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Certifications & Recognition
+        <div class="text-center mb-20">
+          <div
+            class="text-sm font-medium text-amber-400 tracking-widest uppercase mb-4"
+          >
+            {t("about.team.title")}
+          </div>
+          <h2 class="text-4xl md:text-5xl font-light mb-8">
+            {t("about.team.subtitle")}
           </h2>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Endorsed by the most prestigious institutions in the dental sector
+          <p
+            class="text-xl text-gray-300 max-w-3xl mx-auto about-team-description"
+          >
+            {t("about.team.description")}
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+        >
           {
-            certifications.map((cert, index) => (
-              <div class="bg-white rounded-xl p-6 shadow-lg flex items-center hover:shadow-xl transition-all duration-300">
-                <div class="w-12 h-12 bg-primary-gold/20 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                  <svg
-                    class="w-6 h-6 text-primary-gold"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
+            team.map((member, index) => (
+              <div class="group team-member-card">
+                <div class="aspect-square bg-gray-800 rounded-2xl overflow-hidden mb-6 group-hover:scale-105 transition-transform duration-300">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+                  />
                 </div>
-                <p class="font-semibold text-gray-900">{cert}</p>
+                <div class="text-center">
+                  <h3 class="text-xl font-light mb-2">{member.name}</h3>
+                  <p class="text-amber-400 font-medium mb-4 text-sm team-member-title">
+                    {member.title}
+                  </p>
+                  <div class="space-y-3 text-gray-300 text-xs team-member-info">
+                    <p>
+                      <strong class="text-white">
+                        {t("about.team.education")}
+                      </strong>{" "}
+                      {member.education}
+                    </p>
+                    <p>
+                      <strong class="text-white">
+                        {t("about.team.experience")}
+                      </strong>{" "}
+                      {member.experience}
+                    </p>
+                    <div>
+                      <p class="font-medium text-white mb-1">
+                        {t("about.team.certifications")}
+                      </p>
+                      <ul class="space-y-1 text-xs">
+                        {member.certifications.map((cert) => (
+                          <li class="text-gray-400">• {cert}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
               </div>
             ))
           }
@@ -333,85 +387,31 @@ const certifications = [
       </div>
     </section>
 
-    <!-- Technology Section -->
-    <section class="py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Cutting-Edge Technology
-          </h2>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            State-of-the-art equipment for exceptional results
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div class="text-center">
-            <div
-              class="w-16 h-16 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-4"
-            >
-              <span class="text-2xl">🖥️</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 mb-2">
-              Digital Smile Design
-            </h3>
-            <p class="text-gray-600 text-sm">3D digital smile design</p>
-          </div>
-          <div class="text-center">
-            <div
-              class="w-16 h-16 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-4"
-            >
-              <span class="text-2xl">📷</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 mb-2">3D Tomography</h3>
-            <p class="text-gray-600 text-sm">Advanced imaging diagnostics</p>
-          </div>
-          <div class="text-center">
-            <div
-              class="w-16 h-16 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-4"
-            >
-              <span class="text-2xl">⚡</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 mb-2">Dental Laser</h3>
-            <p class="text-gray-600 text-sm">Minimally invasive treatments</p>
-          </div>
-          <div class="text-center">
-            <div
-              class="w-16 h-16 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-4"
-            >
-              <span class="text-2xl">🦷</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 mb-2">CAD/CAM</h3>
-            <p class="text-gray-600 text-sm">Same-day restorations</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- CTA Section -->
-    <section class="py-20 bg-primary-gold text-white">
+    <section class="py-32 bg-white text-gray-900">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Meet Us?</h2>
-        <p class="text-xl mb-12 opacity-90">
-          Schedule your personalized consultation and discover why thousands of
-          patients trust LUMIA
+        <h2 class="text-4xl md:text-5xl font-light mb-8">
+          {t("about.cta.title")}
+        </h2>
+        <p class="text-xl mb-12 text-gray-600 about-cta-description">
+          {t("about.cta.description")}
         </p>
         <div class="flex flex-col sm:flex-row gap-6 justify-center">
           <a
             href="/en/contact"
-            class="inline-flex items-center px-10 py-5 bg-white text-primary-gold font-bold rounded-lg shadow-luxury hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            class="inline-flex items-center px-10 py-5 bg-amber-600 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
           >
-            Schedule Appointment
+            {t("about.cta.button")}
           </a>
           <a
             href="https://wa.me/573000000000"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center px-10 py-5 border-3 border-white text-white hover:bg-white hover:text-primary-gold font-bold rounded-lg transition-all duration-300"
+            class="inline-flex items-center px-10 py-5 border-2 border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white font-medium rounded-lg transition-all duration-300"
           >
             <svg class="mr-3 w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
               <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.531 3.503"
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.87 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.531 3.503"
               ></path>
             </svg>
             WhatsApp
@@ -423,3 +423,74 @@ const certifications = [
 
   <Footer />
 </Layout>
+
+<style>
+  /* Consistent layout regardless of language */
+  .about-hero-title {
+    min-height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about-hero-subtitle {
+    min-height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about-story-subtitle {
+    min-height: 3rem;
+  }
+
+  .about-purpose-description {
+    min-height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about-values-description {
+    min-height: 3rem;
+  }
+
+  .about-team-description {
+    min-height: 3rem;
+  }
+
+  .about-cta-description {
+    min-height: 4rem;
+  }
+
+  /* Ensure consistent card heights */
+  .team-member-card {
+    min-height: 400px;
+  }
+
+  .team-member-title {
+    min-height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .team-member-info {
+    min-height: 8rem;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .about-hero-subtitle {
+      min-height: 8rem;
+    }
+
+    .about-purpose-description {
+      min-height: 6rem;
+    }
+
+    .about-cta-description {
+      min-height: 6rem;
+    }
+  }
+</style>

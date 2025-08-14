@@ -2,132 +2,222 @@
 import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
-import { useTranslations } from "../../../i18n";
+import { getLangFromUrl, useTranslations } from "../../../i18n";
 
-// Force English language for this page
-const lang = "en";
+const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const serviceDetails = {
-  title: "Digital Smile Design",
-  subtitle: "Complete Transformation with 3D Technology",
-  price: "From $2,500 USD",
-  duration: "2-3 appointments",
+  title: "Odontología Estética Premium",
+  subtitle: "Transformamos Sonrisas con Arte y Ciencia",
+  price: "Desde $850,000 COP",
+  duration: "1-4 sesiones",
   description:
-    "Digital Smile Design is a comprehensive aesthetic treatment that uses advanced 3D technology to create the perfect and personalized smile for each patient.",
+    "La odontología estética combina técnicas avanzadas y materiales de última generación para crear sonrisas naturales, armoniosas y duraderas que realzan tu belleza natural.",
 
   benefits: [
-    "Predictable results with 3D simulation",
-    "Premium high-durability materials",
-    "Personalized and unique process",
-    "Significant improvement in self-esteem",
-    "Cutting-edge technology",
-    "Extended warranty",
+    "Sonrisa natural y armoniosa",
+    "Autoestima renovada",
+    "Materiales de máxima calidad",
+    "Técnicas mínimamente invasivas",
+    "Resultados inmediatos",
+    "Durabilidad garantizada",
+  ],
+
+  treatments: [
+    {
+      name: "Blanqueamiento Dental",
+      description: "Aclaramiento profesional hasta 8 tonos más blanco",
+      price: "Desde $850,000 COP",
+      duration: "1-2 sesiones",
+      icon: "⚡",
+    },
+    {
+      name: "Carillas de Porcelana",
+      description: "Láminas ultra delgadas para transformar sonrisas",
+      price: "Desde $1,200,000 COP/diente",
+      duration: "2-3 citas",
+      icon: "✨",
+    },
+    {
+      name: "Resinas Estéticas",
+      description: "Restauraciones del color del diente",
+      price: "Desde $450,000 COP",
+      duration: "1 sesión",
+      icon: "🎨",
+    },
+    {
+      name: "Coronas Estéticas",
+      description: "Coronas de porcelana libres de metal",
+      price: "Desde $980,000 COP",
+      duration: "2 citas",
+      icon: "👑",
+    },
+    {
+      name: "Contouring Dental",
+      description: "Remodelado conservador de dientes",
+      price: "Desde $320,000 COP",
+      duration: "1 sesión",
+      icon: "🔧",
+    },
+    {
+      name: "Incrustaciones Estéticas",
+      description: "Restauraciones precisas en porcelana",
+      price: "Desde $750,000 COP",
+      duration: "2 citas",
+      icon: "💎",
+    },
   ],
 
   process: [
     {
       step: "1",
-      title: "Initial Evaluation",
+      title: "Análisis Estético Completo",
       description:
-        "Complete examination, digital photography and detailed facial analysis.",
+        "Evaluación facial, sonrisa y proporciones dentales con fotografía digital.",
       duration: "60 min",
     },
     {
       step: "2",
-      title: "3D Digital Design",
-      description:
-        "Creation of personalized design using DSD (Digital Smile Design) technology.",
+      title: "Planificación Digital",
+      description: "Diseño digital del resultado esperado con simulación 3D.",
       duration: "45 min",
     },
     {
       step: "3",
-      title: "Aesthetic Trial",
-      description:
-        "Temporary mock-up so you can see and approve your new smile.",
-      duration: "30 min",
+      title: "Preparación Mínimamente Invasiva",
+      description: "Preparación conservadora respetando la estructura dental.",
+      duration: "60-90 min",
     },
     {
       step: "4",
-      title: "Dental Preparation",
-      description: "Minimally invasive preparation of teeth.",
-      duration: "90 min",
+      title: "Fabricación Personalizada",
+      description: "Creación de restauraciones con materiales premium.",
+      duration: "5-7 días",
     },
     {
       step: "5",
-      title: "Final Cementation",
-      description: "Definitive placement of premium veneers or crowns.",
-      duration: "120 min",
+      title: "Cementación Final",
+      description: "Colocación definitiva con técnicas de adhesión avanzada.",
+      duration: "60 min",
     },
   ],
 
   beforeAfter: [
     {
-      before: "/optimized-images/img-lumia/antes-1-optimized.jpg",
-      after: "/optimized-images/img-lumia/cliente-final-1-optimized.jpg",
-      case: "Case 1: Gummy Smile",
+      before: "/optimized-images/img-lumia/antes-despues-9-optimized.jpg",
+      after: "/optimized-images/img-lumia/cliente-final-10-optimized.jpg",
+      case: "Blanqueamiento Profesional Premium",
     },
     {
-      before: "/optimized-images/img-lumia/antes-despues-1-optimized.jpg",
-      after: "/optimized-images/img-lumia/cliente-final-2-optimized.jpg",
-      case: "Case 2: Interdental Spaces",
+      before: "/optimized-images/img-lumia/antes-despues-10-optimized.jpg",
+      after: "/optimized-images/img-lumia/cliente-final-11-optimized.jpg",
+      case: "Carillas de Porcelana - Caso Completo",
     },
     {
-      before: "/optimized-images/img-lumia/antes-despues-2-optimized.jpg",
-      after: "/optimized-images/img-lumia/cliente-final-3-optimized.jpg",
-      case: "Case 3: Severe Discoloration",
+      before: "/optimized-images/img-lumia/antes-despues-11-optimized.jpg",
+      after: "/optimized-images/img-lumia/cliente-final-12-optimized.jpg",
+      case: "Resinas Estéticas Múltiples",
+    },
+    {
+      before: "/optimized-images/img-lumia/protesis-1-optimized.jpg",
+      after: "/optimized-images/img-lumia/protesis-2-optimized.jpg",
+      case: "Prótesis Estética - Caso 1",
+    },
+    {
+      before: "/optimized-images/img-lumia/protesis-4-optimized.jpg",
+      after: "/optimized-images/img-lumia/protesis-5-optimized.jpg",
+      case: "Prótesis Estética - Caso 2",
+    },
+  ],
+
+  whiteningTypes: [
+    {
+      type: "Blanqueamiento en Consultorio",
+      description: "Tratamiento profesional con resultados inmediatos",
+      advantages: [
+        "Resultados en 1 sesión",
+        "Supervisión profesional",
+        "Máxima efectividad",
+      ],
+      price: "Desde $850,000 COP",
+    },
+    {
+      type: "Blanqueamiento Domiciliario",
+      description: "Kit personalizado para uso en casa",
+      advantages: [
+        "Comodidad del hogar",
+        "Ritmo personalizado",
+        "Resultados graduales",
+      ],
+      price: "Desde $650,000 COP",
+    },
+    {
+      type: "Blanqueamiento Combinado",
+      description: "Lo mejor de ambos tratamientos",
+      advantages: [
+        "Máximos resultados",
+        "Duración prolongada",
+        "Seguimiento completo",
+      ],
+      price: "Desde $1,200,000 COP",
     },
   ],
 
   faq: [
     {
-      question: "How long do veneers last?",
+      question: "¿Cuánto tiempo duran los resultados del blanqueamiento?",
       answer:
-        "With proper care, porcelain veneers can last 10-15 years or more.",
+        "Los resultados del blanqueamiento profesional duran entre 1-3 años, dependiendo de los hábitos alimenticios y de higiene. Evitar café, vino tinto y cigarrillo prolonga los resultados.",
     },
     {
-      question: "Is it a painful procedure?",
+      question: "¿Las carillas de porcelana se ven naturales?",
       answer:
-        "No, we use local anesthesia and minimally invasive techniques. Most patients do not report significant pain.",
+        "Sí, las carillas de porcelana están diseñadas para imitar perfectamente el esmalte dental natural. Son translúcidas y reflejan la luz como dientes naturales.",
     },
     {
-      question: "Can I eat normally?",
+      question: "¿Es doloroso el proceso de colocación de carillas?",
       answer:
-        "Yes, after the adaptation period (24-48 hours) you will be able to eat completely normally.",
+        "No, el proceso es mínimamente invasivo y se realiza con anestesia local. La mayoría de pacientes no reporta molestias significativas.",
     },
     {
-      question: "What special care does it require?",
+      question: "¿Puedo comer normalmente con restauraciones estéticas?",
       answer:
-        "Regular dental hygiene, avoid biting hard objects and control visits every 6 months.",
+        "Sí, las restauraciones estéticas están diseñadas para soportar la función masticatoria normal. Se recomienda evitar hábitos como morder objetos duros.",
+    },
+    {
+      question: "¿Qué diferencia hay entre carillas y coronas?",
+      answer:
+        "Las carillas cubren solo la parte frontal del diente con mínimo desgaste. Las coronas cubren todo el diente y requieren mayor preparación, se usan en casos más complejos.",
     },
   ],
 };
 
 const testimonials = [
   {
-    name: "Sarah Johnson",
-    age: 32,
-    location: "Miami, FL",
-    text: "My life changed completely after the smile design. The confidence I have now is incredible.",
+    name: "Sofía Castillo",
+    age: 28,
+    location: "Manizales",
+    text: "Mi blanqueamiento quedó perfecto, mis dientes se ven naturalmente blancos. El proceso fue muy cómodo y sin sensibilidad.",
     rating: 5,
-    image: "https://via.placeholder.com/80x80/d4af37/ffffff?text=SJ",
+    image: "https://via.placeholder.com/80x80/d4af37/ffffff?text=SC",
   },
   {
-    name: "Michael Davis",
-    age: 28,
-    location: "New York, NY",
-    text: "The process was very comfortable and the results exceeded my expectations. I recommend LUMIA 100%.",
+    name: "Julián Gómez",
+    age: 35,
+    location: "Pereira",
+    text: "Las carillas transformaron completamente mi sonrisa. Se ven increíblemente naturales, nadie nota que no son mis dientes originales.",
     rating: 5,
-    image: "https://via.placeholder.com/80x80/d4af37/ffffff?text=MD",
+    image: "https://via.placeholder.com/80x80/d4af37/ffffff?text=JG",
   },
 ];
 ---
 
 <Layout
-  title="Digital Smile Design - LUMIA Specialized Dentistry"
-  description="Complete smile transformation with advanced 3D technology. Personalized Digital Smile Design at LUMIA. Predictable and natural results."
+  title="Odontología Estética Premium - LUMIA Odontología Especializada"
+  description="Odontología estética avanzada en LUMIA. Blanqueamiento, carillas de porcelana, resinas estéticas. Sonrisas perfectas en Manizales y Pereira."
   lang={lang}
-  keywords="smile design Colombia, dental veneers, smile makeover, cosmetic dentistry, perfect smile"
+  keywords="odontología estética Manizales, blanqueamiento dental Pereira, carillas porcelana Colombia, resinas estéticas, sonrisa perfecta"
 >
   <Header />
 
@@ -143,7 +233,7 @@ const testimonials = [
             <div
               class="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-6"
             >
-              <span class="text-sm font-semibold">✨ Premium Service</span>
+              <span class="text-sm font-semibold">🎨 Arte Dental</span>
             </div>
             <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
               {serviceDetails.title}
@@ -153,20 +243,20 @@ const testimonials = [
             </p>
             <div class="flex flex-col sm:flex-row gap-4 mb-8">
               <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                <div class="text-sm opacity-80">Price</div>
+                <div class="text-sm opacity-80">Precio</div>
                 <div class="text-2xl font-bold">{serviceDetails.price}</div>
               </div>
               <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                <div class="text-sm opacity-80">Duration</div>
+                <div class="text-sm opacity-80">Duración</div>
                 <div class="text-2xl font-bold">{serviceDetails.duration}</div>
               </div>
             </div>
             <div class="flex flex-col sm:flex-row gap-4">
               <a
-                href="/en/contact"
+                href="/contacto"
                 class="inline-flex items-center justify-center px-8 py-4 bg-white text-primary-gold font-bold rounded-lg shadow-luxury hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               >
-                Schedule Consultation
+                Consulta Estética
               </a>
               <a
                 href="https://wa.me/573000000000"
@@ -192,8 +282,8 @@ const testimonials = [
               class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-500"
             >
               <img
-                src="/optimized-images/img-lumia/cliente-final-4-optimized.jpg"
-                alt="Digital Smile Design"
+                src="https://via.placeholder.com/500x400/ffffff/d4af37?text=Estética+Dental"
+                alt="Odontología Estética Premium"
                 class="rounded-xl shadow-2xl"
                 loading="lazy"
               />
@@ -203,20 +293,62 @@ const testimonials = [
       </div>
     </section>
 
-    <!-- Service Description -->
+    <!-- Treatments Section -->
     <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Tratamientos Estéticos
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Servicios especializados para cada necesidad estética
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {
+            serviceDetails.treatments.map((treatment, index) => (
+              <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border border-gray-100">
+                <div class="text-center">
+                  <div class="text-6xl mb-4">{treatment.icon}</div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-4">
+                    {treatment.name}
+                  </h3>
+                  <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                    {treatment.description}
+                  </p>
+                  <div class="border-t border-gray-100 pt-6">
+                    <div class="text-lg font-bold text-primary-gold mb-2">
+                      {treatment.price}
+                    </div>
+                    <div class="text-sm text-gray-500">
+                      {treatment.duration}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Description -->
+    <section class="py-20 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 class="text-4xl font-bold text-gray-900 mb-6">
-              What is Digital Smile Design?
+              ¿Qué es la Odontología Estética?
             </h2>
             <p class="text-lg text-gray-600 mb-8 leading-relaxed">
               {serviceDetails.description}
             </p>
 
             <div class="space-y-4">
-              <h3 class="text-2xl font-bold text-gray-900">Main Benefits:</h3>
+              <h3 class="text-2xl font-bold text-gray-900">
+                Beneficios de nuestros tratamientos:
+              </h3>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {
                   serviceDetails.benefits.map((benefit) => (
@@ -246,8 +378,8 @@ const testimonials = [
               class="aspect-video bg-gray-100 rounded-2xl overflow-hidden shadow-xl"
             >
               <img
-                src="/optimized-images/img-lumia/cliente-final-5-optimized.jpg"
-                alt="Digital Smile Design Technology"
+                src="https://via.placeholder.com/600x400/f3f4f6/9ca3af?text=Materiales+Premium"
+                alt="Materiales Estéticos Premium"
                 class="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -257,16 +389,71 @@ const testimonials = [
       </div>
     </section>
 
+    <!-- Whitening Types -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Tipos de Blanqueamiento
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Opciones personalizadas para cada paciente
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {
+            serviceDetails.whiteningTypes.map((whitening, index) => (
+              <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                  {whitening.type}
+                </h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                  {whitening.description}
+                </p>
+
+                <div class="space-y-3 mb-6">
+                  {whitening.advantages.map((advantage, idx) => (
+                    <div class="flex items-center space-x-3">
+                      <div class="w-5 h-5 bg-primary-gold rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg
+                          class="w-2 h-2 text-white"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </div>
+                      <span class="text-gray-700 text-sm">{advantage}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div class="border-t border-gray-100 pt-6">
+                  <div class="text-2xl font-bold text-primary-gold">
+                    {whitening.price}
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
     <!-- Process Steps -->
     <section class="py-20 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Our Process
+            Proceso del Tratamiento
           </h2>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            A systematic and personalized approach to guarantee exceptional
-            results
+            Un enfoque meticuloso para resultados excepcionales
           </p>
         </div>
 
@@ -277,7 +464,7 @@ const testimonials = [
                 class={`flex flex-col lg:flex-row items-center gap-8 ${index % 2 === 1 ? "lg:flex-row-reverse" : ""}`}
               >
                 <div class="flex-1">
-                  <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
                     <div class="flex items-center mb-4">
                       <div class="w-12 h-12 bg-gradient-gold rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
                         {step.step}
@@ -299,7 +486,7 @@ const testimonials = [
                 <div class="flex-1">
                   <div class="aspect-video bg-gradient-to-br from-primary-gold/10 to-primary-gold/20 rounded-2xl flex items-center justify-center">
                     <img
-                      src={`/optimized-images/img-lumia/cliente-final-${parseInt(step.step) + 5}-optimized.jpg`}
+                      src={`https://via.placeholder.com/500x300/d4af37/ffffff?text=Paso+${step.step}`}
                       alt={step.title}
                       class="rounded-xl shadow-lg"
                       loading="lazy"
@@ -318,10 +505,10 @@ const testimonials = [
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Real Results
+            Transformaciones Estéticas
           </h2>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Transformations that speak for themselves
+            Resultados reales que hablan por sí solos
           </p>
         </div>
 
@@ -329,33 +516,33 @@ const testimonials = [
           {
             serviceDetails.beforeAfter.map((comparison, index) => (
               <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div class="relative group">
-                  <div class="before-after-container">
-                    <img
-                      src={comparison.before}
-                      alt="Before"
-                      class="before-image w-full h-64 object-cover transition-opacity duration-700"
-                    />
-                    <img
-                      src={comparison.after}
-                      alt="After"
-                      class="after-image w-full h-64 object-cover absolute inset-0 opacity-0 transition-opacity duration-700"
-                    />
-                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <span class="text-white font-semibold">
-                        Hover to see result
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div class="p-6">
-                  <h3 class="text-lg font-bold text-gray-900 mb-2">
+                <div class="p-4">
+                  <h3 class="text-lg font-bold text-gray-900 mb-4 text-center">
                     {comparison.case}
                   </h3>
-                  <div class="flex justify-between text-sm text-gray-500">
-                    <span>Before</span>
-                    <span>→</span>
-                    <span>After</span>
+                  <div class="space-y-4">
+                    <div>
+                      <h4 class="text-sm font-semibold text-gray-600 mb-2">
+                        Antes
+                      </h4>
+                      <img
+                        src={comparison.before}
+                        alt="Antes"
+                        class="w-full h-48 object-cover rounded-lg border-2 border-gray-200"
+                        onerror="this.style.border='2px solid red'; this.alt='ERROR: Imagen no encontrada';"
+                      />
+                    </div>
+                    <div>
+                      <h4 class="text-sm font-semibold text-gray-600 mb-2">
+                        Después
+                      </h4>
+                      <img
+                        src={comparison.after}
+                        alt="Después"
+                        class="w-full h-48 object-cover rounded-lg border-2 border-gray-200"
+                        onerror="this.style.border='2px solid red'; this.alt='ERROR: Imagen no encontrada';"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -370,17 +557,17 @@ const testimonials = [
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Frequently Asked Questions
+            Preguntas Frecuentes
           </h2>
           <p class="text-xl text-gray-600">
-            We answer your questions about Smile Design
+            Resolvemos tus dudas sobre odontología estética
           </p>
         </div>
 
         <div class="space-y-6">
           {
             serviceDetails.faq.map((item, index) => (
-              <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+              <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
                 <button
                   class="faq-button w-full text-left p-6 focus:outline-none focus:ring-2 focus:ring-primary-gold"
                   data-target={`faq-${index}`}
@@ -419,10 +606,10 @@ const testimonials = [
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            What Our Patients Say
+            Sonrisas Transformadas
           </h2>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Real testimonials from successful transformations
+            La satisfacción de nuestros pacientes es nuestro mayor logro
           </p>
         </div>
 
@@ -453,7 +640,7 @@ const testimonials = [
                   <div>
                     <h4 class="font-bold text-gray-900">{testimonial.name}</h4>
                     <p class="text-gray-600 text-sm">
-                      {testimonial.age} years • {testimonial.location}
+                      {testimonial.age} años • {testimonial.location}
                     </p>
                   </div>
                 </div>
@@ -468,18 +655,18 @@ const testimonials = [
     <section class="py-20 bg-primary-gold text-white">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-4xl md:text-5xl font-bold mb-6">
-          Ready for Your New Smile?
+          ¿Listo para tu Sonrisa Perfecta?
         </h2>
         <p class="text-xl mb-12 opacity-90">
-          Schedule your personalized consultation and discover how we can
-          transform your smile
+          Agenda tu consulta estética y descubre cómo podemos transformar tu
+          sonrisa
         </p>
         <div class="flex flex-col sm:flex-row gap-6 justify-center">
           <a
-            href="/en/contact"
+            href="/contacto"
             class="inline-flex items-center px-10 py-5 bg-white text-primary-gold font-bold rounded-lg shadow-luxury hover:shadow-xl transition-all duration-300 transform hover:scale-105"
           >
-            Schedule Free Consultation
+            Consulta Estética Gratuita
           </a>
           <a
             href="https://wa.me/573000000000"
@@ -492,7 +679,7 @@ const testimonials = [
                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.531 3.503"
               ></path>
             </svg>
-            WhatsApp Consultation
+            WhatsApp
           </a>
         </div>
       </div>

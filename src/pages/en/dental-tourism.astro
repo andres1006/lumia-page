@@ -2,159 +2,220 @@
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
-import { useTranslations } from "../../i18n";
+import { getLangFromUrl, useTranslations } from "../../i18n";
+import SparkleIcon from "../../components/react/SparkleIcon";
+import WhatsAppButton from "../../components/react/WhatsAppButton";
+import PlaceIcons from "../../components/react/PlaceIcons";
+import BenefitIcons from "../../components/react/BenefitIcons";
+import { ArrowRight } from "lucide-react";
 
-// Force English language for this page
-const lang = "en";
+const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const packages = [
   {
-    name: "Premium Smile Design Package",
-    duration: "5-7 days",
+    name:
+      lang === "es"
+        ? "Paquete Diseño de Sonrisa Premium"
+        : "Premium Smile Design Package",
+    duration: lang === "es" ? "5-7 días" : "5-7 days",
     price: "$3,200 - $4,500",
     originalPrice: "$8,000 - $12,000",
     savings: "60-70%",
-    includes: [
-      "Initial specialist consultation",
-      "Complete 3D digital exams",
-      "Digital smile design",
-      "6-10 premium porcelain veneers",
-      "Professional teeth whitening",
-      "Post-treatment follow-up",
-      "2 hotel nights (optional)",
-      "Airport-clinic transfers",
-    ],
+    includes:
+      lang === "es"
+        ? [
+            "Consulta inicial con especialista",
+            "Exámenes digitales 3D completos",
+            "Diseño digital de sonrisa",
+            "6-10 carillas de porcelana premium",
+            "Blanqueamiento dental profesional",
+            "Seguimiento post-tratamiento",
+            "2 noches de hotel (opcional)",
+            "Traslados aeropuerto-clínica",
+          ]
+        : [
+            "Initial specialist consultation",
+            "Complete 3D digital exams",
+            "Digital smile design",
+            "6-10 premium porcelain veneers",
+            "Professional teeth whitening",
+            "Post-treatment follow-up",
+            "2 hotel nights (optional)",
+            "Airport-clinic transfers",
+          ],
   },
   {
-    name: "All-Inclusive Implants Package",
-    duration: "7-10 days",
+    name:
+      lang === "es"
+        ? "Paquete Implantes Todo Incluido"
+        : "All-Inclusive Implants Package",
+    duration: lang === "es" ? "7-10 días" : "7-10 days",
     price: "$2,500 - $5,000",
     originalPrice: "$6,000 - $15,000",
     savings: "60-75%",
-    includes: [
-      "3D tomography evaluation",
-      "1-4 premium dental implants",
-      "Computer-guided surgery",
-      "Porcelain crowns",
-      "Medications included",
-      "1-year follow-up",
-      "3 hotel nights (optional)",
-      "Post-surgery nutrition plan",
-    ],
+    includes:
+      lang === "es"
+        ? [
+            "Evaluación con tomografía 3D",
+            "1-4 implantes dentales premium",
+            "Cirugía guiada por computadora",
+            "Coronas de porcelana",
+            "Medicamentos incluidos",
+            "Seguimiento durante 1 año",
+            "3 noches de hotel (opcional)",
+            "Plan nutricional post-cirugía",
+          ]
+        : [
+            "3D tomography evaluation",
+            "1-4 premium dental implants",
+            "Computer-guided surgery",
+            "Porcelain crowns",
+            "Medications included",
+            "1-year follow-up",
+            "3 hotel nights (optional)",
+            "Post-surgery nutrition plan",
+          ],
   },
   {
-    name: "Complete Transformation Package",
-    duration: "10-14 days",
+    name:
+      lang === "es"
+        ? "Paquete Transformación Completa"
+        : "Complete Transformation Package",
+    duration: lang === "es" ? "10-14 días" : "10-14 days",
     price: "$6,000 - $9,000",
     originalPrice: "$20,000 - $30,000",
     savings: "70-80%",
-    includes: [
-      "Comprehensive multi-specialist evaluation",
-      "Complete smile design",
-      "Combined implants + veneers",
-      "Invisible orthodontics (if applicable)",
-      "Facial bichectomy",
-      "Advanced whitening",
-      "5 hotel nights included",
-      "Gastronomic and cultural tour",
-    ],
-  },
-];
-
-const destinations = [
-  {
-    name: "Nevado del Ruiz",
-    description:
-      "Explore the majestic snow-capped volcano and its unique landscapes during your recovery.",
-    image: "🏔️",
-  },
-  {
-    name: "Coffee Region",
-    description:
-      "Discover traditional coffee farms and taste the world's best coffee.",
-    image: "☕",
-  },
-  {
-    name: "Santa Rosa Hot Springs",
-    description: "Relax in natural thermal waters with healing properties.",
-    image: "♨️",
-  },
-  {
-    name: "Manizales Downtown",
-    description:
-      "Explore the vibrant city culture, museums and colonial architecture.",
-    image: "🏛️",
+    includes:
+      lang === "es"
+        ? [
+            "Evaluación integral multiespecialista",
+            "Diseño de sonrisa completo",
+            "Implantes + carillas combinados",
+            "Ortodoncia invisible (si aplica)",
+            "Bichectomía facial",
+            "Blanqueamiento avanzado",
+            "5 noches de hotel incluidas",
+            "Tour gastronómico y cultural",
+          ]
+        : [
+            "Comprehensive multi-specialist evaluation",
+            "Complete smile design",
+            "Combined implants + veneers",
+            "Invisible orthodontics (if applicable)",
+            "Facial bichectomy",
+            "Advanced whitening",
+            "5 hotel nights included",
+            "Gastronomic and cultural tour",
+          ],
   },
 ];
 
 const process = [
   {
     step: "1",
-    title: "Free Virtual Consultation",
+    title:
+      lang === "es" ? "Consulta Virtual Gratuita" : "Free Virtual Consultation",
     description:
-      "We evaluate your case and design a personalized treatment plan from home.",
+      lang === "es"
+        ? "Evaluamos tu caso y diseñamos un plan de tratamiento personalizado desde casa."
+        : "We evaluate your case and design a personalized treatment plan from home.",
   },
   {
     step: "2",
-    title: "Trip Planning",
+    title: lang === "es" ? "Planificación del Viaje" : "Trip Planning",
     description:
-      "We help you with flights, accommodation and all the details of your stay.",
+      lang === "es"
+        ? "Te ayudamos con vuelos, alojamiento y todos los detalles de tu estadía."
+        : "We help you with flights, accommodation and all the details of your stay.",
   },
   {
     step: "3",
-    title: "Arrival and Welcome",
+    title: lang === "es" ? "Llegada y Bienvenida" : "Arrival and Welcome",
     description:
-      "We pick you up at the airport and get you comfortably settled in Manizales.",
+      lang === "es"
+        ? "Te recogemos en el aeropuerto y te instalamos cómodamente en Manizales."
+        : "We pick you up at the airport and get you comfortably settled in Manizales.",
   },
   {
     step: "4",
-    title: "Dental Treatment",
+    title: lang === "es" ? "Tratamiento Dental" : "Dental Treatment",
     description:
-      "We execute your treatment plan with the highest quality and technology.",
+      lang === "es"
+        ? "Ejecutamos tu plan de tratamiento con la más alta calidad y tecnología."
+        : "We execute your treatment plan with the highest quality and technology.",
   },
   {
     step: "5",
-    title: "Recovery and Tourism",
-    description: "Enjoy Colombia while you recover with our tourism program.",
+    title: lang === "es" ? "Recuperación y Turismo" : "Recovery and Tourism",
+    description:
+      lang === "es"
+        ? "Disfruta de Colombia mientras te recuperas con nuestro programa turístico."
+        : "Enjoy Colombia while you recover with our tourism program.",
   },
   {
     step: "6",
-    title: "Continuous Follow-up",
+    title: lang === "es" ? "Seguimiento Continuo" : "Continuous Follow-up",
     description:
-      "We keep in touch with you to ensure perfect long-term results.",
+      lang === "es"
+        ? "Mantenemos contacto contigo para asegurar resultados perfectos a largo plazo."
+        : "We keep in touch with you to ensure perfect long-term results.",
   },
 ];
 
 const faqs = [
   {
-    question: "Do I need a visa to travel to Colombia?",
+    question:
+      lang === "es"
+        ? "¿Necesito visa para viajar a Colombia?"
+        : "Do I need a visa to travel to Colombia?",
     answer:
-      "US citizens do not need a visa for stays under 90 days. You just need a valid passport.",
+      lang === "es"
+        ? "Los requisitos de visa dependen de tu país de origen. Por ejemplo, los ciudadanos estadounidenses no necesitan visa para estadías menores a 90 días, solo pasaporte vigente. Te recomendamos verificar los requisitos específicos para tu nacionalidad antes de viajar."
+        : "Visa requirements depend on your country of origin. For example, US citizens do not need a visa for stays under 90 days, just a valid passport. We recommend checking the specific requirements for your nationality before traveling.",
   },
   {
-    question: "What if I need additional care?",
+    question:
+      lang === "es"
+        ? "¿Qué pasa si necesito cuidados adicionales?"
+        : "What if I need additional care?",
     answer:
-      "We offer 24/7 virtual follow-up and have agreements with dentists in the United States for emergencies.",
+      lang === "es"
+        ? "Ofrecemos seguimiento virtual 24/7 y tenemos convenios con dentistas en Estados Unidos para emergencias."
+        : "We offer 24/7 virtual follow-up and have agreements with dentists in the United States for emergencies.",
   },
   {
-    question: "Are the materials of the same quality?",
+    question:
+      lang === "es"
+        ? "¿Los materiales son de la misma calidad?"
+        : "Are the materials of the same quality?",
     answer:
-      "We use exactly the same premium materials as clinics in the United States and Europe.",
+      lang === "es"
+        ? "Utilizamos exactamente los mismos materiales premium que las clínicas de Estados Unidos y Europa."
+        : "We use exactly the same premium materials as clinics in the United States and Europe.",
   },
   {
-    question: "Do they speak English at the clinic?",
+    question:
+      lang === "es"
+        ? "¿Hablan inglés en la clínica?"
+        : "Do they speak English at the clinic?",
     answer:
-      "Our entire team is bilingual and we offer complete care in English.",
+      lang === "es"
+        ? "Todo nuestro equipo es bilingüe y ofrecemos atención completamente en inglés."
+        : "Our entire team is bilingual and we offer complete care in English.",
   },
 ];
 ---
 
 <Layout
   title={t("tourism.hero.title")}
-  description="Save up to 70% on world-class dental treatments. Combine your dental care with an incredible vacation in Manizales, Colombia."
+  description={lang === "es"
+    ? "Ahorra hasta 70% en tratamientos dentales de calidad mundial. Combina tu cuidado dental con unas vacaciones increíbles en Manizales, Colombia."
+    : "Save up to 70% on world-class dental treatments. Combine your dental care with an incredible vacation in Manizales, Colombia."}
   lang={lang}
-  keywords="dental tourism Colombia, dentist Manizales foreigners, cheap dental implants Colombia, smile design tourism, dental vacation"
+  keywords={lang === "es"
+    ? "turismo dental Colombia, dentista Manizales extranjeros, implantes dentales baratos Colombia, diseño sonrisa turismo, vacaciones dentales"
+    : "dental tourism Colombia, dentist Manizales foreigners, cheap dental implants Colombia, smile design tourism, dental vacation"}
 >
   <Header />
 
@@ -165,8 +226,8 @@ const faqs = [
     >
       <div class="absolute inset-0">
         <img
-          src="/optimized-images/img-lumia/IMG_5830-optimized.jpg"
-          alt="LUMIA Dental Tourism"
+          src="/optimized-images/img-lumia/cliente-final-4-optimized.jpg"
+          alt="LUMIA Dental Tourism - Resultados de Tratamiento"
           class="w-full h-full object-cover grayscale brightness-50"
         />
         <div class="absolute inset-0 bg-black/40"></div>
@@ -193,21 +254,31 @@ const faqs = [
           <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
               <div class="text-3xl font-bold text-white">70%</div>
-              <div class="text-sm opacity-80 text-white">Average Savings</div>
+              <div class="text-sm opacity-80 text-white">
+                {lang === "es" ? "Ahorro Promedio" : "Average Savings"}
+              </div>
             </div>
             <div>
               <div class="text-3xl font-bold text-white">500+</div>
               <div class="text-sm opacity-80 text-white">
-                International Patients
+                {
+                  lang === "es"
+                    ? "Pacientes Internacionales"
+                    : "International Patients"
+                }
               </div>
             </div>
             <div>
               <div class="text-3xl font-bold text-white">98%</div>
-              <div class="text-sm opacity-80 text-white">Satisfaction</div>
+              <div class="text-sm opacity-80 text-white">
+                {lang === "es" ? "Satisfacción" : "Satisfaction"}
+              </div>
             </div>
             <div>
               <div class="text-3xl font-bold text-white">15+</div>
-              <div class="text-sm opacity-80 text-white">Years Experience</div>
+              <div class="text-sm opacity-80 text-white">
+                {lang === "es" ? "Años de Experiencia" : "Years Experience"}
+              </div>
             </div>
           </div>
         </div>
@@ -216,7 +287,7 @@ const faqs = [
 
     <!-- Value Proposition Section -->
     <section class="py-32 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto">
         <div class="text-center mb-24">
           <h2
             class="text-5xl md:text-6xl font-light text-gray-900 mb-8 tracking-wide"
@@ -233,8 +304,8 @@ const faqs = [
           <div class="group relative h-96">
             <div class="absolute inset-0">
               <img
-                src="/optimized-images/img-lumia/IMG_5830-optimized.jpg"
-                alt="Savings"
+                src="/optimized-images/img-lumia/cliente-final-5-optimized.jpg"
+                alt="Savings - Resultados de Tratamiento"
                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
               />
               <div
@@ -245,20 +316,26 @@ const faqs = [
             <div
               class="relative h-full flex flex-col justify-end py-4 px-0 text-white"
             >
-              <div class="mb-6">
-                <div class="text-4xl mb-4">💰</div>
+              <div class="mb-6 p-4">
                 <h3 class="text-2xl font-light mb-4 tracking-wide">
-                  Extraordinary Savings
+                  {
+                    lang === "es"
+                      ? "Ahorro Extraordinario"
+                      : "Extraordinary Savings"
+                  }
                 </h3>
                 <p class="text-gray-200 font-light leading-relaxed">
-                  Save up to 80% on premium treatments without compromising
-                  quality
+                  {
+                    lang === "es"
+                      ? "Ahorra hasta 80% en tratamientos premium sin comprometer la calidad"
+                      : "Save up to 80% on premium treatments without compromising quality"
+                  }
                 </p>
               </div>
-              <div class="border-t border-white/20 pt-4">
+              <div class="border-t border-white/20 pt-4 p-4">
                 <div class="text-3xl font-light">60-80%</div>
                 <div class="text-sm text-gray-300 font-light">
-                  average savings
+                  {lang === "es" ? "de ahorro promedio" : "average savings"}
                 </div>
               </div>
             </div>
@@ -268,8 +345,8 @@ const faqs = [
           <div class="group relative h-96">
             <div class="absolute inset-0">
               <img
-                src="/optimized-images/img-lumia/IMG_5726-optimized.jpg"
-                alt="Quality"
+                src="/optimized-images/img-lumia/cliente-final-6-optimized.jpg"
+                alt="Quality - Resultados de Tratamiento"
                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
               />
               <div
@@ -280,19 +357,26 @@ const faqs = [
             <div
               class="relative h-full flex flex-col justify-end py-4 px-0 text-white"
             >
-              <div class="mb-6">
-                <div class="text-4xl mb-4">🏆</div>
+              <div class="mb-6 p-4">
                 <h3 class="text-2xl font-light mb-4 tracking-wide">
-                  International Quality
+                  {
+                    lang === "es"
+                      ? "Calidad Internacional"
+                      : "International Quality"
+                  }
                 </h3>
                 <p class="text-gray-200 font-light leading-relaxed">
-                  Certified specialists with cutting-edge technology
+                  {
+                    lang === "es"
+                      ? "Especialistas certificados con tecnología de vanguardia"
+                      : "Certified specialists with cutting-edge technology"
+                  }
                 </p>
               </div>
-              <div class="border-t border-white/20 pt-4">
+              <div class="border-t border-white/20 pt-4 p-4">
                 <div class="text-3xl font-light">15+</div>
                 <div class="text-sm text-gray-300 font-light">
-                  years experience
+                  {lang === "es" ? "años de experiencia" : "years experience"}
                 </div>
               </div>
             </div>
@@ -302,8 +386,8 @@ const faqs = [
           <div class="group relative h-96">
             <div class="absolute inset-0">
               <img
-                src="/optimized-images/img-lumia/IMG_0103-optimized.jpg"
-                alt="Experience"
+                src="/optimized-images/img-lumia/cliente-final-7-optimized.jpg"
+                alt="Experience - Resultados de Tratamiento"
                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
               />
               <div
@@ -314,18 +398,23 @@ const faqs = [
             <div
               class="relative h-full flex flex-col justify-end py-4 px-0 text-white"
             >
-              <div class="mb-6">
-                <div class="text-4xl mb-4">🌴</div>
+              <div class="mb-6 p-4">
                 <h3 class="text-2xl font-light mb-4 tracking-wide">
-                  Unique Experience
+                  {lang === "es" ? "Experiencia Única" : "Unique Experience"}
                 </h3>
                 <p class="text-gray-200 font-light leading-relaxed">
-                  Combine your treatment with cultural and gastronomic tourism
+                  {
+                    lang === "es"
+                      ? "Combina tu tratamiento con turismo cultural y gastronómico"
+                      : "Combine your treatment with cultural and gastronomic tourism"
+                  }
                 </p>
               </div>
-              <div class="border-t border-white/20 pt-4">
+              <div class="border-t border-white/20 pt-4 p-4">
                 <div class="text-3xl font-light">98%</div>
-                <div class="text-sm text-gray-300 font-light">satisfaction</div>
+                <div class="text-sm text-gray-300 font-light">
+                  {lang === "es" ? "satisfacción" : "satisfaction"}
+                </div>
               </div>
             </div>
           </div>
@@ -339,48 +428,60 @@ const faqs = [
             <div
               class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary-gold/10 transition-all duration-300"
             >
-              <span class="text-2xl">✈️</span>
+              <BenefitIcons client:load type="plane" size="lg" />
             </div>
             <h4 class="text-lg font-light text-gray-900 mb-3 tracking-wide">
-              Transfers Included
+              {lang === "es" ? "Traslados Incluidos" : "Transfers Included"}
             </h4>
-            <p class="text-gray-600 text-sm font-light">Airport-clinic-hotel</p>
+            <p class="text-gray-600 text-sm font-light">
+              {
+                lang === "es"
+                  ? "Aeropuerto-clínica-hotel"
+                  : "Airport-clinic-hotel"
+              }
+            </p>
           </div>
 
           <div class="text-center group">
             <div
               class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary-gold/10 transition-all duration-300"
             >
-              <span class="text-2xl">🏨</span>
+              <BenefitIcons client:load type="hotel" size="lg" />
             </div>
             <h4 class="text-lg font-light text-gray-900 mb-3 tracking-wide">
-              Premium Accommodation
+              {lang === "es" ? "Alojamiento Premium" : "Premium Accommodation"}
             </h4>
-            <p class="text-gray-600 text-sm font-light">4-5 star hotels</p>
+            <p class="text-gray-600 text-sm font-light">
+              {lang === "es" ? "Hoteles de 4-5 estrellas" : "4-5 star hotels"}
+            </p>
           </div>
 
           <div class="text-center group">
             <div
               class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary-gold/10 transition-all duration-300"
             >
-              <span class="text-2xl">🎯</span>
+              <BenefitIcons client:load type="target" size="lg" />
             </div>
             <h4 class="text-lg font-light text-gray-900 mb-3 tracking-wide">
-              24/7 Follow-up
+              {lang === "es" ? "Seguimiento 24/7" : "24/7 Follow-up"}
             </h4>
-            <p class="text-gray-600 text-sm font-light">Continuous care</p>
+            <p class="text-gray-600 text-sm font-light">
+              {lang === "es" ? "Atención continua" : "Continuous care"}
+            </p>
           </div>
 
           <div class="text-center group">
             <div
               class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary-gold/10 transition-all duration-300"
             >
-              <span class="text-2xl">🎁</span>
+              <BenefitIcons client:load type="gift" size="lg" />
             </div>
             <h4 class="text-lg font-light text-gray-900 mb-3 tracking-wide">
-              Total Warranty
+              {lang === "es" ? "Garantía Total" : "Total Warranty"}
             </h4>
-            <p class="text-gray-600 text-sm font-light">Guaranteed results</p>
+            <p class="text-gray-600 text-sm font-light">
+              {lang === "es" ? "Resultados garantizados" : "Guaranteed results"}
+            </p>
           </div>
         </div>
       </div>
@@ -395,8 +496,8 @@ const faqs = [
             class="absolute inset-0 w-screen left-1/2 transform -translate-x-1/2"
           >
             <img
-              src="/optimized-images/img-lumia/IMG_5830-optimized.jpg"
-              alt="Dental Tourism Packages"
+              src="/optimized-images/img-lumia/cliente-final-9-optimized.jpg"
+              alt="Dental Tourism Packages - Resultados de Tratamiento"
               class="w-full h-full object-cover grayscale"
             />
             <div class="absolute inset-0 bg-black/50"></div>
@@ -406,17 +507,23 @@ const faqs = [
             class="relative h-full flex flex-col justify-center py-4 px-0 text-white max-w-7xl mx-auto"
           >
             <div class="max-w-2xl py-12 px-4 md:py-16 md:px-0">
-              <div class="text-4xl md:text-6xl mb-6 md:mb-8">✨</div>
               <h3
                 class="text-3xl md:text-4xl lg:text-5xl font-light mb-6 md:mb-8 tracking-wide"
               >
-                Premium Dental Experience
+                {
+                  lang === "es"
+                    ? "Experiencia Dental Premium"
+                    : "Premium Dental Experience"
+                }
               </h3>
               <p
                 class="text-lg md:text-xl text-gray-200 font-light leading-relaxed mb-6 md:mb-8"
               >
-                We design personalized packages that combine premium dental
-                treatments with unique tourism experiences in Colombia
+                {
+                  lang === "es"
+                    ? "Diseñamos paquetes personalizados que combinan tratamientos dentales premium con experiencias turísticas únicas en Colombia"
+                    : "We design personalized packages that combine premium dental treatments with unique tourism experiences in Colombia"
+                }
               </p>
 
               <div
@@ -429,10 +536,18 @@ const faqs = [
                   </div>
                   <div>
                     <h4 class="text-base md:text-lg font-light mb-1 md:mb-2">
-                      Transfers Included
+                      {
+                        lang === "es"
+                          ? "Traslados Incluidos"
+                          : "Transfers Included"
+                      }
                     </h4>
                     <p class="text-sm md:text-base text-gray-300 font-light">
-                      From and to the airport
+                      {
+                        lang === "es"
+                          ? "Desde y hacia el aeropuerto"
+                          : "From and to the airport"
+                      }
                     </p>
                   </div>
                 </div>
@@ -443,10 +558,18 @@ const faqs = [
                   </div>
                   <div>
                     <h4 class="text-base md:text-lg font-light mb-1 md:mb-2">
-                      Premium Accommodation
+                      {
+                        lang === "es"
+                          ? "Alojamiento Premium"
+                          : "Premium Accommodation"
+                      }
                     </h4>
                     <p class="text-sm md:text-base text-gray-300 font-light">
-                      4 and 5 star hotels
+                      {
+                        lang === "es"
+                          ? "Hoteles de 4 y 5 estrellas"
+                          : "4 and 5 star hotels"
+                      }
                     </p>
                   </div>
                 </div>
@@ -457,10 +580,14 @@ const faqs = [
                   </div>
                   <div>
                     <h4 class="text-base md:text-lg font-light mb-1 md:mb-2">
-                      24/7 Follow-up
+                      {lang === "es" ? "Seguimiento 24/7" : "24/7 Follow-up"}
                     </h4>
                     <p class="text-sm md:text-base text-gray-300 font-light">
-                      Personalized accompaniment
+                      {
+                        lang === "es"
+                          ? "Acompañamiento personalizado"
+                          : "Personalized accompaniment"
+                      }
                     </p>
                   </div>
                 </div>
@@ -471,32 +598,25 @@ const faqs = [
                   </div>
                   <div>
                     <h4 class="text-base md:text-lg font-light mb-1 md:mb-2">
-                      Total Guarantee
+                      {lang === "es" ? "Garantía Total" : "Total Guarantee"}
                     </h4>
                     <p class="text-sm md:text-base text-gray-300 font-light">
-                      Guaranteed results
+                      {
+                        lang === "es"
+                          ? "Resultados garantizados"
+                          : "Guaranteed results"
+                      }
                     </p>
                   </div>
                 </div>
               </div>
 
               <a
-                href="/en/contact"
+                href="/contacto"
                 class="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-primary-gold text-white font-light tracking-wide hover:bg-yellow-600 transition-all duration-300 rounded-none text-sm md:text-base"
               >
-                Quote My Package
-                <svg
-                  class="ml-2 w-4 h-4 md:w-5 md:h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                </svg>
+                {lang === "es" ? "Cotizar Mi Paquete" : "Quote My Package"}
+                <ArrowRight className="ml-2 w-4 h-4 md:w-5 md:h-5" />
               </a>
             </div>
           </div>
@@ -505,7 +625,7 @@ const faqs = [
     </section>
 
     <!-- Destination Section -->
-    <section class="py-32 bg-white">
+    <section class="pt-32 bg-white">
       <div class="mx-auto">
         <div class="text-center mb-24">
           <h2
@@ -524,8 +644,8 @@ const faqs = [
           <div class="group relative h-96 overflow-hidden">
             <div class="absolute inset-0">
               <img
-                src="/optimized-images/img-lumia/IMG_0103-optimized.jpg"
-                alt="Nevado del Ruiz"
+                src="/lugares/nevado-ruiz.jpg"
+                alt="Nevado del Ruiz - Resultados de Tratamiento"
                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
               />
               <div
@@ -536,13 +656,11 @@ const faqs = [
             <div
               class="relative h-full flex flex-col justify-end p-6 text-white"
             >
-              <div class="text-4xl mb-4">🏔️</div>
               <h3 class="text-2xl font-light mb-3 tracking-wide">
-                Nevado del Ruiz
+                {t("places.nevado.title")}
               </h3>
               <p class="text-gray-200 font-light leading-relaxed">
-                Explore the majestic snow-capped volcano and its unique
-                landscapes during your recovery.
+                {t("places.nevado.description")}
               </p>
             </div>
           </div>
@@ -551,7 +669,7 @@ const faqs = [
           <div class="group relative h-96 overflow-hidden">
             <div class="absolute inset-0">
               <img
-                src="/optimized-images/img-lumia/IMG_5726-optimized.jpg"
+                src="/lugares/eje-cafetero.jpg"
                 alt="Eje Cafetero"
                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
               />
@@ -563,13 +681,11 @@ const faqs = [
             <div
               class="relative h-full flex flex-col justify-end p-6 text-white"
             >
-              <div class="text-4xl mb-4">☕</div>
               <h3 class="text-2xl font-light mb-3 tracking-wide">
-                Coffee Axis
+                {t("places.eje-cafetero.title")}
               </h3>
               <p class="text-gray-200 font-light leading-relaxed">
-                Discover traditional coffee farms and taste the world's best
-                coffee.
+                {t("places.eje-cafetero.description")}
               </p>
             </div>
           </div>
@@ -578,7 +694,7 @@ const faqs = [
           <div class="group relative h-96 overflow-hidden">
             <div class="absolute inset-0">
               <img
-                src="/optimized-images/img-lumia/IMG_5830-optimized.jpg"
+                src="/lugares/termales-santaRosa.jpg"
                 alt="Termales de Santa Rosa"
                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
               />
@@ -590,22 +706,21 @@ const faqs = [
             <div
               class="relative h-full flex flex-col justify-end p-6 text-white"
             >
-              <div class="text-4xl mb-4">♨️</div>
               <h3 class="text-2xl font-light mb-3 tracking-wide">
-                Santa Rosa Hot Springs
+                {t("places.termales.title")}
               </h3>
               <p class="text-gray-200 font-light leading-relaxed">
-                Relax in natural thermal waters with healing properties.
+                {t("places.termales.description")}
               </p>
             </div>
           </div>
 
-          <!-- Manizales Centro -->
+          <!-- Centro de Manizales -->
           <div class="group relative h-96 overflow-hidden">
             <div class="absolute inset-0">
               <img
-                src="/optimized-images/img-lumia/IMG_0108-optimized.jpg"
-                alt="Manizales Centro"
+                src="/lugares/centro-manizales.jpg"
+                alt="Centro de Manizales"
                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
               />
               <div
@@ -616,13 +731,11 @@ const faqs = [
             <div
               class="relative h-full flex flex-col justify-end p-6 text-white"
             >
-              <div class="text-4xl mb-4">🏛️</div>
               <h3 class="text-2xl font-light mb-3 tracking-wide">
-                Manizales Downtown
+                {t("places.centro.title")}
               </h3>
               <p class="text-gray-200 font-light leading-relaxed">
-                Explore the vibrant city culture, museums and colonial
-                architecture.
+                {t("places.centro.description")}
               </p>
             </div>
           </div>
@@ -634,7 +747,7 @@ const faqs = [
           <div class="group relative h-80 overflow-hidden">
             <div class="absolute inset-0">
               <img
-                src="/optimized-images/img-lumia/IMG_0115-optimized.jpg"
+                src="/lugares/Parque-nacional.jpg"
                 alt="Parque Nacional Los Nevados"
                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
               />
@@ -646,12 +759,11 @@ const faqs = [
             <div
               class="relative h-full flex flex-col justify-end p-6 text-white"
             >
-              <div class="text-3xl mb-3">🌲</div>
               <h3 class="text-xl font-light mb-2 tracking-wide">
-                Los Nevados National Park
+                {t("places.parque.title")}
               </h3>
               <p class="text-gray-200 font-light text-sm leading-relaxed">
-                Nature adventures and hiking in mountain landscapes.
+                {t("places.parque.description")}
               </p>
             </div>
           </div>
@@ -660,7 +772,7 @@ const faqs = [
           <div class="group relative h-80 overflow-hidden">
             <div class="absolute inset-0">
               <img
-                src="/optimized-images/img-lumia/IMG_0149-optimized.jpg"
+                src="/lugares/recinto-pensamiento.webp"
                 alt="Recinto del Pensamiento"
                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
               />
@@ -672,12 +784,11 @@ const faqs = [
             <div
               class="relative h-full flex flex-col justify-end p-6 text-white"
             >
-              <div class="text-3xl mb-3">🦋</div>
               <h3 class="text-xl font-light mb-2 tracking-wide">
-                Recinto del Pensamiento
+                {t("places.recinto.title")}
               </h3>
               <p class="text-gray-200 font-light text-sm leading-relaxed">
-                Butterfly garden and botanical gardens in a magical setting.
+                {t("places.recinto.description")}
               </p>
             </div>
           </div>
@@ -686,7 +797,7 @@ const faqs = [
           <div class="group relative h-80 overflow-hidden">
             <div class="absolute inset-0">
               <img
-                src="/optimized-images/img-lumia/IMG_0197-optimized.jpg"
+                src="/lugares/plaza de bolivar.jpg"
                 alt="Plaza de Bolívar"
                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
               />
@@ -698,12 +809,11 @@ const faqs = [
             <div
               class="relative h-full flex flex-col justify-end p-6 text-white"
             >
-              <div class="text-3xl mb-3">🏛️</div>
               <h3 class="text-xl font-light mb-2 tracking-wide">
-                Bolivar Square
+                {t("places.plaza.title")}
               </h3>
               <p class="text-gray-200 font-light text-sm leading-relaxed">
-                Historic center with colonial architecture and cultural life.
+                {t("places.plaza.description")}
               </p>
             </div>
           </div>
@@ -712,41 +822,89 @@ const faqs = [
     </section>
 
     <!-- Process Section -->
-    <section class="py-20 bg-gradient-dark text-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-6">
+    <section class="py-24 bg-gradient-dark text-white relative overflow-hidden">
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 opacity-5">
+        <div
+          class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary-gold/20 via-transparent to-primary-gold/10"
+        >
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-20">
+          <h2 class="text-5xl md:text-6xl font-light mb-8 tracking-wide">
             {t("tourism.process.title")}
           </h2>
-          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-            We accompany you in every step of your dental transformation and
-            tourism experience
+          <p
+            class="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto font-light leading-relaxed"
+          >
+            {
+              lang === "es"
+                ? "Te acompañamos en cada paso de tu transformación dental y experiencia turística"
+                : "We accompany you in every step of your dental transformation and tourism experience"
+            }
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {
-            process.map((step, index) => (
-              <div class="relative">
-                <div class="flex items-start">
-                  <div class="flex-shrink-0">
-                    <div class="w-16 h-16 bg-gradient-gold rounded-full flex items-center justify-center text-white font-bold text-xl">
+        <!-- Process Steps -->
+        <div class="relative">
+          <div class="space-y-16 lg:space-y-24">
+            {
+              process.map((step, index) => (
+                <div
+                  class={`relative flex items-center process-step lg:flex-row`}
+                >
+                  {/* Step Number Circle */}
+                  <div class="flex-shrink-0 relative">
+                    <div class="w-20 h-20 lg:w-24 lg:h-24  flex items-center justify-center text-white font-bold text-2xl lg:text-3xl ">
                       {step.step}
                     </div>
+                    {/* Glow Effect */}
+                    <div class="absolute inset-0 w-20 h-20 lg:w-24 lg:h-24 bg-primary-black/30 rounded-full blur-xl animate-pulse" />
                   </div>
-                  <div class="ml-6">
-                    <h3 class="text-xl font-bold mb-3">{step.title}</h3>
-                    <p class="text-gray-300 leading-relaxed">
-                      {step.description}
-                    </p>
+
+                  {/* Content Card */}
+                  <div
+                    class={`z-9 flex-1 lg:px-12 content-card ${index % 2 === 0 ? "lg:text-left lg:pl-12" : "lg:text-right lg:pr-12"}`}
+                  >
+                    <div
+                      class={`bg-white/5 backdrop-blur-sm rounded-2xl p-8 lg:p-10 border border-white/10 shadow-2xl process-card ${index % 2 === 0 ? "lg:ml-8" : "lg:mr-8"}`}
+                    >
+                      <h3 class="text-2xl lg:text-3xl font-light mb-4 tracking-wide text-primary-gold">
+                        {step.title}
+                      </h3>
+                      <p class="text-gray-300 leading-relaxed text-lg">
+                        {step.description}
+                      </p>
+                    </div>
                   </div>
+
+                  {/* Connection Line */}
+                  {index < process.length - 1 && (
+                    <div class="hidden lg:block absolute left-1/2 top-full w-px h-16 bg-gradient-to-b from-primary-gold/50 to-transparent transform -translate-x-px" />
+                  )}
                 </div>
-                {index < process.length - 1 && (
-                  <div class="hidden lg:block absolute top-8 left-full w-8 h-0.5 bg-primary-gold/30 transform -translate-x-4" />
-                )}
-              </div>
-            ))
-          }
+              ))
+            }
+          </div>
+        </div>
+
+        {/* Bottom CTA */}
+        <div class="text-center mt-20">
+          <div
+            class="inline-flex items-center space-x-3 bg-white/5 backdrop-blur-sm rounded-full px-8 py-4 border border-white/10"
+          >
+            <div class="w-2 h-2 bg-primary-gold rounded-full animate-pulse">
+            </div>
+            <span class="text-gray-300 font-light">
+              {
+                lang === "es"
+                  ? "Proceso 100% Garantizado"
+                  : "100% Guaranteed Process"
+              }
+            </span>
+          </div>
         </div>
       </div>
     </section>
@@ -763,7 +921,7 @@ const faqs = [
         <div class="space-y-6">
           {
             faqs.map((faq, index) => (
-              <div class="bg-white rounded-2xl p-8 shadow-lg">
+              <div class="bg-white p-8 shadow-lg">
                 <h3 class="text-xl font-bold text-gray-900 mb-4">
                   {faq.question}
                 </h3>
@@ -779,32 +937,37 @@ const faqs = [
     <section id="consultation" class="py-20 bg-gray-50 text-gray-900">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-4xl md:text-5xl font-bold mb-6">
-          Ready for Your Dental Adventure?
+          {
+            lang === "es"
+              ? "¿Listo para tu Aventura Dental?"
+              : "Ready for Your Dental Adventure?"
+          }
         </h2>
         <p class="text-xl mb-12 text-gray-600">
-          Schedule your free virtual consultation today and discover how we can
-          transform your smile while you enjoy Colombia.
+          {
+            lang === "es"
+              ? "Agenda tu consulta virtual gratuita hoy y descubre cómo podemos transformar tu sonrisa mientras disfrutas de Colombia."
+              : "Schedule your free virtual consultation today and discover how we can transform your smile while you enjoy Colombia."
+          }
         </p>
         <div class="flex flex-col sm:flex-row gap-6 justify-center">
           <a
-            href="/en/contact"
+            href={lang === "es" ? "/contacto" : "/en/contact"}
             class="inline-flex items-center px-10 py-5 bg-black text-white font-bold rounded-lg shadow-luxury hover:shadow-xl transition-all duration-300 transform hover:scale-105"
           >
-            Free Virtual Consultation
+            {
+              lang === "es"
+                ? "Consulta Virtual Gratuita"
+                : "Free Virtual Consultation"
+            }
           </a>
-          <a
-            href="https://wa.me/573000000000"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center px-10 py-5 border-2 border-primary-gold text-primary-gold hover:bg-primary-gold hover:text-white font-bold rounded-lg transition-all duration-300"
-          >
-            <svg class="mr-3 w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.531 3.503"
-              ></path>
-            </svg>
-            WhatsApp
-          </a>
+          <WhatsAppButton
+            client:load
+            phone="+57 300 000 0000"
+            text={lang === "es" ? "WhatsApp" : "WhatsApp"}
+            variant="outline"
+            className="px-10 py-5 font-bold"
+          />
         </div>
       </div>
     </section>
@@ -812,3 +975,114 @@ const faqs = [
 
   <Footer />
 </Layout>
+
+<style>
+  /* Custom animations for process steps */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Process step animations */
+  .process-step {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .process-step:nth-child(odd) .content-card {
+    animation: slideInLeft 0.8s ease-out 0.2s both;
+  }
+
+  .process-step:nth-child(even) .content-card {
+    animation: slideInRight 0.8s ease-out 0.2s both;
+  }
+
+  /* Hover effects for process cards */
+  .process-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .process-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px -12px rgba(212, 175, 55, 0.25);
+    border-color: rgba(212, 175, 55, 0.3);
+  }
+
+  /* Glow effect for step numbers */
+  .step-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+    }
+    to {
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+    }
+  }
+
+  /* Timeline line animation */
+  .timeline-line {
+    background: linear-gradient(
+      to bottom,
+      rgba(212, 175, 55, 0.5) 0%,
+      rgba(212, 175, 55, 0.3) 50%,
+      transparent 100%
+    );
+    animation: timelineFlow 3s ease-in-out infinite;
+  }
+
+  @keyframes timelineFlow {
+    0%,
+    100% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  /* Responsive improvements */
+  @media (max-width: 1024px) {
+    .process-step {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    .content-card {
+      animation: none !important;
+    }
+  }
+
+  /* Smooth scrolling for better UX */
+  html {
+    scroll-behavior: smooth;
+  }
+</style>

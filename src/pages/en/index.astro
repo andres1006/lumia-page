@@ -1,324 +1,297 @@
 ---
-// Import the main index page but set the language context correctly
-import Layout from '../../layouts/Layout.astro'
-import Header from '../../components/Header.astro'
-import Footer from '../../components/Footer.astro'
-import Hero from '../../components/react/Hero'
-import ServiceCard from '../../components/react/ServiceCard'
-import { useTranslations } from '../../i18n'
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Hero from "../../components/react/Hero";
+import { getLangFromUrl, useTranslations } from "../../i18n";
 
-// Force English language for this page
-const lang = 'en'
-const t = useTranslations(lang)
-
-const services = [
-  {
-    title: t('services.smile-design.title'),
-    description: t('services.smile-design.desc'),
-    icon: '✨',
-    href: '/en/services/smile-design',
-    featured: true
-  },
-  {
-    title: t('services.implants.title'),
-    description: t('services.implants.desc'),
-    icon: '🦷',
-    href: '/en/services/dental-implants'
-  },
-  {
-    title: t('services.orthodontics.title'),
-    description: t('services.orthodontics.desc'),
-    icon: '🦷',
-    href: '/en/services/orthodontics'
-  },
-  {
-    title: t('services.bichectomy.title'),
-    description: t('services.bichectomy.desc'),
-    icon: '💫',
-    href: '/en/services/bichectomy'
-  }
-]
-
-const whyChooseUs = [
-  {
-    title: t('home.why.specialists'),
-    description: t('home.why.specialists.desc'),
-    icon: '👨‍⚕️'
-  },
-  {
-    title: t('home.why.technology'),
-    description: t('home.why.technology.desc'),
-    icon: '🔬'
-  },
-  {
-    title: t('home.why.experience'),
-    description: t('home.why.experience.desc'),
-    icon: '⭐'
-  },
-  {
-    title: t('home.why.results'),
-    description: t('home.why.results.desc'),
-    icon: '🎯'
-  }
-]
-
-const testimonials = [
-  {
-    name: 'María González',
-    location: 'Manizales',
-    rating: 5,
-    text: 'My experience with LUMIA was extraordinary. Dr. López completely transformed my smile and confidence. The result exceeded all my expectations.',
-    service: t('services.smile-design.title')
-  },
-  {
-    name: 'Carlos Mendoza',
-    location: 'Pereira',
-    rating: 5,
-    text: 'The dental implants changed my life. The technology they use is impressive and the team is extremely professional and warm.',
-    service: t('services.implants.title')
-  },
-  {
-    name: 'Sarah Johnson',
-    location: 'Miami, FL',
-    rating: 5,
-    text: 'I came from the United States for my treatment and it was completely worth it. International quality at incredible prices, plus I got to know beautiful Colombia.',
-    service: 'Dental Tourism'
-  }
-]
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<Layout 
-  title="LUMIA Specialized Dentistry"
-  description="We transform smiles with cutting-edge technology. Specialists in smile design, dental implants and dental tourism in Manizales and Pereira, Colombia."
+<Layout
+  title="LUMIA Odontología Especializada"
+  description={lang === "es"
+    ? "Transformamos sonrisas con tecnología de vanguardia. Especialistas en diseño de sonrisa, implantes dentales y turismo dental en Manizales, Colombia."
+    : "We transform smiles with cutting-edge technology. Specialists in smile design, dental implants and dental tourism in Manizales, Colombia."}
   lang={lang}
-  keywords="smile design Manizales Colombia, dental implants Pereira, dental tourism Colombia, orthodontist Caldas, best cosmetic dentist Colombia"
+  keywords={lang === "es"
+    ? "diseño de sonrisa Manizales, implantes dentales Manizales, turismo dental Colombia, ortodoncista Caldas, mejor dentista estético Colombia"
+    : "smile design Manizales Colombia, dental implants Manizales, dental tourism Colombia, orthodontist Caldas, best cosmetic dentist Colombia"}
 >
   <Header />
-  
-  <main class="pt-20">
+
+  <main>
     <!-- Hero Section -->
-    <Hero 
-      title={t('home.hero.title')}
-      subtitle={t('home.hero.subtitle')}
-      cta1Text={t('home.hero.cta1')}
-      cta2Text={t('home.hero.cta2')}
+    <Hero
+      title={t("home.hero.title")}
+      subtitle={t("home.hero.subtitle")}
+      cta1Text={t("home.hero.cta1")}
+      cta2Text={t("home.hero.cta2")}
       lang={lang}
       client:load
     />
 
     <!-- Introduction Section -->
-    <section class="py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-4xl mx-auto">
-          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            {t('home.intro.title')}
-          </h2>
-          <p class="text-lg text-gray-600 leading-relaxed">
-            {t('home.intro.description')}
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="py-20 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            {t('home.services.title')}
-          </h2>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            {t('home.services.subtitle')}
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service, index) => (
-            <ServiceCard
-              title={service.title}
-              description={service.description}
-              icon={service.icon}
-              href={service.href}
-              featured={service.featured}
-              lang={lang}
-              client:load
-            />
-          ))}
-        </div>
-
-        <div class="text-center mt-12">
-          <a 
-            href="/en/services"
-            class="inline-flex items-center px-8 py-4 bg-gradient-gold text-white font-semibold rounded-lg shadow-gold hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-          >
-            View All Services
-            <svg class="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why Choose LUMIA Section -->
-    <section class="py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            {t('home.why.title')}
-          </h2>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {whyChooseUs.map((reason, index) => (
-            <div class="text-center p-6 rounded-2xl bg-gray-50 hover:bg-primary-gold/5 transition-all duration-300 hover:shadow-lg group">
-              <div class="w-20 h-20 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <span class="text-3xl">{reason.icon}</span>
-              </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-primary-gold transition-colors">
-                {reason.title}
-              </h3>
-              <p class="text-gray-600">
-                {reason.description}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- Gallery Preview Section -->
-    <section class="py-20 bg-gradient-dark text-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-6">
-            {t('home.gallery.title')}
-          </h2>
-          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-            {t('home.gallery.subtitle')}
-          </p>
-        </div>
-
-        <!-- Gallery Grid Placeholder -->
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
-          {Array.from({ length: 8 }).map((_, index) => (
-            <div class="aspect-square bg-gray-700 rounded-xl flex items-center justify-center hover:bg-gray-600 transition-colors cursor-pointer group">
-              <div class="text-center text-gray-400 group-hover:text-gray-300">
-                <span class="text-2xl block mb-2">📸</span>
-                <span class="text-xs">Before/After</span>
-              </div>
-            </div>
-          ))}
-        </div>
-
+    <section class="py-24 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
-          <a 
-            href="/en/gallery"
-            class="inline-flex items-center px-8 py-4 border-2 border-primary-gold text-primary-gold hover:bg-primary-gold hover:text-white font-semibold rounded-lg transition-all duration-300"
-          >
-            {t('common.view-gallery')}
-            <svg class="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-            </svg>
-          </a>
+          <h2 class="text-3xl md:text-4xl font-light text-gray-900 mb-8">
+            {
+              lang === "es"
+                ? "Donde la Ciencia y el Arte Crean Sonrisas Extraordinarias"
+                : "Where Science and Art Create Extraordinary Smiles"
+            }
+          </h2>
+          <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
+            {
+              lang === "es"
+                ? "En LUMIA, combinamos tecnología de vanguardia con un enfoque artístico único para crear sonrisas que no solo transforman apariencias, sino que cambian vidas."
+                : "At LUMIA, we combine cutting-edge technology with a unique artistic approach to create smiles that don't just transform appearances, but change lives."
+            }
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="py-20 bg-gray-50">
+    <!-- Featured Image Section -->
+    <section class="bg-gray-50">
+      <div class="relative">
+        <div class="aspect-video bg-gray-200 overflow-hidden">
+          <img
+            src="/optimized-images/img-lumia/cliente-final-1-optimized.jpg"
+            alt="LUMIA Dental Clinic"
+            class="w-full h-full object-cover grayscale brightness-50"
+          />
+        </div>
+
+        <!-- Text Overlay -->
+        <div class="absolute inset-0 flex items-end justify-start">
+          <div
+            class="text-left text-white max-w-2xl px-4 sm:px-6 lg:px-8 pb-8 sm:pb-12 sm:ml-8 md:ml-12 lg:ml-16"
+          >
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-light mb-3 sm:mb-6">
+              {lang === "es" ? "Odontología como Arte" : "Dentistry as Art"}
+            </h2>
+            <p
+              class="hidden sm:block text-xs sm:text-sm md:text-base leading-relaxed mb-3 sm:mb-6 opacity-95"
+            >
+              {
+                lang === "es"
+                  ? "Cada sonrisa es una obra maestra única. Nuestro enfoque personalizado combina técnicas digitales y analógicas para crear transformaciones que van más allá de un simple cambio estético."
+                  : "Every smile is a unique masterpiece. Our personalized approach combines digital and analog techniques to create transformations that go beyond a simple aesthetic change."
+              }
+            </p>
+            <a
+              href={lang === "es"
+                ? "/servicios/diseno-de-sonrisa"
+                : "/en/services/smile-design"}
+              class="underline underline-offset-4 inline-flex items-center text-white font-medium hover:text-gray-200 transition-colors duration-200 text-sm"
+            >
+              {lang === "es" ? "Descubrir más" : "Discover more"}
+              <svg
+                class="ml-2 w-3 h-3"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Before & After Section -->
+    <section class="py-24 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            {t('home.testimonials.title')}
+          <h2 class="text-3xl md:text-4xl font-light text-gray-900 mb-8">
+            {lang === "es" ? "Transformaciones Reales" : "Real Transformations"}
           </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            {
+              lang === "es"
+                ? "Cada caso es único. Cada resultado es extraordinario."
+                : "Every case is unique. Every result is extraordinary."
+            }
+          </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              <!-- Rating -->
-              <div class="flex mb-4">
-                {Array.from({ length: testimonial.rating }).map((_, i) => (
-                  <svg class="w-5 h-5 text-primary-gold fill-current" viewBox="0 0 20 20">
-                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                  </svg>
-                ))}
-              </div>
-
-              <!-- Testimonial Text -->
-              <blockquote class="text-gray-600 mb-6 italic leading-relaxed">
-                "{testimonial.text}"
-              </blockquote>
-
-              <!-- Service Badge -->
-              <div class="inline-block bg-primary-gold/10 text-primary-gold px-3 py-1 rounded-full text-sm font-medium mb-4">
-                {testimonial.service}
-              </div>
-
-              <!-- Author -->
-              <div class="border-t border-gray-100 pt-4">
-                <div class="font-semibold text-gray-900">{testimonial.name}</div>
-                <div class="text-gray-500 text-sm">{testimonial.location}</div>
-              </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Case 1 -->
+          <div class="group">
+            <div class="aspect-square bg-gray-100 rounded-lg overflow-hidden">
+              <img
+                src="/optimized-images/img-lumia/Protesis hibrida 1/protesis-hibrida-caso1-1-optimized.jpg"
+                alt="Before & After Case 1"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+              />
             </div>
-          ))}
+          </div>
+
+          <!-- Case 2 -->
+          <div class="group">
+            <div class="aspect-square bg-gray-100 rounded-lg overflow-hidden">
+              <img
+                src="/optimized-images/img-lumia/Protesis hibrida 2/protesis-hibrida-caso2-1-optimized.jpg"
+                alt="Before & After Case 2"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+              />
+            </div>
+          </div>
+
+          <!-- Case 3 -->
+          <div class="group">
+            <div class="aspect-square bg-gray-100 rounded-lg overflow-hidden">
+              <img
+                src="/optimized-images/img-lumia/Protesis hibrida 3/protesis-hibrida-caso3-1-optimized.jpg"
+                alt="Before & After Case 3"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+              />
+            </div>
+          </div>
+
+          <!-- Case 4 -->
+          <div class="group">
+            <div class="aspect-square bg-gray-100 rounded-lg overflow-hidden">
+              <img
+                src="/optimized-images/img-lumia/Protesis hibrida 4/protesis-hibrida-caso4-1-optimized.jpg"
+                alt="Before & After Case 4"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+              />
+            </div>
+          </div>
+
+          <!-- Case 5 -->
+          <div class="group">
+            <div class="aspect-square bg-gray-100 rounded-lg overflow-hidden">
+              <img
+                src="/optimized-images/img-lumia/cliente-final-2-optimized.jpg"
+                alt="Before & After Case 5"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+              />
+            </div>
+          </div>
+
+          <!-- Case 6 -->
+          <div class="group">
+            <div class="aspect-square bg-gray-100 rounded-lg overflow-hidden">
+              <img
+                src="/optimized-images/img-lumia/cliente-final-3-optimized.jpg"
+                alt="Before & After Case 6"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+              />
+            </div>
+          </div>
+
+          <!-- Case 7 -->
+          <div class="group">
+            <div class="aspect-square bg-gray-100 rounded-lg overflow-hidden">
+              <img
+                src="/optimized-images/img-lumia/cliente-final-4-optimized.jpg"
+                alt="Before & After Case 7"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+              />
+            </div>
+          </div>
+
+          <!-- Case 8 -->
+          <div class="group">
+            <div class="aspect-square bg-gray-100 rounded-lg overflow-hidden">
+              <img
+                src="/optimized-images/img-lumia/cliente-final-5-optimized.jpg"
+                alt="Before & After Case 8"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Dental Tourism CTA Section -->
-    <section class="py-20 bg-primary-gold text-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6">
-          Coming from the United States?
-        </h2>
-        <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90">
-          Discover our dental tourism packages. Save up to 70% on world-class treatments while enjoying beautiful Colombia.
-        </p>
-        <a 
-          href="/en/dental-tourism"
-          class="inline-flex items-center px-8 py-4 bg-white text-primary-gold font-semibold rounded-lg shadow-luxury hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-        >
-          Explore Dental Tourism
-          <svg class="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-          </svg>
-        </a>
+    <!-- Quality Section -->
+    <section class="bg-white">
+      <div class="relative">
+        <div class="h-64 md:h-80 lg:h-96 bg-gray-200 overflow-hidden">
+          <img
+            src="/optimized-images/img-lumia/cliente-final-6-optimized.jpg"
+            alt="LUMIA Quality"
+            class="w-full h-full object-cover grayscale brightness-50"
+          />
+        </div>
+
+        <!-- Text Overlay -->
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div
+            class="text-center text-white max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
+          >
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-light mb-3 sm:mb-6">
+              {lang === "es" ? "Calidad Inigualable" : "Unmatched Quality"}
+            </h2>
+            <p
+              class="text-xs sm:text-sm md:text-base leading-relaxed mb-3 sm:mb-6 opacity-95 max-w-2xl mx-auto"
+            >
+              {
+                lang === "es"
+                  ? "Para dar vida a cada sonrisa, hemos reunido a los ceramistas más talentosos del mundo, provenientes de América del Sur, Asia y Europa."
+                  : "To bring each smile to life, we have assembled the world's most accomplished ceramists, hailing from South America, Asia and Europe."
+              }
+            </p>
+            <a
+              href={lang === "es" ? "/nosotros" : "/en/about"}
+              class="underline underline-offset-4 inline-flex items-center text-white font-medium hover:text-gray-200 transition-colors duration-200 text-sm"
+            >
+              {lang === "es" ? "Conocer nuestro equipo" : "Meet our team"}
+              <svg
+                class="ml-2 w-3 h-3"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Final CTA Section -->
-    <section class="py-20 bg-white">
+    <section class="py-24 bg-white">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-          Ready to Transform Your Smile?
+        <h2 class="text-3xl md:text-4xl font-light text-gray-900 mb-8">
+          {
+            lang === "es"
+              ? "¿Listo para Transformar tu Sonrisa?"
+              : "Ready to Transform Your Smile?"
+          }
         </h2>
-        <p class="text-xl text-gray-600 mb-12">
-          Schedule your exclusive consultation today and discover how we can create the smile of your dreams.
+        <p class="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
+          {
+            lang === "es"
+              ? "Agenda tu valoración exclusiva hoy y descubre cómo podemos crear la sonrisa de tus sueños."
+              : "Schedule your exclusive consultation today and discover how we can create the smile of your dreams."
+          }
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a 
-            href="/en/contact"
-            class="inline-flex items-center px-8 py-4 bg-gradient-gold text-white font-semibold rounded-lg shadow-gold hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-          >
-            {t('common.schedule-appointment')}
-          </a>
-          <a 
-            href="https://wa.me/573000000000"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center px-8 py-4 border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-white font-semibold rounded-lg transition-all duration-300"
-          >
-            <svg class="mr-2 w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.531 3.503"/>
-            </svg>
-            {t('common.contact-whatsapp')}
-          </a>
-        </div>
+        <a
+          href={lang === "es" ? "/contacto" : "/en/contact"}
+          class="inline-flex items-center px-8 py-4 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors duration-200"
+        >
+          {t("common.schedule-appointment")}
+        </a>
       </div>
     </section>
   </main>
 
   <Footer />
-</Layout> 
+</Layout>

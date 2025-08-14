@@ -2,145 +2,168 @@
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
-import { useTranslations } from "../../i18n";
+import { getLangFromUrl, useTranslations } from "../../i18n";
 
-// Force English language for this page
-const lang = "en";
+const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const portfolioItems = [
   {
     id: 1,
     category: "smile-design",
-    title: "Complete Smile Makeover",
-    subtitle: "Digital Smile Design + Veneers",
+    title: lang === "es" ? "Transformación Completa de Sonrisa" : "Complete Smile Transformation",
+    subtitle: lang === "es" ? "Diseño Digital + Carillas" : "Digital Design + Veneers",
     beforeImage: "/optimized-images/img-lumia/antes-1-optimized.jpg",
     afterImage: "/optimized-images/img-lumia/cliente-final-1-optimized.jpg",
-    description: "Complete transformation with 10 porcelain veneers using Digital Smile Design technology.",
-    treatment: "Porcelain Veneers",
-    duration: "3 weeks",
+    description: lang === "es" 
+      ? "Transformación completa con 10 carillas de porcelana utilizando tecnología de Diseño Digital de Sonrisa."
+      : "Complete transformation with 10 porcelain veneers using Digital Smile Design technology.",
+    treatment: lang === "es" ? "Carillas de Porcelana" : "Porcelain Veneers",
+    duration: lang === "es" ? "3 semanas" : "3 weeks",
     featured: true
   },
   {
     id: 2,
     category: "implants",
-    title: "Full Mouth Reconstruction",
-    subtitle: "6 Dental Implants + Fixed Bridge",
+    title: lang === "es" ? "Rehabilitación Oral Completa" : "Complete Oral Rehabilitation",
+    subtitle: lang === "es" ? "6 Implantes Dentales + Puente Fijo" : "6 Dental Implants + Fixed Bridge",
     beforeImage: "/optimized-images/img-lumia/Protesis hibrida 1/protesis-hibrida-caso1-1-optimized.jpg",
     afterImage: "/optimized-images/img-lumia/Protesis hibrida 1/protesis-hibrida-caso1-2-optimized.jpg",
-    description: "Complete mouth rehabilitation with 6 premium titanium implants and fixed ceramic bridge.",
-    treatment: "Dental Implants",
-    duration: "4 months",
+    description: lang === "es"
+      ? "Rehabilitación completa con 6 implantes de titanio premium y puente fijo de cerámica."
+      : "Complete rehabilitation with 6 premium titanium implants and fixed ceramic bridge.",
+    treatment: lang === "es" ? "Implantes Dentales" : "Dental Implants",
+    duration: lang === "es" ? "4 meses" : "4 months",
     featured: true
   },
   {
     id: 3,
     category: "orthodontics",
-    title: "Invisalign Treatment",
-    subtitle: "12-Month Invisible Correction",
+    title: lang === "es" ? "Tratamiento Invisalign" : "Invisalign Treatment",
+    subtitle: lang === "es" ? "Corrección Invisible de 12 Meses" : "12-Month Invisible Correction",
     beforeImage: "/optimized-images/img-lumia/antes-despues-3-optimized.jpg",
     afterImage: "/optimized-images/img-lumia/cliente-final-4-optimized.jpg",
-    description: "Perfect alignment achieved with Invisalign clear aligners in just 12 months.",
+    description: lang === "es"
+      ? "Alineación perfecta lograda con alineadores transparentes Invisalign en solo 12 meses."
+      : "Perfect alignment achieved with Invisalign clear aligners in just 12 months.",
     treatment: "Invisalign",
-    duration: "12 months",
+    duration: lang === "es" ? "12 meses" : "12 months",
     featured: false
   },
   {
     id: 4,
     category: "bichectomy",
-    title: "Facial Contouring",
-    subtitle: "Bichectomy + Smile Design",
+    title: lang === "es" ? "Contorno Facial" : "Facial Contouring",
+    subtitle: lang === "es" ? "Bichectomía + Diseño de Sonrisa" : "Bichectomy + Smile Design",
     beforeImage: "/optimized-images/img-lumia/antes-despues-4-optimized.jpg",
     afterImage: "/optimized-images/img-lumia/cliente-final-5-optimized.jpg",
-    description: "Facial refinement with bichectomy combined with smile design for perfect harmony.",
-    treatment: "Bichectomy",
-    duration: "1 session",
+    description: lang === "es"
+      ? "Refinamiento facial con bichectomía combinada con diseño de sonrisa para armonía perfecta."
+      : "Facial refinement with bichectomy combined with smile design for perfect harmony.",
+    treatment: lang === "es" ? "Bichectomía" : "Bichectomy",
+    duration: lang === "es" ? "1 sesión" : "1 session",
     featured: false
   },
   {
     id: 5,
     category: "smile-design",
-    title: "Celebrity Smile",
-    subtitle: "Digital Design + Premium Ceramics",
+    title: lang === "es" ? "Sonrisa de Celebridad" : "Celebrity Smile",
+    subtitle: lang === "es" ? "Diseño Digital + Cerámicas Premium" : "Digital Design + Premium Ceramics",
     beforeImage: "/optimized-images/img-lumia/Diseño Ceramica/IMG_0705-optimized.jpg",
     afterImage: "/optimized-images/img-lumia/Diseño Ceramica/IMG_1034-optimized.jpg",
-    description: "Hollywood-style smile achieved with high-end ceramic restorations.",
-    treatment: "Smile Design",
-    duration: "2 weeks",
+    description: lang === "es"
+      ? "Sonrisa estilo Hollywood lograda con restauraciones cerámicas de alta gama."
+      : "Hollywood-style smile achieved with high-end ceramic restorations.",
+    treatment: lang === "es" ? "Diseño de Sonrisa" : "Smile Design",
+    duration: lang === "es" ? "2 semanas" : "2 weeks",
     featured: true
   },
   {
     id: 6,
     category: "whitening",
-    title: "Professional Whitening",
-    subtitle: "8 Shades Lighter",
+    title: lang === "es" ? "Blanqueamiento Profesional" : "Professional Whitening",
+    subtitle: lang === "es" ? "8 Tonos Más Blanco" : "8 Shades Whiter",
     beforeImage: "/optimized-images/img-lumia/antes-despues-5-optimized.jpg",
     afterImage: "/optimized-images/img-lumia/cliente-final-6-optimized.jpg",
-    description: "Dramatic whitening results achieved in a single professional session.",
-    treatment: "Teeth Whitening",
-    duration: "1 session",
+    description: lang === "es"
+      ? "Resultados dramáticos de blanqueamiento logrados en una sola sesión profesional."
+      : "Dramatic whitening results achieved in a single professional session.",
+    treatment: lang === "es" ? "Blanqueamiento Dental" : "Teeth Whitening",
+    duration: lang === "es" ? "1 sesión" : "1 session",
     featured: false
   },
   {
     id: 7,
     category: "implants",
-    title: "Single Tooth Replacement",
-    subtitle: "Premium Titanium Implant",
+    title: lang === "es" ? "Reemplazo de Diente Individual" : "Single Tooth Replacement",
+    subtitle: lang === "es" ? "Implante de Titanio Premium" : "Premium Titanium Implant",
     beforeImage: "/optimized-images/img-lumia/Protesis hibrida 2/protesis-hibrida-caso2-1-optimized.jpg",
     afterImage: "/optimized-images/img-lumia/Protesis hibrida 2/protesis-hibrida-caso2-2-optimized.jpg",
-    description: "Perfect single tooth replacement with titanium implant and ceramic crown.",
-    treatment: "Single Implant",
-    duration: "3 months",
+    description: lang === "es"
+      ? "Reemplazo perfecto de diente individual con implante de titanio y corona cerámica."
+      : "Perfect single tooth replacement with titanium implant and ceramic crown.",
+    treatment: lang === "es" ? "Implante Individual" : "Single Implant",
+    duration: lang === "es" ? "3 meses" : "3 months",
     featured: false
   },
   {
     id: 8,
     category: "smile-design",
-    title: "Gummy Smile Correction",
-    subtitle: "Laser + Veneers",
+    title: lang === "es" ? "Corrección de Sonrisa Gingival" : "Gummy Smile Correction",
+    subtitle: lang === "es" ? "Láser + Carillas" : "Laser + Veneers",
     beforeImage: "/optimized-images/img-lumia/Diseño recina/IMG_1163-optimized.jpg",
     afterImage: "/optimized-images/img-lumia/Diseño recina/IMG_1322-optimized.jpg",
-    description: "Gummy smile correction using laser technology combined with porcelain veneers.",
-    treatment: "Laser + Veneers",
-    duration: "4 weeks",
+    description: lang === "es"
+      ? "Corrección de sonrisa gingival usando tecnología láser combinada con carillas de porcelana."
+      : "Gummy smile correction using laser technology combined with porcelain veneers.",
+    treatment: lang === "es" ? "Láser + Carillas" : "Laser + Veneers",
+    duration: lang === "es" ? "4 semanas" : "4 weeks",
     featured: false
   },
   {
     id: 9,
     category: "orthodontics",
-    title: "Complex Orthodontic Case",
-    subtitle: "18-Month Transformation",
+    title: lang === "es" ? "Caso Ortodóncico Complejo" : "Complex Orthodontic Case",
+    subtitle: lang === "es" ? "Transformación de 18 Meses" : "18-Month Transformation",
     beforeImage: "/optimized-images/img-lumia/antes-despues-6-optimized.jpg",
     afterImage: "/optimized-images/img-lumia/cliente-final-7-optimized.jpg",
-    description: "Complex malocclusion corrected with advanced orthodontic techniques.",
-    treatment: "Clear Aligners",
-    duration: "18 months",
+    description: lang === "es"
+      ? "Maloclusión compleja corregida con técnicas ortodóncicas avanzadas."
+      : "Complex malocclusion corrected with advanced orthodontic techniques.",
+    treatment: lang === "es" ? "Alineadores Transparentes" : "Clear Aligners",
+    duration: lang === "es" ? "18 meses" : "18 months",
     featured: false
   }
 ];
 
-const categories = [
-  { id: "all", name: "All Cases", icon: "🎨" },
-  { id: "smile-design", name: "Smile Design", icon: "✨" },
-  { id: "implants", name: "Dental Implants", icon: "🦷" },
-  { id: "orthodontics", name: "Orthodontics", icon: "📐" },
-  { id: "bichectomy", name: "Bichectomy", icon: "💫" },
-  { id: "whitening", name: "Whitening", icon: "⚡" },
-];
+  const categories = [
+    { id: "all", name: lang === "es" ? "Todos los Casos" : "All Cases", icon: "🎨" },
+    { id: "smile-design", name: lang === "es" ? "Diseño de Sonrisa" : "Smile Design", icon: "✨" },
+    { id: "implants", name: lang === "es" ? "Implantes Dentales" : "Dental Implants", icon: "🦷" },
+    { id: "orthodontics", name: lang === "es" ? "Ortodoncia" : "Orthodontics", icon: "📐" },
+    { id: "bichectomy", name: lang === "es" ? "Bichectomía" : "Bichectomy", icon: "💫" },
+    { id: "whitening", name: lang === "es" ? "Blanqueamiento" : "Whitening", icon: "⚡" },
+  ];
 
 const stats = [
-  { number: "2,500+", label: "Successful Cases" },
-  { number: "15+", label: "Years Experience" },
-  { number: "98%", label: "Satisfaction Rate" },
-  { number: "50+", label: "International Patients" }
+  { number: "2,500+", label: lang === "es" ? "Casos Exitosos" : "Successful Cases" },
+  { number: "15+", label: lang === "es" ? "Años de Experiencia" : "Years of Experience" },
+  { number: "98%", label: lang === "es" ? "Satisfacción" : "Satisfaction" },
+  { number: "50+", label: lang === "es" ? "Pacientes Internacionales" : "International Patients" }
 ];
 ---
 
 <Layout
-  title="Gallery - LUMIA Specialized Dentistry"
-  description="Explore our gallery of successful dental transformations. Before and after cases of smile design, dental implants, orthodontics and more at LUMIA Clinic."
+  title={lang === "es" ? "Galería - LUMIA Odontología Especializada" : "Gallery - LUMIA Specialized Dentistry"}
+  description={lang === "es" 
+    ? "Explora nuestra galería de transformaciones dentales exitosas. Casos antes y después de diseño de sonrisa, implantes dentales, ortodoncia y más en LUMIA."
+    : "Explore our gallery of successful dental transformations. Before and after cases of smile design, dental implants, orthodontics and more at LUMIA."
+  }
   lang={lang}
-  keywords="dental before after, smile makeover Colombia, dental transformation gallery, LUMIA cases, dental tourism results"
+  keywords={lang === "es"
+    ? "antes después dental, transformación sonrisa Colombia, galería casos LUMIA, resultados turismo dental"
+    : "dental before after, smile transformation Colombia, LUMIA case gallery, dental tourism results"
+  }
 >
   <Header />
 
@@ -161,12 +184,15 @@ const stats = [
           class="text-left text-white max-w-2xl px-4 sm:px-6 lg:px-8 pb-8 sm:pb-12 sm:ml-8 md:ml-12 lg:ml-16"
         >
           <h1 class="text-4xl md:text-6xl font-light mb-6 tracking-wide">
-            Transformation Gallery
+            {lang === "es" ? "Galería de Transformaciones" : "Transformation Gallery"}
           </h1>
           <p
             class="text-lg md:text-xl opacity-90 font-light tracking-wide leading-relaxed"
           >
-            Discover the life-changing results we achieve every day at LUMIA
+            {lang === "es" 
+              ? "Descubre los resultados que cambian vidas que logramos cada día en LUMIA"
+              : "Discover the life-changing results we achieve every day at LUMIA"
+            }
           </p>
         </div>
       </div>
@@ -220,12 +246,12 @@ const stats = [
                 <div class="before-image absolute inset-0 transition-opacity duration-700">
                   <img
                     src={item.beforeImage}
-                    alt={`${item.title} - Before`}
+                    alt={`${item.title} - Antes`}
                     class="w-full h-full object-cover"
                     loading="lazy"
                   />
                   <div class="absolute top-4 left-4 bg-black/70 text-white px-3 py-1 rounded-full text-sm font-medium">
-                    Before
+                    {lang === "es" ? "Antes" : "Before"}
                   </div>
                 </div>
                 
@@ -233,12 +259,12 @@ const stats = [
                 <div class="after-image absolute inset-0 opacity-0 transition-opacity duration-700">
                   <img
                     src={item.afterImage}
-                    alt={`${item.title} - After`}
+                    alt={`${item.title} - Después`}
                     class="w-full h-full object-cover"
                     loading="lazy"
                   />
                   <div class="absolute top-4 left-4 bg-primary-gold text-white px-3 py-1 rounded-full text-sm font-medium">
-                    After
+                    {lang === "es" ? "Después" : "After"}
                   </div>
                 </div>
                 
@@ -265,18 +291,18 @@ const stats = [
                     </div>
                     
                     <div class="flex gap-3">
-                      <button 
-                        class="view-case-btn bg-white text-gray-900 px-4 py-2 rounded-lg font-semibold text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
-                        data-case-id={item.id}
-                      >
-                        View Details
-                      </button>
-                      <a 
-                        href="/en/contact"
-                        class="bg-primary-gold text-white px-4 py-2 rounded-lg font-semibold text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
-                      >
-                        Book Appointment
-                      </a>
+                                              <button 
+                          class="view-case-btn bg-white text-gray-900 px-4 py-2 rounded-lg font-semibold text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+                          data-case-id={item.id}
+                        >
+                          {lang === "es" ? "Ver Detalles" : "View Details"}
+                        </button>
+                        <a 
+                          href={lang === "es" ? "/contacto" : "/en/contact"}
+                          class="bg-primary-gold text-white px-4 py-2 rounded-lg font-semibold text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+                        >
+                          {lang === "es" ? "Reservar Cita" : "Book Appointment"}
+                        </a>
                     </div>
                   </div>
                 </div>
@@ -311,17 +337,20 @@ const stats = [
     <section class="py-20 bg-gray-50 text-gray-900">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-4xl md:text-5xl font-bold mb-6">
-          Ready for Your Transformation?
+          {lang === "es" ? "¿Listo para tu Transformación?" : "Ready for Your Transformation?"}
         </h2>
         <p class="text-xl mb-12 text-gray-600">
-          Join thousands of satisfied patients who have transformed their lives with LUMIA
+          {lang === "es"
+            ? "Únete a miles de pacientes satisfechos que han transformado sus vidas con LUMIA"
+            : "Join thousands of satisfied patients who have transformed their lives with LUMIA"
+          }
         </p>
         <div class="flex flex-col sm:flex-row gap-6 justify-center">
           <a
-            href="/en/contact"
+            href={lang === "es" ? "/contacto" : "/en/contact"}
             class="inline-flex items-center px-10 py-5 bg-black text-white font-bold rounded-lg shadow-luxury hover:shadow-xl transition-all duration-300 transform hover:scale-105"
           >
-            Start Your Journey
+            {lang === "es" ? "Inicia tu Transformación" : "Start Your Transformation"}
           </a>
           <a
             href="https://wa.me/573000000000"
@@ -332,7 +361,7 @@ const stats = [
             <svg class="mr-3 w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.531 3.503"></path>
             </svg>
-            WhatsApp Consultation
+            {lang === "es" ? "Consulta WhatsApp" : "WhatsApp Consultation"}
           </a>
         </div>
       </div>
@@ -406,7 +435,10 @@ const stats = [
   </style>
 
   <script>
-    // Gallery filtering functionality
+    // Obtener el idioma actual desde el servidor
+    const currentLang = document.documentElement.lang || 'en';
+    
+    // Funcionalidad de filtrado de galería
     const filterBtns = document.querySelectorAll('.filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-item');
     const modal = document.getElementById('case-modal');
@@ -414,43 +446,42 @@ const stats = [
     const modalContent = document.getElementById('modal-content');
     const closeModal = document.getElementById('close-modal');
 
-    // Portfolio data (would normally come from a database)
+    // Datos del portafolio (normalmente vendrían de una base de datos)
     const portfolioData = {
       1: {
-        title: "Complete Smile Makeover",
-        beforeImage: "https://via.placeholder.com/800x600/f3f4f6/9ca3af?text=Before+Image",
-        afterImage: "https://via.placeholder.com/800x600/d4af37/ffffff?text=After+Image",
-        description: "This patient came to us with severe discoloration, gaps, and misaligned teeth. Using Digital Smile Design technology, we created a personalized treatment plan that included 10 porcelain veneers. The result is a perfectly aligned, bright white smile that completely transformed the patient's confidence.",
-        treatment: "Porcelain Veneers + Digital Smile Design",
-        duration: "3 weeks",
-        beforeDetails: "Severe discoloration, gaps between teeth, uneven alignment",
-        afterDetails: "Perfect white smile, closed gaps, harmonious proportions",
-        technique: "Digital Smile Design with premium porcelain veneers"
+        title: "Transformación Completa de Sonrisa",
+        beforeImage: "https://via.placeholder.com/800x600/f3f4f6/9ca3af?text=Imagen+Antes",
+        afterImage: "https://via.placeholder.com/800x600/d4af37/ffffff?text=Imagen+Después",
+        description: "Esta paciente llegó a nosotros con decoloración severa, espacios y dientes desalineados. Usando tecnología de Diseño Digital de Sonrisa, creamos un plan de tratamiento personalizado que incluyó 10 carillas de porcelana. El resultado es una sonrisa perfectamente alineada y blanca que transformó completamente la confianza de la paciente.",
+        treatment: "Carillas de Porcelana + Diseño Digital de Sonrisa",
+        duration: "3 semanas",
+        beforeDetails: "Decoloración severa, espacios entre dientes, alineación irregular",
+        afterDetails: "Sonrisa blanca perfecta, espacios cerrados, proporciones armoniosas",
+        technique: "Diseño Digital de Sonrisa con carillas de porcelana premium"
       },
       2: {
-        title: "Full Mouth Reconstruction",
-        beforeImage: "https://via.placeholder.com/800x600/f3f4f6/9ca3af?text=Before+Image",
-        afterImage: "https://via.placeholder.com/800x600/d4af37/ffffff?text=After+Image",
-        description: "Complex case of multiple missing teeth restored with 6 premium titanium implants and a fixed ceramic bridge. The patient regained full chewing function and a beautiful smile.",
-        treatment: "6 Dental Implants + Fixed Ceramic Bridge",
-        duration: "4 months",
-        beforeDetails: "Multiple missing teeth, compromised chewing function",
-        afterDetails: "Complete restoration, full function, natural appearance",
-        technique: "Guided implant surgery with immediate loading protocol"
+        title: "Rehabilitación Oral Completa",
+        beforeImage: "https://via.placeholder.com/800x600/f3f4f6/9ca3af?text=Imagen+Antes",
+        afterImage: "https://via.placeholder.com/800x600/d4af37/ffffff?text=Imagen+Después",
+        description: "Caso complejo de múltiples dientes perdidos restaurados con 6 implantes de titanio premium y un puente fijo de cerámica. El paciente recuperó la función masticatoria completa y una sonrisa hermosa.",
+        treatment: "6 Implantes Dentales + Puente Fijo de Cerámica",
+        duration: "4 meses",
+        beforeDetails: "Múltiples dientes perdidos, función masticatoria comprometida",
+        afterDetails: "Restauración completa, función total, apariencia natural",
+        technique: "Cirugía guiada de implantes con protocolo de carga inmediata"
       }
-      // Add more case details as needed
     };
 
-    // Filter functionality
+    // Funcionalidad de filtrado
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         const filter = btn.getAttribute('data-filter');
         
-        // Update active button
+        // Actualizar botón activo
         filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         
-        // Filter items
+        // Filtrar elementos
         galleryItems.forEach(item => {
           const htmlItem = item as HTMLElement;
           const category = item.getAttribute('data-category');
@@ -464,13 +495,13 @@ const stats = [
       });
     });
 
-    // Set default active filter
+    // Establecer filtro activo por defecto
     const defaultFilter = document.querySelector('[data-filter="all"]');
     if (defaultFilter) {
       defaultFilter.classList.add('active');
     }
 
-    // Modal functionality
+    // Funcionalidad del modal
     document.querySelectorAll('.view-case-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -483,34 +514,34 @@ const stats = [
           modalContent.innerHTML = `
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
               <div>
-                <h3 class="text-lg font-semibold mb-4 text-gray-900">Before</h3>
-                <img src="${caseData.beforeImage}" alt="Before" class="w-full rounded-lg shadow-lg">
+                <h3 class="text-lg font-semibold mb-4 text-gray-900">${currentLang === "es" ? "Antes" : "Before"}</h3>
+                <img src="${caseData.beforeImage}" alt="Antes" class="w-full rounded-lg shadow-lg">
                 <p class="text-sm text-gray-600 mt-2">${caseData.beforeDetails}</p>
               </div>
               <div>
-                <h3 class="text-lg font-semibold mb-4 text-primary-gold">After</h3>
-                <img src="${caseData.afterImage}" alt="After" class="w-full rounded-lg shadow-lg">
+                <h3 class="text-lg font-semibold mb-4 text-primary-gold">${currentLang === "es" ? "Después" : "After"}</h3>
+                <img src="${caseData.afterImage}" alt="Después" class="w-full rounded-lg shadow-lg">
                 <p class="text-sm text-gray-600 mt-2">${caseData.afterDetails}</p>
               </div>
             </div>
             
             <div class="space-y-6">
               <div>
-                <h3 class="text-lg font-semibold mb-2 text-gray-900">Case Description</h3>
+                <h3 class="text-lg font-semibold mb-2 text-gray-900">Descripción del Caso</h3>
                 <p class="text-gray-600 leading-relaxed">${caseData.description}</p>
               </div>
               
               <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div class="bg-gray-50 p-4 rounded-lg">
-                  <h4 class="font-semibold text-gray-900 mb-1">Treatment</h4>
+                  <h4 class="font-semibold text-gray-900 mb-1">Tratamiento</h4>
                   <p class="text-gray-600 text-sm">${caseData.treatment}</p>
                 </div>
                 <div class="bg-gray-50 p-4 rounded-lg">
-                  <h4 class="font-semibold text-gray-900 mb-1">Duration</h4>
+                  <h4 class="font-semibold text-gray-900 mb-1">Duración</h4>
                   <p class="text-gray-600 text-sm">${caseData.duration}</p>
                 </div>
                 <div class="bg-gray-50 p-4 rounded-lg">
-                  <h4 class="font-semibold text-gray-900 mb-1">Technique</h4>
+                  <h4 class="font-semibold text-gray-900 mb-1">Técnica</h4>
                   <p class="text-gray-600 text-sm">${caseData.technique}</p>
                 </div>
               </div>
@@ -523,7 +554,7 @@ const stats = [
       });
     });
 
-    // Close modal
+    // Cerrar modal
     if (closeModal && modal) {
       closeModal.addEventListener('click', () => {
         modal.classList.remove('show');
@@ -538,7 +569,7 @@ const stats = [
       });
     }
 
-    // Animate counters
+    // Animar contadores
     const animateCounters = () => {
       const counters = document.querySelectorAll('.animate-counter');
       counters.forEach(counter => {
@@ -564,7 +595,7 @@ const stats = [
       });
     };
 
-    // Trigger counter animation when in view
+    // Activar animación de contadores cuando estén en vista
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
