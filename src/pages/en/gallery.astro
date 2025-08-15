@@ -137,12 +137,12 @@ const portfolioItems = [
 ];
 
   const categories = [
-    { id: "all", name: lang === "es" ? "Todos los Casos" : "All Cases", icon: "🎨" },
-    { id: "smile-design", name: lang === "es" ? "Diseño de Sonrisa" : "Smile Design", icon: "✨" },
-    { id: "implants", name: lang === "es" ? "Implantes Dentales" : "Dental Implants", icon: "🦷" },
-    { id: "orthodontics", name: lang === "es" ? "Ortodoncia" : "Orthodontics", icon: "📐" },
-    { id: "bichectomy", name: lang === "es" ? "Bichectomía" : "Bichectomy", icon: "💫" },
-    { id: "whitening", name: lang === "es" ? "Blanqueamiento" : "Whitening", icon: "⚡" },
+    { id: "all", name: lang === "es" ? "Todos los Casos" : "All Cases", icon: "" },
+    { id: "smile-design", name: lang === "es" ? "Diseño de Sonrisa" : "Smile Design", icon: "" },
+    { id: "implants", name: lang === "es" ? "Implantes Dentales" : "Dental Implants", icon: "" },
+    { id: "orthodontics", name: lang === "es" ? "Ortodoncia" : "Orthodontics", icon: "" },
+    { id: "bichectomy", name: lang === "es" ? "Bichectomía" : "Bichectomy", icon: "" },
+    { id: "whitening", name: lang === "es" ? "Blanqueamiento" : "Whitening", icon: "" },
   ];
 
 const stats = [
@@ -223,7 +223,6 @@ const stats = [
               class="filter-btn flex items-center px-6 py-3 bg-white rounded-full border border-gray-200 hover:border-black hover:text-black transition-all duration-300 text-sm font-medium"
               data-filter={category.id}
             >
-              <span class="mr-2">{category.icon}</span>
               {category.name}
             </button>
           ))}
@@ -241,31 +240,41 @@ const stats = [
               data-category={item.category}
               style={`animation-delay: ${index * 100}ms`}
             >
-              <div class="relative overflow-hidden h-full">
+              <div class="relative overflow-hidden h-full before-after-container" data-item-id={item.id}>
                 <!-- Before Image -->
-                <div class="before-image absolute inset-0 transition-opacity duration-700">
+                <div class="before-image absolute inset-0 transition-all duration-500 ease-in-out">
                   <img
                     src={item.beforeImage}
-                    alt={`${item.title} - Antes`}
+                    alt={`${item.title} - Before`}
                     class="w-full h-full object-cover"
                     loading="lazy"
                   />
-                  <div class="absolute top-4 left-4 bg-black/70 text-white px-3 py-1 rounded-full text-sm font-medium">
-                    {lang === "es" ? "Antes" : "Before"}
+                  <div class="absolute top-4 left-4 bg-black/80 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg">
+                    Before
                   </div>
                 </div>
                 
                 <!-- After Image -->
-                <div class="after-image absolute inset-0 opacity-0 transition-opacity duration-700">
+                <div class="after-image absolute inset-0 opacity-0 transition-all duration-500 ease-in-out">
                   <img
                     src={item.afterImage}
-                    alt={`${item.title} - Después`}
+                    alt={`${item.title} - After`}
                     class="w-full h-full object-cover"
                     loading="lazy"
                   />
-                  <div class="absolute top-4 left-4 bg-primary-gold text-white px-3 py-1 rounded-full text-sm font-medium">
-                    {lang === "es" ? "Después" : "After"}
+                  <div class="absolute top-4 left-4 bg-amber-600 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg">
+                    After
                   </div>
+                </div>
+                
+                <!-- Hover Indicator -->
+                <div class="absolute top-4 right-4 bg-white/90 text-gray-800 px-3 py-1 rounded-full text-xs font-medium shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  👆 Hover to see after
+                </div>
+                
+                <!-- Click Indicator -->
+                <div class="absolute bottom-4 right-4 bg-black/80 text-white px-3 py-1 rounded-full text-xs font-medium shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  💡 Click to toggle
                 </div>
                 
                 <!-- Content Overlay -->
@@ -394,10 +403,20 @@ const stats = [
 
     .before-after-container:hover .before-image {
       opacity: 0;
+      transform: scale(1.05);
     }
 
     .before-after-container:hover .after-image {
       opacity: 1;
+      transform: scale(1.05);
+    }
+
+    .before-after-container {
+      cursor: pointer;
+    }
+
+    .before-after-container:hover {
+      transform: scale(1.02);
     }
 
     .line-clamp-2 {
@@ -568,6 +587,32 @@ const stats = [
         }
       });
     }
+
+    // Funcionalidad de clic para alternar antes/después
+    document.querySelectorAll('.before-after-container').forEach(container => {
+      container.addEventListener('click', () => {
+        const beforeImage = container.querySelector('.before-image') as HTMLElement;
+        const afterImage = container.querySelector('.after-image') as HTMLElement;
+        
+        if (beforeImage && afterImage) {
+          const isShowingAfter = afterImage.style.opacity === '1';
+          
+          if (isShowingAfter) {
+            // Mostrar antes
+            beforeImage.style.opacity = '1';
+            afterImage.style.opacity = '0';
+            beforeImage.style.transform = 'scale(1)';
+            afterImage.style.transform = 'scale(1)';
+          } else {
+            // Mostrar después
+            beforeImage.style.opacity = '0';
+            afterImage.style.opacity = '1';
+            beforeImage.style.transform = 'scale(1.05)';
+            afterImage.style.transform = 'scale(1.05)';
+          }
+        }
+      });
+    });
 
     // Animar contadores
     const animateCounters = () => {
