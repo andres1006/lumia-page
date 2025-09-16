@@ -1,6 +1,7 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n";
 import SocialIcons from "./react/SocialIcons";
+import UltraOptimizedImageRef from "./UltraOptimizedImageRef.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -12,10 +13,12 @@ const t = useTranslations(lang);
       <!-- Logo and Description -->
       <div>
         <div class="flex items-center space-x-3 mb-6">
-          <img
-            src="/optimized-images/img-lumia/logo-lumia-optimized.png"
+          <UltraOptimizedImageRef
+            src="/optimized-images/img-lumia-ultra/logo-lumia-optimized.png"
             alt="LUMIA"
             class="w-12 h-12"
+            quality="high"
+            loading="lazy"
           />
           <div>
             <span class="text-2xl font-light text-white">LUMIA</span>

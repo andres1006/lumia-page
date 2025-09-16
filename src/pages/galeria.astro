@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import UltraOptimizedImageRef from "../components/UltraOptimizedImageRef.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { getLangFromUrl, useTranslations } from "../i18n";
@@ -130,7 +131,7 @@ const categories = [
 const stats = [
   { number: "2,500+", label: "Casos Exitosos" },
   { number: "15+", label: "Años de Experiencia" },
-  { number: "98%", label: "Satisfacción" },
+  { number: "100%", label: "Satisfacción" },
   { number: "50+", label: "Pacientes Internacionales" }
 ];
 ---
@@ -147,10 +148,13 @@ const stats = [
     <!-- Hero Section -->
     <section class="relative h-screen flex items-center justify-center overflow-hidden">
       <div class="absolute inset-0">
-        <img
-          src="/optimized-images/img-lumia/cliente-final-8-optimized.jpg"
-          alt="LUMIA Gallery"
-          class="w-full h-full object-cover grayscale brightness-50"
+        <UltraOptimizedImageRef
+          src="/optimized-images/img-lumia-ultra/servicios1.jpg"
+          alt="LUMIA Gallery - Tratamiento Dental Profesional"
+          class="w-full h-full object-cover object-center grayscale brightness-75"
+          quality="high"
+          loading="eager"
+          priority={true}
         />
         <div class="absolute inset-0 bg-black/40"></div>
       </div>

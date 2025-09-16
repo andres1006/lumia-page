@@ -4,6 +4,7 @@ import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import ServiceCard from "../../components/react/ServiceCard";
 import { getLangFromUrl, useTranslations } from "../../i18n";
+import UltraOptimizedImageRef from "../components/UltraOptimizedImageRef.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -149,11 +150,14 @@ const process = [
       class="relative h-screen flex items-center justify-center overflow-hidden"
     >
       <div class="absolute inset-0">
-        <img
-          src="/optimized-images/img-lumia/cliente-final-4-optimized.jpg"
-          alt="LUMIA Services - Resultados de Tratamiento Dental"
+        <UltraOptimizedImageRef
+                src="/optimized-images/img-lumia-ultra/cliente-final-4-optimized.jpg"
+                alt="LUMIA Services - Resultados de Tratamiento Dental"
           class="w-full h-full object-cover grayscale brightness-50"
-        />
+        /
+                quality="high"
+                loading="lazy"
+              />
         <div class="absolute inset-0 bg-black/40"></div>
       </div>
 

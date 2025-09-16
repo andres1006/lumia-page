@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import { getLangFromUrl, useTranslations } from "../../i18n";
+import UltraOptimizedImageRef from "../components/UltraOptimizedImageRef.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -148,7 +149,7 @@ const portfolioItems = [
 const stats = [
   { number: "2,500+", label: lang === "es" ? "Casos Exitosos" : "Successful Cases" },
   { number: "15+", label: lang === "es" ? "Años de Experiencia" : "Years of Experience" },
-  { number: "98%", label: lang === "es" ? "Satisfacción" : "Satisfaction" },
+  { number: "100%", label: lang === "es" ? "Satisfacción" : "Satisfaction" },
   { number: "50+", label: lang === "es" ? "Pacientes Internacionales" : "International Patients" }
 ];
 ---
@@ -171,11 +172,14 @@ const stats = [
     <!-- Hero Section -->
     <section class="relative h-screen flex items-center justify-center overflow-hidden">
       <div class="absolute inset-0">
-        <img
-          src="/optimized-images/img-lumia/cliente-final-8-optimized.jpg"
-          alt="LUMIA Gallery"
+        <UltraOptimizedImageRef
+                src="/optimized-images/img-lumia-ultra/cliente-final-8-optimized.jpg"
+                alt="LUMIA Gallery"
           class="w-full h-full object-cover grayscale brightness-50"
-        />
+        /
+                quality="high"
+                loading="lazy"
+              />
         <div class="absolute inset-0 bg-black/40"></div>
       </div>
 

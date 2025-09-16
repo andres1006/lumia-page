@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import UltraOptimizedImageRef from "../components/UltraOptimizedImageRef.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import ServiceCard from "../components/react/ServiceCard";
@@ -149,10 +150,13 @@ const process = [
       class="relative h-screen flex items-center justify-center overflow-hidden"
     >
       <div class="absolute inset-0">
-        <img
-          src="/optimized-images/img-lumia/cliente-final-4-optimized.jpg"
-          alt="LUMIA Services - Resultados de Tratamiento Dental"
-          class="w-full h-full object-cover grayscale brightness-50"
+        <UltraOptimizedImageRef
+          src="/optimized-images/img-lumia-ultra/galeria.jpg"
+          alt="LUMIA Services - Dr. Alejandro Restrepo Rehabilitador Oral"
+          class="w-full h-full object-cover object-center grayscale brightness-75"
+          quality="high"
+          loading="eager"
+          priority={true}
         />
         <div class="absolute inset-0 bg-black/40"></div>
       </div>

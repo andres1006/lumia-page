@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import { useTranslations } from "../../i18n";
+import UltraOptimizedImageRef from "../components/UltraOptimizedImageRef.astro";
 
 // Force English language for this page
 const lang = "en";
@@ -153,11 +154,14 @@ const certifications = [
       class="relative h-screen flex items-center justify-center overflow-hidden"
     >
       <div class="absolute inset-0">
-        <img
-          src="/optimized-images/img-lumia/cliente-final-12-optimized.jpg"
-          alt="LUMIA Clinic"
+        <UltraOptimizedImageRef
+                src="/optimized-images/img-lumia-ultra/cliente-final-12-optimized.jpg"
+                alt="LUMIA Clinic"
           class="w-full h-full object-cover grayscale brightness-50"
-        />
+        /
+                quality="high"
+                loading="lazy"
+              />
         <div class="absolute inset-0 bg-black/40"></div>
       </div>
 
@@ -225,10 +229,13 @@ const certifications = [
 
           <div class="relative">
             <div class="aspect-square bg-gray-100 rounded-2xl overflow-hidden">
-              <img
-                src="/optimized-images/img-lumia/cliente-final-13-optimized.jpg"
+              <UltraOptimizedImageRef
+                src="/optimized-images/img-lumia-ultra/cliente-final-13-optimized.jpg"
                 alt="LUMIA History"
                 class="w-full h-full object-cover"
+              /
+                quality="high"
+                loading="lazy"
               />
             </div>
             <div
@@ -245,11 +252,14 @@ const certifications = [
     <section class="bg-white">
       <div class="relative">
         <div class="h-64 md:h-80 lg:h-96 bg-gray-200 overflow-hidden">
-          <img
-            src="/optimized-images/img-lumia/cliente-final-14-optimized.jpg"
-            alt="LUMIA Purpose"
+          <UltraOptimizedImageRef
+                src="/optimized-images/img-lumia-ultra/cliente-final-14-optimized.jpg"
+                alt="LUMIA Purpose"
             class="w-full h-full object-cover grayscale brightness-50"
-          />
+          /
+                quality="high"
+                loading="lazy"
+              />
         </div>
 
         <!-- Text Overlay -->
