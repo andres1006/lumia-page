@@ -112,7 +112,9 @@ const fullTitle = title === siteName ? title : `${title} | ${siteName}`;
 
     <title>{fullTitle}</title>
   </head>
-  <body class="font-sans antialiased bg-white text-gray-900">
+  <body
+    class="font-sans antialiased bg-white text-gray-900 min-h-screen w-full overflow-x-hidden"
+  >
     <slot />
 
     <WhatsAppWidget client:load lang={lang as "es" | "en"} />
@@ -123,6 +125,24 @@ const fullTitle = title === siteName ? title : `${title} | ${siteName}`;
   html {
     font-family: "Montserrat", system-ui, sans-serif;
     scroll-behavior: smooth;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  main {
+    width: 100%;
+    overflow-x: hidden;
   }
 
   .font-serif {

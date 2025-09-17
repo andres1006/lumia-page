@@ -3,7 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import { useTranslations } from "../../i18n";
-import UltraOptimizedImageRef from "../components/UltraOptimizedImageRef.astro";
+import UltraOptimizedImageRef from "../../components/UltraOptimizedImageRef.astro";
 
 // Force English language for this page
 const lang = "en";
@@ -20,37 +20,26 @@ const team = [
       "LUMIA Founder",
     ],
     experience: "15+ years",
-    image: "/optimized-images/img-lumia/cliente-final-9-optimized.jpg",
+    image: "/optimized-images/drs-ultra/Alejandro-Restrepo-optimized.jpg",
   },
   {
-    name: "Dr. Tatiana Atehortua",
-    title: "General Dentist",
-    education: "General Dentistry",
-    certifications: ["General Dentist", "Dental Aesthetics Certification"],
-    experience: "8+ years",
-    image: "/optimized-images/img-lumia/cliente-final-10-optimized.jpg",
+    name: "Sebastian Restrepo",
+    title: "General Manager",
+    education: "Business Administration",
+    certifications: ["LUMIA General Manager", "Dental Clinic Administration"],
+    experience: "10+ years",
+    image: "/optimized-images/drs-ultra/Sebastian-Restrepo-optimized.jpg",
   },
   {
-    name: "Dr. Juliana Echeverry",
-    title: "Endodontist",
-    education: "Specialization in Endodontics",
+    name: "Aux. Isabela Loaiza",
+    title: "Dental Assistant",
+    education: "Dental Assistant Technician",
     certifications: [
-      "Endodontics Specialist",
-      "Microsurgical Endodontics Certification",
+      "Certified Dental Assistant",
+      "Dental Assistance Specialization",
     ],
-    experience: "7+ years",
-    image: "/optimized-images/img-lumia/cliente-final-11-optimized.jpg",
-  },
-  {
-    name: "Dr. Santiago Rodriguez",
-    title: "Maxillofacial Surgeon",
-    education: "Specialization in Maxillofacial Surgery",
-    certifications: [
-      "Maxillofacial Surgery Specialist",
-      "Orthognathic Surgery Certification",
-    ],
-    experience: "12+ years",
-    image: "/optimized-images/img-lumia/cliente-final-12-optimized.jpg",
+    experience: "5+ years",
+    image: "/optimized-images/drs-ultra/Isabela-Loaiza-optimized.jpg",
   },
   {
     name: "Dr. Juanita Castañeda",
@@ -61,15 +50,34 @@ const team = [
       "Periodontal Implants Certification",
     ],
     experience: "9+ years",
-    image: "/optimized-images/img-lumia/cliente-final-13-optimized.jpg",
+    image: "/optimized-images/drs-ultra/Dra-juanita-castañeda-optimized.jpg",
   },
   {
-    name: "Dr. Angela Victoria Gomez",
+    name: "Monica González",
+    title: "Health Auditor",
+    education: "General Dentistry",
+    certifications: ["Health Auditor", "Clinical Management Specialization"],
+    experience: "8+ years",
+    image: "/optimized-images/drs-ultra/Monica-gonazales-optimized.jpg",
+  },
+  {
+    name: "Victoria Gomez",
     title: "Orthodontist",
     education: "Specialization in Orthodontics",
     certifications: ["Orthodontics Specialist", "Invisalign Certification"],
     experience: "6+ years",
-    image: "/optimized-images/img-lumia/cliente-final-14-optimized.jpg",
+    image: "/optimized-images/drs-ultra/victoria-gomez-optimized.jpg",
+  },
+  {
+    name: "Dr. Santiago Rodriguez",
+    title: "Maxilofacial Surgeon",
+    education: "Specialization in Maxilofacial Surgery",
+    certifications: [
+      "Maxilofacial Surgery Specialist",
+      "Orthognathic Surgery Certification",
+    ],
+    experience: "12+ years",
+    image: "/optimized-images/drs-ultra/Santiago-Rodrigez-optimized.jpg",
   },
   {
     name: "Dr. Camila Cuervo",
@@ -80,26 +88,37 @@ const team = [
       "Lingual Orthodontics Certification",
     ],
     experience: "5+ years",
-    image: "/optimized-images/img-lumia/cliente-final-15-optimized.jpg",
+    image: "/optimized-images/drs-ultra/Dra-camila-cuervo-optimized.jpg",
   },
   {
-    name: "Dr. Paula Restrepo",
-    title: "Orthodontist",
-    education: "Specialization in Orthodontics",
+    name: "Dr. Juliana Echeverry",
+    title: "Endodontist",
+    education: "Specialization in Endodontics",
     certifications: [
-      "Orthodontics Specialist",
-      "Invisible Orthodontics Certification",
+      "Endodontics Specialist",
+      "Microsurgical Endodontics Certification",
     ],
     experience: "7+ years",
-    image: "/optimized-images/img-lumia/cliente-final-16-optimized.jpg",
+    image: "/optimized-images/drs-ultra/Dra-juliana-echeverry-optimized.jpg",
   },
   {
-    name: "Dr. Catalina Garcés",
-    title: "Specialist",
-    education: "Specialization in Dentistry",
-    certifications: ["Dentistry Specialist", "Dental Aesthetics Certification"],
+    name: "Dr. Tatiana Atehortua",
+    title: "General Dentist",
+    education: "General Dentistry",
+    certifications: ["General Dentist", "Dental Aesthetics Certification"],
     experience: "8+ years",
-    image: "/optimized-images/img-lumia/cliente-final-17-optimized.jpg",
+    image: "/optimized-images/drs-ultra/Dra-tatiana-Atehortua-optimized.jpg",
+  },
+  {
+    name: "Laura Restrepo",
+    title: "Administrative Assistant",
+    education: "Business Administration",
+    certifications: [
+      "Administrative Assistant",
+      "Clinic Management Specialization",
+    ],
+    experience: "6+ years",
+    image: "/optimized-images/drs-ultra/Laura-Restrepo-optimized.jpg",
   },
 ];
 
@@ -155,13 +174,12 @@ const certifications = [
     >
       <div class="absolute inset-0">
         <UltraOptimizedImageRef
-                src="/optimized-images/img-lumia-ultra/cliente-final-12-optimized.jpg"
-                alt="LUMIA Clinic"
+          src="/optimized-images/img-lumia-ultra/cliente-final-12-optimized.jpg"
+          alt="LUMIA Clinic"
           class="w-full h-full object-cover grayscale brightness-50"
-        /
-                quality="high"
-                loading="lazy"
-              />
+          quality="high"
+          loading="lazy"
+        />
         <div class="absolute inset-0 bg-black/40"></div>
       </div>
 
@@ -230,18 +248,14 @@ const certifications = [
           <div class="relative">
             <div class="aspect-square bg-gray-100 rounded-2xl overflow-hidden">
               <UltraOptimizedImageRef
-                src="/optimized-images/img-lumia-ultra/cliente-final-13-optimized.jpg"
-                alt="LUMIA History"
+                src="/optimized-images/img-lumia-ultra/doc-alejandro-optimized.jpg"
+                alt="Dr. Alejandro Restrepo - LUMIA Founder"
                 class="w-full h-full object-cover"
-              /
-                quality="high"
-                loading="lazy"
+                quality="ultra"
+                priority={true}
+                loading="eager"
+                aspectRatio="1/1"
               />
-            </div>
-            <div
-              class="absolute -bottom-6 -right-6 w-32 h-32 bg-amber-600 rounded-full flex items-center justify-center"
-            >
-              <span class="text-white text-2xl font-light">2008</span>
             </div>
           </div>
         </div>
@@ -253,13 +267,12 @@ const certifications = [
       <div class="relative">
         <div class="h-64 md:h-80 lg:h-96 bg-gray-200 overflow-hidden">
           <UltraOptimizedImageRef
-                src="/optimized-images/img-lumia-ultra/cliente-final-14-optimized.jpg"
-                alt="LUMIA Purpose"
+            src="/optimized-images/img-lumia-ultra/cliente-final-14-optimized.jpg"
+            alt="LUMIA Purpose"
             class="w-full h-full object-cover grayscale brightness-50"
-          /
-                quality="high"
-                loading="lazy"
-              />
+            quality="high"
+            loading="lazy"
+          />
         </div>
 
         <!-- Text Overlay -->
@@ -306,10 +319,12 @@ const certifications = [
             values.slice(0, 3).map((value, index) => (
               <div class="relative group">
                 <div class="h-64 md:h-80 lg:h-96 bg-gray-200 overflow-hidden">
-                  <img
-                    src={`/optimized-images/img-lumia/cliente-final-${index === 0 ? "15" : index === 1 ? "16" : "17"}-optimized.jpg`}
+                  <UltraOptimizedImageRef
+                    src={`/optimized-images/img-lumia-ultra/cliente-final-${index === 0 ? "15" : index === 1 ? "16" : "17"}-optimized.jpg`}
                     alt={value.title}
                     class="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-75 transition-all duration-300"
+                    quality="high"
+                    loading="lazy"
                   />
                 </div>
                 <div class="absolute inset-0 flex items-center justify-center">
@@ -354,11 +369,14 @@ const certifications = [
           {
             team.map((member, index) => (
               <div class="group team-member-card">
-                <div class="aspect-square bg-gray-800 rounded-2xl overflow-hidden mb-6 group-hover:scale-105 transition-transform duration-300">
-                  <img
+                <div class="aspect-[3/4] bg-gray-800 rounded-2xl overflow-hidden mb-6 group-hover:scale-105 transition-transform duration-300">
+                  <UltraOptimizedImageRef
                     src={member.image}
                     alt={member.name}
-                    class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+                    class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                    quality="high"
+                    loading="lazy"
+                    aspectRatio="3/4"
                   />
                 </div>
                 <div class="text-center">

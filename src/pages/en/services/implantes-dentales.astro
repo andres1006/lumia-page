@@ -3,54 +3,55 @@ import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
 import { getLangFromUrl, useTranslations } from "../../../i18n";
+import UltraOptimizedImageRef from "../../../components/UltraOptimizedImageRef.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const serviceDetails = {
-  title: "Implantes Dentales Premium",
-  subtitle: "Reemplazo Permanente con Titanio Alemán",
-  price: "Desde $1,800,000 COP",
-  duration: "3-6 meses",
+  title: "Premium Dental Implants",
+  subtitle: "Permanent Replacement with German Titanium",
+  price: "From $1,800,000 COP",
+  duration: "3-6 months",
   description:
-    "Los implantes dentales son la solución más avanzada y duradera para reemplazar dientes perdidos. Utilizamos implantes de titanio alemán de la más alta calidad para garantizar resultados excepcionales y duraderos.",
+    "Dental implants are the most advanced and durable solution to replace lost teeth. We use German titanium implants of the highest quality to guarantee exceptional and lasting results.",
 
   benefits: [
-    "100% funcional como diente natural",
-    "Duración de por vida con cuidado adecuado",
-    "Preserva el hueso maxilar",
-    "No afecta dientes adyacentes",
-    "Tecnología alemana premium",
-    "Éxito del 100% en nuestros casos",
+    "100% functional like natural tooth",
+    "Lifetime duration with proper care",
+    "Preserves jawbone",
+    "Does not affect adjacent teeth",
+    "Premium German technology",
+    "100% success in our cases",
   ],
 
   types: [
     {
-      name: "Implante Individual",
-      description: "Para reemplazar un solo diente perdido",
-      price: "Desde $1,800,000 COP",
-      duration: "3-4 meses",
+      name: "Individual Implant",
+      description: "To replace a single lost tooth",
+      price: "From $1,800,000 COP",
+      duration: "3-4 months",
       icon: "🦷",
     },
     {
-      name: "Puente sobre Implantes",
-      description: "Para reemplazar múltiples dientes consecutivos",
-      price: "Desde $4,500,000 COP",
-      duration: "4-5 meses",
+      name: "Bridge on Implants",
+      description: "To replace multiple consecutive teeth",
+      price: "From $4,500,000 COP",
+      duration: "4-5 months",
       icon: "🏗️",
     },
     {
       name: "All-on-4",
-      description: "Rehabilitación completa con 4 implantes",
-      price: "Desde $15,000,000 COP",
-      duration: "6 meses",
+      description: "Complete rehabilitation with 4 implants",
+      price: "From $15,000,000 COP",
+      duration: "6 months",
       icon: "✨",
     },
     {
       name: "All-on-6",
-      description: "Rehabilitación completa con 6 implantes",
-      price: "Desde $18,000,000 COP",
-      duration: "6 meses",
+      description: "Complete rehabilitation with 6 implants",
+      price: "From $18,000,000 COP",
+      duration: "6 months",
       icon: "👑",
     },
   ],
@@ -58,36 +59,34 @@ const serviceDetails = {
   process: [
     {
       step: "1",
-      title: "Evaluación y Diagnóstico",
-      description:
-        "Tomografía 3D, análisis óseo y planificación digital del caso.",
+      title: "Evaluation and Diagnosis",
+      description: "3D tomography, bone analysis and digital case planning.",
       duration: "60 min",
     },
     {
       step: "2",
-      title: "Cirugía de Implante",
+      title: "Implant Surgery",
       description:
-        "Colocación del implante de titanio con técnica mínimamente invasiva.",
+        "Placement of the titanium implant with minimally invasive technique.",
       duration: "45-90 min",
     },
     {
       step: "3",
-      title: "Período de Oseointegración",
-      description:
-        "Proceso natural de fusión del implante con el hueso (3-6 meses).",
-      duration: "3-6 meses",
+      title: "Osseointegration Period",
+      description: "Natural process of implant fusion with bone (3-6 months).",
+      duration: "3-6 months",
     },
     {
       step: "4",
-      title: "Toma de Impresión",
+      title: "Impression Taking",
       description:
-        "Impresión digital para fabricación de la corona personalizada.",
+        "Digital impression for manufacturing the personalized crown.",
       duration: "30 min",
     },
     {
       step: "5",
-      title: "Colocación de Corona",
-      description: "Instalación de la corona definitiva sobre el implante.",
+      title: "Crown Placement",
+      description: "Installation of the definitive crown on the implant.",
       duration: "45 min",
     },
   ],
@@ -96,59 +95,59 @@ const serviceDetails = {
     {
       before: "/optimized-images/img-lumia/antes-1-optimized.jpg",
       after: "/optimized-images/img-lumia/cliente-final-1-optimized.jpg",
-      case: "Implante Individual - Molar Superior",
+      case: "Individual Implant - Upper Molar",
     },
     {
       before: "/optimized-images/img-lumia/antes-despues-1-optimized.jpg",
       after: "/optimized-images/img-lumia/cliente-final-2-optimized.jpg",
-      case: "All-on-4 Maxilar Superior",
+      case: "All-on-4 Upper Jaw",
     },
     {
       before: "/optimized-images/img-lumia/antes-despues-2-optimized.jpg",
       after: "/optimized-images/img-lumia/cliente-final-3-optimized.jpg",
-      case: "Rehabilitación Completa Inferior",
+      case: "Complete Lower Rehabilitation",
     },
     {
       before:
         "/optimized-images/img-lumia/protesis-hibrida-1/protesis-hibrida-caso1-1-optimized.jpg",
       after:
         "/optimized-images/img-lumia/protesis-hibrida-1/protesis-hibrida-caso1-2-optimized.jpg",
-      case: "Prótesis Híbrida - Caso 1",
+      case: "Hybrid Prosthesis - Case 1",
     },
     {
       before:
         "/optimized-images/img-lumia/protesis-hibrida-2/protesis-hibrida-caso2-1-optimized.jpg",
       after:
         "/optimized-images/img-lumia/protesis-hibrida-2/protesis-hibrida-caso2-2-optimized.jpg",
-      case: "Prótesis Híbrida - Caso 2",
+      case: "Hybrid Prosthesis - Case 2",
     },
   ],
 
   faq: [
     {
-      question: "¿Cuánto tiempo duran los implantes dentales?",
+      question: "How long do dental implants last?",
       answer:
-        "Con el cuidado adecuado, los implantes dentales pueden durar toda la vida. El titanio se integra permanentemente con el hueso y no se deteriora.",
+        "With proper care, dental implants can last a lifetime. Titanium integrates permanently with bone and does not deteriorate.",
     },
     {
-      question: "¿Es doloroso el procedimiento?",
+      question: "Is the procedure painful?",
       answer:
-        "No, utilizamos anestesia local y técnicas mínimamente invasivas. La mayoría de pacientes reportan menos molestias que una extracción dental.",
+        "No, we use local anesthesia and minimally invasive techniques. Most patients report less discomfort than a dental extraction.",
     },
     {
-      question: "¿Puedo comer normal después del implante?",
+      question: "Can I eat normally after the implant?",
       answer:
-        "Después del período de cicatrización inicial (7-10 días), podrás comer con total normalidad. Los implantes ofrecen 100% de la fuerza masticatoria.",
+        "After the initial healing period (7-10 days), you will be able to eat completely normally. Implants offer 100% of chewing strength.",
     },
     {
-      question: "¿Qué cuidados requieren los implantes?",
+      question: "What care do implants require?",
       answer:
-        "Los mismos cuidados que tus dientes naturales: cepillado, hilo dental y visitas regulares de control cada 6 meses.",
+        "The same care as your natural teeth: brushing, flossing and regular check-ups every 6 months.",
     },
     {
-      question: "¿Todos pueden recibir implantes?",
+      question: "Can everyone receive implants?",
       answer:
-        "La mayoría de personas son candidatos. Evaluamos cada caso individualmente, considerando salud general, densidad ósea y hábitos.",
+        "Most people are candidates. We evaluate each case individually, considering general health, bone density and habits.",
     },
   ],
 };
@@ -158,7 +157,7 @@ const testimonials = [
     name: "Roberto Martínez",
     age: 45,
     location: "Manizales",
-    text: "Después de 2 años usando prótesis removible, los implantes All-on-4 cambiaron mi vida. Puedo comer de todo y sonreír con confianza.",
+    text: "After 2 years using removable dentures, All-on-4 implants changed my life. I can eat everything and smile with confidence.",
     rating: 5,
     image: "https://via.placeholder.com/80x80/d4af37/ffffff?text=RM",
   },
@@ -166,7 +165,7 @@ const testimonials = [
     name: "Ana Lucía Torres",
     age: 38,
     location: "Pereira",
-    text: "Mi implante individual se ve y se siente exactamente como mi diente natural. El proceso fue muy cómodo y profesional.",
+    text: "My individual implant looks and feels exactly like my natural tooth. The process was very comfortable and professional.",
     rating: 5,
     image: "https://via.placeholder.com/80x80/d4af37/ffffff?text=AT",
   },
@@ -174,10 +173,10 @@ const testimonials = [
 ---
 
 <Layout
-  title="Implantes Dentales Premium - LUMIA Odontología Especializada"
-  description="Implantes dentales de titanio alemán premium en LUMIA. Reemplazo permanente para dientes perdidos. All-on-4, implantes individuales. Manizales y Pereira."
+  title="Premium Dental Implants - LUMIA Specialized Dentistry"
+  description="Premium German titanium dental implants at LUMIA. Permanent replacement for lost teeth. All-on-4, individual implants. Manizales and Pereira."
   lang={lang}
-  keywords="implantes dentales Manizales, All on 4 Colombia, implantes titanio Pereira, rehabilitación oral, prótesis fija"
+  keywords="dental implants Manizales, All on 4 Colombia, titanium implants Pereira, oral rehabilitation, fixed prosthesis"
 >
   <Header />
 
@@ -193,7 +192,7 @@ const testimonials = [
             <div
               class="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-6"
             >
-              <span class="text-sm font-semibold">🦷 Tecnología Alemana</span>
+              <span class="text-sm font-semibold">🦷 German Technology</span>
             </div>
             <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
               {serviceDetails.title}
@@ -203,11 +202,11 @@ const testimonials = [
             </p>
             <div class="flex flex-col sm:flex-row gap-4 mb-8">
               <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                <div class="text-sm opacity-80">Precio</div>
+                <div class="text-sm opacity-80">Price</div>
                 <div class="text-2xl font-bold">{serviceDetails.price}</div>
               </div>
               <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                <div class="text-sm opacity-80">Proceso</div>
+                <div class="text-sm opacity-80">Process</div>
                 <div class="text-2xl font-bold">{serviceDetails.duration}</div>
               </div>
             </div>
@@ -216,7 +215,7 @@ const testimonials = [
                 href="/contacto"
                 class="inline-flex items-center justify-center px-8 py-4 bg-white text-primary-gold font-bold rounded-lg shadow-luxury hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               >
-                Consulta Gratuita
+                Free Consultation
               </a>
               <a
                 href="https://wa.me/573164052829"
@@ -258,10 +257,10 @@ const testimonials = [
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Tipos de Implantes
+            Types of Implants
           </h2>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Soluciones personalizadas para cada necesidad
+            Personalized solutions for every need
           </p>
         </div>
 
@@ -297,7 +296,7 @@ const testimonials = [
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 class="text-4xl font-bold text-gray-900 mb-6">
-              ¿Por qué elegir nuestros implantes?
+              Why choose our implants?
             </h2>
             <p class="text-lg text-gray-600 mb-8 leading-relaxed">
               {serviceDetails.description}
@@ -305,7 +304,7 @@ const testimonials = [
 
             <div class="space-y-4">
               <h3 class="text-2xl font-bold text-gray-900">
-                Ventajas de nuestros implantes:
+                Advantages of our implants:
               </h3>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {
@@ -337,7 +336,7 @@ const testimonials = [
             >
               <img
                 src="https://via.placeholder.com/600x400/f3f4f6/9ca3af?text=Titanio+Alemán"
-                alt="Implantes de Titanio Alemán"
+                alt="German Titanium Implants"
                 class="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -352,10 +351,10 @@ const testimonials = [
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Proceso del Implante
+            Implant Process
           </h2>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Un proceso sistemático y seguro para resultados predecibles
+            A systematic and safe process for predictable results
           </p>
         </div>
 
@@ -407,10 +406,10 @@ const testimonials = [
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Casos de Éxito
+            Success Cases
           </h2>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Resultados reales que transforman vidas
+            Real results that transform lives
           </p>
         </div>
 
@@ -425,22 +424,22 @@ const testimonials = [
                   <div class="space-y-4">
                     <div>
                       <h4 class="text-sm font-semibold text-gray-600 mb-2">
-                        Antes
+                        Before
                       </h4>
                       <img
                         src={comparison.before}
-                        alt="Antes"
+                        alt="Before"
                         class="w-full h-48 object-cover rounded-lg border-2 border-gray-200"
                         onerror="this.style.border='2px solid red'; this.alt='ERROR: Imagen no encontrada';"
                       />
                     </div>
                     <div>
                       <h4 class="text-sm font-semibold text-gray-600 mb-2">
-                        Después
+                        After
                       </h4>
                       <img
                         src={comparison.after}
-                        alt="Después"
+                        alt="After"
                         class="w-full h-64 object-cover rounded-lg border-2 border-gray-200"
                         onerror="this.style.border='2px solid red'; this.alt='ERROR: Imagen no encontrada';"
                       />
@@ -459,10 +458,10 @@ const testimonials = [
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Preguntas Frecuentes
+            Frequently Asked Questions
           </h2>
           <p class="text-xl text-gray-600">
-            Resolvemos tus dudas sobre implantes dentales
+            We answer your questions about dental implants
           </p>
         </div>
 
@@ -508,10 +507,10 @@ const testimonials = [
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Testimonios Reales
+            Real Testimonials
           </h2>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            La satisfacción de nuestros pacientes es nuestra mayor recompensa
+            Our patients' satisfaction is our greatest reward
           </p>
         </div>
 
@@ -542,7 +541,7 @@ const testimonials = [
                   <div>
                     <h4 class="font-bold text-gray-900">{testimonial.name}</h4>
                     <p class="text-gray-600 text-sm">
-                      {testimonial.age} años • {testimonial.location}
+                      {testimonial.age} years old • {testimonial.location}
                     </p>
                   </div>
                 </div>
@@ -557,18 +556,18 @@ const testimonials = [
     <section class="py-20 bg-primary-gold text-white">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-4xl md:text-5xl font-bold mb-6">
-          ¿Listo para Recuperar tu Sonrisa?
+          Ready to Recover Your Smile?
         </h2>
         <p class="text-xl mb-12 opacity-90">
-          Agenda tu consulta gratuita y descubre cómo los implantes pueden
-          cambiar tu vida
+          Schedule your free consultation and discover how implants can change
+          your life
         </p>
         <div class="flex flex-col sm:flex-row gap-6 justify-center">
           <a
             href="/contacto"
             class="inline-flex items-center px-10 py-5 bg-white text-primary-gold font-bold rounded-lg shadow-luxury hover:shadow-xl transition-all duration-300 transform hover:scale-105"
           >
-            Consulta Gratuita
+            Free Consultation
           </a>
           <a
             href="https://wa.me/573164052829"

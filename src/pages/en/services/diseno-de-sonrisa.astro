@@ -3,60 +3,60 @@ import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
 import { getLangFromUrl, useTranslations } from "../../../i18n";
-import UltraOptimizedImageRef from "../components/UltraOptimizedImageRef.astro";
+import UltraOptimizedImageRef from "../../../components/UltraOptimizedImageRef.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const serviceDetails = {
-  title: "Diseño de Sonrisa Digital",
-  subtitle: "Transformación Completa con Tecnología 3D",
-  price: "Desde $2,500,000 COP",
-  duration: "2-3 citas",
+  title: "Digital Smile Design",
+  subtitle: "Complete Transformation with 3D Technology",
+  price: "From $2,500,000 COP",
+  duration: "2-3 appointments",
   description:
-    "El Diseño de Sonrisa Digital es un tratamiento estético integral que utiliza tecnología 3D avanzada para crear la sonrisa perfecta y personalizada para cada paciente.",
+    "Digital Smile Design is a comprehensive aesthetic treatment that uses advanced 3D technology to create the perfect and personalized smile for each patient.",
 
   benefits: [
-    "Resultados predecibles con simulación 3D",
-    "Materiales premium de alta durabilidad",
-    "Proceso personalizado y único",
-    "Mejora significativa en la autoestima",
-    "Tecnología de vanguardia",
-    "Garantía extendida",
+    "Predictable results with 3D simulation",
+    "Premium high-durability materials",
+    "Personalized and unique process",
+    "Significant improvement in self-esteem",
+    "Cutting-edge technology",
+    "Extended warranty",
   ],
 
   process: [
     {
       step: "1",
-      title: "Evaluación Inicial",
+      title: "Initial Evaluation",
       description:
-        "Examen completo, fotografías digitales y análisis facial detallado.",
+        "Complete examination, digital photographs and detailed facial analysis.",
       duration: "60 min",
     },
     {
       step: "2",
-      title: "Diseño Digital 3D",
+      title: "Digital 3D Design",
       description:
-        "Creación del diseño personalizado usando tecnología DSD (Digital Smile Design).",
+        "Creation of the personalized design using DSD (Digital Smile Design) technology.",
       duration: "45 min",
     },
     {
       step: "3",
-      title: "Prueba Estética",
+      title: "Aesthetic Trial",
       description:
-        "Mock-up temporal para que puedas ver y aprobar tu nueva sonrisa.",
+        "Temporary mock-up so you can see and approve your new smile.",
       duration: "30 min",
     },
     {
       step: "4",
-      title: "Preparación Dental",
-      description: "Preparación mínimamente invasiva de los dientes.",
+      title: "Dental Preparation",
+      description: "Minimally invasive tooth preparation.",
       duration: "90 min",
     },
     {
       step: "5",
-      title: "Cementación Final",
-      description: "Colocación definitiva de las carillas o coronas premium.",
+      title: "Final Cementation",
+      description: "Definitive placement of premium veneers or crowns.",
       duration: "120 min",
     },
   ],
@@ -65,53 +65,53 @@ const serviceDetails = {
     {
       before: "/optimized-images/img-lumia/antes-1-optimized.jpg",
       after: "/optimized-images/img-lumia/cliente-final-1-optimized.jpg",
-      case: "Caso 1: Sonrisa Gingival",
+      case: "Case 1: Gummy Smile",
     },
     {
       before: "/optimized-images/img-lumia/antes-despues-1-optimized.jpg",
       after: "/optimized-images/img-lumia/cliente-final-2-optimized.jpg",
-      case: "Caso 2: Espacios Interdentales",
+      case: "Case 2: Interdental Spaces",
     },
     {
       before: "/optimized-images/img-lumia/antes-despues-2-optimized.jpg",
       after: "/optimized-images/img-lumia/cliente-final-3-optimized.jpg",
-      case: "Caso 3: Decoloración Severa",
+      case: "Case 3: Severe Discoloration",
     },
     {
       before:
         "/optimized-images/img-lumia/diseno-ceramica/IMG_0705-optimized.jpg",
       after:
         "/optimized-images/img-lumia/diseno-ceramica/IMG_1034-optimized.jpg",
-      case: "Caso 4: Diseño en Cerámica",
+      case: "Case 4: Ceramic Design",
     },
     {
       before:
         "/optimized-images/img-lumia/diseno-recina/IMG_1163-optimized.jpg",
       after: "/optimized-images/img-lumia/diseno-recina/IMG_1322-optimized.jpg",
-      case: "Caso 5: Diseño en Resina",
+      case: "Case 5: Resin Design",
     },
   ],
 
   faq: [
     {
-      question: "¿Cuánto tiempo duran las carillas?",
+      question: "How long do veneers last?",
       answer:
-        "Con el cuidado adecuado, las carillas de porcelana pueden durar entre 10-15 años o más.",
+        "With proper care, porcelain veneers can last between 10-15 years or more.",
     },
     {
-      question: "¿Es un procedimiento doloroso?",
+      question: "Is the procedure painful?",
       answer:
-        "No, utilizamos anestesia local y técnicas mínimamente invasivas. La mayoría de pacientes no reportan dolor significativo.",
+        "No, we use local anesthesia and minimally invasive techniques. Most patients do not report significant pain.",
     },
     {
-      question: "¿Puedo comer con normalidad?",
+      question: "Can I eat normally?",
       answer:
-        "Sí, después del período de adaptación (24-48 horas) podrás comer con total normalidad.",
+        "Yes, after the adaptation period (24-48 hours) you will be able to eat completely normally.",
     },
     {
-      question: "¿Qué cuidados especiales requiere?",
+      question: "What special care does it require?",
       answer:
-        "Higiene dental regular, evitar morder objetos duros y visitas de control cada 6 meses.",
+        "Regular dental hygiene, avoid biting hard objects and control visits every 6 months.",
     },
   ],
 };
@@ -121,7 +121,7 @@ const testimonials = [
     name: "María González",
     age: 32,
     location: "Manizales",
-    text: "Mi vida cambió completamente después del diseño de sonrisa. La confianza que tengo ahora es increíble.",
+    text: "My life changed completely after the smile design. The confidence I have now is incredible.",
     rating: 5,
     image: "https://via.placeholder.com/80x80/d4af37/ffffff?text=MG",
   },
@@ -129,7 +129,7 @@ const testimonials = [
     name: "Carlos Rodríguez",
     age: 28,
     location: "Pereira",
-    text: "El proceso fue muy cómodo y los resultados superaron mis expectativas. Recomiendo 100% a LUMIA.",
+    text: "The process was very comfortable and the results exceeded my expectations. I recommend LUMIA 100%.",
     rating: 5,
     image: "https://via.placeholder.com/80x80/d4af37/ffffff?text=CR",
   },
@@ -137,10 +137,10 @@ const testimonials = [
 ---
 
 <Layout
-  title="Diseño de Sonrisa Digital - LUMIA Odontología Especializada"
-  description="Transformación completa de tu sonrisa con tecnología 3D avanzada. Diseño de Sonrisa Digital personalizado en LUMIA. Resultados predecibles y naturales."
+  title="Digital Smile Design - LUMIA Specialized Dentistry"
+  description="Complete transformation of your smile with advanced 3D technology. Personalized Digital Smile Design at LUMIA. Predictable and natural results."
   lang={lang}
-  keywords="diseño de sonrisa Manizales, carillas dentales Colombia, smile design Pereira, estética dental, sonrisa perfecta"
+  keywords="smile design Manizales, dental veneers Colombia, smile design Pereira, dental aesthetics, perfect smile"
 >
   <Header />
 
@@ -156,7 +156,7 @@ const testimonials = [
             <div
               class="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-6"
             >
-              <span class="text-sm font-semibold">✨ Servicio Premium</span>
+              <span class="text-sm font-semibold">✨ Premium Service</span>
             </div>
             <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
               {serviceDetails.title}
@@ -166,11 +166,11 @@ const testimonials = [
             </p>
             <div class="flex flex-col sm:flex-row gap-4 mb-8">
               <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                <div class="text-sm opacity-80">Precio</div>
+                <div class="text-sm opacity-80">Price</div>
                 <div class="text-2xl font-bold">{serviceDetails.price}</div>
               </div>
               <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                <div class="text-sm opacity-80">Duración</div>
+                <div class="text-sm opacity-80">Duration</div>
                 <div class="text-2xl font-bold">{serviceDetails.duration}</div>
               </div>
             </div>
@@ -179,7 +179,7 @@ const testimonials = [
                 href="/contacto"
                 class="inline-flex items-center justify-center px-8 py-4 bg-white text-primary-gold font-bold rounded-lg shadow-luxury hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               >
-                Agendar Valoración
+                Schedule Assessment
               </a>
               <a
                 href="https://wa.me/573164052829"
@@ -206,10 +206,9 @@ const testimonials = [
             >
               <UltraOptimizedImageRef
                 src="/optimized-images/img-lumia-ultra/cliente-final-4-optimized.jpg"
-                alt="Diseño de Sonrisa Digital"
+                alt="Digital Smile Design"
                 class="rounded-xl shadow-2xl"
                 loading="lazy"
-              /
                 quality="high"
                 loading="lazy"
               />
@@ -225,16 +224,14 @@ const testimonials = [
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 class="text-4xl font-bold text-gray-900 mb-6">
-              ¿Qué es el Diseño de Sonrisa Digital?
+              What is Digital Smile Design?
             </h2>
             <p class="text-lg text-gray-600 mb-8 leading-relaxed">
               {serviceDetails.description}
             </p>
 
             <div class="space-y-4">
-              <h3 class="text-2xl font-bold text-gray-900">
-                Beneficios Principales:
-              </h3>
+              <h3 class="text-2xl font-bold text-gray-900">Main Benefits:</h3>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {
                   serviceDetails.benefits.map((benefit) => (
@@ -265,10 +262,9 @@ const testimonials = [
             >
               <UltraOptimizedImageRef
                 src="/optimized-images/img-lumia-ultra/cliente-final-5-optimized.jpg"
-                alt="Tecnología Digital Smile Design"
+                alt="Digital Smile Design Technology"
                 class="w-full h-full object-cover"
                 loading="lazy"
-              /
                 quality="high"
                 loading="lazy"
               />
@@ -283,11 +279,10 @@ const testimonials = [
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Nuestro Proceso
+            Our Process
           </h2>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Un enfoque sistemático y personalizado para garantizar resultados
-            excepcionales
+            A systematic and personalized approach to ensure exceptional results
           </p>
         </div>
 
@@ -339,10 +334,10 @@ const testimonials = [
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Resultados Reales
+            Real Results
           </h2>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Transformaciones que hablan por sí solas
+            Transformations that speak for themselves
           </p>
         </div>
 
@@ -357,22 +352,22 @@ const testimonials = [
                   <div class="space-y-4">
                     <div>
                       <h4 class="text-sm font-semibold text-gray-600 mb-2">
-                        Antes
+                        Before
                       </h4>
                       <img
                         src={comparison.before}
-                        alt="Antes"
+                        alt="Before"
                         class="w-full h-48 object-cover rounded-lg border-2 border-gray-200"
                         onerror="this.style.border='2px solid red'; this.alt='ERROR: Imagen no encontrada';"
                       />
                     </div>
                     <div>
                       <h4 class="text-sm font-semibold text-gray-600 mb-2">
-                        Después
+                        After
                       </h4>
                       <img
                         src={comparison.after}
-                        alt="Después"
+                        alt="After"
                         class="w-full h-48 object-cover rounded-lg border-2 border-gray-200"
                         onerror="this.style.border='2px solid red'; this.alt='ERROR: Imagen no encontrada';"
                       />
@@ -391,10 +386,10 @@ const testimonials = [
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Preguntas Frecuentes
+            Frequently Asked Questions
           </h2>
           <p class="text-xl text-gray-600">
-            Resolvemos tus dudas sobre el Diseño de Sonrisa
+            We answer your questions about Smile Design
           </p>
         </div>
 
@@ -440,10 +435,10 @@ const testimonials = [
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Lo que Dicen Nuestros Pacientes
+            What Our Patients Say
           </h2>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Testimonios reales de transformaciones exitosas
+            Real testimonials from successful transformations
           </p>
         </div>
 
@@ -474,7 +469,7 @@ const testimonials = [
                   <div>
                     <h4 class="font-bold text-gray-900">{testimonial.name}</h4>
                     <p class="text-gray-600 text-sm">
-                      {testimonial.age} años • {testimonial.location}
+                      {testimonial.age} years old • {testimonial.location}
                     </p>
                   </div>
                 </div>
@@ -489,18 +484,18 @@ const testimonials = [
     <section class="py-20 bg-primary-gold text-white">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-4xl md:text-5xl font-bold mb-6">
-          ¿Listo para tu Nueva Sonrisa?
+          Ready for Your New Smile?
         </h2>
         <p class="text-xl mb-12 opacity-90">
-          Agenda tu valoración personalizada y descubre cómo podemos transformar
-          tu sonrisa
+          Schedule your personalized assessment and discover how we can
+          transform your smile
         </p>
         <div class="flex flex-col sm:flex-row gap-6 justify-center">
           <a
             href="/contacto"
             class="inline-flex items-center px-10 py-5 bg-white text-primary-gold font-bold rounded-lg shadow-luxury hover:shadow-xl transition-all duration-300 transform hover:scale-105"
           >
-            Agendar Valoración Gratuita
+            Schedule Free Assessment
           </a>
           <a
             href="https://wa.me/573164052829"
@@ -513,7 +508,7 @@ const testimonials = [
                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.531 3.503"
               ></path>
             </svg>
-            Consulta WhatsApp
+            WhatsApp Consultation
           </a>
         </div>
       </div>
