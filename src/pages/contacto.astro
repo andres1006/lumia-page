@@ -15,7 +15,7 @@ const locations = [
       "Centro Comercial Fundadores Local 9908, Manizales, Colombia",
     phone: "+57 (316) 405-2829",
     email: "manizales@lumiaodontologia.com",
-    hours: "Lun - Vie: 8:00 AM - 6:00 PM\nSáb: 8:00 AM - 2:00 PM",
+    hours: "Lun - Vie: 9:00 AM - 7:00 PM\nSáb: 9:00 AM - 12:00 PM",
     mapEmbed:
       "https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d12549.632637522736!2d-75.51732263674872!3d5.070403023383203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x8e476f95f3b49329%3A0xa197bfb8ae502f53!2sCC%20Fundadores%2C%20Cl.%2033b%20%2320-03%20Local%209909%2C%20Manizales%2C%20Caldas!3m2!1d5.069177!2d-75.509868!5e0!3m2!1ses!2sco!4v1755098385419!5m2!1ses!2sco", // Placeholder
   },
@@ -623,8 +623,8 @@ const services = [
                         <p class="font-medium text-gray-900 text-sm mb-1">
                           Horarios
                         </p>
-                        <span class="text-sm text-gray-600">
-                          {location.hours.split("\n")[0]}
+                        <span class="text-sm text-gray-600 whitespace-pre-line">
+                          {location.hours}
                         </span>
                       </div>
                     </div>

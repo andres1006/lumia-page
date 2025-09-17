@@ -97,7 +97,13 @@ const t = useTranslations(lang);
         </h3>
         <div class="space-y-4">
           <div>
-            <p class="text-gray-400 text-sm mb-1">CC Fundadores</p>
+            <p class="text-gray-400 text-sm mb-1">
+              {
+                lang === "es"
+                  ? "CC Fundadores, Local 9908, 2do Piso"
+                  : "CC Fundadores, Local 9908, 2nd Floor"
+              }
+            </p>
             <a
               href="tel:+573164052829"
               class="text-white hover:text-gray-300 transition-colors text-sm block"
@@ -110,11 +116,11 @@ const t = useTranslations(lang);
             <p class="text-gray-400 text-sm mb-1">
               {t("contact.schedule")}
             </p>
-            <p class="text-white text-sm">
+            <p class="text-white text-sm whitespace-pre-line">
               {
                 lang === "es"
-                  ? "Lun - Vie: 8:00 AM - 6:00 PM"
-                  : "Mon - Fri: 8:00 AM - 6:00 PM"
+                  ? "Lun - Vie: 9:00 AM - 7:00 PM\nSáb: 9:00 AM - 12:00 PM"
+                  : "Mon - Fri: 9:00 AM - 7:00 PM\nSat: 9:00 AM - 12:00 PM"
               }
             </p>
           </div>

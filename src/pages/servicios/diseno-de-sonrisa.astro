@@ -3,7 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import { getLangFromUrl, useTranslations } from "../../i18n";
-import UltraOptimizedImageRef from "../components/UltraOptimizedImageRef.astro";
+import UltraOptimizedImageRef from "../../components/UltraOptimizedImageRef.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -209,7 +209,6 @@ const testimonials = [
                 alt="Diseño de Sonrisa Digital"
                 class="rounded-xl shadow-2xl"
                 loading="lazy"
-              /
                 quality="high"
                 loading="lazy"
               />
@@ -268,7 +267,6 @@ const testimonials = [
                 alt="Tecnología Digital Smile Design"
                 class="w-full h-full object-cover"
                 loading="lazy"
-              /
                 quality="high"
                 loading="lazy"
               />

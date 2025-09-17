@@ -202,8 +202,8 @@ const faqs = [
         : "Do they speak English at the clinic?",
     answer:
       lang === "es"
-        ? "Sí, contamos con la posibilidad de comunicarnos completamente en inglés. Nuestro equipo médico y administrativo es bilingüe, y garantizamos que tu experiencia sea completamente en inglés si así lo prefieres. Desde la consulta inicial hasta el seguimiento post-tratamiento."
-        : "Yes, we have the ability to communicate completely in English. Our medical and administrative team is bilingual, and we guarantee that your experience will be completely in English if you prefer. From the initial consultation to post-treatment follow-up.",
+        ? "Aunque nuestro equipo médico tiene conocimientos básicos de inglés, contamos con personal especializado en comunicación bilingüe y tecnología de traducción para garantizar una comunicación clara y efectiva durante todo tu tratamiento."
+        : "While our medical team has basic English knowledge, we have specialized bilingual communication staff and translation technology to ensure clear and effective communication throughout your treatment.",
   },
 ];
 ---
@@ -309,7 +309,7 @@ const faqs = [
               <UltraOptimizedImageRef
                 src="/optimized-images/img-lumia-ultra/cliente-final-5-optimized.jpg"
                 alt="Savings - Resultados de Tratamiento"
-                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                 quality="high"
                 loading="lazy"
               />
@@ -352,7 +352,7 @@ const faqs = [
               <UltraOptimizedImageRef
                 src="/optimized-images/img-lumia-ultra/cliente-final-6-optimized.jpg"
                 alt="Quality - Resultados de Tratamiento"
-                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                 quality="high"
                 loading="lazy"
               />
@@ -395,7 +395,7 @@ const faqs = [
               <UltraOptimizedImageRef
                 src="/optimized-images/img-lumia-ultra/cliente-final-7-optimized.jpg"
                 alt="Experience - Resultados de Tratamiento"
-                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                 quality="high"
                 loading="lazy"
               />
@@ -1095,5 +1095,23 @@ const faqs = [
   /* Smooth scrolling for better UX */
   html {
     scroll-behavior: smooth;
+  }
+
+  /* Fix for tourism cards images */
+  .group.relative.h-96 {
+    overflow: hidden;
+  }
+
+  .group.relative.h-96 .absolute.inset-0 {
+    overflow: hidden;
+  }
+
+  .group.relative.h-96 img {
+    transform-origin: center;
+    will-change: transform, filter;
+  }
+
+  .group.relative.h-96:hover img {
+    transform: scale(1.05);
   }
 </style>
