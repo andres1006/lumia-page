@@ -1,12 +1,11 @@
 import {
   Trophy,
-  TreePalm,
+  TreePine,
   Plane,
   Building2,
   Target,
   Gift,
   Landmark,
-  TreePine,
 } from "lucide-react";
 
 interface BenefitIconsProps {
@@ -37,7 +36,7 @@ export default function BenefitIcons({
 
   const icons = {
     trophy: Trophy,
-    palm: TreePalm,
+    palm: TreePine,
     plane: Plane,
     hotel: Building2,
     target: Target,

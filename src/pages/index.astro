@@ -3,7 +3,6 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Hero from "../components/react/Hero";
-import GoogleReviews from "../components/GoogleReviews.astro";
 import UltraOptimizedImageRef from "../components/UltraOptimizedImageRef.astro";
 import { getLangFromUrl, useTranslations } from "../i18n";
 
@@ -152,7 +151,7 @@ const t = useTranslations(lang);
           <div class="group">
             <div class="aspect-square bg-gray-100 rounded-lg overflow-hidden">
               <UltraOptimizedImageRef
-                src="/optimized-images/img-lumia/cliente-final-1-optimized.jpg"
+                src="/optimized-images/img-lumia-ultra/cliente-final-1-optimized.jpg"
                 alt="Before & After Case 1"
                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
                 quality="high"
@@ -254,15 +253,6 @@ const t = useTranslations(lang);
         </div>
       </div>
     </section>
-
-    <!-- Google Reviews Section -->
-    <GoogleReviews
-      title={lang === "es" ? "Reseñas de Google" : "Google Reviews"}
-      subtitle={lang === "es"
-        ? "Lo que dicen nuestros pacientes"
-        : "What our patients say"}
-      hidden={false}
-    />
 
     <!-- Quality Section -->
     <section class="bg-white">

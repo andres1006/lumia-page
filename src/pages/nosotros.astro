@@ -2,7 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import GoogleReviews from "../components/GoogleReviews.astro";
 import UltraOptimizedImageRef from "../components/UltraOptimizedImageRef.astro";
 import { getLangFromUrl, useTranslations } from "../i18n";
 
@@ -423,15 +422,6 @@ const certifications = [
         </div>
       </div>
     </section>
-
-    <!-- Google Reviews Section -->
-    <GoogleReviews
-      title={lang === "es" ? "Reseñas de Google" : "Google Reviews"}
-      subtitle={lang === "es"
-        ? "Lo que dicen nuestros pacientes"
-        : "What our patients say"}
-      hidden={false}
-    />
 
     <!-- CTA Section -->
     <section class="py-32 bg-white text-gray-900">

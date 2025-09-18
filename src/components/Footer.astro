@@ -2,6 +2,7 @@
 import { getLangFromUrl, useTranslations } from "../i18n";
 import SocialIcons from "./react/SocialIcons";
 import UltraOptimizedImageRef from "./UltraOptimizedImageRef.astro";
+import GoogleReviewsFooter from "./GoogleReviewsFooter.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -9,7 +10,7 @@ const t = useTranslations(lang);
 
 <footer class="bg-black text-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
       <!-- Logo and Description -->
       <div>
         <div class="flex items-center space-x-3 mb-6">
@@ -100,8 +101,8 @@ const t = useTranslations(lang);
             <p class="text-gray-400 text-sm mb-1">
               {
                 lang === "es"
-                  ? "CC Fundadores, Local 9908, 2do Piso"
-                  : "CC Fundadores, Local 9908, 2nd Floor"
+                  ? "CC Fundadores, Local 9908, 2do Piso<br>Manizales, Caldas, Colombia"
+                  : "CC Fundadores, Local 9908, 2nd Floor<br>Manizales, Caldas, Colombia"
               }
             </p>
             <a
@@ -125,6 +126,11 @@ const t = useTranslations(lang);
             </p>
           </div>
         </div>
+      </div>
+
+      <!-- Google Reviews -->
+      <div class="lg:col-span-1">
+        <GoogleReviewsFooter lang={lang} />
       </div>
     </div>
 
