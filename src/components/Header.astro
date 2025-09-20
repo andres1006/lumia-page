@@ -1,7 +1,6 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n";
 import LanguageSelector from "./react/LanguageSelector";
-import UltraOptimizedImageRef from "./UltraOptimizedImageRef.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -16,11 +15,10 @@ const t = useTranslations(lang);
       <!-- Logo -->
       <div class="flex-shrink-0">
         <a href={lang === "es" ? "/" : "/en"} class="flex items-center">
-          <UltraOptimizedImageRef
-            src="/optimized-images/img-lumia-ultra/logo-lumia-optimized.png"
+          <img
+            src="/optimized-images/logo-lumia-optimized.webp"
             alt="Lumia"
             class="w-32 h-32"
-            quality="high"
             loading="lazy"
           />
         </a>

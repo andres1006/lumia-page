@@ -2,7 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import UltraOptimizedImageRef from "../components/UltraOptimizedImageRef.astro";
 import { getLangFromUrl, useTranslations } from "../i18n";
 
 const lang = getLangFromUrl(Astro.url);
@@ -19,7 +18,7 @@ const team = [
       "Fundador de LUMIA",
     ],
     experience: "15+ años",
-    image: "/optimized-images/drs/Alejandro-Restrepo-optimized.jpg",
+    image: "/optimized-images/drs/Alejandro-Restrepo-optimized.webp",
   },
   {
     name: "Sebastian Restrepo",
@@ -30,7 +29,7 @@ const team = [
       "Administración de Clínicas Dentales",
     ],
     experience: "10+ años",
-    image: "/optimized-images/drs/Sebastian-Restrepo-optimized.jpg",
+    image: "/optimized-images/drs/Sebastian-Restrepo-1-optimized.webp",
   },
   {
     name: "Aux. Isabela Loaiza",
@@ -41,7 +40,7 @@ const team = [
       "Especialización en Asistencia Dental",
     ],
     experience: "5+ años",
-    image: "/optimized-images/drs/Isabela-Loaiza-optimized.jpg",
+    image: "/optimized-images/drs/Isabela-Loaiza-optimized.webp",
   },
   {
     name: "Dra. Juanita Castañeda",
@@ -52,7 +51,7 @@ const team = [
       "Certificación en Implantes Periodontales",
     ],
     experience: "9+ años",
-    image: "/optimized-images/drs/Dra-juanita-castañeda-optimized.jpg",
+    image: "/optimized-images/drs/Dra-juanita-castan╠âeda-optimized.webp",
   },
   {
     name: "Monica González",
@@ -60,7 +59,7 @@ const team = [
     education: "Odontología General",
     certifications: ["Auditora en Salud", "Especialización en Gestión Clínica"],
     experience: "8+ años",
-    image: "/optimized-images/drs/Monica-gonazales-optimized.jpg",
+    image: "/optimized-images/drs/Monica-gonzales-optimized.webp",
   },
   {
     name: "Victoria Gomez",
@@ -68,7 +67,7 @@ const team = [
     education: "Especialización en Ortodoncia",
     certifications: ["Especialista en Ortodoncia", "Certificación Invisalign"],
     experience: "6+ años",
-    image: "/optimized-images/drs/victoria-gomez-optimized.jpg",
+    image: "/optimized-images/drs/victoria-gomez-optimized.webp",
   },
   {
     name: "Dr. Santiago Rodriguez",
@@ -79,7 +78,7 @@ const team = [
       "Certificación en Cirugía Ortognática",
     ],
     experience: "12+ años",
-    image: "/optimized-images/drs/Santiago-Rodrigez-optimized.jpg",
+    image: "/optimized-images/drs/Santiago-Rodrigez-optimized.webp",
   },
   {
     name: "Dra. Camila Cuervo",
@@ -90,7 +89,7 @@ const team = [
       "Certificación en Ortodoncia Lingual",
     ],
     experience: "5+ años",
-    image: "/optimized-images/drs/Dra-camila-cuervo-optimized.jpg",
+    image: "/optimized-images/drs/Dra-camila-cuervo-optimized.webp",
   },
   {
     name: "Dra. Juliana Echeverry",
@@ -101,7 +100,7 @@ const team = [
       "Certificación en Microcirugía Endodóntica",
     ],
     experience: "7+ años",
-    image: "/optimized-images/drs/Dra-juliana-echeverry-optimized.jpg",
+    image: "/optimized-images/drs/Dra-juliana-echeverry-1-optimized.webp",
   },
   {
     name: "Dra. Tatiana Atehortua",
@@ -109,7 +108,7 @@ const team = [
     education: "Odontología General",
     certifications: ["Odontóloga General", "Certificación en Estética Dental"],
     experience: "8+ años",
-    image: "/optimized-images/drs/Dra-tatiana-Atehortua-optimized.jpg",
+    image: "/optimized-images/drs/Dra-tatiana-Atehortua-1-optimized.webp",
   },
   {
     name: "Laura Restrepo",
@@ -120,7 +119,7 @@ const team = [
       "Especialización en Gestión de Clínicas",
     ],
     experience: "6+ años",
-    image: "/optimized-images/drs/Laura-Restrepo-optimized.jpg",
+    image: "/optimized-images/drs/Laura-Restrepo-optimized.webp",
   },
   {
     name: "Sofia Bedoya",
@@ -131,7 +130,7 @@ const team = [
       "Especialización en Atención al Cliente",
     ],
     experience: "4+ años",
-    image: "/optimized-images/drs/Sofia-bedoya-optimized.jpg",
+    image: "/optimized-images/drs/Sofia-bedoya-optimized.webp",
   },
 ];
 
@@ -141,34 +140,29 @@ const values = [
     description:
       "Buscamos la perfección en cada tratamiento, utilizando las técnicas más avanzadas y materiales de la más alta calidad.",
     icon: "🏆",
+    image: "/optimized-images/img-lumia-ultra/cliente-final-15-optimized.webp",
   },
   {
     title: "Innovación",
     description:
       "Incorporamos constantemente nuevas tecnologías y metodologías para ofrecer los mejores resultados.",
     icon: "🔬",
+    image: "/optimized-images/img-lumia-ultra/cliente-final-10-optimized.webp",
   },
   {
     title: "Compromiso",
     description:
       "Nos dedicamos completamente al bienestar y satisfacción de nuestros pacientes en cada paso del proceso.",
     icon: "💎",
+    image: "/optimized-images/img-lumia-ultra/cliente-final-17-optimized.webp",
   },
   {
     title: "Calidez Humana",
     description:
       "Tratamos a cada paciente como familia, brindando un ambiente cálido y personalizado.",
     icon: "❤️",
+    image: "/optimized-images/img-lumia-ultra/cliente-final-18-optimized.webp",
   },
-];
-
-const certifications = [
-  "ISO 9001:2015 - Gestión de Calidad",
-  "Certificación INVIMA",
-  "Miembro International Congress of Oral Implantologists",
-  "Certificación Straumann Partner",
-  "Nobel Biocare Certified Center",
-  "Invisalign Diamond Provider",
 ];
 ---
 
@@ -187,7 +181,7 @@ const certifications = [
     >
       <div class="absolute inset-0">
         <img
-          src="/Team.jpg"
+          src="/Team.webp"
           alt="LUMIA Team"
           class="w-full h-full object-cover grayscale brightness-50"
         />
@@ -258,14 +252,11 @@ const certifications = [
 
           <div class="relative">
             <div class="aspect-square bg-gray-100 rounded-2xl overflow-hidden">
-              <UltraOptimizedImageRef
-                src="/optimized-images/img-lumia/doc-alejandro-optimized.jpg"
+              <img
+                src="/optimized-images/img-lumia-ultra/doc-alejandro-optimized.webp"
                 alt="Dr. Alejandro Restrepo - Fundador de LUMIA"
                 class="w-full h-full object-cover"
-                quality="ultra"
-                priority={true}
                 loading="eager"
-                aspectRatio="1/1"
               />
             </div>
           </div>
@@ -278,7 +269,7 @@ const certifications = [
       <div class="relative">
         <div class="h-64 md:h-80 lg:h-96 bg-gray-200 overflow-hidden">
           <img
-            src="/servicios1.png"
+            src="/servicios1.webp"
             alt="LUMIA Purpose"
             class="w-full h-full object-cover grayscale brightness-50"
           />
@@ -329,7 +320,7 @@ const certifications = [
               <div class="relative group">
                 <div class="h-64 md:h-80 lg:h-96 bg-gray-200 overflow-hidden">
                   <img
-                    src={`/optimized-images/img-lumia/cliente-final-${index === 0 ? "15" : index === 1 ? "16" : "17"}-optimized.jpg`}
+                    src={value.image}
                     alt={value.title}
                     class="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-75 transition-all duration-300"
                   />
@@ -377,13 +368,11 @@ const certifications = [
             team.map((member, index) => (
               <div class="group team-member-card">
                 <div class="aspect-[3/4] bg-gray-800 rounded-2xl overflow-hidden mb-6 group-hover:scale-105 transition-transform duration-300">
-                  <UltraOptimizedImageRef
+                  <img
                     src={member.image}
                     alt={member.name}
                     class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
-                    quality="high"
                     loading="lazy"
-                    aspectRatio="3/4"
                   />
                 </div>
                 <div class="text-center">

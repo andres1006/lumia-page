@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import UltraOptimizedImageRef from "../components/UltraOptimizedImageRef.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { getLangFromUrl, useTranslations } from "../i18n";
@@ -14,8 +13,8 @@ const portfolioItems = [
     category: "smile-design",
     title: "Transformación Completa de Sonrisa",
     subtitle: "Diseño Digital + Carillas",
-    beforeImage: "/optimized-images/img-lumia/antes-1-optimized.jpg",
-    afterImage: "/optimized-images/img-lumia/cliente-final-1-optimized.jpg",
+    beforeImage: "/optimized-images/img-lumia-ultra/antes-1.webp",
+    afterImage: "/optimized-images/img-lumia-ultra/cliente-final-1-optimized.webp",
     description: "Transformación completa con 10 carillas de porcelana utilizando tecnología de Diseño Digital de Sonrisa.",
     treatment: "Carillas de Porcelana",
     duration: "3 semanas",
@@ -26,8 +25,8 @@ const portfolioItems = [
     category: "implants",
     title: "Rehabilitación Oral Completa",
     subtitle: "6 Implantes Dentales + Puente Fijo",
-    beforeImage: "/optimized-images/img-lumia/Protesis-hibrida-4/protesis-hibrida-caso4-1-optimized.jpg",
-    afterImage: "/optimized-images/img-lumia/Protesis-hibrida-4/protesis-hibrida-caso4-2-optimized.jpg",
+    beforeImage: "/optimized-images/img-lumia-ultra/protesis-hibrida-4/protesis-hibrida-caso4-1.webp",
+    afterImage: "/optimized-images/img-lumia-ultra/protesis-hibrida-4/protesis-hibrida-caso4-2.webp",
     description: "Rehabilitación completa con 6 implantes de titanio premium y puente fijo de cerámica.",
     treatment: "Implantes Dentales",
     duration: "4 meses",
@@ -38,8 +37,8 @@ const portfolioItems = [
     category: "orthodontics",
     title: "Tratamiento Invisalign",
     subtitle: "Corrección Invisible de 12 Meses",
-    beforeImage: "/optimized-images/img-lumia/antes-despues-3-optimized.jpg",
-    afterImage: "/optimized-images/img-lumia/cliente-final-4-optimized.jpg",
+    beforeImage: "/optimized-images/img-lumia-ultra/antes-despues-3-optimized.webp",
+    afterImage: "/optimized-images/img-lumia-ultra/cliente-final-4-optimized.webp",
     description: "Alineación perfecta lograda con alineadores transparentes Invisalign en solo 12 meses.",
     treatment: "Invisalign",
     duration: "12 meses",
@@ -50,8 +49,8 @@ const portfolioItems = [
     category: "bichectomy",
     title: "Contorno Facial",
     subtitle: "Bichectomía + Diseño de Sonrisa",
-    beforeImage: "/optimized-images/img-lumia/antes-despues-4-optimized.jpg",
-    afterImage: "/optimized-images/img-lumia/cliente-final-5-optimized.jpg",
+    beforeImage: "/optimized-images/img-lumia-ultra/antes-despues-4-optimized.webp",
+    afterImage: "/optimized-images/img-lumia-ultra/cliente-final-5-optimized.webp",
     description: "Refinamiento facial con bichectomía combinada con diseño de sonrisa para armonía perfecta.",
     treatment: "Bichectomía",
     duration: "1 sesión",
@@ -62,8 +61,8 @@ const portfolioItems = [
     category: "smile-design",
     title: "Sonrisa de Celebridad",
     subtitle: "Diseño Digital + Cerámicas Premium",
-    beforeImage: "/optimized-images/img-lumia/DiseñoCeramica/IMG_0705-optimized.jpg",
-    afterImage: "/optimized-images/img-lumia/cliente-final-5-optimized.jpg",
+    beforeImage: "/optimized-images/img-lumia-ultra/diseño-ceramica/IMG_0705-optimized.webp",
+    afterImage: "/optimized-images/img-lumia-ultra/diseño-ceramica/IMG_1034.webp",
     description: "Sonrisa estilo Hollywood lograda con restauraciones cerámicas de alta gama.",
     treatment: "Diseño de Sonrisa",
     duration: "2 semanas",
@@ -74,8 +73,8 @@ const portfolioItems = [
     category: "whitening",
     title: "Blanqueamiento Profesional",
     subtitle: "8 Tonos Más Blanco",
-    beforeImage: "/optimized-images/img-lumia/antes-despues-5-optimized.jpg",
-    afterImage: "/optimized-images/img-lumia/cliente-final-6-optimized.jpg",
+    beforeImage: "/optimized-images/img-lumia-ultra/antes-despues-5-optimized.webp",
+    afterImage: "/optimized-images/img-lumia-ultra/cliente-final-6-optimized.webp",
     description: "Resultados dramáticos de blanqueamiento logrados en una sola sesión profesional.",
     treatment: "Blanqueamiento Dental",
     duration: "1 sesión",
@@ -86,8 +85,8 @@ const portfolioItems = [
     category: "implants",
     title: "Reemplazo de Diente Individual",
     subtitle: "Implante de Titanio Premium",
-    beforeImage: "/optimized-images/img-lumia/Protesishibrida-2/protesis-hibrida-caso2-1-optimized.jpg",
-    afterImage: "/optimized-images/img-lumia/cliente-final-3-optimized.jpg",
+    beforeImage: "/optimized-images/img-lumia-ultra/protesis-hibrida-2/protesis-hibrida-caso2-1.webp",
+    afterImage: "/optimized-images/img-lumia-ultra/protesis-hibrida-2/protesis-hibrida-caso2-2.webp",
     description: "Reemplazo perfecto de diente individual con implante de titanio y corona cerámica.",
     treatment: "Implante Individual",
     duration: "3 meses",
@@ -98,8 +97,8 @@ const portfolioItems = [
     category: "smile-design",
     title: "Corrección de Sonrisa Gingival",
     subtitle: "Láser + Carillas",
-    beforeImage: "/optimized-images/img-lumia/DiseñoRecina/IMG_1163-optimized.jpg",
-    afterImage: "/optimized-images/img-lumia/cliente-final-4-optimized.jpg",
+    beforeImage: "/optimized-images/img-lumia-ultra/diseño-recina/IMG_1322-optimized.webp",
+    afterImage: "/optimized-images/img-lumia-ultra/diseño-recina/IMG_1163-optimized.webp",
     description: "Corrección de sonrisa gingival usando tecnología láser combinada con carillas de porcelana.",
     treatment: "Láser + Carillas",
     duration: "4 semanas",
@@ -110,8 +109,8 @@ const portfolioItems = [
     category: "orthodontics",
     title: "Caso Ortodóncico Complejo",
     subtitle: "Transformación de 18 Meses",
-    beforeImage: "/optimized-images/img-lumia/antes-despues-6-optimized.jpg",
-    afterImage: "/optimized-images/img-lumia/cliente-final-7-optimized.jpg",
+    beforeImage: "/optimized-images/img-lumia-ultra/antes-despues-6-optimized.webp",
+    afterImage: "/optimized-images/img-lumia-ultra/cliente-final-7-optimized.webp",
     description: "Maloclusión compleja corregida con técnicas ortodóncicas avanzadas.",
     treatment: "Alineadores Transparentes",
     duration: "18 meses",
@@ -148,13 +147,15 @@ const stats = [
     <!-- Hero Section -->
     <section class="relative h-screen flex items-center justify-center overflow-hidden">
       <div class="absolute inset-0">
-        <UltraOptimizedImageRef
-          src="/optimized-images/img-lumia-ultra/servicios1.jpg"
+        <img
+          src="/servicios1.webp"
           alt="LUMIA Gallery - Tratamiento Dental Profesional"
           class="w-full h-full object-cover object-center grayscale brightness-75"
-          quality="high"
           loading="eager"
-          priority={true}
+          width="1920"
+          height="1080"
+          decoding="async"
+          fetchpriority="high"
         />
         <div class="absolute inset-0 bg-black/40"></div>
       </div>
@@ -226,6 +227,10 @@ const stats = [
                     alt={`${item.title} - Antes`}
                     class="w-full h-full object-cover"
                     loading="lazy"
+                    width="400"
+                    height="300"
+                    decoding="async"
+                    fetchpriority="low"
                   />
                   <div class="absolute top-4 left-4 bg-black/80 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg">
                     Antes
@@ -239,6 +244,10 @@ const stats = [
                     alt={`${item.title} - Después`}
                     class="w-full h-full object-cover"
                     loading="lazy"
+                    width="400"
+                    height="300"
+                    decoding="async"
+                    fetchpriority="low"
                   />
                   <div class="absolute top-4 left-4 bg-amber-600 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg">
                     Después

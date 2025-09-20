@@ -3,7 +3,6 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import { getLangFromUrl, useTranslations } from "../../i18n";
-import UltraOptimizedImageRef from "../../components/UltraOptimizedImageRef.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -14,8 +13,8 @@ const portfolioItems = [
     category: "smile-design",
     title: lang === "es" ? "Transformación Completa de Sonrisa" : "Complete Smile Transformation",
     subtitle: lang === "es" ? "Diseño Digital + Carillas" : "Digital Design + Veneers",
-    beforeImage: "/optimized-images/img-lumia/antes-1-optimized.jpg",
-    afterImage: "/optimized-images/img-lumia/cliente-final-1-optimized.jpg",
+    beforeImage: "/optimized-images/img-lumia-ultra/antes-1.webp",
+    afterImage: "/optimized-images/img-lumia-ultra/cliente-final-1-optimized.webp",
     description: lang === "es" 
       ? "Transformación completa con 10 carillas de porcelana utilizando tecnología de Diseño Digital de Sonrisa."
       : "Complete transformation with 10 porcelain veneers using Digital Smile Design technology.",
@@ -28,8 +27,8 @@ const portfolioItems = [
     category: "implants",
     title: lang === "es" ? "Rehabilitación Oral Completa" : "Complete Oral Rehabilitation",
     subtitle: lang === "es" ? "6 Implantes Dentales + Puente Fijo" : "6 Dental Implants + Fixed Bridge",
-    beforeImage: "/optimized-images/img-lumia/Protesis-hibrida-4/protesis-hibrida-caso4-1-optimized.jpg",
-    afterImage: "/optimized-images/img-lumia/Protesis-hibrida-4/protesis-hibrida-caso4-2-optimized.jpg",
+    beforeImage: "/optimized-images/img-lumia-ultra/protesis-hibrida-4/protesis-hibrida-caso4-1.webp",
+    afterImage: "/optimized-images/img-lumia-ultra/protesis-hibrida-4/protesis-hibrida-caso4-2.webp",
     description: lang === "es"
       ? "Rehabilitación completa con 6 implantes de titanio premium y puente fijo de cerámica."
       : "Complete rehabilitation with 6 premium titanium implants and fixed ceramic bridge.",
@@ -42,8 +41,8 @@ const portfolioItems = [
     category: "orthodontics",
     title: lang === "es" ? "Tratamiento Invisalign" : "Invisalign Treatment",
     subtitle: lang === "es" ? "Corrección Invisible de 12 Meses" : "12-Month Invisible Correction",
-    beforeImage: "/optimized-images/img-lumia/antes-despues-3-optimized.jpg",
-    afterImage: "/optimized-images/img-lumia/cliente-final-4-optimized.jpg",
+    beforeImage: "/optimized-images/img-lumia-ultra/antes-despues-3-optimized.webp",
+    afterImage: "/optimized-images/img-lumia-ultra/cliente-final-4-optimized.webp",
     description: lang === "es"
       ? "Alineación perfecta lograda con alineadores transparentes Invisalign en solo 12 meses."
       : "Perfect alignment achieved with Invisalign clear aligners in just 12 months.",
@@ -56,8 +55,8 @@ const portfolioItems = [
     category: "bichectomy",
     title: lang === "es" ? "Contorno Facial" : "Facial Contouring",
     subtitle: lang === "es" ? "Bichectomía + Diseño de Sonrisa" : "Bichectomy + Smile Design",
-    beforeImage: "/optimized-images/img-lumia/antes-despues-4-optimized.jpg",
-    afterImage: "/optimized-images/img-lumia/cliente-final-5-optimized.jpg",
+    beforeImage: "/optimized-images/img-lumia-ultra/antes-despues-4-optimized.webp",
+    afterImage: "/optimized-images/img-lumia-ultra/cliente-final-5-optimized.webp",
     description: lang === "es"
       ? "Refinamiento facial con bichectomía combinada con diseño de sonrisa para armonía perfecta."
       : "Facial refinement with bichectomy combined with smile design for perfect harmony.",
@@ -70,8 +69,8 @@ const portfolioItems = [
     category: "smile-design",
     title: lang === "es" ? "Sonrisa de Celebridad" : "Celebrity Smile",
     subtitle: lang === "es" ? "Diseño Digital + Cerámicas Premium" : "Digital Design + Premium Ceramics",
-    beforeImage: "/optimized-images/img-lumia/DiseñoCeramica/IMG_0705-optimized.jpg",
-    afterImage: "/optimized-images/img-lumia/DiseñoCeramica/IMG_1034-optimized.jpg",
+    beforeImage: "/optimized-images/img-lumia-ultra/diseño-ceramica/IMG_0705-optimized.webp",
+    afterImage: "/optimized-images/img-lumia-ultra/diseño-ceramica/IMG_1034.webp",
     description: lang === "es"
       ? "Sonrisa estilo Hollywood lograda con restauraciones cerámicas de alta gama."
       : "Hollywood-style smile achieved with high-end ceramic restorations.",
@@ -84,8 +83,8 @@ const portfolioItems = [
     category: "whitening",
     title: lang === "es" ? "Blanqueamiento Profesional" : "Professional Whitening",
     subtitle: lang === "es" ? "8 Tonos Más Blanco" : "8 Shades Whiter",
-    beforeImage: "/optimized-images/img-lumia/antes-despues-5-optimized.jpg",
-    afterImage: "/optimized-images/img-lumia/cliente-final-6-optimized.jpg",
+    beforeImage: "/optimized-images/img-lumia-ultra/antes-despues-5-optimized.webp",
+    afterImage: "/optimized-images/img-lumia-ultra/cliente-final-6-optimized.webp",
     description: lang === "es"
       ? "Resultados dramáticos de blanqueamiento logrados en una sola sesión profesional."
       : "Dramatic whitening results achieved in a single professional session.",
@@ -98,8 +97,8 @@ const portfolioItems = [
     category: "implants",
     title: lang === "es" ? "Reemplazo de Diente Individual" : "Single Tooth Replacement",
     subtitle: lang === "es" ? "Implante de Titanio Premium" : "Premium Titanium Implant",
-    beforeImage: "/optimized-images/img-lumia/Protesishibrida-2/protesis-hibrida-caso2-1-optimized.jpg",
-    afterImage: "/optimized-images/img-lumia/Protesishibrida-2/protesis-hibrida-caso2-2-optimized.jpg",
+    beforeImage: "/optimized-images/img-lumia-ultra/protesis-hibrida-2/protesis-hibrida-caso2-1.webp",
+    afterImage: "/optimized-images/img-lumia-ultra/protesis-hibrida-2/protesis-hibrida-caso2-2.webp",
     description: lang === "es"
       ? "Reemplazo perfecto de diente individual con implante de titanio y corona cerámica."
       : "Perfect single tooth replacement with titanium implant and ceramic crown.",
@@ -112,8 +111,8 @@ const portfolioItems = [
     category: "smile-design",
     title: lang === "es" ? "Corrección de Sonrisa Gingival" : "Gummy Smile Correction",
     subtitle: lang === "es" ? "Láser + Carillas" : "Laser + Veneers",
-    beforeImage: "/optimized-images/img-lumia/DiseñoRecina/IMG_1163-optimized.jpg",
-    afterImage: "/optimized-images/img-lumia/cliente-final-4-optimized.jpg",
+    beforeImage: "/optimized-images/img-lumia-ultra/diseño-recina/IMG_1322-optimized.webp",
+    afterImage: "/optimized-images/img-lumia-ultra/diseño-recina/IMG_1163-optimized.webp",
     description: lang === "es"
       ? "Corrección de sonrisa gingival usando tecnología láser combinada con carillas de porcelana."
       : "Gummy smile correction using laser technology combined with porcelain veneers.",
@@ -126,8 +125,8 @@ const portfolioItems = [
     category: "orthodontics",
     title: lang === "es" ? "Caso Ortodóncico Complejo" : "Complex Orthodontic Case",
     subtitle: lang === "es" ? "Transformación de 18 Meses" : "18-Month Transformation",
-    beforeImage: "/optimized-images/img-lumia/antes-despues-6-optimized.jpg",
-    afterImage: "/optimized-images/img-lumia/cliente-final-7-optimized.jpg",
+    beforeImage: "/optimized-images/img-lumia-ultra/antes-despues-6-optimized.webp",
+    afterImage: "/optimized-images/img-lumia-ultra/cliente-final-7-optimized.webp",
     description: lang === "es"
       ? "Maloclusión compleja corregida con técnicas ortodóncicas avanzadas."
       : "Complex malocclusion corrected with advanced orthodontic techniques.",
@@ -172,14 +171,16 @@ const stats = [
     <!-- Hero Section -->
     <section class="relative h-screen flex items-center justify-center overflow-hidden">
       <div class="absolute inset-0">
-        <UltraOptimizedImageRef
-                src="/optimized-images/img-lumia-ultra/cliente-final-8-optimized.jpg"
-                alt="LUMIA Gallery"
+        <img
+          src="/servicios1.webp"
+          alt="LUMIA Gallery"
           class="w-full h-full object-cover grayscale brightness-50"
-        /
-                quality="high"
-                loading="lazy"
-              />
+          loading="eager"
+          width="1920"
+          height="1080"
+          decoding="async"
+          fetchpriority="high"
+        />
         <div class="absolute inset-0 bg-black/40"></div>
       </div>
 
@@ -252,6 +253,10 @@ const stats = [
                     alt={`${item.title} - Before`}
                     class="w-full h-full object-cover"
                     loading="lazy"
+                    width="400"
+                    height="300"
+                    decoding="async"
+                    fetchpriority="low"
                   />
                   <div class="absolute top-4 left-4 bg-black/80 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg">
                     Before
@@ -265,6 +270,10 @@ const stats = [
                     alt={`${item.title} - After`}
                     class="w-full h-full object-cover"
                     loading="lazy"
+                    width="400"
+                    height="300"
+                    decoding="async"
+                    fetchpriority="low"
                   />
                   <div class="absolute top-4 left-4 bg-amber-600 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg">
                     After

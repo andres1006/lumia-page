@@ -1,7 +1,6 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n";
 import SocialIcons from "./react/SocialIcons";
-import UltraOptimizedImageRef from "./UltraOptimizedImageRef.astro";
 import GoogleReviewsFooter from "./GoogleReviewsFooter.astro";
 
 const lang = getLangFromUrl(Astro.url);
@@ -14,11 +13,10 @@ const t = useTranslations(lang);
       <!-- Logo and Description -->
       <div>
         <div class="flex items-center space-x-3 mb-6">
-          <UltraOptimizedImageRef
-            src="/optimized-images/img-lumia-ultra/logo-lumia-optimized.png"
+          <img
+            src="/optimized-images/logo-lumia-optimized.webp"
             alt="LUMIA"
             class="w-12 h-12"
-            quality="high"
             loading="lazy"
           />
           <div>
@@ -101,8 +99,8 @@ const t = useTranslations(lang);
             <p class="text-gray-400 text-sm mb-1">
               {
                 lang === "es"
-                  ? "CC Fundadores, Local 9908, 2do Piso<br>Manizales, Caldas, Colombia"
-                  : "CC Fundadores, Local 9908, 2nd Floor<br>Manizales, Caldas, Colombia"
+                  ? "CC Fundadores, Local 9908, Piso Exito Manizales, Caldas, Colombia"
+                  : "CC Fundadores, Local 9908, Floor Exito Manizales, Caldas, Colombia"
               }
             </p>
             <a

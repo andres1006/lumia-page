@@ -3,7 +3,6 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import { getLangFromUrl, useTranslations } from "../../i18n";
-import UltraOptimizedImageRef from "../../components/UltraOptimizedImageRef.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -63,31 +62,33 @@ const serviceDetails = {
 
   beforeAfter: [
     {
-      before: "/optimized-images/img-lumia/antes-1-optimized.jpg",
-      after: "/optimized-images/img-lumia/cliente-final-1-optimized.jpg",
+      before: "/optimized-images/img-lumia-ultra/antes-1.webp",
+      after: "/optimized-images/img-lumia-ultra/cliente-final-1-optimized.webp",
       case: "Caso 1: Sonrisa Gingival",
     },
     {
-      before: "/optimized-images/img-lumia/antes-despues-1-optimized.jpg",
-      after: "/optimized-images/img-lumia/cliente-final-2-optimized.jpg",
+      before:
+        "/optimized-images/img-lumia-ultra/antes-despues-1-optimized.webp",
+      after: "/optimized-images/img-lumia-ultra/cliente-final-2-optimized.webp",
       case: "Caso 2: Espacios Interdentales",
     },
     {
-      before: "/optimized-images/img-lumia/antes-despues-2-optimized.jpg",
-      after: "/optimized-images/img-lumia/cliente-final-3-optimized.jpg",
+      before:
+        "/optimized-images/img-lumia-ultra/antes-despues-2-optimized.webp",
+      after: "/optimized-images/img-lumia-ultra/cliente-final-3-optimized.webp",
       case: "Caso 3: Decoloración Severa",
     },
     {
       before:
-        "/optimized-images/img-lumia/diseno-ceramica/IMG_0705-optimized.jpg",
-      after:
-        "/optimized-images/img-lumia/diseno-ceramica/IMG_1034-optimized.jpg",
+        "/optimized-images/img-lumia-ultra/diseño-ceramica/IMG_0705-optimized.webp",
+      after: "/optimized-images/img-lumia-ultra/diseño-ceramica/IMG_1034.webp",
       case: "Caso 4: Diseño en Cerámica",
     },
     {
       before:
-        "/optimized-images/img-lumia/diseno-recina/IMG_1163-optimized.jpg",
-      after: "/optimized-images/img-lumia/diseno-recina/IMG_1322-optimized.jpg",
+        "/optimized-images/img-lumia-ultra/diseño-recina/IMG_1163-optimized.webp",
+      after:
+        "/optimized-images/img-lumia-ultra/diseño-recina/IMG_1322-optimized.webp",
       case: "Caso 5: Diseño en Resina",
     },
   ],
@@ -204,12 +205,10 @@ const testimonials = [
             <div
               class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-500"
             >
-              <UltraOptimizedImageRef
+              <img
                 src="/optimized-images/img-lumia-ultra/cliente-final-4-optimized.jpg"
                 alt="Diseño de Sonrisa Digital"
                 class="rounded-xl shadow-2xl"
-                loading="lazy"
-                quality="high"
                 loading="lazy"
               />
             </div>
@@ -262,12 +261,10 @@ const testimonials = [
             <div
               class="aspect-video bg-gray-100 rounded-2xl overflow-hidden shadow-xl"
             >
-              <UltraOptimizedImageRef
+              <img
                 src="/optimized-images/img-lumia-ultra/cliente-final-5-optimized.jpg"
                 alt="Tecnología Digital Smile Design"
                 class="w-full h-full object-cover"
-                loading="lazy"
-                quality="high"
                 loading="lazy"
               />
             </div>

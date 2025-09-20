@@ -8,7 +8,6 @@ import WhatsAppButton from "../../components/react/WhatsAppButton";
 import PlaceIcons from "../../components/react/PlaceIcons";
 import BenefitIcons from "../../components/react/BenefitIcons";
 import { ArrowRight } from "lucide-react";
-import UltraOptimizedImageRef from "../../components/UltraOptimizedImageRef.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -226,11 +225,10 @@ const faqs = [
       class="relative h-screen flex items-center justify-center overflow-hidden"
     >
       <div class="absolute inset-0">
-        <UltraOptimizedImageRef
-          src="/optimized-images/img-lumia-ultra/cliente-final-4-optimized.jpg"
+        <img
+          src="/turista-haciendo-selfie.jpg"
           alt="LUMIA Dental Tourism - Resultados de Tratamiento"
           class="w-full h-full object-cover grayscale brightness-50"
-          quality="high"
           loading="lazy"
         />
         <div class="absolute inset-0 bg-black/40"></div>
@@ -306,11 +304,10 @@ const faqs = [
           <!-- Savings Card -->
           <div class="group relative h-96">
             <div class="absolute inset-0">
-              <UltraOptimizedImageRef
-                src="/optimized-images/img-lumia-ultra/cliente-final-5-optimized.jpg"
+              <img
+                src="/ahorro.jpg"
                 alt="Savings - Resultados de Tratamiento"
                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
-                quality="high"
                 loading="lazy"
               />
               <div
@@ -349,11 +346,10 @@ const faqs = [
           <!-- Quality Card -->
           <div class="group relative h-96">
             <div class="absolute inset-0">
-              <UltraOptimizedImageRef
-                src="/optimized-images/img-lumia-ultra/cliente-final-6-optimized.jpg"
+              <img
+                src="/optimized-images/img-lumia-ultra/cliente-final-6-optimized.webp"
                 alt="Quality - Resultados de Tratamiento"
                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
-                quality="high"
                 loading="lazy"
               />
               <div
@@ -392,11 +388,10 @@ const faqs = [
           <!-- Experience Card -->
           <div class="group relative h-96">
             <div class="absolute inset-0">
-              <UltraOptimizedImageRef
-                src="/optimized-images/img-lumia-ultra/cliente-final-7-optimized.jpg"
+              <img
+                src="/experiencia.jpg"
                 alt="Experience - Resultados de Tratamiento"
                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
-                quality="high"
                 loading="lazy"
               />
               <div
@@ -504,11 +499,10 @@ const faqs = [
           <div
             class="absolute inset-0 w-screen left-1/2 transform -translate-x-1/2"
           >
-            <UltraOptimizedImageRef
-              src="/optimized-images/img-lumia-ultra/cliente-final-9-optimized.jpg"
+            <img
+              src="/galeria.webp"
               alt="Dental Tourism Packages - Resultados de Tratamiento"
               class="w-full h-full object-cover grayscale"
-              quality="high"
               loading="lazy"
             />
             <div class="absolute inset-0 bg-black/50"></div>
@@ -655,7 +649,7 @@ const faqs = [
           <div class="group relative h-96 overflow-hidden">
             <div class="absolute inset-0">
               <img
-                src="/lugares/nevado-ruiz.jpg"
+                src="/lugares/nevado-ruiz.webp"
                 alt="Nevado del Ruiz - Resultados de Tratamiento"
                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
               />
@@ -680,7 +674,7 @@ const faqs = [
           <div class="group relative h-96 overflow-hidden">
             <div class="absolute inset-0">
               <img
-                src="/lugares/eje-cafetero.jpg"
+                src="/lugares/eje-cafetero.webp"
                 alt="Eje Cafetero"
                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
               />
@@ -705,7 +699,7 @@ const faqs = [
           <div class="group relative h-96 overflow-hidden">
             <div class="absolute inset-0">
               <img
-                src="/lugares/termales-santaRosa.jpg"
+                src="/lugares/termales-santaRosa.webp"
                 alt="Termales de Santa Rosa"
                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
               />
@@ -730,7 +724,7 @@ const faqs = [
           <div class="group relative h-96 overflow-hidden">
             <div class="absolute inset-0">
               <img
-                src="/lugares/centro-manizales.jpg"
+                src="/lugares/centro-manizales.webp"
                 alt="Centro de Manizales"
                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
               />
@@ -758,7 +752,7 @@ const faqs = [
           <div class="group relative h-80 overflow-hidden">
             <div class="absolute inset-0">
               <img
-                src="/lugares/Parque-nacional.jpg"
+                src="/lugares/Parque-nacional.webp"
                 alt="Parque Nacional Los Nevados"
                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
               />
@@ -808,7 +802,7 @@ const faqs = [
           <div class="group relative h-80 overflow-hidden">
             <div class="absolute inset-0">
               <img
-                src="/lugares/plaza de bolivar.jpg"
+                src="/lugares/plaza de bolivar.webp"
                 alt="Plaza de Bolívar"
                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
               />

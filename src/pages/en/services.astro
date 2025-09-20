@@ -2,9 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
-import ServiceCard from "../../components/react/ServiceCard";
 import { getLangFromUrl, useTranslations } from "../../i18n";
-import UltraOptimizedImageRef from "../../components/UltraOptimizedImageRef.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -14,7 +12,7 @@ const mainServices = [
     title: "Diseño de Sonrisa",
     description:
       "Transformación completa de tu sonrisa utilizando tecnología 3D y materiales premium para resultados naturales y duraderos.",
-    image: "/optimized-images/img-lumia/cliente-final-4-optimized.jpg",
+    image: "/optimized-images/img-lumia-ultra/cliente-final-4-optimized.webp",
     href: "/servicios/diseno-de-sonrisa",
     benefits: [
       "Resultados predecibles",
@@ -29,7 +27,7 @@ const mainServices = [
     title: "Implantes Dentales",
     description:
       "Reemplazo de dientes perdidos con implantes de titanio de alta calidad y coronas estéticas que lucen y funcionan como dientes naturales.",
-    image: "/optimized-images/img-lumia/protesis-1-optimized.jpg",
+    image: "/optimized-images/img-lumia-ultra/protesis-1.webp",
     href: "/servicios/implantes-dentales",
     benefits: [
       "Titanio grado médico",
@@ -44,7 +42,7 @@ const mainServices = [
     title: "Ortodoncia Invisible",
     description:
       "Corrección de la posición dental con alineadores transparentes Invisalign para una sonrisa perfecta sin brackets metálicos.",
-    image: "/optimized-images/img-lumia/antes-despues-1-optimized.jpg",
+    image: "/optimized-images/img-lumia-ultra/antes-despues-1-optimized.webp",
     href: "/servicios/ortodoncia",
     benefits: [
       "Alineadores invisibles",
@@ -59,7 +57,7 @@ const mainServices = [
     title: "Bichectomía",
     description:
       "Reducción de las bolsas de Bichat para afinar el rostro y resaltar los pómulos, creando un perfil facial más definido y armonioso.",
-    image: "/optimized-images/img-lumia/cliente-final-1-optimized.jpg",
+    image: "/optimized-images/img-lumia-ultra/cliente-final-1-optimized.webp",
     href: "/servicios/bichectomia",
     benefits: [
       "Rostro más definido",
@@ -74,7 +72,7 @@ const mainServices = [
     title: "Blanqueamiento Dental",
     description:
       "Tratamiento profesional para aclarar el color de tus dientes hasta 8 tonos, devolviendo la blancura natural de tu sonrisa.",
-    image: "/optimized-images/img-lumia/cliente-final-2-optimized.jpg",
+    image: "/optimized-images/img-lumia-ultra/cliente-final-2-optimized.webp",
     href: "/servicios/blanqueamiento",
     benefits: [
       "Hasta 8 tonos más blanco",
@@ -89,7 +87,7 @@ const mainServices = [
     title: "Odontología Estética General",
     description:
       "Tratamientos integrales para mejorar la apariencia y función de tu sonrisa, incluyendo carillas, coronas y restauraciones estéticas.",
-    image: "/optimized-images/img-lumia/cliente-final-3-optimized.jpg",
+    image: "/optimized-images/img-lumia-ultra/cliente-final-3-optimized.webp",
     href: "/servicios/odontologia-estetica-general",
     benefits: [
       "Múltiples tratamientos",
@@ -150,11 +148,10 @@ const process = [
       class="relative h-screen flex items-center justify-center overflow-hidden"
     >
       <div class="absolute inset-0">
-        <UltraOptimizedImageRef
-          src="/optimized-images/img-lumia-ultra/cliente-final-4-optimized.jpg"
+        <img
+          src="/galeria.webp"
           alt="LUMIA Services - Resultados de Tratamiento Dental"
           class="w-full h-full object-cover grayscale brightness-50"
-          quality="high"
           loading="lazy"
         />
         <div class="absolute inset-0 bg-black/40"></div>
