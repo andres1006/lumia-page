@@ -144,13 +144,13 @@ const t = useTranslations(lang);
         </p>
         <div class="flex space-x-6 mt-4 md:mt-0">
           <a
-            href="#"
+            href={lang === "es" ? "/privacidad" : "/privacidad"}
             class="text-gray-400 hover:text-white transition-colors text-sm"
           >
             {lang === "es" ? "Privacidad" : "Privacy"}
           </a>
           <a
-            href="#"
+            href={lang === "es" ? "/terminos" : "/terminos"}
             class="text-gray-400 hover:text-white transition-colors text-sm"
           >
             {lang === "es" ? "Términos" : "Terms"}

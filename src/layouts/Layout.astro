@@ -44,8 +44,9 @@ const fullTitle = title === siteName ? title : `${title} | ${siteName}`;
     <link rel="canonical" href={canonicalURL} />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/logo-lumia.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/logo-lumia.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/logo-lumia.png" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -104,13 +105,30 @@ const fullTitle = title === siteName ? title : `${title} | ${siteName}`;
           "Orthodontics"
         ],
         "sameAs": [
-          "https://www.instagram.com/lumiaodontologia",
-          "https://www.facebook.com/lumiaodontologia"
+          "https://www.instagram.com/lumiaodontologia/?hl=es",
+          "https://facebook.com/p/Lumia-Odontologia-especializada-100063923624494/?_rdc=1&_rdr#"
         ]
       }
     </script>
 
     <title>{fullTitle}</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2JLQ9G7QZ3"
+    ></script>
+    <script>
+      // @ts-ignore
+      window.dataLayer = window.dataLayer || [];
+      // @ts-ignore
+      function gtag() {
+        // @ts-ignore
+        window.dataLayer.push(arguments);
+      }
+      // @ts-ignore
+      gtag("js", new Date());
+      // @ts-ignore
+      gtag("config", "G-2JLQ9G7QZ3");
+    </script>
   </head>
   <body
     class="font-sans antialiased bg-white text-gray-900 min-h-screen w-full overflow-x-hidden"

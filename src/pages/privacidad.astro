@@ -1,0 +1,134 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { getLangFromUrl, useTranslations } from "../i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout
+  title={lang === "es"
+    ? "Política de Privacidad - LUMIA"
+    : "Privacy Policy - LUMIA"}
+  description={lang === "es"
+    ? "Política de privacidad de LUMIA Odontología Especializada. Conoce cómo protegemos tu información personal."
+    : "Privacy policy of LUMIA Specialized Dentistry. Learn how we protect your personal information."}
+  lang={lang}
+  keywords="privacidad, protección datos, LUMIA, política privacidad"
+>
+  <Header />
+
+  <main class="pt-20">
+    <section class="py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-3xl md:text-4xl font-light text-gray-900 mb-8">
+          {lang === "es" ? "Política de Privacidad" : "Privacy Policy"}
+        </h1>
+
+        <div class="prose prose-lg max-w-none">
+          <p class="text-gray-600 mb-6">
+            {
+              lang === "es"
+                ? "En LUMIA Odontología Especializada, respetamos tu privacidad y nos comprometemos a proteger tu información personal. Esta política describe cómo recopilamos, usamos y protegemos tu información."
+                : "At LUMIA Specialized Dentistry, we respect your privacy and are committed to protecting your personal information. This policy describes how we collect, use and protect your information."
+            }
+          </p>
+
+          <h2 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+            {
+              lang === "es"
+                ? "Información que Recopilamos"
+                : "Information We Collect"
+            }
+          </h2>
+          <p class="text-gray-600 mb-4">
+            {
+              lang === "es"
+                ? "Recopilamos información que nos proporcionas directamente, como tu nombre, número de teléfono, dirección de correo electrónico y información médica relevante para brindarte el mejor cuidado dental."
+                : "We collect information you provide directly to us, such as your name, phone number, email address, and relevant medical information to provide you with the best dental care."
+            }
+          </p>
+
+          <h2 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+            {
+              lang === "es"
+                ? "Cómo Usamos tu Información"
+                : "How We Use Your Information"
+            }
+          </h2>
+          <ul class="text-gray-600 mb-4 list-disc pl-6">
+            <li>
+              {
+                lang === "es"
+                  ? "Proporcionar servicios dentales y atención médica"
+                  : "Provide dental services and medical care"
+              }
+            </li>
+            <li>
+              {
+                lang === "es"
+                  ? "Programar y recordar citas"
+                  : "Schedule and remind appointments"
+              }
+            </li>
+            <li>
+              {
+                lang === "es"
+                  ? "Comunicarnos contigo sobre tu tratamiento"
+                  : "Communicate with you about your treatment"
+              }
+            </li>
+            <li>
+              {
+                lang === "es"
+                  ? "Mejorar nuestros servicios"
+                  : "Improve our services"
+              }
+            </li>
+          </ul>
+
+          <h2 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+            {lang === "es" ? "Protección de Datos" : "Data Protection"}
+          </h2>
+          <p class="text-gray-600 mb-4">
+            {
+              lang === "es"
+                ? "Implementamos medidas de seguridad técnicas y organizativas para proteger tu información personal contra acceso no autorizado, alteración, divulgación o destrucción."
+                : "We implement technical and organizational security measures to protect your personal information from unauthorized access, alteration, disclosure or destruction."
+            }
+          </p>
+
+          <h2 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+            {lang === "es" ? "Contacto" : "Contact"}
+          </h2>
+          <p class="text-gray-600 mb-4">
+            {
+              lang === "es"
+                ? "Si tienes preguntas sobre esta política de privacidad, puedes contactarnos en:"
+                : "If you have questions about this privacy policy, you can contact us at:"
+            }
+          </p>
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <p class="text-gray-700">
+              <strong
+                >{
+                  lang === "es"
+                    ? "LUMIA Odontología Especializada"
+                    : "LUMIA Specialized Dentistry"
+                }</strong
+              ><br />
+              CC Fundadores, Local 9908, Piso Exito<br />
+              Manizales, Caldas, Colombia<br />
+              <strong>{lang === "es" ? "Teléfono:" : "Phone:"}</strong> +57 (316)
+              405-2829
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

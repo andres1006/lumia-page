@@ -155,7 +155,6 @@ const stats = [
           width="1920"
           height="1080"
           decoding="async"
-          fetchpriority="high"
         />
         <div class="absolute inset-0 bg-black/40"></div>
       </div>
@@ -220,25 +219,8 @@ const stats = [
               style={`animation-delay: ${index * 100}ms`}
             >
               <div class="relative overflow-hidden h-full before-after-container" data-item-id={item.id}>
-                <!-- Before Image -->
-                <div class="before-image absolute inset-0 transition-all duration-500 ease-in-out">
-                  <img
-                    src={item.beforeImage}
-                    alt={`${item.title} - Antes`}
-                    class="w-full h-full object-cover"
-                    loading="lazy"
-                    width="400"
-                    height="300"
-                    decoding="async"
-                    fetchpriority="low"
-                  />
-                  <div class="absolute top-4 left-4 bg-black/80 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg">
-                    Antes
-                  </div>
-                </div>
-                
-                <!-- After Image -->
-                <div class="after-image absolute inset-0 opacity-0 transition-all duration-500 ease-in-out">
+                <!-- After Image (Default visible) -->
+                <div class="after-image absolute inset-0 transition-all duration-500 ease-in-out">
                   <img
                     src={item.afterImage}
                     alt={`${item.title} - Después`}
@@ -247,16 +229,31 @@ const stats = [
                     width="400"
                     height="300"
                     decoding="async"
-                    fetchpriority="low"
                   />
                   <div class="absolute top-4 left-4 bg-amber-600 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg">
                     Después
                   </div>
                 </div>
                 
+                <!-- Before Image (Hidden by default, shown on hover) -->
+                <div class="before-image absolute inset-0 opacity-0 transition-all duration-500 ease-in-out group-hover:opacity-100">
+                  <img
+                    src={item.beforeImage}
+                    alt={`${item.title} - Antes`}
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                    width="400"
+                    height="300"
+                    decoding="async"
+                  />
+                  <div class="absolute top-4 left-4 bg-black/80 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg">
+                    Antes
+                  </div>
+                </div>
+                
                 <!-- Hover Indicator -->
                 <div class="absolute top-4 right-4 bg-white/90 text-gray-800 px-3 py-1 rounded-full text-xs font-medium shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  👆 Pasa el mouse para ver después
+                  👆 Pasa el mouse para ver antes
                 </div>
                 
                 <!-- Click Indicator -->
@@ -386,12 +383,12 @@ const stats = [
     }
 
     .before-after-container:hover .before-image {
-      opacity: 0;
+      opacity: 1;
       transform: scale(1.05);
     }
 
     .before-after-container:hover .after-image {
-      opacity: 1;
+      opacity: 0;
       transform: scale(1.05);
     }
 
