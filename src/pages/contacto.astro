@@ -164,7 +164,7 @@ const services = [
             <h2 class="text-3xl font-bold text-gray-900 mb-8">
               Envíanos un Mensaje
             </h2>
-            <form action="#" method="POST" class="space-y-6">
+            <form id="contact-form" class="space-y-6" data-lang={lang}>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label
@@ -293,7 +293,11 @@ const services = [
                 type="submit"
                 class="w-full bg-gradient-gold text-white font-semibold py-4 px-6 rounded-lg shadow-gold hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               >
-                {t("contact.form.send")}
+                {
+                  lang === "es"
+                    ? "Enviar Mensaje via WhatsApp"
+                    : "Send Message via WhatsApp"
+                }
               </button>
             </form>
           </div>
@@ -971,3 +975,124 @@ const services = [
     box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
   }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const contactForm = document.getElementById(
+      "contact-form"
+    ) as HTMLFormElement;
+
+    if (contactForm) {
+      contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Obtener todos los datos del formulario
+        const formData = new FormData(contactForm);
+        const firstName = formData.get("firstName") || "";
+        const lastName = formData.get("lastName") || "";
+        const email = formData.get("email") || "";
+        const phone = formData.get("phone") || "";
+        const service = formData.get("service") || "";
+        const location = formData.get("location") || "";
+        const message = formData.get("message") || "";
+
+        // Obtener el idioma del formulario
+        const language = contactForm.getAttribute("data-lang") || "es";
+
+        // Crear el mensaje para WhatsApp
+        const fullName = `${firstName} ${lastName}`.trim();
+
+        let whatsappMessage = "";
+        let successMessage = "";
+        let confirmationText = "";
+
+        if (language === "es") {
+          whatsappMessage = `🦷 *Nuevo contacto desde LUMIA Odontología*\n\n`;
+          whatsappMessage += `👤 *Nombre completo:* ${fullName}\n`;
+
+          if (email) {
+            whatsappMessage += `📧 *Email:* ${email}\n`;
+          }
+
+          if (phone) {
+            whatsappMessage += `📱 *Teléfono:* ${phone}\n`;
+          }
+
+          if (service) {
+            whatsappMessage += `🏥 *Servicio de interés:* ${service}\n`;
+          }
+
+          if (location) {
+            whatsappMessage += `📍 *Ubicación preferida:* ${location}\n`;
+          }
+
+          if (message) {
+            whatsappMessage += `💬 *Mensaje adicional:*\n${message}\n`;
+          }
+
+          whatsappMessage += `\n_Formulario enviado desde el sitio web de LUMIA_`;
+          successMessage = "✅ ¡Tú mensaje está siendo enviado!";
+          confirmationText = "Enviar Mensaje via WhatsApp";
+        } else {
+          whatsappMessage = `🦷 *New contact from LUMIA Dentistry*\n\n`;
+          whatsappMessage += `👤 *Full name:* ${fullName}\n`;
+
+          if (email) {
+            whatsappMessage += `📧 *Email:* ${email}\n`;
+          }
+
+          if (phone) {
+            whatsappMessage += `📱 *Phone:* ${phone}\n`;
+          }
+
+          if (service) {
+            whatsappMessage += `🏥 *Service of interest:* ${service}\n`;
+          }
+
+          if (location) {
+            whatsappMessage += `📍 *Preferred location:* ${location}\n`;
+          }
+
+          if (message) {
+            whatsappMessage += `💬 *Additional message:*\n${message}\n`;
+          }
+
+          whatsappMessage += `\n_Form sent from LUMIA website_`;
+          successMessage = "✅ Your message is being sent!";
+          confirmationText = "Send Message via WhatsApp";
+        }
+
+        // Codificar el mensaje para URL
+        const encodedMessage = encodeURIComponent(whatsappMessage);
+
+        // Número de WhatsApp de LUMIA
+        const whatsappNumber = "573164052829";
+
+        // Crear enlace de WhatsApp
+        const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+        // Abrir WhatsApp en nueva ventana
+        window.open(whatsappLink, "_blank");
+
+        // Mostrar mensaje de confirmación
+        const button = contactForm.querySelector(
+          'button[type="submit"]'
+        ) as HTMLButtonElement | null;
+        if (button) {
+          const originalText = button.textContent || "";
+          button.textContent = successMessage;
+          button.classList.add("bg-green-600");
+
+          // Después de 3 segundos, restaurar el botón y limpiar el formulario
+          setTimeout(() => {
+            if (button) {
+              button.textContent = confirmationText || originalText;
+              button.classList.remove("bg-green-600");
+            }
+            contactForm.reset();
+          }, 3000);
+        }
+      });
+    }
+  });
+</script>

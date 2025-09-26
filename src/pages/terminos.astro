@@ -20,13 +20,42 @@ const t = useTranslations(lang);
 >
   <Header />
 
-  <main class="pt-20">
-    <section class="py-16 bg-white">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-3xl md:text-4xl font-light text-gray-900 mb-8">
+  <main>
+    <!-- Hero Section -->
+    <section
+      class="relative h-screen flex items-center justify-center overflow-hidden"
+    >
+      <div class="absolute inset-0">
+        <img
+          src="/optimized-images/img-lumia-ultra/equipo-trabajo-2-optimized.webp"
+          alt="LUMIA Clinic"
+          class="w-full h-full object-cover grayscale brightness-50"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 bg-black/40"></div>
+      </div>
+
+      <div
+        class="relative z-10 text-center text-white max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
+        <h1 class="text-5xl md:text-7xl font-light mb-8 tracking-wide">
           {lang === "es" ? "Términos y Condiciones" : "Terms and Conditions"}
         </h1>
+        <p
+          class="text-xl md:text-2xl mb-12 opacity-90 font-light tracking-wide"
+        >
+          {
+            lang === "es"
+              ? "Términos que rigen nuestros servicios dentales y el uso de nuestro sitio web"
+              : "Guidelines that govern our dental services and website usage"
+          }
+        </p>
+      </div>
+    </section>
 
+    <!-- Terms Content Section -->
+    <section class="py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="prose prose-lg max-w-none">
           <p class="text-gray-600 mb-6">
             {

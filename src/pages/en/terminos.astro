@@ -1,0 +1,121 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n";
+
+const lang = "en";
+const t = useTranslations(lang);
+---
+
+<Layout
+  title="Terms and Conditions - LUMIA"
+  description="Terms and conditions for using LUMIA Specialized Dentistry services."
+  lang={lang}
+  keywords="terms conditions, LUMIA, dental services, terms of use"
+>
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section
+      class="relative h-screen flex items-center justify-center overflow-hidden"
+    >
+      <div class="absolute inset-0">
+        <img
+          src="/optimized-images/img-lumia-ultra/equipo-trabajo-2-optimized.webp"
+          alt="LUMIA Clinic"
+          class="w-full h-full object-cover grayscale brightness-50"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 bg-black/40"></div>
+      </div>
+
+      <div
+        class="relative z-10 text-center text-white max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
+        <h1 class="text-5xl md:text-7xl font-light mb-8 tracking-wide">
+          Terms and Conditions
+        </h1>
+        <p
+          class="text-xl md:text-2xl mb-12 opacity-90 font-light tracking-wide"
+        >
+          Guidelines that govern our dental services and website usage
+        </p>
+      </div>
+    </section>
+
+    <!-- Terms Content Section -->
+    <section class="py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="prose prose-lg max-w-none">
+          <p class="text-gray-600 mb-6">
+            Welcome to LUMIA Specialized Dentistry. These terms and conditions
+            govern the use of our dental services and website.
+          </p>
+
+          <h2 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+            Medical Services
+          </h2>
+          <p class="text-gray-600 mb-4">
+            Services provided by LUMIA are medical in nature and require
+            professional evaluation. Results may vary according to each
+            individual case.
+          </p>
+
+          <h2 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+            Appointments and Cancellations
+          </h2>
+          <ul class="text-gray-600 mb-4 list-disc pl-6">
+            <li>Appointments must be scheduled at least 24 hours in advance</li>
+            <li>Cancellations require 24 hours prior notice</li>
+            <li>Missed appointments may be subject to charges</li>
+          </ul>
+
+          <h2 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+            Payments and Billing
+          </h2>
+          <p class="text-gray-600 mb-4">
+            Payments are made at the time of service. We accept cash, credit
+            cards and bank transfers. Prices are subject to change without
+            notice.
+          </p>
+
+          <h2 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+            Patient Responsibility
+          </h2>
+          <p class="text-gray-600 mb-4">
+            The patient is responsible for providing accurate and complete
+            medical information, following post-treatment instructions and
+            attending all follow-up appointments.
+          </p>
+
+          <h2 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+            Modifications
+          </h2>
+          <p class="text-gray-600 mb-4">
+            LUMIA reserves the right to modify these terms at any time. Changes
+            will take effect immediately after publication on our website.
+          </p>
+
+          <h2 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+            Contact
+          </h2>
+          <p class="text-gray-600 mb-4">
+            For questions about these terms and conditions, contact us:
+          </p>
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <p class="text-gray-700">
+              <strong>LUMIA Specialized Dentistry</strong><br />
+              CC Fundadores, Local 9908, Piso Exito<br />
+              Manizales, Caldas, Colombia<br />
+              <strong>Phone:</strong> +57 (316) 405-2829
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

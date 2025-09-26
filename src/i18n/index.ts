@@ -25,6 +25,7 @@ export const ui = {
         'common.get-quote': 'Obtener Cotización',
         'common.read-more': 'Leer Más',
         'common.before-after': 'Antes y Después',
+        'common.satisfaction-survey': 'Encuesta de Satisfacción',
 
         // Home Page
         'home.hero.title': 'LUMIA: Donde la Ciencia y el Arte Crean Sonrisas Extraordinarias',
@@ -154,6 +155,7 @@ export const ui = {
         'common.get-quote': 'Get Quote',
         'common.read-more': 'Read More',
         'common.before-after': 'Before & After',
+        'common.satisfaction-survey': 'Satisfaction Survey',
 
         // Home Page
         'home.hero.title': 'LUMIA: Where Science and Art Create Extraordinary Smiles',

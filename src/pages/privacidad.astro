@@ -20,111 +20,643 @@ const t = useTranslations(lang);
 >
   <Header />
 
-  <main class="pt-20">
-    <section class="py-16 bg-white">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-3xl md:text-4xl font-light text-gray-900 mb-8">
+  <main>
+    <!-- Hero Section -->
+    <section
+      class="relative h-screen flex items-center justify-center overflow-hidden"
+    >
+      <div class="absolute inset-0">
+        <img
+          src="/optimized-images/img-lumia-ultra/equipo-trabajo-2-optimized.webp"
+          alt="LUMIA Clinic"
+          class="w-full h-full object-cover grayscale brightness-50"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 bg-black/40"></div>
+      </div>
+
+      <div
+        class="relative z-10 text-center text-white max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
+        <h1 class="text-5xl md:text-7xl font-light mb-8 tracking-wide">
           {lang === "es" ? "Política de Privacidad" : "Privacy Policy"}
         </h1>
+        <p
+          class="text-xl md:text-2xl mb-12 opacity-90 font-light tracking-wide"
+        >
+          {
+            lang === "es"
+              ? "Cómo protegemos y manejamos tus datos personales"
+              : "How we protect and manage your personal data"
+          }
+        </p>
+      </div>
+    </section>
 
+    <!-- Privacy Content Section -->
+    <section class="py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="prose prose-lg max-w-none">
-          <p class="text-gray-600 mb-6">
-            {
-              lang === "es"
-                ? "En LUMIA Odontología Especializada, respetamos tu privacidad y nos comprometemos a proteger tu información personal. Esta política describe cómo recopilamos, usamos y protegemos tu información."
-                : "At LUMIA Specialized Dentistry, we respect your privacy and are committed to protecting your personal information. This policy describes how we collect, use and protect your information."
-            }
-          </p>
+          {
+            lang === "es" ? (
+              <>
+                {/* Información General */}
+                <p class="text-gray-600 mb-6">
+                  LUMIA ODONTOLOGÍA S.A.S., en desarrollo de su objeto social
+                  relacionado con la prestación de servicios de odontología
+                  general y especializada, garantiza el manejo adecuado de los
+                  datos personales de conformidad con la garantía constitucional
+                  de Habeas Data establecida en la Ley 1581 de 2012.
+                </p>
 
-          <h2 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            {
-              lang === "es"
-                ? "Información que Recopilamos"
-                : "Information We Collect"
-            }
-          </h2>
-          <p class="text-gray-600 mb-4">
-            {
-              lang === "es"
-                ? "Recopilamos información que nos proporcionas directamente, como tu nombre, número de teléfono, dirección de correo electrónico y información médica relevante para brindarte el mejor cuidado dental."
-                : "We collect information you provide directly to us, such as your name, phone number, email address, and relevant medical information to provide you with the best dental care."
-            }
-          </p>
+                {/* Marco Legal */}
+                <div class="bg-blue-50 p-6 rounded-lg mb-8">
+                  <h3 class="text-xl font-semibold text-blue-900 mb-4">
+                    Marco Normativo
+                  </h3>
+                  <ul class="text-gray-700">
+                    <li>
+                      • Constitución Política de Colombia (Artículos 15 y 20)
+                    </li>
+                    <li>• Ley 1581 de 2012 y Decreto 1377 de 2013</li>
+                    <li>• Decreto 1074 de 2015</li>
+                    <li>• Resolución 839 de 2017 del Ministerio de Salud</li>
+                    <li>• Ley 2015 de 2020 y Resolución 1888 de 2025</li>
+                  </ul>
+                </div>
 
-          <h2 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            {
-              lang === "es"
-                ? "Cómo Usamos tu Información"
-                : "How We Use Your Information"
-            }
-          </h2>
-          <ul class="text-gray-600 mb-4 list-disc pl-6">
-            <li>
-              {
-                lang === "es"
-                  ? "Proporcionar servicios dentales y atención médica"
-                  : "Provide dental services and medical care"
-              }
-            </li>
-            <li>
-              {
-                lang === "es"
-                  ? "Programar y recordar citas"
-                  : "Schedule and remind appointments"
-              }
-            </li>
-            <li>
-              {
-                lang === "es"
-                  ? "Comunicarnos contigo sobre tu tratamiento"
-                  : "Communicate with you about your treatment"
-              }
-            </li>
-            <li>
-              {
-                lang === "es"
-                  ? "Mejorar nuestros servicios"
-                  : "Improve our services"
-              }
-            </li>
-          </ul>
+                {/* Datos de Empresa */}
+                <div class="bg-amber-50 p-6 rounded-lg mb-8">
+                  <h3 class="text-xl font-semibold text-amber-900 mb-4">
+                    Identificación de la Responsable del Tratamiento
+                  </h3>
+                  <div class="text-gray-700">
+                    <p>
+                      <strong>Razón Social:</strong> LUMIA ODONTOLOGÍA S.A.S.
+                    </p>
+                    <p>
+                      <strong>NIT:</strong> 901.823.286-1
+                    </p>
+                    <p>
+                      <strong>Domicilio:</strong> Calle 33B #20-03 Local 9909,
+                      Manizales
+                    </p>
+                    <p>
+                      <strong>Teléfonos:</strong> 606 8902828 - 3164052829
+                    </p>
+                    <p>
+                      <strong>Email:</strong> lumiaodontologia@gmail.com /
+                      lumiagestion01@gmail.com
+                    </p>
+                    <p>
+                      <strong>Sitio Web:</strong> www.lumiaodontologia.com
+                    </p>
+                  </div>
+                </div>
 
-          <h2 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            {lang === "es" ? "Protección de Datos" : "Data Protection"}
-          </h2>
-          <p class="text-gray-600 mb-4">
-            {
-              lang === "es"
-                ? "Implementamos medidas de seguridad técnicas y organizativas para proteger tu información personal contra acceso no autorizado, alteración, divulgación o destrucción."
-                : "We implement technical and organizational security measures to protect your personal information from unauthorized access, alteration, disclosure or destruction."
-            }
-          </p>
+                {/* Principios */}
+                <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+                  Principios del Tratamiento
+                </h3>
+                <ol class="text-gray-600 mb-4 list-decimal pl-6">
+                  <li>
+                    <strong>Legalidad:</strong> El tratamiento está reglado y
+                    sujeto a la ley vigente.
+                  </li>
+                  <li>
+                    <strong>Finalidad:</strong> Los datos se tratan con un
+                    propósito legítimo previamente informado.
+                  </li>
+                  <li>
+                    <strong>Libertad:</strong> Requiere del consentimiento
+                    previo, expreso e informado del titular.
+                  </li>
+                  <li>
+                    <strong>Veracidad o Calidad:</strong> La información debe
+                    ser veraz, completa, exacta y actualizada.
+                  </li>
+                  <li>
+                    <strong>Transparencia:</strong> Garantizar el derecho del
+                    titular a obtener información.
+                  </li>
+                  <li>
+                    <strong>Seguridad:</strong> Proteger la información contra
+                    adulteración, pérdida o acceso no autorizado.
+                  </li>
+                  <li>
+                    <strong>Confidencialidad:</strong> Mantener la reserva de la
+                    información por parte de quienes la tratan.
+                  </li>
+                </ol>
 
-          <h2 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            {lang === "es" ? "Contacto" : "Contact"}
-          </h2>
-          <p class="text-gray-600 mb-4">
-            {
-              lang === "es"
-                ? "Si tienes preguntas sobre esta política de privacidad, puedes contactarnos en:"
-                : "If you have questions about this privacy policy, you can contact us at:"
-            }
-          </p>
-          <div class="bg-gray-50 p-4 rounded-lg">
-            <p class="text-gray-700">
-              <strong
-                >{
-                  lang === "es"
-                    ? "LUMIA Odontología Especializada"
-                    : "LUMIA Specialized Dentistry"
-                }</strong
-              ><br />
-              CC Fundadores, Local 9908, Piso Exito<br />
-              Manizales, Caldas, Colombia<br />
-              <strong>{lang === "es" ? "Teléfono:" : "Phone:"}</strong> +57 (316)
-              405-2829
-            </p>
-          </div>
+                {/* Autorización */}
+                <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+                  Autorización para el Tratamiento
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  La recolección, almacenamiento, uso, circulación y tratamiento
+                  de los datos personales requieren del{" "}
+                  <strong>
+                    consentimiento libre, previo, expreso e informado
+                  </strong>{" "}
+                  de los titulares de los mismos.
+                </p>
+
+                <p class="text-gray-600 mb-4">
+                  <strong>La autorización puede otorgarse por:</strong>
+                </p>
+                <ul class="text-gray-600 mb-4 list-disc pl-6">
+                  <li>Documento físico o electrónico</li>
+                  <li>Mensaje de datos o correo electrónico</li>
+                  <li>
+                    Cualquier formato digital que permita garantizar su
+                    posterior consulta
+                  </li>
+                  <li>Conducta inequívoca del titular</li>
+                </ul>
+
+                {/* Finalidades */}
+                <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+                  Finalidades del Tratamiento
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  LUMIA ODONTOLOGÍA S.A.S. trata los datos personales para las
+                  siguientes finalidades:
+                </p>
+                <ol class="text-gray-600 mb-4 list-decimal pl-6">
+                  <li>
+                    Análisis de población atendida y entrega de RIPS a
+                    organismos de control
+                  </li>
+                  <li>
+                    Procesos de actualización, programación y confirmación de
+                    agendas
+                  </li>
+                  <li>
+                    Envío de información sobre promociones, eventos y campañas
+                    de salud oral
+                  </li>
+                  <li>
+                    Evaluación de la calidad de los tratamientos y servicios
+                  </li>
+                  <li>
+                    Seguimiento virtual de la evolución de tratamientos
+                    odontológicos
+                  </li>
+                  <li>Cumplimiento de obligaciones legales y contractuales</li>
+                  <li>Debida diligencia comercial</li>
+                  <li>Comunicación comercial y marketing</li>
+                  <li>Cumplimiento de obligaciones comerciales y laborales</li>
+                  <li>Análisis estadísticos despersonalizados</li>
+                  <li>Propósitos de seguridad y prevención del fraude</li>
+                </ol>
+
+                {/* Derechos del Titular */}
+                <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+                  Derechos del Titular
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  Como titular de la información usted tiene los siguientes
+                  derechos:
+                </p>
+                <ul class="text-gray-600 mb-4 list-disc pl-6">
+                  <li>
+                    <strong>Conocer, actualizar y rectificar</strong> sus datos
+                    personales
+                  </li>
+                  <li>
+                    <strong>Solicitar prueba</strong> de la autorización
+                    otorgada
+                  </li>
+                  <li>
+                    <strong>Ser informado</strong> respecto del uso que se le ha
+                    dado a sus datos
+                  </li>
+                  <li>
+                    <strong>Presentar quejas</strong> ante la Superintendencia
+                    de Industria y Comercio
+                  </li>
+                  <li>
+                    <strong>Revocar la autorización</strong> y solicitar la
+                    supresión del dato
+                  </li>
+                  <li>
+                    <strong>Acceder de forma gratuita</strong> a sus datos
+                    personales
+                  </li>
+                </ul>
+
+                {/* Ejercicio de Derechos */}
+                <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+                  Ejercicio de Derechos (ARCO)
+                </h3>
+                <div class="bg-green-50 p-6 rounded-lg mb-8">
+                  <h4 class="text-lg font-semibold text-green-900 mb-3">
+                    Para consultas y solicitudes:
+                  </h4>
+                  <ul class="text-gray-700 mb-4">
+                    <li>
+                      • <strong>Consultas:</strong> Se responden en máximo 10
+                      días hábiles
+                    </li>
+                    <li>
+                      • <strong>Reclamos:</strong> Se responden en máximo 15
+                      días hábiles
+                    </li>
+                    <li>
+                      • <strong>Contacto:</strong> WhatsApp 3164052829
+                    </li>
+                    <li>
+                      • <strong>Formulario Web:</strong>{" "}
+                      www.lumiaodontologia.com/privacidad
+                    </li>
+                    <li>
+                      • <strong>Email:</strong> lumiaodontologia@gmail.com /
+                      lumiagestion01@gmail.com
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Historia Clínica */}
+                <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+                  Historia Clínica y Datos de Salud
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  La historia clínica se conservará por un período mínimo de{" "}
+                  <strong>15 años</strong> contados a partir de la fecha de la
+                  última atención, conforme a la Resolución 839 de 2017 del
+                  Ministerio de Salud. Los datos relacionados con la salud son
+                  considerados <strong>datos sensibles</strong> y requieren
+                  autorización expresa del titular.
+                </p>
+
+                {/* Seguridad */}
+                <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+                  Medidas de Seguridad
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  Implementamos medidas técnicas, humanas y administrativas para
+                  proteger sus datos personales contra adulteración, pérdida,
+                  consulta, uso o acceso no autorizado o fraudulento. Todo
+                  incidente de seguridad será reportado a las autoridades
+                  competentes.
+                </p>
+
+                {/* Datos de Menores de Edad */}
+                <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+                  Tratamiento de Datos de Menores
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  El tratamiento de datos personales de menores de edad requiere
+                  autorización del representante legal y valoración de la
+                  opinión del menor según su madurez y capacidad de
+                  entendimiento.
+                </p>
+
+                {/* Canales Digitales */}
+                <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+                  Canales Digitales
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  Para el tratamiento de datos a través de sitio web,
+                  aplicaciones y WhatsApp, implementamos avisos de privacidad
+                  digital, gestión de cookies y mecanismos técnicos para el
+                  ejercicio de derechos.
+                </p>
+
+                {/* Contacto Final */}
+                <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+                  Contacto
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  Para el ejercicio de sus derechos o consultas sobre esta
+                  política, puede contactarnos a través de:
+                </p>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                  <p class="text-gray-700">
+                    <>
+                      <strong>LUMIA ODONTOLOGÍA S.A.S.</strong>
+                      <br />
+                    </>
+                    <strong>NIT:</strong> 901.823.286-1
+                    <br />
+                    Calle 33B #20-03 Local 9909
+                    <br />
+                    Manizales, Caldas, Colombia
+                    <br />
+                    <strong>Teléfonos:</strong> 606 8902828 / 3164052829
+                    <br />
+                    <strong>Email:</strong> lumiaodontologia@gmail.com
+                    <br />
+                    <strong>Sitio Web:</strong> www.lumiaodontologia.com
+                    <br />
+                    <strong>Formulario:</strong>{" "}
+                    www.lumiaodontologia.com/privacidad
+                  </p>
+                </div>
+
+                <div class="bg-yellow-50 p-6 rounded-lg mt-8">
+                  <p class="text-gray-800">
+                    <strong>Fecha de Vigencia:</strong> Esta política está
+                    vigente desde el 24 de septiembre de 2025.
+                    <br />
+                    <strong>Versión:</strong> 2.0 (Adenda de Actualización)
+                  </p>
+                </div>
+              </>
+            ) : (
+              <>
+                {/* English Version */}
+                <p class="text-gray-600 mb-6">
+                  LUMIA ODONTOLOGÍA S.A.S., in development of its corporate
+                  purpose related to the provision of general and specialized
+                  dentistry services, guarantees proper handling of personal
+                  data in accordance with the Constitutional Habeas Data
+                  guarantee established in Law 1581 of 2012.
+                </p>
+
+                {/* Legal Framework */}
+                <div class="bg-blue-50 p-6 rounded-lg mb-8">
+                  <h3 class="text-xl font-semibold text-blue-900 mb-4">
+                    Legal Framework
+                  </h3>
+                  <ul class="text-gray-700">
+                    <li>• Colombian Constitution (Articles 15 and 20)</li>
+                    <li>• Law 1581 of 2012 and Decree 1377 of 2013</li>
+                    <li>• Decree 1074 of 2015</li>
+                    <li>• Resolution 839 of 2017 from Ministry of Health</li>
+                    <li>• Law 2015 of 2020 and Resolution 1888 of 2025</li>
+                  </ul>
+                </div>
+
+                {/* Data Controller Information */}
+                <div class="bg-amber-50 p-6 rounded-lg mb-8">
+                  <h3 class="text-xl font-semibold text-amber-900 mb-4">
+                    Data Processing Controller Identification
+                  </h3>
+                  <div class="text-gray-700">
+                    <p>
+                      <strong>Company:</strong> LUMIA ODONTOLOGÍA S.A.S.
+                    </p>
+                    <p>
+                      <strong>Tax ID:</strong> 901.823.286-1
+                    </p>
+                    <p>
+                      <strong>Address:</strong> Calle 33B #20-03 Local 9909,
+                      Manizales
+                    </p>
+                    <p>
+                      <strong>Phones:</strong> 606 8902828 - 3164052829
+                    </p>
+                    <p>
+                      <strong>Email:</strong> lumiaodontologia@gmail.com /
+                      lumiagestion01@gmail.com
+                    </p>
+                    <p>
+                      <strong>Website:</strong> www.lumiaodontologia.com
+                    </p>
+                  </div>
+                </div>
+
+                {/* Processing Principles */}
+                <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+                  Data Processing Principles
+                </h3>
+                <ol class="text-gray-600 mb-4 list-decimal pl-6">
+                  <li>
+                    <strong>Legality:</strong> Data processing is regulated and
+                    subject to current law.
+                  </li>
+                  <li>
+                    <strong>Purpose:</strong> Data is processed for legitimate,
+                    previously informed purposes.
+                  </li>
+                  <li>
+                    <strong>Freedom:</strong> Requires prior, express, and
+                    informed consent from the data subject.
+                  </li>
+                  <li>
+                    <strong>Truthfulness or Quality:</strong> Information must
+                    be truthful, complete, accurate and up-to-date.
+                  </li>
+                  <li>
+                    <strong>Transparency:</strong> Guarantee the data subject's
+                    right to obtain information.
+                  </li>
+                  <li>
+                    <strong>Security:</strong> Protect information against
+                    tampering, loss or unauthorized access.
+                  </li>
+                  <li>
+                    <strong>Confidentiality:</strong> Maintain confidentiality
+                    by those who process the data.
+                  </li>
+                </ol>
+
+                {/* Authorization */}
+                <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+                  Authorization for Data Processing
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  The collection, storage, use, circulation and processing of
+                  personal data requires the{" "}
+                  <strong>free, prior, express and informed consent</strong>
+                  of the data subjects.
+                </p>
+
+                <p class="text-gray-600 mb-4">
+                  <strong>Authorization can be granted through:</strong>
+                </p>
+                <ul class="text-gray-600 mb-4 list-disc pl-6">
+                  <li>Physical or electronic documents</li>
+                  <li>Data messages or email</li>
+                  <li>
+                    Any digital format that allows guaranteeing subsequent
+                    consultation
+                  </li>
+                  <li>Unambiguous conduct of the data subject</li>
+                </ul>
+
+                {/* Processing Purposes */}
+                <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+                  Data Processing Purposes
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  LUMIA ODONTOLOGÍA S.A.S. processes personal data for the
+                  following purposes:
+                </p>
+                <ol class="text-gray-600 mb-4 list-decimal pl-6">
+                  <li>
+                    Analysis of treated population and delivery of RIPS to
+                    control agencies
+                  </li>
+                  <li>
+                    Update, programming and confirmation of appointment
+                    processes
+                  </li>
+                  <li>
+                    Sending information about promotions, events and oral health
+                    campaigns
+                  </li>
+                  <li>Evaluation of the quality of treatments and services</li>
+                  <li>Virtual monitoring of dental treatment evolution</li>
+                  <li>Compliance with legal and contractual obligations</li>
+                  <li>Commercial due diligence</li>
+                  <li>Commercial communication and marketing</li>
+                  <li>Compliance with commercial and labor obligations</li>
+                  <li>Depersonalized statistical analysis</li>
+                  <li>Security and fraud prevention purposes</li>
+                </ol>
+
+                {/* Data Subject Rights */}
+                <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+                  Data Subject Rights
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  As a data subject, you have the following rights:
+                </p>
+                <ul class="text-gray-600 mb-4 list-disc pl-6">
+                  <li>
+                    <strong>Know, update and rectify</strong> your personal data
+                  </li>
+                  <li>
+                    <strong>Request proof</strong> of the authorization granted
+                  </li>
+                  <li>
+                    <strong>Be informed</strong> about how your data has been
+                    used
+                  </li>
+                  <li>
+                    <strong>File complaints</strong> with the Superintendency of
+                    Industry and Commerce
+                  </li>
+                  <li>
+                    <strong>Revoke authorization</strong> and request data
+                    deletion
+                  </li>
+                  <li>
+                    <strong>Access your personal data free of charge</strong>
+                  </li>
+                </ul>
+
+                {/* Exercise of Rights (ARCO) */}
+                <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+                  Exercise of Rights (ARCO)
+                </h3>
+                <div class="bg-green-50 p-6 rounded-lg mb-8">
+                  <h4 class="text-lg font-semibold text-green-900 mb-3">
+                    For queries and requests:
+                  </h4>
+                  <ul class="text-gray-700 mb-4">
+                    <li>
+                      • <strong>Queries:</strong> Answered within maximum 10
+                      business days
+                    </li>
+                    <li>
+                      • <strong>Claims:</strong> Answered within maximum 15
+                      business days
+                    </li>
+                    <li>
+                      • <strong>Contact:</strong> WhatsApp 3164052829
+                    </li>
+                    <li>
+                      • <strong>Web Form:</strong>{" "}
+                      www.lumiaodontologia.com/privacidad
+                    </li>
+                    <li>
+                      • <strong>Email:</strong> lumiaodontologia@gmail.com /
+                      lumiagestion01@gmail.com
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Clinical Records */}
+                <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+                  Clinical Records and Health Data
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  Clinical records will be kept for a minimum period of{" "}
+                  <strong>15 years</strong>
+                  counted from the date of the last care, in accordance with
+                  Resolution 839 of 2017 from the Ministry of Health.
+                  Health-related data are considered{" "}
+                  <strong>sensitive data</strong>
+                  and require express authorization from the data subject.
+                </p>
+
+                {/* Security */}
+                <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+                  Security Measures
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  We implement technical, human and administrative measures to
+                  protect your personal data against tampering, loss,
+                  consultation, use or unauthorized or fraudulent access. Any
+                  security incident will be reported to the competent
+                  authorities.
+                </p>
+
+                {/* Minors' Data */}
+                <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+                  Processing of Minors' Data
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  Processing personal data of minors requires authorization from
+                  the legal representative and assessment of the minor's opinion
+                  according to their maturity and understanding capacity.
+                </p>
+
+                {/* Digital Channels */}
+                <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+                  Digital Channels
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  For data processing through website, applications and
+                  WhatsApp, we implement digital privacy notices, cookie
+                  management and technical mechanisms for exercising rights.
+                </p>
+
+                {/* Final Contact */}
+                <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
+                  Contact
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  To exercise your rights or for questions about this policy,
+                  you can contact us through:
+                </p>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                  <p class="text-gray-700">
+                    <>
+                      <strong>LUMIA ODONTOLOGÍA S.A.S.</strong>
+                      <br />
+                    </>
+                    <strong>Tax ID:</strong> 901.823.286-1
+                    <br />
+                    Calle 33B #20-03 Local 9909
+                    <br />
+                    Manizales, Caldas, Colombia
+                    <br />
+                    <strong>Phones:</strong> 606 8902828 / 3164052829
+                    <br />
+                    <strong>Email:</strong> lumiaodontologia@gmail.com
+                    <br />
+                    <strong>Website:</strong> www.lumiaodontologia.com
+                    <br />
+                    <strong>Form:</strong> www.lumiaodontologia.com/privacidad
+                  </p>
+                </div>
+
+                <div class="bg-yellow-50 p-6 rounded-lg mt-8">
+                  <p class="text-gray-800">
+                    <strong>Effective Date:</strong> This policy is effective as
+                    of September 24, 2025.
+                    <br />
+                    <strong>Version:</strong> 2.0 (Update Addendum)
+                  </p>
+                </div>
+              </>
+            )
+          }
         </div>
       </div>
     </section>

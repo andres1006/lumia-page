@@ -38,6 +38,12 @@ export default function LanguageSelector({ lang }: LanguageSelectorProps) {
     "/contacto": "/en/contact",
     "/en/contact": "/contacto",
 
+    "/terminos": "/en/terminos",
+    "/en/terminos": "/terminos",
+
+    "/privacidad": "/en/privacidad",
+    "/en/privacidad": "/privacidad",
+
     // Servicios específicos
     "/servicios/diseno-de-sonrisa": "/en/services/smile-design",
     "/en/services/smile-design": "/servicios/diseno-de-sonrisa",
