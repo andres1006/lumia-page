@@ -1,0 +1,279 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { getLangFromUrl, useTranslations } from "../i18n";
+import { getActiveCampaigns } from "../data/marketing-campaigns";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const activeCampaigns = getActiveCampaigns();
+
+// Determinar si es la ruta en inglés
+const isEnglishRoute = Astro.url.pathname.startsWith('/en/marketing-terminos');
+const currentLang = isEnglishRoute ? 'en' : 'es';
+---
+
+<Layout
+  title={lang === "es"
+    ? "Términos y Condiciones de Marketing - LUMIA"
+    : "Marketing Terms and Conditions - LUMIA"}
+  description={lang === "es"
+    ? "Términos y condiciones de campañas promocionales y sorteos de LUMIA Odontología Especializada."
+    : "Terms and conditions for promotional campaigns and contests of LUMIA Specialized Dentistry."}
+  lang={lang}
+  keywords="términos condiciones, marketing, sorteos, promociones, LUMIA"
+>
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section
+      class="relative h-screen flex items-center justify-center overflow-hidden"
+    >
+      <div class="absolute inset-0">
+        <img
+          src="/optimized-images/img-lumia-ultra/equipo-trabajo-2-optimized.webp"
+          alt="LUMIA Clinic"
+          class="w-full h-full object-cover grayscale brightness-50"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 bg-black/40"></div>
+      </div>
+
+      <div
+        class="relative z-10 text-center text-white max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
+        <h1 class="text-5xl md:text-7xl font-light mb-8 tracking-wide">
+          {currentLang === "es" ? "Términos y Condiciones de Marketing" : "Marketing Terms and Conditions"}
+        </h1>
+        <p
+          class="text-xl md:text-2xl mb-12 opacity-90 font-light tracking-wide"
+        >
+          {
+            currentLang === "es"
+              ? "Campañas promocionales, sorteos y promociones vigentes"
+              : "Current promotional campaigns, contests and offers"
+          }
+        </p>
+      </div>
+    </section>
+
+    <!-- Navigation Sidebar -->
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          
+          <!-- Sidebar Navigation -->
+          <div class="lg:col-span-1">
+            <div class="bg-white rounded-lg shadow-md p-6 sticky top-8">
+              <h3 class="text-lg font-semibold text-gray-900 mb-6">
+                {currentLang === "es" ? "MÁS INFORMACIÓN" : "MORE INFORMATION"}
+              </h3>
+              <nav class="space-y-3">
+                <a 
+                  href={currentLang === "es" ? "/nosotros" : "/en/about"} 
+                  class="block text-gray-600 hover:text-blue-600 transition-colors duration-200"
+                >
+                  {currentLang === "es" ? "¿Quiénes Somos?" : "Who Are We?"}
+                </a>
+                <a 
+                  href={currentLang === "es" ? "/contacto" : "/en/contact"} 
+                  class="block text-gray-600 hover:text-blue-600 transition-colors duration-200"
+                >
+                  {currentLang === "es" ? "Contáctanos" : "Contact Us"}
+                </a>
+                <a 
+                  href={currentLang === "es" ? "/privacidad" : "/en/privacidad"} 
+                  class="block text-gray-600 hover:text-blue-600 transition-colors duration-200"
+                >
+                  {currentLang === "es" ? "Políticas de Privacidad" : "Privacy Policies"}
+                </a>
+                <a 
+                  href={currentLang === "es" ? "/terminos" : "/en/terminos"} 
+                  class="block text-gray-600 hover:text-blue-600 transition-colors duration-200"
+                >
+                  {currentLang === "es" ? "Términos y Condiciones" : "Terms and Conditions"}
+                </a>
+                <a 
+                  href={currentLang === "es" ? "/marketing-terminos" : "/en/marketing-terminos"} 
+                  class="block text-blue-600 font-medium border-l-4 border-blue-600 pl-3"
+                >
+                  {currentLang === "es" ? "Términos de Marketing" : "Marketing Terms"}
+                </a>
+                <a 
+                  href={currentLang === "es" ? "/galeria" : "/en/gallery"} 
+                  class="block text-gray-600 hover:text-blue-600 transition-colors duration-200"
+                >
+                  {currentLang === "es" ? "Galería" : "Gallery"}
+                </a>
+              </nav>
+            </div>
+          </div>
+
+          <!-- Main Content -->
+          <div class="lg:col-span-3">
+            <div class="bg-white rounded-lg shadow-md p-8">
+              
+              <!-- Header -->
+              <div class="mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">
+                  {currentLang === "es" 
+                    ? "T&C Actividades Comerciales - Promociones y Descuentos LUMIA"
+                    : "T&C Commercial Activities - Promotions and Discounts LUMIA"
+                  }
+                </h2>
+                <div class="border-l-4 border-blue-600 pl-4">
+                  <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                    {currentLang === "es" ? "TÉRMINOS Y CONDICIONES" : "TERMS AND CONDITIONS"}
+                  </h3>
+                </div>
+              </div>
+
+              <!-- Active Campaigns Section -->
+              {activeCampaigns.length > 0 ? (
+                <div class="space-y-8">
+                  {activeCampaigns.map((campaign) => (
+                    <div class="border border-gray-200 rounded-lg p-6">
+                      <!-- Campaign Header -->
+                      <div class="flex items-center justify-between mb-4">
+                        <div>
+                          <h3 class="text-2xl font-bold text-gray-900 mb-2">
+                            {campaign.title}
+                          </h3>
+                          <p class="text-gray-600 mb-3">
+                            {campaign.description}
+                          </p>
+                          <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
+                              {currentLang === "es" ? "ACTIVO" : "ACTIVE"}
+                            </span>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+                              {campaign.startDate} - {campaign.endDate}
+                            </span>
+                            {campaign.discount && (
+                              <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800">
+                                {campaign.discount}
+                              </span>
+                            )}
+                          </div>
+                          <div class="flex flex-wrap gap-2">
+                            {campaign.socialMedia.map((social) => (
+                              <span class="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-gray-100 text-gray-700">
+                                {social}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Campaign Details -->
+                      <div class="space-y-6">
+                        
+                        {/* Requirements */}
+                        {campaign.requirements && campaign.requirements.length > 0 && (
+                          <div>
+                            <h4 class="text-lg font-semibold text-gray-900 mb-3">
+                              {currentLang === "es" ? "Requisitos para Participar:" : "Participation Requirements:"}
+                            </h4>
+                            <ul class="list-disc list-inside space-y-1 text-gray-700">
+                              {campaign.requirements.map((req) => (
+                                <li>{req}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+
+                        {/* Restrictions */}
+                        {campaign.restrictions && campaign.restrictions.length > 0 && (
+                          <div>
+                            <h4 class="text-lg font-semibold text-gray-900 mb-3">
+                              {currentLang === "es" ? "Restricciones:" : "Restrictions:"}
+                            </h4>
+                            <ul class="list-disc list-inside space-y-1 text-gray-700">
+                              {campaign.restrictions.map((restriction) => (
+                                <li>{restriction}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+
+                        {/* Terms and Conditions */}
+                        <div>
+                          <h4 class="text-lg font-semibold text-gray-900 mb-3">
+                            {currentLang === "es" ? "Términos y Condiciones Detallados:" : "Detailed Terms and Conditions:"}
+                          </h4>
+                          <div class="prose prose-gray max-w-none">
+                            <div class="whitespace-pre-line text-gray-700 leading-relaxed">
+                              {campaign.terms}
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Contact Information */}
+                        {campaign.contactInfo && (
+                          <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="text-lg font-semibold text-blue-900 mb-2">
+                              {currentLang === "es" ? "Información de Contacto:" : "Contact Information:"}
+                            </h4>
+                            <p class="text-blue-800">
+                              {campaign.contactInfo}
+                            </p>
+                          </div>
+                        )}
+
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div class="text-center py-12">
+                  <div class="text-gray-400 mb-4">
+                    <svg class="mx-auto h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                    </svg>
+                  </div>
+                  <h3 class="text-lg font-medium text-gray-900 mb-2">
+                    {currentLang === "es" ? "No hay campañas activas" : "No active campaigns"}
+                  </h3>
+                  <p class="text-gray-600">
+                    {currentLang === "es" 
+                      ? "Actualmente no tenemos campañas promocionales activas. Mantente atento a nuestras redes sociales para futuras promociones."
+                      : "We currently have no active promotional campaigns. Stay tuned to our social media for future promotions."
+                    }
+                  </p>
+                </div>
+              )}
+
+              <!-- General Information -->
+              <div class="mt-12 pt-8 border-t border-gray-200">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">
+                  {currentLang === "es" ? "Información General" : "General Information"}
+                </h3>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                  <p class="text-gray-700 mb-4">
+                    {currentLang === "es" 
+                      ? "LUMIA ODONTOLOGÍA S.A.S. se reserva el derecho de modificar, suspender o cancelar cualquier campaña promocional en cualquier momento sin previo aviso. Todas las promociones están sujetas a disponibilidad y términos específicos."
+                      : "LUMIA ODONTOLOGÍA S.A.S. reserves the right to modify, suspend or cancel any promotional campaign at any time without prior notice. All promotions are subject to availability and specific terms."
+                    }
+                  </p>
+                  <div class="text-sm text-gray-600">
+                    <p>
+                      <strong>{currentLang === "es" ? "Contacto:" : "Contact:"}</strong><br/>
+                      WhatsApp: 3164052829<br/>
+                      Email: lumiaodontologia@gmail.com<br/>
+                      Instagram: @lumiaodontologia
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
