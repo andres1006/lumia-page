@@ -17,6 +17,112 @@ const t = useTranslations(lang);
   <Header />
 
   <main>
+    <!-- Floating Navigation Index -->
+    <div
+      id="navigation-index"
+      class="fixed left-4 top-1/2 transform -translate-y-1/2 z-50 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg border border-gray-200 p-4 max-w-xs hidden lg:block"
+    >
+      <h4
+        class="text-sm font-semibold text-gray-800 mb-3 sticky top-0 bg-white/95 pb-2 border-b border-gray-200"
+      >
+        📋 Navigation Index
+      </h4>
+      <nav class="space-y-1 text-xs">
+        <a
+          href="#section-1"
+          class="block py-1 px-2 rounded hover:bg-blue-50 text-gray-600 hover:text-blue-700 transition-colors"
+          >1. General Information</a
+        >
+        <a
+          href="#section-2"
+          class="block py-1 px-2 rounded hover:bg-blue-50 text-gray-600 hover:text-blue-700 transition-colors"
+          >2. Legal Framework</a
+        >
+        <a
+          href="#section-3"
+          class="block py-1 px-2 rounded hover:bg-blue-50 text-gray-600 hover:text-blue-700 transition-colors"
+          >3. Principles</a
+        >
+        <a
+          href="#section-4"
+          class="block py-1 px-2 rounded hover:bg-blue-50 text-gray-600 hover:text-blue-700 transition-colors"
+          >4. Definitions</a
+        >
+        <a
+          href="#section-5"
+          class="block py-1 px-2 rounded hover:bg-blue-50 text-gray-600 hover:text-blue-700 transition-colors"
+          >5. Authorization</a
+        >
+        <a
+          href="#section-6"
+          class="block py-1 px-2 rounded hover:bg-blue-50 text-gray-600 hover:text-blue-700 transition-colors"
+          >6. Privacy Notice</a
+        >
+        <a
+          href="#section-7"
+          class="block py-1 px-2 rounded hover:bg-blue-50 text-gray-600 hover:text-blue-700 transition-colors"
+          >7. Rights and Duties</a
+        >
+        <a
+          href="#section-8"
+          class="block py-1 px-2 rounded hover:bg-blue-50 text-gray-600 hover:text-blue-700 transition-colors"
+          >8. Queries and Requests</a
+        >
+        <a
+          href="#section-9"
+          class="block py-1 px-2 rounded hover:bg-blue-50 text-gray-600 hover:text-blue-700 transition-colors"
+          >9. Digital Channels</a
+        >
+        <a
+          href="#section-10"
+          class="block py-1 px-2 rounded hover:bg-blue-50 text-gray-600 hover:text-blue-700 transition-colors"
+          >10. Purposes</a
+        >
+        <a
+          href="#section-11"
+          class="block py-1 px-2 rounded hover:bg-blue-50 text-gray-600 hover:text-blue-700 transition-colors"
+          >11. Security</a
+        >
+        <a
+          href="#section-12"
+          class="block py-1 px-2 rounded hover:bg-blue-50 text-gray-600 hover:text-blue-700 transition-colors"
+          >12. Legal Framework</a
+        >
+        <a
+          href="#section-13"
+          class="block py-1 px-2 rounded hover:bg-blue-50 text-gray-600 hover:text-blue-700 transition-colors"
+          >13. Final Provisions</a
+        >
+        <a
+          href="#addendum"
+          class="block py-1 px-2 rounded hover:bg-yellow-50 text-gray-600 hover:text-yellow-700 transition-colors"
+          >📄 Addendum v2.0</a
+        >
+        <a
+          href="#contact"
+          class="block py-1 px-2 rounded hover:bg-blue-50 text-gray-600 hover:text-blue-700 transition-colors"
+          >📞 Contact</a
+        >
+      </nav>
+      <div class="mt-3 pt-2 border-t border-gray-200">
+        <button
+          onclick="toggleNavigation()"
+          class="w-full text-xs text-gray-500 hover:text-gray-700 transition-colors"
+        >
+          🔽 Hide Index
+        </button>
+      </div>
+    </div>
+
+    <!-- Button to show/hide index on mobile -->
+    <button
+      id="mobile-nav-toggle"
+      onclick="toggleNavigation()"
+      class="fixed bottom-4 right-4 lg:hidden bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors z-50"
+    >
+      📋
+    </button>
+
     <!-- Hero Section -->
     <section
       class="relative h-screen flex items-center justify-center overflow-hidden"
@@ -49,45 +155,728 @@ const t = useTranslations(lang);
     <section class="py-16 bg-white">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="prose prose-lg max-w-none">
-          <p class="text-gray-600 mb-6">
-            LUMIA ODONTOLOGÍA S.A.S., in development of its corporate purpose
-            related to the provision of general and specialized dentistry
-            services, guarantees proper handling of personal data in accordance
-            with the Constitutional Habeas Data guarantee established in Law
-            1581 of 2012.
-          </p>
+          {/* General Information */}
+          <div
+            id="section-1"
+            class="bg-gray-50 p-6 rounded-lg mb-8 scroll-mt-24"
+          >
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">
+              1. GENERAL INFORMATION
+            </h3>
+            <p class="text-gray-700 mb-4">
+              LUMIA ODONTOLOGÍA S.A.S., in development of its corporate purpose
+              related to the provision of general and specialized dentistry
+              services, will be responsible for data processing as well as the
+              collection and storage of data related to patients, suppliers,
+              employees, and any natural person who provides their personal data
+              to the company. This policy is governed by the provisions of Law
+              1581 of 2012 and its regulatory decrees.
+            </p>
+            <p class="text-gray-600 mb-4">
+              LUMIA ODONTOLOGÍA S.A.S., in development of its corporate purpose
+              will be responsible for data processing as well as the collection
+              and storage of data related to patients, suppliers, employees, and
+              any natural person who provides their personal data to the company
+              for the provision of dental services.
+            </p>
+          </div>
 
           {/* Legal Framework */}
-          <div class="bg-blue-50 p-6 rounded-lg mb-8">
+          <div
+            id="section-2"
+            class="bg-blue-50 p-6 rounded-lg mb-8 scroll-mt-24"
+          >
             <h3 class="text-xl font-semibold text-blue-900 mb-4">
-              Legal Framework
+              2. LEGAL FRAMEWORK AND APPLICABLE JURISPRUDENCE
             </h3>
-            <ul class="text-gray-700">
-              <li>• Colombian Constitution (Articles 15 and 20)</li>
-              <li>• Law 1581 of 2012 and Decree 1377 of 2013</li>
-              <li>• Decree 1074 of 2015</li>
-              <li>• Resolution 839 of 2017 from Ministry of Health</li>
-              <li>• Law 2015 of 2020 and Resolution 1888 of 2025</li>
+            <p class="text-gray-700 mb-4">
+              The processing of personal data in Colombia is regulated by Law
+              1581 of 2012, which establishes general provisions for the
+              protection of personal data. This law is complemented by:
+            </p>
+            <ul class="text-gray-700 mb-4 list-disc pl-6 space-y-2">
+              <li>Colombian Constitution (Articles 15 and 20)</li>
+              <li>Law 1581 of 2012 and Decree 1377 of 2013</li>
+              <li>Decree 1074 of 2015</li>
+              <li>Resolution 839 of 2017 from Ministry of Health</li>
+              <li>Law 2015 of 2020 and Resolution 1888 of 2025</li>
+              <li>Judicial rulings and precedents from Constitutional Court</li>
             </ul>
           </div>
 
-          {/* Data Controller Information */}
-          <div class="bg-amber-50 p-6 rounded-lg mb-8">
+          {/* Company Data */}
+          <div
+            id="company"
+            class="bg-amber-50 p-6 rounded-lg mb-8 scroll-mt-24"
+          >
             <h3 class="text-xl font-semibold text-amber-900 mb-4">
-              Data Processing Controller Identification
+              7.8. IDENTIFICATION OF THE DATA CONTROLLER
             </h3>
-            <div class="text-gray-700">
+            <div class="text-gray-700 space-y-2">
+              <p><strong>Company:</strong> LUMIA ODONTOLOGÍA S.A.S.</p>
+              <p><strong>Tax ID:</strong> 901.823.286-1</p>
               <p>
-                <strong>Company:</strong> LUMIA ODONTOLOGÍA S.A.S.
+                <strong>Address:</strong> Calle 33B #20-03 Local 9909, Manizales,
+                Caldas, Colombia
+              </p>
+              <p>
+                <strong>Phones:</strong> 606 8902828 / 3164052829
+              </p>
+              <p>
+                <strong>Email:</strong> lumiaodontologia@gmail.com / lumiagestion01@gmail.com
+              </p>
+              <p><strong>Website:</strong> www.lumiaodontologia.com</p>
+            </div>
+          </div>
+
+          {/* Principles */}
+          <div
+            id="section-3"
+            class="bg-purple-50 p-6 rounded-lg mb-8 scroll-mt-24"
+          >
+            <h3 class="text-xl font-semibold text-purple-900 mb-4">
+              3. PRINCIPLES
+            </h3>
+            <p class="text-gray-700 mb-4">
+              The principles established below constitute the essential
+              foundations for the protection of personal data, and any regulated
+              activity must comply with them and the other provisions that
+              develop them.
+            </p>
+            <ol class="text-gray-700 mb-4 list-decimal pl-6 space-y-2">
+              <li>
+                <strong>Principle of legality:</strong> The processing of personal
+                data is a regulated activity that must comply with the provisions
+                of this law and other provisions that develop it.
+              </li>
+              <li>
+                <strong>Principle of purpose:</strong> The processing of personal
+                data collected by LUMIA ODONTOLOGÍA S.A.S. must serve a legitimate
+                purpose of which the data subject must be informed.
+              </li>
+              <li>
+                <strong>Principle of freedom:</strong> Processing can only be carried
+                out with the prior, express, and informed consent of the data subject,
+                or in the absence of a legal or judicial mandate that relieves consent.
+              </li>
+              <li>
+                <strong>Principle of truthfulness or quality:</strong> The information
+                subject to processing must be truthful, complete, accurate, updated,
+                verifiable, and understandable. Processing of partial, incomplete,
+                fragmented, or misleading data is prohibited.
+              </li>
+              <li>
+                <strong>Principle of transparency:</strong> The processing must guarantee
+                the data subject's right to obtain information from LUMIA ODONTOLOGÍA
+                at any time and without restrictions about the existence of data
+                concerning them.
+              </li>
+              <li>
+                <strong>
+                  Principle of restricted access and circulation:
+                </strong>
+                Processing is subject to the limits derived from the nature of personal
+                data, the provisions of this law, and the Constitution. In this sense,
+                processing can only be done by persons authorized by the data subject
+                and/or by the provisions of the law.
+              </li>
+              <li>
+                <strong>Principle of security:</strong> The information subject to
+                processing by LUMIA ODONTOLOGÍA S.A.S. must be protected through
+                the use of technical, human, and administrative measures that are
+                necessary to provide security to the records, avoiding their adulteration,
+                loss, consultation, use, or unauthorized or fraudulent access.
+              </li>
+              <li>
+                <strong>Principle of confidentiality:</strong> All persons involved
+                in the processing of personal data that are not of a public nature
+                are obliged to guarantee the confidentiality of the information,
+                even after their relationship with any of the tasks that comprise
+                the processing has ended.
+              </li>
+            </ol>
+          </div>
+
+          {/* Definitions */}
+          <div
+            id="section-4"
+            class="bg-indigo-50 p-6 rounded-lg mb-8 scroll-mt-24"
+          >
+            <h3 class="text-xl font-semibold text-indigo-900 mb-4">
+              4. DEFINITIONS
+            </h3>
+            <dl class="text-gray-700 space-y-3">
+              <dt class="font-semibold">Authorization:</dt>
+              <dd class="ml-4">
+                Prior, express, and informed consent of the data subject to
+                carry out the processing of personal data.
+              </dd>
+              <dt class="font-semibold">Privacy Notice:</dt>
+              <dd class="ml-4">
+                Physical, electronic document, or in any other format generated
+                by the data controller that is made available to the data
+                subject for the processing of their personal data.
+              </dd>
+              <dt class="font-semibold">Database:</dt>
+              <dd class="ml-4">
+                Organized set of personal data that is subject to processing.
+              </dd>
+              <dt class="font-semibold">Personal Data:</dt>
+              <dd class="ml-4">
+                Any information linked to or that may be associated with one or
+                more determined or determinable natural persons.
+              </dd>
+              <dt class="font-semibold">Sensitive Data:</dt>
+              <dd class="ml-4">
+                Data that affects the privacy of the data subject or whose
+                improper use may generate discrimination.
+              </dd>
+              <dt class="font-semibold">Data Controller:</dt>
+              <dd class="ml-4">
+                Natural or legal person, public or private, that by itself or in
+                association with others, decides on the database and/or the
+                processing of the data.
+              </dd>
+              <dt class="font-semibold">Data Processor:</dt>
+              <dd class="ml-4">
+                Natural or legal person, public or private, that by itself or in
+                association with others, performs the processing of personal
+                data on behalf of the data controller.
+              </dd>
+              <dt class="font-semibold">Data Subject:</dt>
+              <dd class="ml-4">
+                Natural person whose personal data is subject to processing.
+              </dd>
+              <dt class="font-semibold">Processing:</dt>
+              <dd class="ml-4">
+                Any systematic operation and procedure, automated or not, that
+                allows the collection, storage, use, circulation, or deletion of
+                personal data.
+              </dd>
+              <dt class="font-semibold">Transfer:</dt>
+              <dd class="ml-4">
+                Data processing that involves the communication of personal data
+                inside or outside the territory of the Republic of Colombia when
+                it has as its purpose the performance of a processing by the
+                processor on behalf of the controller.
+              </dd>
+              <dt class="font-semibold">Transmission:</dt>
+              <dd class="ml-4">
+                Processing of personal data that involves the communication of
+                such data inside or outside the territory of the Republic of
+                Colombia when the purpose is for the processor to perform the
+                processing on behalf of the controller.
+              </dd>
+            </dl>
+          </div>
+
+          {/* Authorization */}
+          <div
+            id="section-5"
+            class="bg-green-50 p-6 rounded-lg mb-8 scroll-mt-24"
+          >
+            <h3 class="text-xl font-semibold text-green-900 mb-4">
+              5. AUTHORIZATION
+            </h3>
+            <p class="text-gray-700 mb-4">
+              The collection, storage, use, circulation, and deletion of
+              personal data requires the <strong
+                >free, prior, express, and informed consent</strong
+              > of the data subjects, which must be obtained through any means that
+              may be subject to subsequent consultation.
+            </p>
+            <p class="text-gray-700 mb-4">
+              <strong>
+                Authorization is a declaration that informs the data subject of
+                the personal data:
+              </strong>
+            </p>
+            <ul class="text-gray-700 mb-4 list-disc pl-6 space-y-2">
+              <li>
+                The purpose for which the data will be collected and used.
+              </li>
+              <li>
+                The optional nature of the response to the questions asked.
+              </li>
+              <li>
+                The rights that assist them as data subjects and the procedure
+                to exercise them.
+              </li>
+              <li>
+                The identification, physical or electronic address, and
+                telephone number of the data controller.
+              </li>
+              <li>
+                The general treatment to which the data will be subjected and
+                the purpose of the processing.
+              </li>
+            </ul>
+
+            <h4 class="text-lg font-semibold text-green-800 mb-3">
+              5.1. Forms of Authorization
+            </h4>
+            <p class="text-gray-700 mb-4">
+              Authorization can be granted through different means, including:
+            </p>
+            <ul class="text-gray-700 mb-4 list-disc pl-6 space-y-2">
+              <li>Physical or electronic documents</li>
+              <li>Data messages or email</li>
+              <li>
+                Any digital format that allows guaranteeing subsequent
+                consultation
+              </li>
+              <li>Unambiguous conduct of the data subject</li>
+            </ul>
+
+            <h4 class="text-lg font-semibold text-green-800 mb-3">
+              5.2. Proof of Authorization
+            </h4>
+            <p class="text-gray-700 mb-4">
+              LUMIA ODONTOLOGÍA S.A.S. must keep proof of the authorization
+              granted by the data subjects, which may be contained in physical
+              or electronic documents.
+            </p>
+
+            <h4 class="text-lg font-semibold text-green-800 mb-3">
+              5.3. Cases Where Authorization Is Not Required
+            </h4>
+            <p class="text-gray-700 mb-4">
+              Authorization is not required in the following cases:
+            </p>
+            <ul class="text-gray-700 mb-4 list-disc pl-6 space-y-2">
+              <li>
+                Information required by a public or administrative entity in
+                exercise of its legal functions or by court order.
+              </li>
+              <li>Data of a public nature.</li>
+              <li>Cases of medical or health emergency.</li>
+              <li>
+                Processing of data authorized by law for historical,
+                statistical, or scientific purposes.
+              </li>
+              <li>Data related to the Civil Registry of Persons.</li>
+            </ul>
+            <p class="text-gray-700 text-sm italic">
+              The above is in accordance with the provisions of Article 10 of
+              Law 1581 of 2012.
+            </p>
+          </div>
+
+          {/* Privacy Notice */}
+          <div
+            id="section-6"
+            class="bg-cyan-50 p-6 rounded-lg mb-8 scroll-mt-24"
+          >
+            <h3 class="text-xl font-semibold text-cyan-900 mb-4">
+              6. PRIVACY NOTICE
+            </h3>
+            <p class="text-gray-700 mb-4">
+              The privacy notice is a physical, electronic document, or in any
+              other format generated by the data controller that is made
+              available to the data subject for the processing of their personal
+              data. In any case, the privacy notice must be made available to
+              the data subject and must contain at least the following
+              information:
+            </p>
+            <ul class="text-gray-700 mb-4 list-disc pl-6 space-y-2">
+              <li>
+                The identity, address, and contact details of the data
+                controller.
+              </li>
+              <li>
+                The type of processing to which the data will be subjected.
+              </li>
+              <li>The general purposes of the processing.</li>
+              <li>
+                The rights that assist the data subject and the procedure to
+                exercise them.
+              </li>
+              <li>The date from which the privacy notice becomes effective.</li>
+            </ul>
+          </div>
+
+          {/* Purposes */}
+          <div
+            id="section-10"
+            class="bg-orange-50 p-6 rounded-lg mb-8 scroll-mt-24"
+          >
+            <h3 class="text-xl font-semibold text-orange-900 mb-4">
+              10. PURPOSES OF PERSONAL DATA PROCESSING
+            </h3>
+            <p class="text-gray-700 mb-4">
+              LUMIA ODONTOLOGÍA S.A.S. collects, stores, uses, circulates,
+              deletes, and processes personal data for the following purposes:
+            </p>
+            <ol class="text-gray-700 mb-4 list-decimal pl-6 space-y-2">
+              <li>
+                Analysis of the treated population and delivery of RIPS to
+                control agencies - Ministry of Health and Social Protection,
+                Superintendency of Health, EPS, ARL, and other entities that
+                require it by legal mandate -; research and epidemiological
+                studies.
+              </li>
+              <li>
+                Carry out processes of updating, programming, and confirmation
+                of schedules and appointment care.
+              </li>
+              <li>
+                Sending information to the subscriber about promotions, events,
+                and oral health advertising campaigns, changes, or news, and
+                treatment and/or product offers.
+              </li>
+              <li>
+                Evaluation of the quality of treatments and services provided.
+              </li>
+              <li>Virtual monitoring of the evolution of dental treatments.</li>
+              <li>
+                Comply with the legal and/or contractual obligations of LUMIA
+                ODONTOLOGÍA S.A.S.
+              </li>
+              <li>
+                Carry out commercial due diligence and commercial communication
+                and marketing activities.
+              </li>
+              <li>
+                Comply with commercial and labor obligations derived from the
+                relationship with suppliers, employees, and contractors.
+              </li>
+              <li>
+                Carry out depersonalized statistical analysis for internal
+                purposes and business intelligence.
+              </li>
+              <li>
+                Security and fraud prevention purposes, as well as compliance
+                with legal obligations related to fraud prevention.
+              </li>
+            </ol>
+            <p class="text-gray-700 text-sm italic">
+              Regarding data considered as Sensitive, in accordance with the
+              provisions of Law 1581 of 2012, LUMIA ODONTOLOGÍA S.A.S. will
+              process them only when there is explicit authorization from the
+              data subject, except in cases where the law provides otherwise.
+            </p>
+          </div>
+
+          {/* Data Subject Rights */}
+          <div
+            id="section-7"
+            class="bg-pink-50 p-6 rounded-lg mb-8 scroll-mt-24"
+          >
+            <h3 class="text-xl font-semibold text-pink-900 mb-4">
+              7. RIGHTS AND DUTIES
+            </h3>
+
+            <h4 class="text-lg font-semibold text-pink-800 mb-3">
+              7.1. Rights of Data Subjects
+            </h4>
+            <p class="text-gray-700 mb-4">
+              Data subjects have the following rights:
+            </p>
+            <ul class="text-gray-700 mb-4 list-disc pl-6 space-y-2">
+              <li>
+                <strong>Know, update, and rectify</strong> their personal data before
+                LUMIA ODONTOLOGÍA S.A.S., as the data controller or processor. This
+                right may be exercised, among others, against partial, inaccurate,
+                incomplete, fragmented, misleading data, or data whose processing
+                is expressly prohibited or has not been authorized.
+              </li>
+              <li>
+                <strong>Request proof</strong> of the authorization granted to the
+                data controller, except when expressly excepted as a requirement
+                for processing, in accordance with the provisions of Article 10 of
+                the aforementioned law.
+              </li>
+              <li>
+                <strong>Be informed</strong> by the data controller or processor,
+                upon request, regarding the use that has been made of their personal
+                data.
+              </li>
+              <li>
+                <strong>
+                  File complaints before the Superintendency of Industry and
+                  Commerce for violations of the provisions of this law and
+                  other regulations that modify, add to, or complement it.
+                </strong>
+              </li>
+              <li>
+                <strong>Revoke the authorization</strong> and/or request the deletion
+                of the data when the processing does not respect the principles,
+                rights, and constitutional and legal guarantees. Revocation and/or
+                deletion will proceed when the Superintendency of Industry and Commerce
+                has determined that the data controller or processor has engaged
+                in conduct contrary to this law and the Constitution.
+              </li>
+              <li>
+                <strong>Access free of charge</strong> to their personal data that
+                have been subject to processing.
+              </li>
+            </ul>
+            <p class="text-gray-700 text-sm italic">
+              In the processing of personal data, the rights of minors will be
+              protected in any case, in accordance with the provisions of
+              Article 7 of Law 1581 of 2012.
+            </p>
+
+            <h4 class="text-lg font-semibold text-pink-800 mb-3">
+              7.2. Duties of Data Subjects
+            </h4>
+            <p class="text-gray-700 mb-4">
+              Data subjects have the following duties:
+            </p>
+            <ul class="text-gray-700 mb-4 list-disc pl-6 space-y-2">
+              <li>Provide truthful, complete, and accurate information.</li>
+              <li>Update their personal data when necessary.</li>
+              <li>Report changes in their personal data.</li>
+            </ul>
+
+            <h4 class="text-lg font-semibold text-pink-800 mb-3">
+              7.3. Duties of Data Controllers
+            </h4>
+            <p class="text-gray-700 mb-4">
+              Data controllers have the following duties:
+            </p>
+            <ul class="text-gray-700 mb-4 list-disc pl-6 space-y-2">
+              <li>Guarantee the data subject's exercise of their rights.</li>
+              <li>
+                Keep the information under the necessary security conditions.
+              </li>
+              <li>Update the information when necessary.</li>
+              <li>Rectify the information when it is incorrect.</li>
+              <li>Provide the data subject with proof of authorization.</li>
+              <li>
+                Inform the data subject about the purpose of the collection.
+              </li>
+              <li>
+                Inform the data subject about the processing of their data.
+              </li>
+            </ul>
+
+            <h4 class="text-lg font-semibold text-pink-800 mb-3">
+              7.4. Duties of Data Processors
+            </h4>
+            <p class="text-gray-700 mb-4">
+              Data processors have the following duties:
+            </p>
+            <ul class="text-gray-700 mb-4 list-disc pl-6 space-y-2">
+              <li>Guarantee the data subject's exercise of their rights.</li>
+              <li>
+                Keep the information under the necessary security conditions.
+              </li>
+              <li>Update the information when necessary.</li>
+              <li>Rectify the information when it is incorrect.</li>
+              <li>Provide the data subject with proof of authorization.</li>
+              <li>
+                Inform the data subject about the purpose of the collection.
+              </li>
+              <li>
+                Inform the data subject about the processing of their data.
+              </li>
+            </ul>
+
+            <h4 class="text-lg font-semibold text-pink-800 mb-3">
+              7.5. Processing of Minors' Data
+            </h4>
+            <p class="text-gray-700 mb-4">
+              The processing of personal data of minors requires authorization
+              from the legal representative and assessment of the minor's
+              opinion according to their maturity and understanding capacity.
+            </p>
+
+            <h4 class="text-lg font-semibold text-pink-800 mb-3">
+              7.6. Health Data and Clinical Records
+            </h4>
+            <p class="text-gray-700 mb-4">
+              Clinical records will be kept for a minimum period of 15 years
+              counted from the date of the last care, in accordance with
+              Resolution 839 of 2017 from the Ministry of Health. Health-related
+              data are considered sensitive data and require express
+              authorization from the data subject.
+            </p>
+          </div>
+
+          {/* Exercise of Rights */}
+          <div
+            id="section-8"
+            class="bg-teal-50 p-6 rounded-lg mb-8 scroll-mt-24"
+          >
+            <h3 class="text-xl font-semibold text-teal-900 mb-4">
+              8. PROCEDURE FOR QUERIES AND REQUESTS BY DATA SUBJECTS
+            </h3>
+            <p class="text-gray-700 mb-4">
+              Every data subject has the right to make queries and requests to
+              LUMIA ODONTOLOGÍA S.A.S. regarding their personal data. The
+              procedures for exercising these rights are as follows:
+            </p>
+
+            <h4 class="text-lg font-semibold text-teal-800 mb-3">
+              8.1. Queries
+            </h4>
+            <p class="text-gray-700 mb-4">
+              Data subjects may consult their personal data at any time. The
+              query will be answered within a maximum of 10 business days from
+              the date of receipt. When it is not possible to attend to the
+              query within said term, the interested party will be informed of
+              the reasons for the delay and the date on which their query will
+              be attended to, which in no case may exceed 5 business days
+              following the expiration of the first term.
+            </p>
+
+            <h4 class="text-lg font-semibold text-teal-800 mb-3">
+              8.2. Claims
+            </h4>
+            <p class="text-gray-700 mb-4">
+              Data subjects may request the correction, update, or deletion of
+              their personal data, or revoke the authorization granted. The
+              claim will be answered within a maximum of 15 business days from
+              the date of receipt. When it is not possible to attend to the
+              claim within said term, the interested party will be informed of
+              the reasons for the delay and the date on which their claim will
+              be attended to, which in no case may exceed 8 business days
+              following the expiration of the first term.
+            </p>
+
+            <h4 class="text-lg font-semibold text-teal-800 mb-3">
+              8.3. Contact Channels
+            </h4>
+            <div class="bg-white p-4 rounded-lg border">
+              <ul class="text-gray-700 space-y-2">
+                <li>
+                  <strong>WhatsApp:</strong> 3164052829
+                </li>
+                <li>
+                  <strong>Email:</strong> lumiaodontologia@gmail.com / lumiagestion01@gmail.com
+                </li>
+                <li>
+                  <strong>Web form:</strong> www.lumiaodontologia.com/privacidad
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Digital Channels */}
+          <div
+            id="section-9"
+            class="bg-emerald-50 p-6 rounded-lg mb-8 scroll-mt-24"
+          >
+            <h3 class="text-xl font-semibold text-emerald-900 mb-4">
+              9. PROCESSING THROUGH DIGITAL CHANNELS (WEBSITE, APPS, AND
+              WHATSAPP)
+            </h3>
+
+            <h4 class="text-lg font-semibold text-emerald-800 mb-3">
+              9.1. Website and Applications
+            </h4>
+            <p class="text-gray-700 mb-4">
+              For data processing through the website and applications, LUMIA
+              ODONTOLOGÍA S.A.S. implements digital privacy notices, cookie
+              management policies, and technical mechanisms for exercising
+              rights.
+            </p>
+
+            <h4 class="text-lg font-semibold text-emerald-800 mb-3">
+              9.2. WhatsApp Business
+            </h4>
+            <p class="text-gray-700 mb-4">
+              For data processing through WhatsApp Business, LUMIA ODONTOLOGÍA
+              S.A.S. implements privacy notices, data protection measures, and
+              procedures for exercising rights through this channel.
+            </p>
+          </div>
+
+          {/* Legal Framework and Scope */}
+          <div
+            id="section-12"
+            class="bg-slate-50 p-6 rounded-lg mb-8 scroll-mt-24"
+          >
+            <h3 class="text-xl font-semibold text-slate-900 mb-4">
+              12. LEGAL FRAMEWORK AND SCOPE OF APPLICATION
+            </h3>
+            <p class="text-gray-700 mb-4">
+              The provisions of Articles 15 and 20 of the Colombian Constitution
+              and Law 1581 of 2012 and its regulatory decrees are applied.
+            </p>
+          </div>
+
+          {/* Security */}
+          <div
+            id="section-11"
+            class="bg-red-50 p-6 rounded-lg mb-8 scroll-mt-24"
+          >
+            <h3 class="text-xl font-semibold text-red-900 mb-4">
+              11. INFORMATION SECURITY
+            </h3>
+
+            <h4 class="text-lg font-semibold text-red-800 mb-3">
+              11.1. Security Measures
+            </h4>
+            <p class="text-gray-700 mb-4">
+              LUMIA ODONTOLOGÍA S.A.S. will adopt the technical, human, and
+              administrative measures that are necessary to provide security to
+              the records, avoiding their adulteration, loss, consultation, use,
+              or unauthorized or fraudulent access.
+            </p>
+
+            <h4 class="text-lg font-semibold text-red-800 mb-3">
+              11.2. Implementation of Security Measures
+            </h4>
+            <p class="text-gray-700 mb-4">
+              The security measures will be implemented taking into account the
+              nature of the personal data, the risks to which they are exposed,
+              and the technical and economic possibilities of implementation.
+            </p>
+          </div>
+
+          {/* Update Addendum */}
+          <div
+            id="addendum"
+            class="bg-yellow-50 p-6 rounded-lg mb-8 scroll-mt-24"
+          >
+            <h3 class="text-xl font-semibold text-yellow-900 mb-4">
+              UPDATE ADDENDUM — PERSONAL DATA PROCESSING POLICY (Version 2.0)
+            </h3>
+            <p class="text-gray-700 mb-4">
+              <strong>Effective date:</strong> September 24, 2025
+            </p>
+            <p class="text-gray-700 mb-4">
+              This addendum updates the Personal Data Processing Policy of LUMIA
+              ODONTOLOGÍA S.A.S., incorporating the latest regulatory changes
+              and best practices in data protection.
+            </p>
+          </div>
+
+          {/* Final Provisions */}
+          <div
+            id="section-13"
+            class="bg-gray-50 p-6 rounded-lg mb-8 scroll-mt-24"
+          >
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">
+              13. FINAL PROVISIONS
+            </h3>
+            <p class="text-gray-700 mb-4">
+              The Habeas Data area is responsible for complying with the
+              provisions of this policy and ensuring the protection of personal
+              data in all company processes.
+            </p>
+          </div>
+
+          {/* Final Contact */}
+          <div id="contact" class="bg-slate-50 p-6 rounded-lg scroll-mt-24">
+            <h3 class="text-xl font-semibold text-slate-900 mb-4">
+              CONTACT INFORMATION
+            </h3>
+            <div class="bg-white p-4 rounded-lg border">
+              <p class="text-gray-700 space-y-2">
+                <strong>LUMIA ODONTOLOGÍA S.A.S.</strong>
               </p>
               <p>
                 <strong>Tax ID:</strong> 901.823.286-1
               </p>
               <p>
-                <strong>Address:</strong> Calle 33B #20-03 Local 9909, Manizales
+                <strong>Address:</strong> Calle 33B #20-03 Local 9909, Manizales,
+                Caldas, Colombia
               </p>
               <p>
-                <strong>Phones:</strong> 606 8902828 - 3164052829
+                <strong>Phones:</strong> 606 8902828 / 3164052829
               </p>
               <p>
                 <strong>Email:</strong> lumiaodontologia@gmail.com / lumiagestion01@gmail.com
@@ -95,227 +884,11 @@ const t = useTranslations(lang);
               <p>
                 <strong>Website:</strong> www.lumiaodontologia.com
               </p>
+              <p>
+                <strong>Attention Form:</strong>{" "}
+                www.lumiaodontologia.com/privacidad
+              </p>
             </div>
-          </div>
-
-          {/* Processing Principles */}
-          <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            Data Processing Principles
-          </h3>
-          <ol class="text-gray-600 mb-4 list-decimal pl-6">
-            <li>
-              <strong>Legality:</strong> Data processing is regulated and subject
-              to current law.
-            </li>
-            <li>
-              <strong>Purpose:</strong> Data is processed for legitimate, previously
-              informed purposes.
-            </li>
-            <li>
-              <strong>Freedom:</strong> Requires prior, express, and informed consent
-              from the data subject.
-            </li>
-            <li>
-              <strong>Truthfulness or Quality:</strong> Information must be truthful,
-              complete, accurate and up-to-date.
-            </li>
-            <li>
-              <strong>Transparency:</strong> Guarantee the data subject's right to
-              obtain information.
-            </li>
-            <li>
-              <strong>Security:</strong> Protect information against tampering, loss
-              or unauthorized access.
-            </li>
-            <li>
-              <strong>Confidentiality:</strong> Maintain confidentiality by those
-              who process the data.
-            </li>
-          </ol>
-
-          {/* Authorization */}
-          <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            Authorization for Data Processing
-          </h3>
-          <p class="text-gray-600 mb-4">
-            The collection, storage, use, circulation and processing of personal
-            data requires the <strong
-              >free, prior, express and informed consent</strong
-            >
-            of the data subjects.
-          </p>
-
-          <p class="text-gray-600 mb-4">
-            <strong>Authorization can be granted through:</strong>
-          </p>
-          <ul class="text-gray-600 mb-4 list-disc pl-6">
-            <li>Physical or electronic documents</li>
-            <li>Data messages or email</li>
-            <li>
-              Any digital format that allows guaranteeing subsequent
-              consultation
-            </li>
-            <li>Unambiguous conduct of the data subject</li>
-          </ul>
-
-          {/* Processing Purposes */}
-          <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            Data Processing Purposes
-          </h3>
-          <p class="text-gray-600 mb-4">
-            LUMIA ODONTOLOGÍA S.A.S. processes personal data for the following
-            purposes:
-          </p>
-          <ol class="text-gray-600 mb-4 list-decimal pl-6">
-            <li>
-              Analysis of treated population and delivery of RIPS to control
-              agencies
-            </li>
-            <li>
-              Update, programming and confirmation of appointment processes
-            </li>
-            <li>
-              Sending information about promotions, events and oral health
-              campaigns
-            </li>
-            <li>Evaluation of the quality of treatments and services</li>
-            <li>Virtual monitoring of dental treatment evolution</li>
-            <li>Compliance with legal and contractual obligations</li>
-            <li>Commercial due diligence</li>
-            <li>Commercial communication and marketing</li>
-            <li>Compliance with commercial and labor obligations</li>
-            <li>Depersonalized statistical analysis</li>
-            <li>Security and fraud prevention purposes</li>
-          </ol>
-
-          {/* Data Subject Rights */}
-          <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            Data Subject Rights
-          </h3>
-          <p class="text-gray-600 mb-4">
-            As a data subject, you have the following rights:
-          </p>
-          <ul class="text-gray-600 mb-4 list-disc pl-6">
-            <li>
-              <strong>Know, update and rectify</strong> your personal data
-            </li>
-            <li>
-              <strong>Request proof</strong> of the authorization granted
-            </li>
-            <li>
-              <strong>Be informed</strong> about how your data has been used
-            </li>
-            <li>
-              <strong>File complaints</strong> with the Superintendency of Industry
-              and Commerce
-            </li>
-            <li>
-              <strong>Revoke authorization</strong> and request data deletion
-            </li>
-            <li>
-              <strong>Access your personal data free of charge</strong>
-            </li>
-          </ul>
-
-          {/* Exercise of Rights (ARCO) */}
-          <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            Exercise of Rights (ARCO)
-          </h3>
-          <div class="bg-green-50 p-6 rounded-lg mb-8">
-            <h4 class="text-lg font-semibold text-green-900 mb-3">
-              For queries and requests:
-            </h4>
-            <ul class="text-gray-700 mb-4">
-              <li>
-                • <strong>Queries:</strong> Answered within maximum 10 business days
-              </li>
-              <li>
-                • <strong>Claims:</strong> Answered within maximum 15 business days
-              </li>
-              <li>
-                • <strong>Contact:</strong> WhatsApp 3164052829
-              </li>
-              <li>
-                • <strong>Web Form:</strong> www.lumiaodontologia.com/privacidad
-              </li>
-              <li>
-                • <strong>Email:</strong> lumiaodontologia@gmail.com / lumiagestion01@gmail.com
-              </li>
-            </ul>
-          </div>
-
-          {/* Clinical Records */}
-          <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            Clinical Records and Health Data
-          </h3>
-          <p class="text-gray-600 mb-4">
-            Clinical records will be kept for a minimum period of <strong
-              >15 years</strong
-            >
-            counted from the date of the last care, in accordance with Resolution
-            839 of 2017 from the Ministry of Health. Health-related data are considered
-            <strong>sensitive data</strong>
-            and require express authorization from the data subject.
-          </p>
-
-          {/* Security */}
-          <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            Security Measures
-          </h3>
-          <p class="text-gray-600 mb-4">
-            We implement technical, human and administrative measures to protect
-            your personal data against tampering, loss, consultation, use or
-            unauthorized or fraudulent access. Any security incident will be
-            reported to the competent authorities.
-          </p>
-
-          {/* Minors' Data */}
-          <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            Processing of Minors' Data
-          </h3>
-          <p class="text-gray-600 mb-4">
-            Processing personal data of minors requires authorization from the
-            legal representative and assessment of the minor's opinion according
-            to their maturity and understanding capacity.
-          </p>
-
-          {/* Digital Channels */}
-          <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            Digital Channels
-          </h3>
-          <p class="text-gray-600 mb-4">
-            For data processing through website, applications and WhatsApp, we
-            implement digital privacy notices, cookie management and technical
-            mechanisms for exercising rights.
-          </p>
-
-          {/* Final Contact */}
-          <h3 class="text-2xl font-semibold text-gray-900 mt-8 mb-4">
-            Contact
-          </h3>
-          <p class="text-gray-600 mb-4">
-            To exercise your rights or for questions about this policy, you can
-            contact us through:
-          </p>
-          <div class="bg-gray-50 p-6 rounded-lg">
-            <p class="text-gray-700">
-              <strong>LUMIA ODONTOLOGÍA S.A.S.</strong><br />
-              <strong>Tax ID:</strong> 901.823.286-1<br />
-              Calle 33B #20-03 Local 9909<br />
-              Manizales, Caldas, Colombia<br />
-              <strong>Phones:</strong> 606 8902828 / 3164052829<br />
-              <strong>Email:</strong> lumiaodontologia@gmail.com<br />
-              <strong>Website:</strong> www.lumiaodontologia.com<br />
-              <strong>Form:</strong> www.lumiaodontologia.com/privacidad
-            </p>
-          </div>
-
-          <div class="bg-yellow-50 p-6 rounded-lg mt-8">
-            <p class="text-gray-800">
-              <strong>Effective Date:</strong> This policy is effective as of September
-              24, 2025.<br />
-              <strong>Version:</strong> 2.0 (Update Addendum)
-            </p>
           </div>
         </div>
       </div>
@@ -323,4 +896,168 @@ const t = useTranslations(lang);
   </main>
 
   <Footer />
+
+  <script>
+    function toggleNavigation() {
+      const navIndex = document.getElementById("navigation-index");
+      const mobileToggle = document.getElementById("mobile-nav-toggle");
+
+      if (!navIndex) return;
+
+      if (navIndex.classList.contains("hidden")) {
+        navIndex.classList.remove("hidden");
+        if (mobileToggle) {
+          mobileToggle.textContent = "✕";
+          mobileToggle.classList.add("bg-red-600", "hover:bg-red-700");
+          mobileToggle.classList.remove("bg-blue-600", "hover:bg-blue-700");
+        }
+      } else {
+        navIndex.classList.add("hidden");
+        if (mobileToggle) {
+          mobileToggle.textContent = "📋";
+          mobileToggle.classList.add("bg-blue-600", "hover:bg-blue-700");
+          mobileToggle.classList.remove("bg-red-600", "hover:bg-red-700");
+        }
+      }
+    }
+
+    // Smooth scroll for navigation links
+    document.addEventListener("DOMContentLoaded", function () {
+      const navLinks = document.querySelectorAll(
+        '#navigation-index a[href^="#"]'
+      );
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const targetId = (link as HTMLAnchorElement)
+            .getAttribute("href")
+            ?.substring(1);
+          if (!targetId) return;
+
+          const targetElement = document.getElementById(targetId);
+
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+
+            // Highlight section temporarily
+            targetElement.style.transition = "box-shadow 0.3s ease";
+            targetElement.style.boxShadow = "0 0 20px rgba(59, 130, 246, 0.5)";
+            setTimeout(() => {
+              targetElement.style.boxShadow = "";
+            }, 2000);
+          }
+        });
+      });
+
+      // Show/hide index automatically on scroll
+      let lastScrollY = window.scrollY;
+      const navIndex = document.getElementById("navigation-index");
+
+      window.addEventListener("scroll", () => {
+        const currentScrollY = window.scrollY;
+
+        if (navIndex) {
+          if (currentScrollY > 100) {
+            navIndex.style.transform = "translateY(-50%)";
+          } else {
+            navIndex.style.transform = "translateY(-50%)";
+          }
+        }
+
+        lastScrollY = currentScrollY;
+      });
+
+      // Highlight active link based on visible section
+      const sections = document.querySelectorAll(
+        '[id^="section-"], #addendum, #contact, #company'
+      );
+
+      const observerOptions = {
+        root: null,
+        rootMargin: "-20% 0px -70% 0px",
+        threshold: 0,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Remove active class from all links
+            navLinks.forEach((link) =>
+              link.classList.remove("bg-blue-100", "text-blue-800")
+            );
+
+            // Add active class to corresponding link
+            const activeLink = document.querySelector(
+              `#navigation-index a[href="#${entry.target.id}"]`
+            );
+            if (activeLink) {
+              activeLink.classList.add("bg-blue-100", "text-blue-800");
+            }
+          }
+        });
+      }, observerOptions);
+
+      sections.forEach((section) => observer.observe(section));
+    });
+
+    // Function to show/hide on mobile
+    function toggleMobileNavigation() {
+      const navIndex = document.getElementById("navigation-index");
+      if (navIndex) {
+        navIndex.classList.toggle("hidden");
+      }
+    }
+  </script>
+
+  <style>
+    #navigation-index {
+      max-height: 80vh;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: #cbd5e0 #f7fafc;
+    }
+
+    #navigation-index::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    #navigation-index::-webkit-scrollbar-track {
+      background: #f7fafc;
+      border-radius: 3px;
+    }
+
+    #navigation-index::-webkit-scrollbar-thumb {
+      background: #cbd5e0;
+      border-radius: 3px;
+    }
+
+    #navigation-index::-webkit-scrollbar-thumb:hover {
+      background: #a0aec0;
+    }
+
+    #navigation-index a {
+      transition: all 0.2s ease;
+    }
+
+    #navigation-index a:hover {
+      transform: translateX(4px);
+    }
+
+    @media (max-width: 1024px) {
+      #navigation-index {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 90vw;
+        max-height: 80vh;
+        z-index: 1000;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      }
+    }
+  </style>
 </Layout>
